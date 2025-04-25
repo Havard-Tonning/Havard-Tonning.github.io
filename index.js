@@ -10,8 +10,7 @@ L.marker([61.83523221010576, 6.805439949245476], {icon: L.icon({
     iconAnchor: [12, 41],
     popupAnchor: [1, -34],
     shadowSize: [41, 41]})}).addTo(map)
-    .bindPopup("<H4>Du er her</H4><img src='./images/infotavler.jpg' class='popup-image'> <style='opacity:0'>")
-    .openPopup();
+    .bindPopup("<H4>Du er her</H4><img src='./images/infotavler.jpg' class='popup-image'> <style='opacity:0'>");
 
 
 L.marker([61.83573157084586, 6.805100560216835]).addTo(map)
@@ -73,7 +72,7 @@ var latlngs = [
     [61.83472167178082, 6.812313397757036],
     [61.83450897512067, 6.807624896582845],
     [61.83528882632151, 6.807341810444835],
-    [61.835207800694334, 6.80566811208517]
+    [61.835230448567664, 6.805423001262164]
 ];
 
 var polyline = L.polyline(latlngs, {color: 'red'}).addTo(map);
