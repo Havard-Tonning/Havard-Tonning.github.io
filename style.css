@@ -1,6 +1,10 @@
 
+html,body{
+    height:100%
+}
+
 #map {
-    height: 400px;
+    height: 85%;
     width: 90%;
     margin-left: 5%;
     margin-top: 5%;
