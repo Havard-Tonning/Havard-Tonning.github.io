@@ -4,27 +4,33 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-L.marker([61.83523221010576, 6.805439949245476]).addTo(map)
-    .bindPopup('Du er her')
+L.marker([61.83523221010576, 6.805439949245476], {icon: L.icon({
+    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]})}).addTo(map)
+    .bindPopup("<H4>Du er her</H4><img src='./images/infotavler.jpg' class='popup-image'> <style='opacity:0'>")
     .openPopup();
 
+
 L.marker([61.83573157084586, 6.805100560216835]).addTo(map)
-    .bindPopup('Noregs minste og kaldaste strand');
+.bindPopup("<H4>Noregs minste og kaldaste strand</H4><img src='./images/strand.jpg' class='popup-image'>");
 
 L.marker([61.834191786195206, 6.805654369769167]).addTo(map)
-    .bindPopup('Olden Gamle Kyrkje');
+    .bindPopup('<H4>Olden Gamle Kyrkje<H4><img src="./images/OldenGamleKyrkje.jpg" class="popup-image">');
 
 L.marker([61.83198400514617, 6.801277627125196]).addTo(map)
-    .bindPopup('Håskreda')
+    .bindPopup("<H4>Håskreda</H4><img src='./images/haskreda.jpg' class='popup-image'>")
 
 L.marker([61.82756413293129, 6.808309705339039]).addTo(map)
-    .bindPopup('Olden Nye Kyrkje');
+    .bindPopup("<H4>Olden Nye Kyrkje</H4><img src='./images/OldenNyeKyrkje.jpg' class='popup-image'>");
 
 L.marker([61.818087067146614, 6.810325979689476]).addTo(map)
-    .bindPopup('Laukifossen');
+    .bindPopup("<H4>Laukifossen</H4><img src='./images/laukifossen.jpg' class='popup-image'>");
 
 L.marker([61.832533331352266, 6.81289993511424]).addTo(map)
-.bindPopup('Singerheimen');
+.bindPopup("<H4>Singerheimen</H4><img src='./images/singerheimen.jpg' class='popup-image'>");
 
 
 // create a red polyline from an array of LatLng points
