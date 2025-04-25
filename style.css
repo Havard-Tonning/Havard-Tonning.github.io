@@ -1,6 +1,6 @@
-
 html,body{
-    height:100%
+    height:100%;
+    overflow-x:hidden;
 }
 
 #map {
@@ -67,4 +67,32 @@ html,body{
 .bokslink{
     text-decoration: none;
     color: black;
+}
+
+a{
+    text-decoration: none;
+}
+
+.picdiv{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.trippic{
+    height: 300px;
+    width: 100%;
+    object-fit: fill;
+    z-index: 1;
+}
+
+.pictext {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    color: white;
 }
