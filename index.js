@@ -76,3 +76,4 @@ var latlngs = [
 ];
 
 var polyline = L.polyline(latlngs, {color: 'red'}).addTo(map);
+

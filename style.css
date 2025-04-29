@@ -1,6 +1,7 @@
 html,body{
     height:100%;
     overflow-x:hidden;
+    font-family:"Avant Garde", Avantgarde, "Century Gothic";
 }
 
 #map {
@@ -117,3 +118,55 @@ a{
     background-color: rgb(247, 247, 247);
     border-radius: 5px;
 }
+  
+  .faq-section {
+    max-width: 800px;
+    margin: 50px auto;
+
+    background: #fff;
+    border-radius: 5px;
+  }
+  
+  .faq-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .faq-item {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+  }
+  
+  .faq-question {
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-size: 1.2rem;
+    color: #000000;
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  
+  .icon {
+    font-size: 1.5rem;
+    color: #91c6ff;
+  }
+  
+  .faq-answer {
+    padding: 10px;
+    font-size: 1rem;
+    color: #000000;
+    display: none;
+  }
+  
+  .faq-question.active .icon {
+    content: "-";
+  }
+  
