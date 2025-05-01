@@ -170,3 +170,20 @@ a{
     content: "-";
   }
   
+  .tripstats{
+    display: flex;
+    margin-top: 10px;
+    width:100%;
+    justify-content: space-around;
+
+  }
+
+  .statbox{
+    background-color: #333;    
+    border-radius: 5px;
+    height: 100px;
+    width: 30%;
+    color:white;
+    justify-content: center;
+    text-align: center;
+  }
