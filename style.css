@@ -1,7 +1,10 @@
+
 html,body{
     height:100%;
     overflow-x:hidden;
     font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    max-width: 430px;
+    background-color: #f5f5f5;
 }
 
 #map {
@@ -20,8 +23,8 @@ html,body{
 
 .main-header {
     text-align: center;
-    height: 70px;
-    background-color: rgb(191, 201, 255);
+    height: 100px;
+    background-color: rgb(58, 126, 201);
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     color: white;
@@ -58,11 +61,33 @@ html,body{
     margin-top: 15px;
     text-align: center;
     align-content: center;
-    background-color: rgb(247, 225, 247);
+    opacity: 0.9;
+    background-color: white;
     border-radius: 10px;
     width: 90%;
     margin-left: 5%;
     margin-right: 5%;
+}
+
+.valgboks:hover{
+    scale: 1.05;
+}
+
+.infobox{
+    height: 200px;
+    background-color: white;
+    width: 90%;
+    align-content: center;
+    border-radius: 10px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 10px;
+    opacity: 0.9;
+    text-align: center;
+}
+
+.infoheader{
+    color: rgb(58, 126, 201)
 }
 
 .bokslink{
