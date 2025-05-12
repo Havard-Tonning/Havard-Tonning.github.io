@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Håskreda</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0LT1EF01DF"></script>
@@ -15,11 +17,30 @@
 
   gtag('config', 'G-0LT1EF01DF');
 </script>
+
 <body>
     <a href="index.html">
         <header class="main-header">Olden Navigasjon</header>
     </a>
     <a href="mainmap.html" class="backbutton">Tilbake til kart</a>
-    <h1>Håskreda</h1>
+<div class="swiper">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide"><video class="swiper_image" src="./images/haskreda.mp4" style="object-fit: contain; " controls></div>
+        <div class="swiper-slide"><img class="swiper_image" src="./images/haskreda1.jpg"></div>
+        <div class="swiper-slide"><img class="swiper_image" src="./images/haskreda2.jpg"></div>
+    </div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+    </div>
+<div class="marginbody">
+<p>
+
+<i>Video av Asgeir Flåten, bilder av Helene Jørgensen, via <a href="https://www.fjordingen.no/nyhende/i/BWg04e/skulle-berre-ut-med-soepla-fanga-haaskreda-paa-film">Fjordingen.</a></i>
+</p>
+</div>
+    <script src="swiper.js"></script>
+    <script src="index.js"></script>   
 </body>
 </html>
