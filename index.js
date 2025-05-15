@@ -115,7 +115,7 @@ locationControl.onAdd = function(map) {
             watch: true,
             enableHighAccuracy: true,
             maximumAge: 10000,
-            timeout: 10000
+            //timeout: 10000
         });
         return false;
     };
@@ -134,13 +134,14 @@ function onLocationFound(e){
         locationMarker = L.circleMarker(e.latlng, {radius: 8, fillColor: '#3a7ec9', color: "FFF", weight: 2, opacity: 1, fillOpacity: 0.8}).addTo(map);
 
         locationCircle = L.circle(e.latlng, {radius: radius, color: '#3a7ec9', fillColor:'#3a7ec9', fillOpacity: 0.1 }).addTo(map);
+
+        map.setView(e.latlng);
     }else {
         locationMarker.setLatLng(e.latlng);
         locationCircle.setLatLng(e.latlng);
         locationCircle.setRadius(radius);
     }
 
-     map.setView(e.latlng);
 }
 
 function onLocationError(e){
