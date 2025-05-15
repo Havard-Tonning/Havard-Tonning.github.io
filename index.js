@@ -101,3 +101,39 @@ L.marker([61.811346777648616, 6.794098073865384], {icon: L.icon({
     popupAnchor: [1, -34],
     shadowSize: [41, 41]})}).addTo(map)
     .bindPopup("<a href='laukisetra.html'><H3>Laukisetra</H3><p>Litt meir krevande tur, men med utsikt på toppen som gjer strevet verdt det.</p><img src='./images/laukisetra1.jpg' class='popup-image'> <style='opacity:0'></a>");
+
+var locationMarker, locationCircle;
+
+function onLocationFound(e){
+    var radius = e.accuracy;
+
+    if(!locationMarker){
+        locationMarker = L.circleMarker(e.latlng, {radius: 8, fillColor: '#3a7ec9', color: "FFF", weight: 2, opacity: 1, fillOpacity: 0.8}).addTo(map);
+
+        locationCircle = L.circle(e.latlng, {radius: radius, color: '#3a7ec9', fillColor:'#3a7ec9', fillOpacity: 0.1 }).addTo(map);
+    }else {
+        locationMarker.setLatLng(e.latlng);
+        locationCircle.setLatLng(e.latlng);
+        locationCircle.setRadius(radius);
+    }
+
+    // // Center map on user's location
+    // map.setView(e.latlng);
+}
+
+function onLocationError(e){
+    alert(e.message);
+}
+
+map.on('locationfound', onLocationFound);
+map.on('locationerror', onLocationError);
+
+map.locate({
+    watch: true,
+    enableHighAccuracy: true,
+    maximumAge: 10000,
+    timeout: 10000
+});
+
+
+
