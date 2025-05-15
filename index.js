@@ -4,14 +4,14 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-L.marker([61.83523221010576, 6.805439949245476], {icon: L.icon({
-    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
-    iconSize: [25, 41],
-    iconAnchor: [12, 41],
-    popupAnchor: [1, -34],
-    shadowSize: [41, 41]})}).addTo(map)
-    .bindPopup("<H3>Du er her</H3><p>Klikk på kartmarkørane for å vise sjåverdigheita. Klikk igjen for å opne infosida til staden.</p><img src='./images/infotavler.jpg' class='popup-image'> <style='opacity:0'>")
-    .openPopup();
+// L.marker([61.83523221010576, 6.805439949245476], {icon: L.icon({
+//     iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
+//     iconSize: [25, 41],
+//     iconAnchor: [12, 41],
+//     popupAnchor: [1, -34],
+//     shadowSize: [41, 41]})}).addTo(map)
+//     .bindPopup("<H3>Du er her</H3><p>Klikk på kartmarkørane for å vise sjåverdigheita. Klikk igjen for å opne infosida til staden.</p><img src='./images/infotavler.jpg' class='popup-image'> <style='opacity:0'>")
+//     .openPopup();
 
 L.marker([61.83573157084586, 6.805100560216835]).addTo(map)
 .bindPopup("<a href='strand.html'><H3>Noregs minste og kaldaste strand</H3><p>2,5 meter brei og ein gjennomsnittstemperatur på rundt 6 grader.</p><img src='./images/strand.jpg' class='popup-image'></a>");
@@ -77,3 +77,27 @@ var latlngs = [
 
 var polyline = L.polyline(latlngs, {color: 'red'}).addTo(map);
 
+ L.marker([61.85855378132025, 6.832809190327688], {icon: L.icon({
+     iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
+     iconSize: [25, 41],
+     iconAnchor: [12, 41],
+     popupAnchor: [1, -34],
+     shadowSize: [41, 41]})}).addTo(map)
+     .bindPopup("<a href='huaren.html'><H3>Huaren</H3><p>Familievenleg tur med flott utsikt.</p><img src='./images/huaren.jpg' class='popup-image'> <style='opacity:0'></a>");
+
+L.marker([61.84875878015604, 6.771772936299873], {icon: L.icon({
+    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]})}).addTo(map)
+    .bindPopup("<a href='skarstein.html'><H3>Skarsteinsetra</H3><p>Familievenleg tur opp til ei flott seter med utsikt over fjorden.</p><img src='./images/skarstein.jpg' class='popup-image'> <style='opacity:0'></a>");
+
+    
+L.marker([61.811346777648616, 6.794098073865384], {icon: L.icon({
+    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]})}).addTo(map)
+    .bindPopup("<a href='laukisetra.html'><H3>Laukisetra</H3><p>Litt meir krevande tur, men med utsikt på toppen som gjer strevet verdt det.</p><img src='./images/laukisetra1.jpg' class='popup-image'> <style='opacity:0'></a>");
