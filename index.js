@@ -23,13 +23,13 @@ L.marker([61.83198400514617, 6.801277627125196]).addTo(map)
     .bindPopup("<a href='skred.html'><H3>Håskreda</H3><p>Kvart år dundrar eit stort skred ned fjellsidene. Somme år blir bygda dekka av ei sky av snø.</p><img src='./images/haskreda.jpg' class='popup-image'></a>")
 
 L.marker([61.82756413293129, 6.808309705339039]).addTo(map)
-    .bindPopup("<a href='nykyrkje.html'><H3>Olden Nye Kyrkje</H3><p>Ei langkyrkje frå 1934. Legg merke til vaierane som bind kyrkja til bakken for å forhindre at den bles vekk <i>igjen.</i></p><img src='./images/OldenNyeKyrkje.jpg' class='popup-image'></a>");
+    .bindPopup("<a href='nykyrkje.html'><H3>Olden Nye Kyrkje</H3><p>Ei langkyrkje frå 1934. Legg merke til vaierane som bind kyrkja til bakken for å forhindre at den bles vekk.</p><img src='./images/OldenNyeKyrkje.jpg' class='popup-image'></a>");
 
 L.marker([61.818087067146614, 6.810325979689476]).addTo(map)
     .bindPopup("<a href='lauki.html'><H3>Laukifossen</H3><p>Eit vakkert fossefall som også blir nytta til kraftgenerering.</p><img src='./images/laukifossen.jpg' class='popup-image'></a>");
 
 L.marker([61.832533331352266, 6.81289993511424]).addTo(map)
-.bindPopup("<a href='singerheimen.html'><H3>Singerheimen</H3><p>Ei samling vakre bygg oppført av milliareæren Willam Singer i 1921. I dag verna gjennom bruk.</p><img src='./images/singerheimen.jpg' class='popup-image'></a>");
+.bindPopup("<a href='singerheimen.html'><H3>Singerheimen</H3><p>Ei samling vakre bygg oppført av milliardæren Willam Singer i 1921. I dag verna gjennom bruk.</p><img src='./images/singerheimen.jpg' class='popup-image'></a>");
 
 
 // create a red polyline from an array of LatLng points

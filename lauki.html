@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laukifossen</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0LT1EF01DF"></script>
@@ -15,11 +17,49 @@
 
   gtag('config', 'G-0LT1EF01DF');
 </script>
+
 <body>
     <a href="index.html">
         <header class="main-header">Olden Navigasjon</header>
     </a>
     <a href="mainmap.html" class="backbutton">Tilbake til kart</a>
+<div class="swiper">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide"><img class="swiper_image" src="./images/laukifossen1.jpg"></div>
+        <div class="swiper-slide"><img class="swiper_image" src="./images/laukifossen2.jpg"></div>
+        <div class="swiper-slide"><img class="swiper_image" src="./images/laukifossen3.jpg"></div>
+    </div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+    </div>
+<div class="marginbody">
     <h1>Laukifossen</h1>
+    <p>Laukifossen er eit vakkert fossefall som også blir nytta til kraftverk<br></p>
+    
+    <h3>Om fossen</h3>
+    <p>
+        Laukifossen er ein lite men vakkert fossefall. Smeltevatnet frå breden sørger for ein vakker fargepallet på vatnet, med nyansar frå djup blå til eirgrøn. Dei omringande treda og fjella, samt dei 
+        gamle bygga og trebrua gjer dette til ein av dei vakraste stadane i bygda. 
+    </p>
+    <h3>Kraftverket</h3>
+    <p>
+        Heilt sidan 1917 det vore kraftverk i denn fossen. Årsproduksjonen er på 200 megawattimar. For å putte dette i kontekst, så er dette nok straum til å: <br>
+        <ul>
+            <li>Forsyne 10 husstandar i eit år</li>
+            <li>Lade 1,3 millionar telefonar</li>
+            <li>Lade 40 millionar tannbørster</li>
+            <li>Sjå på TV i 228 år</li>
+            <li>Køyre ein elbil 30 gongar rundt jorda</li>
+        </ul>
+
+        <br>
+        <i>Informasjon henta frå <a href="https://www.nve.no/energi/energisystem/vannkraft/vannkraftdatabase/vannkraftverk/?id=955">NVE.</a></i>
+    </p>
+
+</div>
+    <script src="swiper.js"></script>
+    <script src="index.js"></script>   
 </body>
 </html>

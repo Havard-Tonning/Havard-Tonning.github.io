@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Noregs Minste Strand</title>
+    <title>Den minste og kaldaste stranda</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0LT1EF01DF"></script>
@@ -15,11 +17,43 @@
 
   gtag('config', 'G-0LT1EF01DF');
 </script>
+
 <body>
     <a href="index.html">
         <header class="main-header">Olden Navigasjon</header>
     </a>
     <a href="mainmap.html" class="backbutton">Tilbake til kart</a>
-    <h1>Strand</h1>
+<div class="swiper">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide"><img class="swiper_image" src="./images/strand1.jpg"></div>
+        <div class="swiper-slide"><img class="swiper_image" src="./images/strand2.jpg"></div>
+        <div class="swiper-slide"><img class="swiper_image" src="./images/strand3.jpg"></div>
+    </div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+    </div>
+<div class="marginbody">
+    <h1>Den minste og kaldaste stranda i Noreg</h1>
+    <p>Stranda, som ligg i hjartet av bygda, har ei breidd på 2,5 meter og ein temperatur på mellom 5 og 8 grader<br></p>
+    <h3>Bakgrunn</h3>
+    <p>I 2019 hang kjøpmann André Opheim opp eit skilt som informerer om at dette er den minste og kaldaste stranda i landet. Smeltevatnet rett frå Briksdalsbreen
+        gjer at tempraturen, sjølv på dei varmaste somardagane, held seg einsifra. Det stranda manglar i temperatur gjer den opp for i eksklusivitet. Stranda har 
+        fin kvit skjelsand og ei utsikt som dei færraste slår.         
+    </p>
+
+    <h3>Popularitet</h3>
+    <p>
+        Etter skiltet kom opp har stranda vorte ein populær destinasjon blant turistane. Somme tør seg uti for å kunne skryte på seg at dei har bada på akkurat denne stranda. 
+        <br><br>Eit par år etter opninga satt André opp ei badstove der folk kan varme seg opp i etter ein kald dukkert. Dette har også gjort stranda til ei heilårsstrand, der
+        dei ekstra modige kan ta ein dukkert på vinterstid.
+    </p>
+        <i>Informasjon henta frå <a href="https://www.firda.no/olden-har-norges-minste-og-kaldaste-badestrand/s/5-15-826882"> Firda</a>.</i>
+    </p>
+
+</div>
+    <script src="swiper.js"></script>
+    <script src="index.js"></script>   
 </body>
 </html>
