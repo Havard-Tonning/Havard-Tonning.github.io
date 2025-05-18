@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Buss til Oldedalen</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="bus.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
+</head>
+<body>
+    <a href="index.html">
+        <header class="main-header">Olden Navigasjon</header>
+    </a>
+
+    <div class="container">
+        <div class="tabs">
+            <div class="tab active" id="tab-monday-wednesday-friday">Måndag, Onsdag, Fredag</div>
+            <div class="tab" id="tab-tuesday-thursday">Tysdag, Torsdag</div>
+            <div class="tab" id="tab-weekend">Helg</div>
+        </div>
+
+
+
+        <div class="direction-selector">
+            <button class="direction-btn active" data-direction="to-briksdalen">Til Briksdalen</button>
+            <button class="direction-btn" data-direction="to-olden">Til Olden</button>
+        </div>
+
+        <div id="schedule-display" class="schedule-container">
+            <!-- Schedule will be rendered here -->
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+    <script src="index.js"></script>
+    <script src="utilities.js"></script>
+    <script src="bus.js"></script>
+</body>
+</html>
