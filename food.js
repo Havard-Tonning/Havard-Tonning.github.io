@@ -38,3 +38,11 @@ L.marker([61.83452678782124, 6.804963791435792], {icon: L.icon({
     popupAnchor: [1, -34],
     shadowSize: [41, 41]})}).addTo(map)
     .bindPopup("<a href='yris.html'><H3>Yris Kafé</H3><p>Yris Kafé, lokalisert i sentrum av Olden, tilbyr både iskrem, kaffi og matservering.</p><img src='./images/yris1.jpg' class='popup-image'> <style='opacity:0'></a>");
+
+L.marker([61.83514958988893, 6.804779749846841], {icon: L.icon({
+    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]})}).addTo(map)
+    .bindPopup("<a href='stabukk.html'><H3>Stabukk</H3><p>Stabukk er ein kafé i hjartet av Olden med is, shakes, bollar og kaffi.</p><img src='./images/stabukk5.jpg' class='popup-image'> <style='opacity:0'></a>");

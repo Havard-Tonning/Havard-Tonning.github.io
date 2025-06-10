@@ -357,4 +357,10 @@ tr:last-child td {
   max-width: 100%;
 }
 
-
+.weatherbox {
+width: 100%;
+min-height: 350px;
+border-radius: 15px;
+object-fit: contain;
+overflow: hidden;
+};
