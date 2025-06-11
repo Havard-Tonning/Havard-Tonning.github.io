@@ -24,13 +24,15 @@ html,body{
 }
 
 .main-header {
-    text-align: center;
     height: 100px;
     background-color: #3a7ec9;
     color: white;
     font-size: 2rem;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    align-content:center;
+    display: flex;
+    justify-content: center; /* horizontal centering */
+    align-items: center;     /* vertical centering */
+    height: 100px;
 }
 
 
@@ -127,7 +129,7 @@ a{
     background-color: rgb(247, 247, 247);
     border-radius: 5px;
 }
-  
+
   .faq-section {
     max-width: 800px;
     margin: 50px auto;
@@ -135,19 +137,19 @@ a{
     background: #fff;
     border-radius: 5px;
   }
-  
+
   .faq-title {
     text-align: center;
     font-size: 2rem;
     margin-bottom: 20px;
     color: #333;
   }
-  
+
   .faq-item {
     border-bottom: 1px solid #ddd;
     padding: 10px 0;
   }
-  
+
   .faq-question {
     background: none;
     border: none;
@@ -161,24 +163,24 @@ a{
     align-items: center;
     justify-content: space-between;
   }
-  
-  
+
+
   .icon {
     font-size: 1.5rem;
     color: #91c6ff;
   }
-  
+
   .faq-answer {
     padding: 10px;
     font-size: 1rem;
     color: #000000;
     display: none;
   }
-  
+
   .faq-question.active .icon {
     content: "-";
   }
-  
+
   .tripstats{
     display: flex;
     margin-top: 10px;
@@ -187,7 +189,7 @@ a{
   }
 
   .statbox{
-    background-color: #3a7ec9;    
+    background-color: #3a7ec9;
     border-radius: 5px;
     height: 110px;
     width: 30%;
@@ -292,7 +294,7 @@ th {
 td {
   padding: 12px 8px;
   border-bottom: 1px solid #f0f0f5;
-  font-size: 0.95rem; 
+  font-size: 0.95rem;
   text-align: left;
 }
 
@@ -378,12 +380,8 @@ margin-top: -15px;
 }
 
 .logoimg {
-display: flex;
-justify-content: center;
-width: 40%;
-padding-left: 30%;
-margin-top: -20px;
-}
+width: 50%;
+} 
 
 .infop {
   margin: 2px
