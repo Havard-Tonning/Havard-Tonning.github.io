@@ -2,15 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+<meta name="google-adsense-account" content="ca-pub-4960913684387727">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="style.css">
-    <meta http-equiv='cache-control' content='no-cache'> 
-    <meta http-equiv='expires' content='0'> 
+    <meta http-equiv='cache-control' content='no-cache'>
+    <meta http-equiv='expires' content='0'>
     <meta http-equiv='pragma' content='no-cache'>
     <script src="https://kit.fontawesome.com/e065bf0659.js" crossorigin="anonymous"></script>
-    
-
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0LT1EF01DF"></script>
@@ -18,35 +17,37 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-0LT1EF01DF');
 </script>
-<body background="./images/fjord.jpg" style="background-repeat: no-repeat;">
-
-    <a href="index.html">
-        <header class="main-header">
-            <img class="logoimg" src="images/logo3.png" alt="">
-        </header>
-    </a>
-    <script src="index.js"></script>
+<body background="./images/fjord.jpg" style="background-repeat: no-repeat; max-width: none; width: 100vw; min-height: 100vh; display: flex; flex-direction: column; align-items: center; background-size: cover; background-position: center;">
     
-    <div class="infobox">
-        <h1 class="infoheader">Feeling Lost?</h1>
-        <p style="padding:20px">Scan the qr code below to learn more about the village, with maps, navigation, and tips from a local.</p>
-    </div>
-
-    <div class="qrbox">
-        <img src="images/testqr.png" alt="" class="qrimg">
-    </div>
-
-    <div class="subtext" style="margin-top: -10px;">
-        <p class="subtexttext">iolden.no</p>
-    </div>
-
-    <div>
-        <p class="attribution">
-            Created by Håvard Tonning
-        </p>
+    <div style="width: 100%; max-width: none; min-width: 430px; flex: 1; display: flex; flex-direction: column; padding: 0 clamp(20px, 5vw, 100px);">
+        <a href="index.html">
+            <header class="main-header" style="width: 100%; height: clamp(100px, 15vh, 200px);">
+                <img class="logoimg" src="images/logo3.png" alt="" style="width: clamp(200px, 50vw, 600px); height: auto;">
+            </header>
+        </a>
+        
+        <script src="index.js"></script>
+        
+        <div class="infobox" style="width: clamp(300px, 80vw, 1200px); height: auto; min-height: clamp(150px, 20vh, 300px); margin: clamp(20px, 3vh, 60px) auto; padding: clamp(20px, 4vw, 80px); font-size: clamp(1rem, 2.5vw, 2rem); align-self: center;">
+            <h1 class="infoheader" style="font-size: clamp(1.8rem, 5vw, 4rem); margin-bottom: clamp(15px, 3vh, 40px);">Feeling Lost?</h1>
+            <p style="padding: 0; line-height: 1.5; margin: 0;">Scan the qr code below to learn more about the village, with maps, navigation, and tips from a local.</p>
+        </div>
+        
+        <div class="qrbox" style="width: clamp(250px, 60vw, 800px); margin: clamp(20px, 4vh, 80px) auto; display: flex; justify-content: center; align-self: center;">
+            <img src="images/testqr.png" alt="" class="qrimg" style="width: 100%; height: auto; border-radius: clamp(10px, 2vw, 30px);">
+        </div>
+        
+        <div class="subtext" style="margin: clamp(10px, 2vh, 30px) auto; display: flex; justify-content: center;">
+            <p class="subtexttext" style="background-color: white; padding: clamp(10px, 2vw, 25px); border-radius: clamp(3px, 0.5vw, 8px); font-size: clamp(1.2rem, 3vw, 3rem); margin: 0; white-space: nowrap;">iolden.no</p>
+        </div>
+        
+        <div style="margin: clamp(10px, 2vh, 30px) auto clamp(40px, 5vh, 100px) auto; display: flex; justify-content: center;">
+            <p class="attribution" style="background-color: white; border-radius: clamp(3px, 0.5vw, 8px); padding: clamp(8px, 1.5vw, 20px); text-align: center; margin: 0; font-size: clamp(0.9rem, 2vw, 1.8rem);">
+                Created by Håvard Tonning
+            </p>
+        </div>
     </div>
 </body>
 </html>
