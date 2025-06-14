@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bus to Oldedalen</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../bus.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
+</head>
+<body>
+    <a href="index.html">
+        <header class="main-header">
+            <img class="logoimg" src="../images/logo3.png" alt="">
+        </header>
+    </a>
+
+    <div class="container">
+        <div class="tabs">
+            <div class="tab active" id="tab-monday-wednesday-friday">Monday, Wednesday, Friday</div>
+            <div class="tab" id="tab-tuesday-thursday">Tuesday, Thursday</div>
+            <div class="tab" id="tab-weekend">Weekend</div>
+        </div>
+
+
+
+        <div class="direction-selector">
+            <button class="direction-btn active" data-direction="to-briksdalen">To Briksdalen</button>
+            <button class="direction-btn" data-direction="to-olden">To Olden</button>
+        </div>
+
+        <div id="schedule-display" class="schedule-container">
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+    <script src="../index.js"></script>
+    <script src="../bus.js"></script>
+    <footer class="mainfooter">
+        Developed by <a href="https://www.instagram.com/havard_tonning/" style="color: rgb(203, 234, 255);">Håvard Tonning</a>
+        <br>
+        &copy;2025 All rights reserved
+        <br>
+        Questions? Contact me at <a href="mailto:havard@iolden.no" style="color: rgb(203, 234, 255)">havard@iolden.no</a>
+    </footer> 
+</body>
+</html>

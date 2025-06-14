@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+    <title>Kjenndalen</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+    <script src="https://kit.fontawesome.com/e065bf0659.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0LT1EF01DF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0LT1EF01DF');
+</script>
+<body>
+
+    <a href="index.html">
+        <header class="main-header">
+            <img class="logoimg" src="../images/logo3.png" alt="">
+        </header>
+    </a>
+
+    <!-- Slider main container -->
+<div class="swiper">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide"><img class="swiper_image" src="./../images/kjenndalen1.jpg"></div>
+      <div class="swiper-slide"><img class="swiper_image" src="./../images/kjenndalen2.jpg"></div>
+      <div class="swiper-slide"><img class="swiper_image" src="./../images/kjenndalen3.jpg"></div>
+      <div class="swiper-slide"><img class="swiper_image" src="./../images/kjenndalen4.jpg"></div>
+
+    </div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+<div class="roundedbody">
+  <div class="tripstats">
+    <div class="statbox" style="font-size: 1rem; background-color: #306EB0;"><br><i class="fa-solid fa-car" style="font-size: 2.5rem;"></i> <br><br>27 km</div>
+    <div class="statbox" style="font-size: 1rem; background-color: #3b80c9;"><br><i class="fa-solid fa-person-hiking" style="font-size: 2.5rem;"></i><br><br>600 m</div>
+    <div class="statbox" style="font-size: 1rem; background-color: #5F97D3;"><br><i class="fa-solid fa-clock" style="font-size: 2.5rem;"></i> <br><br>2 h</div>
+  </div>
+
+  <div class="marginbody">
+    <h1>Kjenndalen</h1>
+  <p style="margin-bottom:-20px;">
+At the end of Lodalen we find Kjenndalen, Kjenndalstova and the Kjenndal Glacier. These are popular hiking destinations for many. Here too, there can be many photo stops before you reach the <i>actual</i> destination. The road runs along Lovatnet, which has the characteristic turquoise green color. Along the road are well-kept farms, nice campsites and other popular motifs, such as the old Breng Pasture.
+<br><br>
+Further into the valley you can stop and read about the tragic Lodalsulukkene in 1905 and 1936, where parts of Ramnefjell fell into the lake and created tidal waves that destroyed everything in their path and killed 135 people. There is a memorial plaque and a nicely landscaped memorial garden.
+<br><br>
+From here it is 10 kilometers to the parking lot at Kjenndalsbreen. Then there is only a short walk to the lookout point towards the glacier.
+<br><br>
+On the return trip you can stop at Kjenndalstova for a snack or coffee break.
+<br><br> Marked in red is the part that is driven, while the walking route is marked in orange.
+<br><br><i>Information retrieved from <a href="https://oldenfjordhotel.no/kjenndalen">Olden Fjordhotel</a></i>
+    </p>
+
+
+</div>
+</div>
+  <div id="kjenndalen_map" class="maps"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+  <script src="../swiper.js"></script>
+  <script src="../index.js"></script>   
+  <script src="../kjenndalen.js"></script>
+
+    <footer class="mainfooter">
+        Developed by <a href="https://www.instagram.com/havard_tonning/" style="color: rgb(203, 234, 255);">Håvard Tonning</a>
+        <br>
+        &copy;2025 All rights reserved
+        <br>
+        Questions? Contact me at <a href="mailto:havard@iolden.no" style="color: rgb(203, 234, 255)">havard@iolden.no</a>
+    </footer> 
+</body>
+</html>
