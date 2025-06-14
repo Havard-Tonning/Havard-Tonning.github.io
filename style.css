@@ -3,7 +3,8 @@ html,body{
     height:100%;
     overflow-x:hidden;
     font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "Helvetica Neue", sans-serif;
-    max-width: 430px;
+    width: 100%;
+    min-width: 200px;
     background-color: #f5f5f5;
     margin:0;
     padding: 0;
@@ -381,7 +382,9 @@ margin-top: -15px;
 }
 
 .logoimg {
-width: 50%;
+
+min-height: 80px;
+max-height: 180px;
 } 
 
 .infop {
@@ -405,4 +408,42 @@ width: 50%;
     align-content:center;
     text-decoration: none;
 
+}
+
+.languages{
+  position: absolute;
+  right: 20px;
+  display: flex;
+  font-size: 15px;
+  margin-left: 50px;
+  text-decoration: none;
+  
+}
+
+.active-lang{
+  margin-right: 10px;
+  background-color: rgb(255, 255, 255);  
+  color: #3a7ec9;
+  border-radius: 30%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  padding: 5px;
+}
+
+.active-lang:hover{
+  transform: translateY(-1px);
+}
+
+.disactive-lang:hover{
+  transform: translateY(-1px);
+  background-color: white;
+  color: #3a7ec9;
+}
+
+.disactive-lang{
+    margin-right: 10px;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 30%;
+  padding: 5px;
 }
