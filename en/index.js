@@ -14,22 +14,22 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 //     .openPopup();
 
 L.marker([61.83573157084586, 6.805100560216835]).addTo(map)
-.bindPopup("<a href='strand.html'><H3>Noregs minste og kaldaste strand</H3><p>2,5 meter brei og ein gjennomsnittstemperatur på rundt 6 grader.</p><img src='./images/strand.jpg' class='popup-image'></a>");
+.bindPopup("<a href='strand.html'><H3>The smallest and coldest beach in Norway</H3><p>2,5 metres wide and an average water temperature of around 6 degrees.</p><img src='../images/strand.jpg' class='popup-image'></a>");
 
 L.marker([61.834191786195206, 6.805654369769167]).addTo(map)
-    .bindPopup('<a href="gamlekyrkja.html"><H3>Olden Gamle Kyrkje</H3><p>Ei korskyrkje frå 1759, bygd på same stad som ei stavkyrkje frå 1300-talet.</p><img src="./images/OldenGamleKyrkje.jpg" class="popup-image"></a>');
+    .bindPopup('<a href="gamlekyrkja.html"><H3>Olden Old Church</H3><p>A cross chruch from 1759, built on the site of a stave church from the 1300s.</p><img src="../images/OldenGamleKyrkje.jpg" class="popup-image"></a>');
 
 L.marker([61.83198400514617, 6.801277627125196]).addTo(map)
-    .bindPopup("<a href='skred.html'><H3>Håskreda</H3><p>Kvart år dundrar eit stort skred ned fjellsidene. Somme år blir bygda dekka av ei sky av snø.</p><img src='./images/haskreda.jpg' class='popup-image'></a>")
+    .bindPopup("<a href='skred.html'><H3>Håskreda</H3><p>Every year a large avalanche thunders down the mountainside. Some years the village is covered in a cloud of snow.</p><img src='../images/haskreda.jpg' class='popup-image'></a>")
 
 L.marker([61.82756413293129, 6.808309705339039]).addTo(map)
-    .bindPopup("<a href='nykyrkje.html'><H3>Olden Nye Kyrkje</H3><p>Ei langkyrkje frå 1934. Legg merke til vaierane som bind kyrkja til bakken for å forhindre at den bles vekk.</p><img src='./images/OldenNyeKyrkje.jpg' class='popup-image'></a>");
+    .bindPopup("<a href='nykyrkje.html'><H3>Olden New Church</H3><p>A long church from 1934. Note the wires that tie the church to the ground to prevent it from blowing away.</p><img src='../images/OldenNyeKyrkje.jpg' class='popup-image'></a>");
 
 L.marker([61.818087067146614, 6.810325979689476]).addTo(map)
-    .bindPopup("<a href='lauki.html'><H3>Laukifossen</H3><p>Eit vakkert fossefall som også blir nytta til kraftgenerering.</p><img src='./images/laukifossen.jpg' class='popup-image'></a>");
+    .bindPopup("<a href='lauki.html'><H3>Laukifossen</H3><p>A beautiful waterfall that is also used for power generation.</p><img src='../images/laukifossen.jpg' class='popup-image'></a>");
 
 L.marker([61.832533331352266, 6.81289993511424]).addTo(map)
-.bindPopup("<a href='singerheimen.html'><H3>Singerheimen</H3><p>Ei samling vakre bygg oppført av milliardæren Willam Singer i 1921. I dag verna gjennom bruk.</p><img src='./images/singerheimen.jpg' class='popup-image'></a>");
+.bindPopup("<a href='singerheimen.html'><H3>Singerheimen</H3><p>A collection of beautiful buildings built by billionaire William Singer in 1921. Today protected through use.</p><img src='../images/singerheimen.jpg' class='popup-image'></a>");
 
 
 // create a red polyline from an array of LatLng points
@@ -210,6 +210,13 @@ function onLocationError(e){
 
 map.on('locationfound', onLocationFound);
 map.on('locationerror', onLocationError);
+
+// map.locate({
+//     watch: true,
+//     enableHighAccuracy: true,
+//     maximumAge: 10000,
+//     timeout: 10000
+// });
 
 
 

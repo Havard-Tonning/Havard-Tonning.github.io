@@ -56,10 +56,12 @@ html,body{
     width: 90%;
     margin-left: 5%;
     margin-right: 5%;
+
 }
 
 .valgboks:hover{
     scale: 1.05;
+    transition:0.3s ease-in-out;
 }
 
 .infobox{
@@ -430,19 +432,84 @@ max-height: 180px;
 
 .active-lang:hover{
   transform: translateY(-1px);
+  transition: 0.3s ease;
 }
 
 .disactive-lang:hover{
   transform: translateY(-1px);
   background-color: white;
   color: #3a7ec9;
+  transition: 0.3s ease;
+
 }
 
 .disactive-lang{
-    margin-right: 10px;
+  margin-right: 10px;
   background-color: rgba(255, 255, 255, 0.3);
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 30%;
   padding: 5px;
+}
+.ham-menu {
+  position: absolute;
+  left: 30px;
+  top: 30px;
+  font-size: 30px;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  z-index: 200;
+}
+
+/* Hide the X icon by default, show hamburger */
+.ham-menu i:nth-child(1) {
+  opacity: 1;
+}
+
+.ham-menu i:nth-child(2) {
+  opacity: 0;
+}
+
+/* When active, hide hamburger and show X */
+.ham-menu.active i:nth-child(1) {
+  opacity: 0;
+}
+
+.ham-menu.active i:nth-child(2) {
+  opacity: 1;
+}
+
+.menu-content {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  background: #3A7EC9;
+  background: linear-gradient(172deg, rgba(58, 126, 201, 1) 0%, rgba(83, 204, 237, 1) 100%);
+  height: 100vh;
+  width: 100vw;
+  max-width: 500px;
+  left: -500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.menu-content.active {
+  left: 0;
+}
+
+.menu-content a {
+  font-size: large;
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.menu-content a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
 }
