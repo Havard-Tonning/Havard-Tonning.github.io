@@ -459,7 +459,7 @@ max-height: 180px;
   text-decoration: none;
   color: white;
   cursor: pointer;
-  z-index: 200;
+  z-index: 20000;
 }
 
 /* Hide the X icon by default, show hamburger */
@@ -483,7 +483,7 @@ max-height: 180px;
 .menu-content {
   position: fixed;
   top: 0;
-  z-index: 100;
+  z-index: 10000;
   background: #3A7EC9;
   background: linear-gradient(172deg, rgba(58, 126, 201, 1) 0%, rgba(83, 204, 237, 1) 100%);
   height: 100vh;
