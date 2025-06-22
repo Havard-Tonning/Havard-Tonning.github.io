@@ -1,4 +1,4 @@
-var map = L.map('mat_map', {zoomControl: false}).setView([61.845, 6.81], 14,5);
+var map = L.map('mat_map', {zoomControl: false}).setView([61.84017770961436, 6.805104792299194], 14,5);
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -46,3 +46,11 @@ L.marker([61.83514958988893, 6.804779749846841], {icon: L.icon({
     popupAnchor: [1, -34],
     shadowSize: [41, 41]})}).addTo(map)
     .bindPopup("<a href='stabukk.html'><H3>Stabukk</H3><p>Stabukk er ein kafé i hjartet av Olden med is, shakes, bollar og kaffi.</p><img src='./images/stabukk5.jpg' class='popup-image'> <style='opacity:0'></a>");
+
+L.marker([61.83237864928943, 6.813073108002821], {icon: L.icon({
+    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]})}).addTo(map)
+    .bindPopup("<a href='singer-food.html'><H3>Singerheimen</H3><p>På Singerheimen serverer dei afternoon tea i omgjevnadar fulle av tradisjon og historie.</p><img src='./images/singer-food.jpg' class='popup-image'> <style='opacity:0'></a>");
