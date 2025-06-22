@@ -53,4 +53,4 @@ L.marker([61.83237864928943, 6.813073108002821], {icon: L.icon({
     iconAnchor: [12, 41],
     popupAnchor: [1, -34],
     shadowSize: [41, 41]})}).addTo(map)
-    .bindPopup("<a href='singer-food.html'><H3>Singerheimen</H3><p>At Singerheimen they serve afternoon tea surrounded by tradition and history.</p><img src='./images/singer-food.jpg' class='popup-image'> <style='opacity:0'></a>");
+    .bindPopup("<a href='singer-food.html'><H3>Singerheimen</H3><p>At Singerheimen they serve afternoon tea surrounded by tradition and history.</p><img src='../images/singer-food.jpg' class='popup-image'> <style='opacity:0'></a>");
