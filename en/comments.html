@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-        <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <title>Guest Book</title>
     <script src="components.js"></script>
 
@@ -10,51 +11,33 @@
 
     <link rel="stylesheet" href="../style.css">
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-0LT1EF01DF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-0LT1EF01DF');
-</script>
 <body>
-        <header class="main-header">
-            <a href="index.html">
-                <img class="logoimg" src="../images/logo3.png" alt="">
-            </a>    
-            <div class="ham-menu"> 
-                <i class="fa-solid fa-bars"></i>
-                <i class="fa-solid fa-xmark"></i>
-            </div>
-            <div class="languages">
-                <a href="../comments.html"><div class="disactive-lang">No</div></a>
-                <div class="active-lang">En</div>
-            </div>
-        </header>
+     <g-tag></g-tag>
+    <header class="main-header">
+        <a href="index.html">
+            <img class="logoimg" src="../images/logo3.png" alt="">
+        </a>
+        <div class="ham-menu">
+            <i class="fa-solid fa-bars"></i>
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="languages">
+            <a href="../comments.html">
+                <div class="disactive-lang">No</div>
+            </a>
+            <div class="active-lang">En</div>
+        </div>
+    </header>
 
-
-    <div class="menu-content">
-        <a href="index.html" style="margin-top: 100px;">Home</a>
-        <a href="mainmap.html">Virtual guided trip</a>
-        <a href="picktrip.html">Hikes in the area</a>
-        <a href="sites.html">A short drive away</a>
-        <a href="weather.html">Weather forecast</a>
-        <a href="bus.html">Bus to Briksdalen</a>
-        <a href="toilet.html">Public toilets</a>
-        <a href="faq.html">Frequently asked questions</a>
-        <a href="comments.html">Digital guestbook</a>
-        <a href="feedback.html">Give feedback to the village</a>
-        <a href="about.html">About</a>
-    </div>
-   <script src="../hamburger.js"></script>
+    <hamburger-menu></hamburger-menu>
 
     <div class="marginbody" style="border-radius: 10px;">
-    <div class="guestbook">
-        <script crossorigin src="https://unpkg.com/@memorista/client-ui@2/dist/index.bundle.js"></script>
-        <x-memorista api-key="4b77eba8-ab88-47e6-a4b1-f0b51f025614"></x-memorista>
+        <div class="guestbook">
+            <script crossorigin src="https://unpkg.com/@memorista/client-ui@2/dist/index.bundle.js"></script>
+            <x-memorista api-key="4b77eba8-ab88-47e6-a4b1-f0b51f025614"></x-memorista>
+        </div>
     </div>
-   </div>
     <site-footer></site-footer>
 </body>
+
 </html>
