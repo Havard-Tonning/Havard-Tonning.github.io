@@ -57,6 +57,31 @@ class hamburger extends HTMLElement {
     }
 }
 
+class mainHeader extends HTMLElement{
+    connectedCallback() {
+        let currentLang = this.getAttribute("lang") || "no";
+        let path = window.location.pathname;
+        let filename = path.split("/").pop() || "index.html"
+        
+
+        this.innerHTML = `
+        <header class="main-header">
+            <a href="index.html">
+                <img class="logoimg" src="images/logo3.png" alt="">
+            </a>    
+            <div class="ham-menu"> 
+                <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <div class="languages">
+                <div class="active-lang">No</div>
+                <a href="en/${filename}"><div class="disactive-lang">En</div></a>
+            </div>
+        </header>`
+    }
+}
+
 customElements.define('site-footer', SiteFooter);
 customElements.define('g-tag', gtag);
 customElements.define('hamburger-menu', hamburger);
+customElements.define("main-header", mainHeader);

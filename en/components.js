@@ -30,15 +30,15 @@ class gtag extends HTMLElement {
 
 class hamburger extends HTMLElement {
     connectedCallback(){
-        this.innerHTML = `<div class="menu-content">
+        this.innerHTML = `    <div class="menu-content">
         <a href="index.html" style="margin-top: 100px;">Home</a>
         <a href="mainmap.html">Virtual guided trip</a>
         <a href="picktrip.html">Hikes in the area</a>
         <a href="sites.html">A short drive away</a>
         <a href="weather.html">Weather forecast</a>
         <a href="bus.html">Bus to Briksdalen</a>
-        <a href="toilet.html">Public toilets</a>
-        <a href="faq.html">Frequently asked questions</a>
+        <a href="toilet.html">Piblic toilets</a>
+        <a href="faq.html">FAQs</a>
         <a href="comments.html">Digital guestbook</a>
         <a href="feedback.html">Give feedback to the village</a>
     </div>`; 
@@ -55,6 +55,33 @@ class hamburger extends HTMLElement {
     }
 }
 
+
+class mainHeader extends HTMLElement{
+    connectedCallback() {
+        let path = window.location.pathname;
+        let filename = path.split("/").pop() || "index.html"
+         
+
+        this.innerHTML = `
+    <header class="main-header">
+        <a href="index.html">
+            <img class="logoimg" src="../images/logo3.png" alt="">
+        </a>
+        <div class="ham-menu">
+            <i class="fa-solid fa-bars"></i>
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="languages">
+            <a href="../${filename}">
+                <div class="disactive-lang">No</div>
+            </a>
+            <div class="active-lang">En</div>
+        </div>
+    </header>`
+    }
+}
+
 customElements.define('site-footer', SiteFooter);
 customElements.define('g-tag', gtag);
 customElements.define('hamburger-menu', hamburger);
+customElements.define("main-header", mainHeader);
