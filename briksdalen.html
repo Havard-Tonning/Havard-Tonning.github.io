@@ -1,68 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Briksdalen</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
     <script src="https://kit.fontawesome.com/e065bf0659.js" crossorigin="anonymous"></script>
     <script src="components.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 
 <body>
-<g-tag></g-tag>
-
-<main-header></main-header>
-        
+    <g-tag></g-tag>
+    <main-header></main-header>
     <hamburger-menu></hamburger-menu>
 
-    <!-- Slider main container -->
-<div class="swiper">
-    <!-- Additional required wrapper -->
-    <div class="swiper-wrapper">
-      <!-- Slides -->
-      <div class="swiper-slide"><img class="swiper_image" src="./images/briksdalen1.jpg"></div>
-      <div class="swiper-slide"><img class="swiper_image" src="./images/briksdalen2.jpg"></div>
-      <div class="swiper-slide"><img class="swiper_image" src="./images/briksdalen3.jpg"></div>
-      <div class="swiper-slide"><img class="swiper_image" src="./images/briksdalen4.jpg"></div>
-      <div class="swiper-slide"><img class="swiper_image" src="./images/briksdalen5.jpg"></div>
-
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img class="swiper_image" src="./images/briksdalen1.jpg"></div>
+            <div class="swiper-slide"><img class="swiper_image" src="./images/briksdalen2.jpg"></div>
+            <div class="swiper-slide"><img class="swiper_image" src="./images/briksdalen3.jpg"></div>
+            <div class="swiper-slide"><img class="swiper_image" src="./images/briksdalen4.jpg"></div>
+            <div class="swiper-slide"><img class="swiper_image" src="./images/briksdalen5.jpg"></div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
     </div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-  </div>
-<div class="roundedbody">
-  <div class="tripstats">
-    <div class="statbox" style="font-size: 1rem; background-color: #306EB0;"><br><i class="fa-solid fa-car" style="font-size: 2.5rem;"></i> <br><br>22 km</div>
-    <div class="statbox" style="font-size: 1rem; background-color: #3b80c9;"><br><i class="fa-solid fa-person-hiking" style="font-size: 2.5rem;"></i><br><br>5,2 km t/r</div>
-    <div class="statbox" style="font-size: 1rem; background-color: #5F97D3;"><br><i class="fa-solid fa-clock" style="font-size: 2.5rem;"></i> <br><br>3 t</div>
-  </div>
+    <div class="roundedbody">
+        <div class="tripstats">
+            <div class="statbox" style="font-size: 1rem; background-color: #306EB0;"><br><i class="fa-solid fa-car" style="font-size: 2.5rem;"></i> <br><br>22 km</div>
+            <div class="statbox" style="font-size: 1rem; background-color: #3b80c9;"><br><i class="fa-solid fa-person-hiking" style="font-size: 2.5rem;"></i><br><br>5,2 km t/r</div>
+            <div class="statbox" style="font-size: 1rem; background-color: #5F97D3;"><br><i class="fa-solid fa-clock" style="font-size: 2.5rem;"></i> <br><br>3 t</div>
+        </div>
 
-  <div class="marginbody">
-    <h1>Briksdalsbreen</h1>
-    <p  style="margin-bottom:-20px;">Briksdalsbreen er ein vestleg arm av Jostedalsbreen, den største isbreen på det Europeiske fastland - verna som nasjonalpark. Breen vart danna for ca 2500 år sidan. Arealet er omlag 10,4 km². Mesteparten (88%) ligg på breplatået over 1500 moh. 
-        Breen strekk seg frå 1910 moh. nesten ned til Briksdalsvatnet 350 moh.   
-        <br><br> Breen har forma Briksdalen gjennom fleire tusen år; glattslipte berg med frodig vegetasjon pregar landskapet. Denne mektige naturen er noko av det vakraste du kan finne i Norge - og turistar har vitja dalen i meir enn 100 år. 
-        <br><br> Briksdalsbre Fjellstove ligg ein halvtimes køyretur unna Olden. Frå her er det ein lett gåtur på 2,6 kilometer opp til breen. Turen tar 40-60 minutt og heile vegen er du omringa av vakker natur på alle kantar.
-        
-
-        <br><br> Markert i raud er delen som køyrast, medan gåruta er markert i oransje.
-        <br><br><i>Informasjon henta frå <a href="https://www.briksdal.no/briksdalsbreen">briksdal.no.</a></i>
-    </p>
-
-
-</div>
-</div>
-  <div id="briksdalen_map" class="maps"></div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
-  <script src="swiper.js"></script>
-  <script src="index.js"></script>   
-  <script src="briksdalen.js"></script>
-  <site-footer></site-footer>
+        <div class="marginbody">
+            <h1>Briksdalsbreen</h1>
+            <p style="margin-bottom:-20px;">Briksdalsbreen er ein vestleg arm av Jostedalsbreen, den største isbreen på det Europeiske fastland - verna som nasjonalpark. Breen vart danna for ca 2500 år sidan. Arealet er omlag 10,4 km². Mesteparten (88%) ligg på breplatået over 1500 moh.
+                Breen strekk seg frå 1910 moh. nesten ned til Briksdalsvatnet 350 moh.
+                <br><br> Breen har forma Briksdalen gjennom fleire tusen år; glattslipte berg med frodig vegetasjon pregar landskapet. Denne mektige naturen er noko av det vakraste du kan finne i Norge - og turistar har vitja dalen i meir enn 100 år.
+                <br><br> Briksdalsbre Fjellstove ligg ein halvtimes køyretur unna Olden. Frå her er det ein lett gåtur på 2,6 kilometer opp til breen. Turen tar 40-60 minutt og heile vegen er du omringa av vakker natur på alle kantar.
+                <br><br> Markert i raud er delen som køyrast, medan gåruta er markert i oransje.
+                <br><br><i>Informasjon henta frå <a href="https://www.briksdal.no/briksdalsbreen">briksdal.no.</a></i>
+            </p>
+        </div>
+    </div>
+    <div id="briksdalen_map" class="maps"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+    <script src="swiper.js"></script>
+    <script src="index.js"></script>
+    <script src="briksdalen.js"></script>
+    <site-footer></site-footer>
 </body>
 </html>

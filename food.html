@@ -1,50 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <title>Mat og drikke</title>
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
     <script src="https://kit.fontawesome.com/e065bf0659.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="components.js"></script>
 </head>
+
 <body>
     <g-tag></g-tag>
-<main-header></main-header>
-
-
-
+    <main-header></main-header>
     <hamburger-menu></hamburger-menu>
 
-
-    <!-- Slider main container -->
-<div class="swiper">
-    <!-- Additional required wrapper -->
-    <div class="swiper-wrapper">
-      <!-- Slides -->
-      <div class="swiper-slide"><img class="swiper_image" src="./images/food.jpg"></div>
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img class="swiper_image" src="./images/food.jpg"></div>
+        </div>
     </div>
-  </div>
-<div class="roundedbody">
-  <div class="marginbody">
-    <h1>Mat og drikke</h1>
-    <p>Olden har fleire stadar med der ein kan slå seg ned, anten ein ønsker ein kopp kaffi og ein kuleis, eller eit større måltid. På kartet under kan du
-        sjå kor du kan ete.
-    </p>
-  </div>
-</div>
-  <div id="mat_map" class="maps" style="margin-top: -25px;"></div>
+    <div class="roundedbody">
+        <div class="marginbody">
+            <h1>Mat og drikke</h1>
+            <p>Olden har fleire stadar med der ein kan slå seg ned, anten ein ønsker ein kopp kaffi og ein kuleis, eller eit større måltid. På kartet under kan du
+                sjå kor du kan ete.
+            </p>
+        </div>
+    </div>
+    <div id="mat_map" class="maps" style="margin-top: -25px;"></div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
-  <script src="swiper.js"></script>
-  <script src="index.js"></script>   
-  <script src="food.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+    <script src="swiper.js"></script>
+    <script src="index.js"></script>
+    <script src="food.js"></script>
 
     <site-footer></site-footer>
 </body>
+
 </html>

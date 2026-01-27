@@ -1,73 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-        <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <title>Laukisetra</title>
     <script src="components.js"></script>
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
     <script src="https://kit.fontawesome.com/e065bf0659.js" crossorigin="anonymous"></script>
-
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 </head>
 
 <body>
-  <g-tag></g-tag>
-
-<main-header></main-header>
-
-
+    <g-tag></g-tag>
+    <main-header></main-header>
     <hamburger-menu></hamburger-menu>
-    
-    <!-- Slider main container -->
-<div class="swiper">
-    <!-- Additional required wrapper -->
-    <div class="swiper-wrapper">
-      <!-- Slides -->
-      <div class="swiper-slide"><img class="swiper_image" src="./../images/laukisetra1.jpg"></div>
-      <div class="swiper-slide"><img class="swiper_image" src="./../images/laukisetra2.jpg"></div>
-      <div class="swiper-slide"><img class="swiper_image" src="./../images/laukisetra3.jpg"></div>
+
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img class="swiper_image" src="./../images/laukisetra1.jpg"></div>
+            <div class="swiper-slide"><img class="swiper_image" src="./../images/laukisetra2.jpg"></div>
+            <div class="swiper-slide"><img class="swiper_image" src="./../images/laukisetra3.jpg"></div>
+        </div>
+
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+    <div class="roundedbody">
+        <div class="tripstats">
+            <div class="statbox" style="font-size: 1rem; background-color: #306EB0;"><br><i class="fa-solid fa-ruler-horizontal" style="font-size: 2.5rem;"></i> <br><br>10 km</div>
+            <div class="statbox" style="font-size: 1rem; background-color: #3b80c9;"><br><i class="fa-solid fa-clock" style="font-size: 2.5rem;"></i> <br><br>3 h</div>
+            <div class="statbox" style="font-size: 1rem; background-color: #5F97D3;"><br><i class="fa-solid fa-dumbbell" style="font-size: 2.5rem;"></i> <br><br>Medium</div>
+        </div>
+
+        <div class="marginbody">
+            <h1>Laukisetra</h1>
+            <p>
+                There are four farmers who each have their own farm. The barns are no longer standing. When they had to take the cows to the pastures earlier in the year, they brought the cattle on a long detour thorugh Eidemaka. The pasture ridge was too steep for the cows. At Laukisetra they used to have a zip-line for transporting the milk to the farm.
+                <br><br>
+                Follow the signs to Laukisetra through the farmyard to the sawmill. There is a nice forest road to Laukisetra.
+                <br><br><i>Information retrieved from <a href="https://www.visitnorway.no/listings/laukisetra/225020/">Visit Norway</a></i>
+
+            </p>
+        </div>
     </div>
 
+    <div id="lauki_map" class="maps"></div>
 
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-  </div>
-<div class="roundedbody">  
-  <div class="tripstats">
-    <div class="statbox" style="font-size: 1rem; background-color: #306EB0;"><br><i class="fa-solid fa-ruler-horizontal" style="font-size: 2.5rem;"></i> <br><br>10 km</div>
-    <div class="statbox" style="font-size: 1rem; background-color: #3b80c9;"><br><i class="fa-solid fa-clock" style="font-size: 2.5rem;"></i> <br><br>3 h</div>
-    <div class="statbox" style="font-size: 1rem; background-color: #5F97D3;"><br><i class="fa-solid fa-dumbbell" style="font-size: 2.5rem;"></i> <br><br>Medium</div>
-  </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+    <script src="../swiper.js"></script>
+    <script src="index.js"></script>
+    <script src="laukisetra.js"></script>
 
-
-  <div class="marginbody">
-    <h1>Laukisetra</h1>
-    <p>
-      There are four farmers who each have their own farm. The barns are no longer standing. When they had to take the cows to the pastures earlier in the year, they brought the cattle on a long detour thorugh Eidemaka. The pasture ridge was too steep for the cows. At Laukisetra they used to have a zip-line for transporting the milk to the farm.
-<br><br>
-Follow the signs to Laukisetra through the farmyard to the sawmill. There is a nice forest road to Laukisetra.
-      <br><br><i>Information retrieved from <a href="https://www.visitnorway.no/listings/laukisetra/225020/">Visit Norway</a></i>
-
-    </p>
-</div>
-</div>
-
-  <div id="lauki_map" class="maps"></div>
-
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
-  <script src="../swiper.js"></script>
-  <script src="index.js"></script>   
-  <script src="laukisetra.js"></script>
-
-  
     <site-footer></site-footer>
 </body>
+
 </html>

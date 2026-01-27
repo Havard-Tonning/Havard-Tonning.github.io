@@ -1,66 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-        <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <title>Huaren</title>
     <script src="components.js"></script>
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
     <script src="https://kit.fontawesome.com/e065bf0659.js" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 </head>
+
 <body>
-  <g-tag></g-tag>
-
-<main-header></main-header>
-
-
-
+    <g-tag></g-tag>
+    <main-header></main-header>
     <hamburger-menu></hamburger-menu>
 
-    <!-- Slider main container -->
-<div class="swiper">
-    <!-- Additional required wrapper -->
-    <div class="swiper-wrapper">
-      <!-- Slides -->
-      <div class="swiper-slide"><img class="swiper_image" src="./../images/huaren1.jpg"></div>
-      <div class="swiper-slide"><img class="swiper_image" src="./../images/huaren2.jpg"></div>
-      <div class="swiper-slide"><img class="swiper_image" src="./../images/huaren3.jpg"></div>
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img class="swiper_image" src="./../images/huaren1.jpg"></div>
+            <div class="swiper-slide"><img class="swiper_image" src="./../images/huaren2.jpg"></div>
+            <div class="swiper-slide"><img class="swiper_image" src="./../images/huaren3.jpg"></div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
     </div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-  </div>
-<div class="roundedbody">
-  <div class="tripstats">
-    <div class="statbox" style="font-size: 1rem; background-color: #306EB0;"><br><i class="fa-solid fa-ruler-horizontal" style="font-size: 2.5rem;"></i> <br><br>8,4 km </div>
-    <div class="statbox" style="font-size: 1rem; background-color: #3b80c9;"><br><i class="fa-solid fa-clock" style="font-size: 2.5rem;"></i> <br><br>2 h</div>
-    <div class="statbox" style="font-size: 1rem; background-color: #5F97D3;"><br><i class="fa-solid fa-dumbbell" style="font-size: 2.5rem;"></i> <br><br>Medium</div>
-  </div>
+    <div class="roundedbody">
+        <div class="tripstats">
+            <div class="statbox" style="font-size: 1rem; background-color: #306EB0;"><br><i class="fa-solid fa-ruler-horizontal" style="font-size: 2.5rem;"></i> <br><br>8,4 km </div>
+            <div class="statbox" style="font-size: 1rem; background-color: #3b80c9;"><br><i class="fa-solid fa-clock" style="font-size: 2.5rem;"></i> <br><br>2 h</div>
+            <div class="statbox" style="font-size: 1rem; background-color: #5F97D3;"><br><i class="fa-solid fa-dumbbell" style="font-size: 2.5rem;"></i> <br><br>Medium</div>
+        </div>
 
-  <div class="marginbody" style="margin-bottom: -20px;">
-    <h1>Huaren</h1>
-    <p>
-      Huaren is a popular hike both for locals and tourists in Olden. From the viewpoint, you have a fantastic view of the Nordfjord and down to Olden. With the exception of the last 200 metres where there is a forest path, the hike is a gravel road acessible by bike. 
-    </p>
-    
-    <p><br><br>The hike to Huaren starts at Olden School. Here, there is an information board that shows the route. In the beginning, there is an asphalt road that turns to the left at the first farm. After a bit on asphalt, the road turns to gravel. <br><br>Where there is doubts about the route, there are signs showing the way. Before the last hills, there is a bench where one can take a breather and enjoy the view. The final part is a bit steeper and the road slithers upward. When it starts flattening out, the signs take you off the gravel road. Here, there is 200 metres of a wide forest path that leads to the viewpoint.</p>
-    <p><br>On the map, the standard route is marked in red. An alternate return route is marked in orange.</p>
-    <br><i>Information retrieved from <a href="https://kart.stikkut.no/huaren">Stikk Ut.</a></i>
-  
-  </div>
-</div>
-  <div id="huaren_map" class="maps"></div>
+        <div class="marginbody" style="margin-bottom: -20px;">
+            <h1>Huaren</h1>
+            <p>
+                Huaren is a popular hike both for locals and tourists in Olden. From the viewpoint, you have a fantastic view of the Nordfjord and down to Olden. With the exception of the last 200 metres where there is a forest path, the hike is a gravel road acessible by bike.
+            </p>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
-  <script src="../swiper.js"></script>
-  <script src="index.js"></script>   
-  <script src="huaren.js"></script>
+            <p><br><br>The hike to Huaren starts at Olden School. Here, there is an information board that shows the route. In the beginning, there is an asphalt road that turns to the left at the first farm. After a bit on asphalt, the road turns to gravel. <br><br>Where there is doubts about the route, there are signs showing the way. Before the last hills, there is a bench where one can take a breather and enjoy the view. The final part is a bit steeper and the road slithers upward. When it starts flattening out, the signs take you off the gravel road. Here, there is 200 metres of a wide forest path that leads to the viewpoint.</p>
+            <p><br>On the map, the standard route is marked in red. An alternate return route is marked in orange.</p>
+            <br><i>Information retrieved from <a href="https://kart.stikkut.no/huaren">Stikk Ut.</a></i>
+
+        </div>
+    </div>
+    <div id="huaren_map" class="maps"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+    <script src="../swiper.js"></script>
+    <script src="index.js"></script>
+    <script src="huaren.js"></script>
 
     <site-footer></site-footer>
 </body>
+
 </html>

@@ -1,73 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-        <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <title>Skarsteinsetra</title>
     <script src="components.js"></script>
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
     <script src="https://kit.fontawesome.com/e065bf0659.js" crossorigin="anonymous"></script>
-    
-
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
+
 <body>
-  <g-tag></g-tag>
-<main-header></main-header>
-
-
-
+    <g-tag></g-tag>
+    <main-header></main-header>
     <hamburger-menu></hamburger-menu>
 
-<!--    <a href="picktrip.html">Tilbake til turar</a>-->
-    <!-- Slider main container -->
-<div class="swiper">
-    <!-- Additional required wrapper -->
-    <div class="swiper-wrapper">
-      <!-- Slides -->
-      <div class="swiper-slide"><img class="swiper_image" src="./../images/skarstein1.jpg"></div>
-      <div class="swiper-slide"><img class="swiper_image" src="./../images/skarstein2.jpg"></div>
-      <div class="swiper-slide"><img class="swiper_image" src="./../images/skarstein3.jpg"></div>
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img class="swiper_image" src="./../images/skarstein1.jpg"></div>
+            <div class="swiper-slide"><img class="swiper_image" src="./../images/skarstein2.jpg"></div>
+            <div class="swiper-slide"><img class="swiper_image" src="./../images/skarstein3.jpg"></div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
     </div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-  </div>
-<div class="roundedbody">
-  <div class="tripstats">
-    <div class="statbox" style="font-size: 1rem; background-color: #306EB0;"><br><i class="fa-solid fa-ruler-horizontal" style="font-size: 2.5rem;"></i> <br><br>9 km</div>
-    <div class="statbox" style="font-size: 1rem; background-color: #3b80c9;"><br><i class="fa-solid fa-clock" style="font-size: 2.5rem;"></i> <br><br>1,5 h</div>
-    <div class="statbox" style="font-size: 1rem; background-color: #5F97D3;"><br><i class="fa-solid fa-dumbbell" style="font-size: 2.5rem;"></i> <br><br>Easy</div>
-  </div>
+    <div class="roundedbody">
+        <div class="tripstats">
+            <div class="statbox" style="font-size: 1rem; background-color: #306EB0;"><br><i class="fa-solid fa-ruler-horizontal" style="font-size: 2.5rem;"></i> <br><br>9 km</div>
+            <div class="statbox" style="font-size: 1rem; background-color: #3b80c9;"><br><i class="fa-solid fa-clock" style="font-size: 2.5rem;"></i> <br><br>1,5 h</div>
+            <div class="statbox" style="font-size: 1rem; background-color: #5F97D3;"><br><i class="fa-solid fa-dumbbell" style="font-size: 2.5rem;"></i> <br><br>Easy</div>
+        </div>
 
-  <div class="marginbody" style="margin-bottom: -20px;">
-    <h1>Skarsteinsetra</h1>
-    <p>
-     The hike to Skarsteinsetra starts from the center of Olden. Municipal road to Fagerli. From there, you take the Forest Road to Skarsteinsetra. The hike up takes about 30-40 minutes, and is on both a forest road and a nice trail. It is possible to push a stroller up.
-<br><br>
-At Skarsteinsetra there is a nice view over the fjord and towards Loen and Rake/Oppheim.
-      
-    <br><br><i>Information retrieved from <a href="https://www.nordfjord.no/skarsteinsaetra">Visit Nordfjord</a></i>
-  
-  </p>
+        <div class="marginbody" style="margin-bottom: -20px;">
+            <h1>Skarsteinsetra</h1>
+            <p>
+                The hike to Skarsteinsetra starts from the center of Olden. Municipal road to Fagerli. From there, you take the Forest Road to Skarsteinsetra. The hike up takes about 30-40 minutes, and is on both a forest road and a nice trail. It is possible to push a stroller up.
+                <br><br>
+                At Skarsteinsetra there is a nice view over the fjord and towards Loen and Rake/Oppheim.
 
+                <br><br><i>Information retrieved from <a href="https://www.nordfjord.no/skarsteinsaetra">Visit Nordfjord</a></i>
 
-  </div>
-</div>
+            </p>
+        </div>
+    </div>
 
-  <div id="skarstein_map" class="maps"></div>
+    <div id="skarstein_map" class="maps"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+    <script src="../swiper.js"></script>
+    <script src="index.js"></script>
+    <script src="skarstein.js"></script>
 
-
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
-  <script src="../swiper.js"></script>
-  <script src="index.js"></script>   
-  <script src="skarstein.js"></script>
-  
     <site-footer></site-footer>
 </body>
+
 </html>
