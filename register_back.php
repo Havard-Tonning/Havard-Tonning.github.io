@@ -43,13 +43,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $localFlag = true;
     }
 
-    if(isset($_POST["testQ"])){
-        if (empty($testQ) || !($testQ == "Gul" || $testQ == "gul")){
+    if($type == "local"){
+        if (empty($testQ) || !(strtolower($testQ) == "gul")){
             $errors[] = "TestError";
         }
-    }
-    else{
-        $errors[] = "AwaitingTest";
     }
 
     // If no errors, process registration

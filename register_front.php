@@ -4,7 +4,7 @@
     <title>PHP Form</title>
 </head>
 <body>
-    <form method="post" action="register_back.php"> 
+    <form method="post" action=""> 
         <h1>PHP Form</h1>
 
         <label for="username">Name</label><br>
