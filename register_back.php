@@ -64,9 +64,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 function writeUserToDB($username, $email, $password, $type){
     $servername = "localhost";
-    $DBusername = "wmhftwvu_iOlden";
+    $DBusername = "wmrhtwvu_admin";
     $DBpassword = "UwS5GHDa(2kb";
-    $DBname = "wmhftwvu_iOlden";
+    $DBname = "wmrhtwvu_iOlden";
 
     // Create connection
     $conn = new mysqli($servername, $DBusername, $DBpassword, $DBname);
