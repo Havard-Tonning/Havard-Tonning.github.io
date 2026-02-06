@@ -1,4 +1,7 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 // Initialize variables
 $username = $password = $password2 = $email = $type = $testQ = "";
 $errors = [];
