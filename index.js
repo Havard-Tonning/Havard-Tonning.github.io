@@ -178,7 +178,6 @@ L.marker([61.811346777648616, 6.794098073865384], {icon: L.icon({
     shadowSize: [41, 41]})}).addTo(map)
     .bindPopup("<a href='laukisetra.html'><H3>Laukisetra</H3><p>Litt meir krevande tur, men med utsikt på toppen som gjer strevet verdt det.</p><img src='./images/laukisetra1.jpg' class='popup-image'> <style='opacity:0'></a>");
 
-// Add a control button to request location permission
 var locationControl = L.control({position: 'topleft'});
 
 locationControl.onAdd = function(map) {
@@ -186,12 +185,10 @@ locationControl.onAdd = function(map) {
     div.innerHTML = '<a href="#" title="Show my location" role="button" aria-label="Show my location" style="display: flex; align-items: center; justify-content: center; width: 30px; height: 30px; background-color: white; text-decoration: none; color: black; font-size: 18px;"><i class="fa-solid fa-map-pin"></i></a>';
     
     div.onclick = function() {
-        // Start location tracking when button is clicked
         map.locate({
             watch: true,
             enableHighAccuracy: true,
             maximumAge: 10000,
-            //timeout: 10000
         });
         return false;
     };
@@ -226,6 +223,4 @@ function onLocationError(e){
 
 map.on('locationfound', onLocationFound);
 map.on('locationerror', onLocationError);
-
-
 
