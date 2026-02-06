@@ -78,7 +78,7 @@ function writeUserToDB($username, $email, $password, $type){
 
     $roleNum = ($type == "local") ? 2 : 2;
 
-    $sql = "INSERT INTO users (Username, Email, PassHash, RoleNum) VALUES (?, ?, ?, ?)";
+    $sql = "INSERT INTO Users (Username, Email, PassHash, RoleNum) VALUES (?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("sssi", $username, $email, $password, $roleNum);
     $stmt->execute();
