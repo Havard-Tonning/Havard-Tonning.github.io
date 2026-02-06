@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 function writeUserToDB($username, $email, $password, $type){
-    $servername = "localhost:3306";
+    $servername = "localhost";
     $DBusername = "wmhftwvu_iOlden";
     $DBpassword = "UwS5GHDa(2kb";
     $DBname = "wmhftwvu_iOlden";
