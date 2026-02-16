@@ -111,5 +111,5 @@ function writeUserToDB($username, $email, $password, $type){
     $conn->close();
 }
 
-include 'register_front.php';
+include 'calendar_form_front.php';
 ?>

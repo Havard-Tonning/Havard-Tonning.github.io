@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>PHP Form</title>
+    <title>Registration Form</title>
 </head>
 <body>
     <form method="post" action=""> 
-        <h1>PHP Form</h1>
+        <h1>Registration Form</h1>
 
         <label for="username">Name</label><br>
         <input type="text" name="username" id="username" value="<?php echo htmlspecialchars($username); ?>"><br>
-        <?php if(in_array("UserError", $errors)) echo'<div class="error">Username must be at least three characters long and must only contain English letters.<br></div>' ?>
+        <?php if(in_array("UserError", $errors)) echo'<div class="error">Username must be at least three characters long and must only contain English letters.<br></div>';
+        if(in_array("UniqueError", $errors)) echo'<div class="error">Username is already taken<br></div>' ?>
 
         <label for="password">Password</label><br>
         <input type="password" name="password" id="password" value="<?php echo htmlspecialchars($password); ?>"><br>
