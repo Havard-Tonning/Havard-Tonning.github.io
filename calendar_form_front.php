@@ -5,14 +5,10 @@
 </head>
 <body>
     <?php 
-        if (session_status() !== PHP_SESSION_NONE) {
+        if (session_status() === PHP_SESSION_NONE) {
             $currentPage = basename($_SERVER['PHP_SELF']); 
             echo "<a href='login_back.php?return=$currentPage'>Log in</a>";
-        
         }
-    
-    
-    
     ?>
 
     <form method="post" action=""> 
