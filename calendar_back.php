@@ -1,6 +1,29 @@
 <?php
 require_once 'login_back.php'; 
 
+function isLocal(){
+    $conn = createConn(); 
+
+    $sql = "SELECT * FROM `Users` WHERE `username` = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $_SESSION["username"]);
+    $stmt->execute();
+    
+    $results = $stmt -> get_result();
+
+    if($row = $results -> fetch_assoc()){
+        if($row["RoleNum"] == 2){
+            $stmt->close();
+            $conn->close();    
+            return true;
+        }
+    }
+    $stmt->close();
+    $conn->close();    
+    return false;
+}
+
+
 function fetchEvents(){
     $conn = createConn(); 
 
