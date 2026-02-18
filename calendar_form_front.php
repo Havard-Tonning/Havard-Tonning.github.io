@@ -5,10 +5,17 @@
 </head>
 <body>
     <?php 
-        if (session_status() === PHP_SESSION_NONE) {
-            $currentPage = basename($_SERVER['PHP_SELF']); 
-            echo "<a href='login_back.php?return=$currentPage'>Log in</a>";
+    if (!isset($_SESSION['username'])) {
+        $currentPage = basename($_SERVER['PHP_SELF']);
+        
+        if (!empty($_SERVER['QUERY_STRING'])) {
+            $currentPage .= '?' . $_SERVER['QUERY_STRING'];
         }
+
+        header("Location: login_back.php?return=" . urlencode($currentPage));
+        
+        exit();
+    }
     ?>
 
     <form method="post" action=""> 
@@ -18,10 +25,17 @@
         <input type="text" name="eventName" id="eventNAme" value="<?php echo htmlspecialchars($eventName); ?>" required><br>
 
         <label for="description">Description</label><br>
-        <textarea name="description" id="description" required></textarea>
+        <textarea name="description" id="description" required></textarea><br>
 
-        <label for="eventTime">Time of event</label>
+        <label for="eventTime">Time of event</label><br>
         <input type="datetime-local" name="enventTime" id="eventTime">
+
+        <select name="eventType" id="type">
+            <option value="sport" <?php if($type == "sport") echo "selected"; ?>>Sport</option>
+            <option value="concert" <?php if($type == "concert") echo "selected"; ?>>Concert</option>
+            <option value="meeting" <?php if($type == "meeting") echo "selected"; ?>>Meeting</option>
+            <option value="meeting" <?php if($type == "meeting") echo "selected"; ?>>Meeting</option>
+        </select><br>
 
         <br>
         <input type="submit" name="submit" value="Submit Form">

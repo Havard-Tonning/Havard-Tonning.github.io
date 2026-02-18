@@ -14,7 +14,7 @@
         <input type="text" name="username" id="username" value="<?php echo htmlspecialchars($username); ?>" required><br>
 
         <label for="password">Password</label><br>
-        <input type="password" name="password" id="password" value="<?php echo htmlspecialchars($password); ?>" required><br>
+        <input type="password" name="password" id="password" required><br>
 
         <?php 
         if($error){
