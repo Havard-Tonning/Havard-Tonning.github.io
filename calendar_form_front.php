@@ -34,7 +34,8 @@
             <option value="sport" <?php if($type == "sport") echo "selected"; ?>>Sport</option>
             <option value="concert" <?php if($type == "concert") echo "selected"; ?>>Concert</option>
             <option value="meeting" <?php if($type == "meeting") echo "selected"; ?>>Meeting</option>
-            <option value="meeting" <?php if($type == "meeting") echo "selected"; ?>>Meeting</option>
+            <option value="basar" <?php if($type == "basar") echo "selected"; ?>>Basar</option>
+            <option value="other" <?php if($type == "other") echo "selected"; ?>>Other</option>
         </select><br>
 
         <br>
