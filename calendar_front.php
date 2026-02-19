@@ -16,14 +16,14 @@
         <div class="marginbody">
             <div class="calendarHeader">
                 <div class="calendarNav">
-                    <button class="btn-nav" onclick="moveMonth(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="navButton" onclick="moveMonth(-1)"><i class="fa-solid fa-chevron-left"></i></button>
                     <h2 id="monthTitle">Februar 2026</h2>
-                    <button class="btn-nav" onclick="moveMonth(1)"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="navButton" onclick="moveMonth(1)"><i class="fa-solid fa-chevron-left"></i></button>
                 </div>
 
                 <div class="tabs">
-                    <div class="tab active" onclick="setView('calendar')"><i class="fa-solid fa-calendar-days"></i></button>
-                    <div class="tab" onclick="setView('list')"><i class="fa-solid fa-list"></i></div>
+                    <div class="tab active" id="tabCalendar"onclick="setView('calendar')"><i class="fa-solid fa-calendar-days"></i></button>
+                    <div class="tab" id="tabList" onclick="setView('list')"><i class="fa-solid fa-list"></i></div>
                 </div>
             </div>
 
@@ -50,9 +50,20 @@
         </div>
     </div>
     
+    <div class="eventModal" id="eventModal" onclick="if(event.target == this) closeModal()">
+        <div class="modalContent">
+            <span class="closeModal" onclick="closeModal()">&times;</span>
+            <span class="modalCategory" id="modalCategory">Category</span>
+            <h2 id=modalTitle>Title</h2>
+            <div class="eventMeta">
+                <p><i class="fa-solid fa-calendar-day"></i> <span id="modalDate">Date</span></p>
+                <p><i class="fa-solid fa-user-pen"></i>Added by: <span id="modalUser">Username</span></p>
+            </div>
+            <p id="modalDescription">Description</p>
+        </div>
+    </div>
+<site-footer></site-footer>
 
-
-
-
+<script src="calendar.js"></script>
 </body>
 </html>
