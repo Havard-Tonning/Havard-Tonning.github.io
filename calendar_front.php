@@ -36,13 +36,13 @@
             </div>
 
             <div class="listView" id="listView">
-                <div class="listContainer">
+                <div class="listContainer" id="eventList">
                     <!-- Put JS content here -->
                 </div>
             </div>
 
             <?php if(isset($_SESSION["username"]))
-                        if(isLocal()):?>
+                        if(isLocalUser()):?>
                             <a href="calendar_form_front.html">
                                 <i class="fa-solid fa-calendar-plus"></i> Add event
                             </a>
@@ -54,7 +54,7 @@
         <div class="modalContent">
             <span class="closeModal" onclick="closeModal()">&times;</span>
             <span class="modalCategory" id="modalCategory">Category</span>
-            <h2 id=modalTitle>Title</h2>
+            <h2 id="modalTitle">Title</h2>
             <div class="eventMeta">
                 <p><i class="fa-solid fa-calendar-day"></i> <span id="modalDate">Date</span></p>
                 <p><i class="fa-solid fa-user-pen"></i>Added by: <span id="modalUser">Username</span></p>

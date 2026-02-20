@@ -22,7 +22,7 @@ function render(){
 }
 
 function updateHeader(){
-    document.getElementById("monthTitle").innerText = viewDate.getMonth() + " " + viewDate.getFullYear();
+    document.getElementById("monthTitle").innerText = viewDate.toLocaleString('default', { month: 'long' }) + " " + viewDate.getFullYear();
 }
 
 function renderCalendar(){
@@ -86,7 +86,7 @@ function renderCalendar(){
 
         filteredEvents.forEach(e=> {
             listDiv.innerHTML += `
-                <div class="valgBoks" onclick="openModal(${e.id}">
+                <div class="valgBoks" onclick="openModal(${e.id})">
                     <span>${e.date.split("-").reverse().join(".")} </span>
                     <span>${e.title}</span>
                 </div>

@@ -1,7 +1,7 @@
 <?php
 require_once 'login_back.php'; 
 
-function isLocal(){
+function isLocalUser(){
     $conn = createConn(); 
 
     $sql = "SELECT * FROM `Users` WHERE `username` = ?";
