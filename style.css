@@ -521,3 +521,8 @@ max-height: 180px;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 5px;
 }
+
+.day {
+  border: 1px black solid;
+  margin:25px;
+}
