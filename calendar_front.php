@@ -18,16 +18,16 @@
                 <div class="calendarNav">
                     <button class="navButton" onclick="moveMonth(-1)"><i class="fa-solid fa-chevron-left"></i></button>
                     <h2 id="monthTitle">Februar 2026</h2>
-                    <button class="navButton" onclick="moveMonth(1)"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="navButton" onclick="moveMonth(1)"><i class="fa-solid fa-chevron-right"></i></button>
                 </div>
 
                 <div class="tabs">
-                    <div class="tab active" id="tabCalendar"onclick="setView('calendar')"><i class="fa-solid fa-calendar-days"></i></button>
+                    <div class="tab active" id="tabCalendar"onclick="setView('calendar')"><i class="fa-solid fa-calendar-days"></i></div>
                     <div class="tab" id="tabList" onclick="setView('list')"><i class="fa-solid fa-list"></i></div>
                 </div>
             </div>
 
-            <div class="calendarView">
+            <div class="calendarView" id="calendarView">
                 <div class="calendarContainer">
                     <div id="calendarGrid" class="calendarGrid">
                         <!-- Put JS content here -->
@@ -35,13 +35,13 @@
                 </div>
             </div>
 
-            <div class="listView">
+            <div class="listView" id="listView">
                 <div class="listContainer">
                     <!-- Put JS content here -->
                 </div>
             </div>
 
-            <?php if(!isset($_SESSION["username"]))
+            <?php if(isset($_SESSION["username"]))
                         if(isLocal()):?>
                             <a href="calendar_form_front.html">
                                 <i class="fa-solid fa-calendar-plus"></i> Add event

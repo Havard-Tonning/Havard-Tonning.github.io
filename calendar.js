@@ -22,7 +22,7 @@ function render(){
 }
 
 function updateHeader(){
-    document.getElementById("monthTitle").innerText = viewDate.getMonth() + " " + viewDate.getFullYear;
+    document.getElementById("monthTitle").innerText = viewDate.getMonth() + " " + viewDate.getFullYear();
 }
 
 function renderCalendar(){
@@ -37,7 +37,8 @@ function renderCalendar(){
     const month = viewDate.getMonth();
 
     // JS starts week on Sunday. Sunday gets moved to day 6, and all others are moved one earlier
-    let startOffset = fistDay === 0 ? 6 : firstDay - 1; 
+    let firstDay = new Date(year, month, 1).getDay();
+    let startOffset = firstDay === 0 ? 6 : firstDay - 1; 
 
     // Get the next month, then the 0th of that month, which is the last of the next one
     let daysInMonth = new Date(year, month + 1, 0).getDate();
@@ -49,7 +50,7 @@ function renderCalendar(){
 
     for(let d = 1; d <= daysInMonth; d++){
         // Formatting date to ISO standard for comparison. Padding single digit months/days with zeros
-        let dateString = `${year}-${String(month + 1).padStart(2, 0)} - ${String(d).padStart(2, 0)}`;
+        let dateString = `${year}-${String(month + 1).padStart(2, 0)}-${String(d).padStart(2, 0)}`;
         const isToday = new Date().toISOString().split('T')[0] === dateString;
     
         const dayEvents = events.filter(e=>e.date === dateString);
@@ -63,23 +64,23 @@ function renderCalendar(){
         grid.innerHTML += `
             <div class="day ${isToday ? 'today' : ''}">
                 <span class="dayNumber">${d}</span>
-                <span class="eventContainer"> ${eventsHTML}</div>
+                <span class="eventContainer"> ${eventsHTML}</span>
             </div>
         `;    
     }
-
+}
     function renderList(){
         let listDiv = document.getElementById('eventList');
 
         listDiv.innerHTML = '';
 
-        const filteredEvents = events.Filter(e => {
+        const filteredEvents = events.filter(e => {
             const eDate = new Date(e.date);
             return eDate.getMonth() === viewDate.getMonth() && eDate.getFullYear() === viewDate.getFullYear();
         }).sort((a,b) => new Date(a.date) - new Date(b.date));
 
         if(filteredEvents.length === 0){
-            listDiv.innerHTML = '<p style="text-allign:center;">No events this month</p>';
+            listDiv.innerHTML = '<p style="text-align:center;">No events this month</p>';
             return;
         }
 
@@ -92,7 +93,7 @@ function renderCalendar(){
             `
         })
     }
-}
+
 
 function setView(view){
     currentView = view;
@@ -115,7 +116,7 @@ function openModal(eventId){
 
     document.getElementById('modalTitle').innerText = e.title;
     document.getElementById('modalDate').innerText = e.date.split("-").reverse().join('.');
-    document.getElementById('modalUser').innterText = e.username;
+    document.getElementById('modalUser').innerText = e.username;
     document.getElementById('modalDescription').innerText = e.description;
     document.getElementById('modalCategory').innerText = e.category;
     document.getElementById('eventModal').style.display = 'flex';
