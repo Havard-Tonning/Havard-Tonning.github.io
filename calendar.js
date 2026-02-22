@@ -53,7 +53,7 @@ function renderCalendar(){
         let dateString = `${year}-${String(month + 1).padStart(2, 0)}-${String(d).padStart(2, 0)}`;
         const isToday = new Date().toISOString().split('T')[0] === dateString;
     
-        const dayEvents = events.filter(e=>e.date === dateString);
+        const dayEvents = events.filter(e => e.date.split(" ")[0] === dateString);
 
         let eventsHTML ='';
 
@@ -75,7 +75,7 @@ function renderCalendar(){
         listDiv.innerHTML = '';
 
         const filteredEvents = events.filter(e => {
-            const eDate = new Date(e.date);
+            const eDate = new Date(e.date.split(" ")[0]);
             return eDate.getMonth() === viewDate.getMonth() && eDate.getFullYear() === viewDate.getFullYear();
         }).sort((a,b) => new Date(a.date) - new Date(b.date));
 
@@ -115,7 +115,7 @@ function openModal(eventId){
         return;
 
     document.getElementById('modalTitle').innerText = e.title;
-    document.getElementById('modalDate').innerText = e.date.split("-").reverse().join('.');
+    document.getElementById('modalDate').innerText = e.date.split(" ")[0].split("-").reverse().join('.');    
     document.getElementById('modalUser').innerText = e.username;
     document.getElementById('modalDescription').innerText = e.description;
     document.getElementById('modalCategory').innerText = e.category;
