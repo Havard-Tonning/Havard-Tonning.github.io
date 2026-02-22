@@ -1,6 +1,8 @@
+<!-- register_back.php -->
+
 <?php
 
-// Initialize variables
+// Initialise variables
 $username = $password = $password2 = $email = $type = $testQ = "";
 $errors = [];
 $success = false;
@@ -50,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    checkUsername($username);
+    checkUsername($username, $errors);
 
     // If no errors, process registration
     if (empty($errors)) {
@@ -62,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-function checkUsername($username){
+function checkUsername($username, &$errors){
     $conn = createConn();
 
     $sql = "SELECT COUNT(*) FROM Users WHERE Username = ?";
@@ -80,29 +82,10 @@ function checkUsername($username){
 
 }
 
-function createConn(){
-    $servername = "localhost";
-    $DBusername = "wmrhtwvu_admin";
-    $DBpassword = "UwS5GHDa(2kb";
-    $DBname = "wmrhtwvu_iOlden";
-
-    // Create connection
-    $conn = new mysqli($servername, $DBusername, $DBpassword, $DBname);
-
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-    else{
-        return $conn;
-    }
-
-}
-
 function writeUserToDB($username, $email, $password, $type){
     $conn = createConn();
 
-    $roleNum = ($type == "local") ? 2 : 2;
+    $roleNum = ($type == "local") ? 2 : 1;
 
     $sql = "INSERT INTO Users (Username, Email, PassHash, RoleNum) VALUES (?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);

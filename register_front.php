@@ -1,3 +1,5 @@
+<!-- register_front.php -->
+
 <!DOCTYPE html>
 <html>
 <head>

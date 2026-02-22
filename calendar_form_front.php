@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Calendar Form</title>
-</head>
-<body>
-    <?php 
+<!-- calendar_form_front.php -->
+<?php 
+    session_start();
+
     if (!isset($_SESSION['username'])) {
         $currentPage = basename($_SERVER['PHP_SELF']);
         
@@ -16,19 +13,28 @@
         
         exit();
     }
-    ?>
+?>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calendar Form</title>
+</head>
+<body>
+
 
     <form method="post" action=""> 
         <h1>Calendar Form</h1>
 
         <label for="eventName">Name of Event</label><br>
-        <input type="text" name="eventName" id="eventNAme" value="<?php echo htmlspecialchars($eventName); ?>" required><br>
+        <input type="text" name="eventName" id="eventName" value="<?php echo htmlspecialchars($eventName); ?>" required><br>
 
         <label for="description">Description</label><br>
         <textarea name="description" id="description" required></textarea><br>
 
         <label for="eventTime">Time of event</label><br>
-        <input type="datetime-local" name="enventTime" id="eventTime">
+        <input type="datetime-local" name="evenetTime" id="eventTime">
 
         <select name="eventType" id="type">
             <option value="sport" <?php if($type == "sport") echo "selected"; ?>>Sport</option>

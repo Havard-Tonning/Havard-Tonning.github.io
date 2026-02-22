@@ -1,3 +1,5 @@
+<!-- login_front.php -->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,14 +25,7 @@
         ?>
         <br>
         <input type="submit" name="submit" value="Submit Form">
-
-        <?php if($success == true){echo'<div class="success">Login successful</div>'; 
-        session_start();
-        $_SESSION["username"] = $username;
-        }
         
-        
-        ?>
     </form>
 </body>
 </html>

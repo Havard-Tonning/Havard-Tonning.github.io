@@ -1,7 +1,9 @@
+<!-- calendar_form_back.php ************************ FIX *********************-->
 <?php
 
-include 'db.php';
+session_start();
 
+include 'db.php';
 
 // Initialize variables
 $username = $password = $password2 = $email = $type = $testQ = "";

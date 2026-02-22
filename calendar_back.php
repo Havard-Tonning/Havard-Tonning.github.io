@@ -1,5 +1,9 @@
+<!-- calendar_back.php -->
+
 <?php
 require_once 'db.php'; 
+session_start();
+
 
 function isLocalUser(){
     $conn = createConn(); 

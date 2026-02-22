@@ -1,3 +1,10 @@
+<!-- calendar_front.php -->
+
+<?php 
+    session_start();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,7 +50,7 @@
 
             <?php if(isset($_SESSION["username"]))
                         if(isLocalUser()):?>
-                            <a href="calendar_form_front.html">
+                            <a href="calendar_form_front.php">
                                 <i class="fa-solid fa-calendar-plus"></i> Add event
                             </a>
                         <?php endif; ?>

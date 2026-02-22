@@ -1,3 +1,5 @@
+// calendar.js
+
 let events = [];
 let viewDate = new Date();
 let currentView = "calendar";
