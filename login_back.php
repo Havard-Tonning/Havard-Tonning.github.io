@@ -9,7 +9,7 @@ session_start();
 $username = $password = "";
 $error = false;
 
-$returnUrl = $_REQUEST['return'] ?? 'index.php';
+$returnUrl = $_REQUEST['return'] ?? 'index.html';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"] ?? "";
