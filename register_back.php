@@ -77,12 +77,31 @@ function checkUsername($username, &$errors){
     $stmt->fetch();
 
     if ($count > 0) {
-        $errors[] = "UniqueError";
+        $errors[] = "UniqueUsername";
     }
     
     $conn->close();
 
 }
+
+function checkEmail($email, &$errors){
+    $conn = createConn();
+
+    $sql = "SELECT COUNT(*) FROM Users WHERE Email = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $stmt->bind_result($count);
+    $stmt->fetch();
+
+    if ($count > 0) {
+        $errors[] = "UniqueEmail";
+    }
+    
+    $conn->close();
+
+}
+
 
 function writeUserToDB($username, $email, $password, $type){
     $conn = createConn();

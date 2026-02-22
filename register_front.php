@@ -23,6 +23,8 @@
         <label for="email">Email</label><br>
         <input type="email" name="email" id="email" value="<?php echo htmlspecialchars($email); ?>"><br>
         <?php if(in_array("EmailError", $errors)) echo'<div class="error">Invalid email.<br></div>' ?>
+        <?php if(in_array("UniqueEmail", $errors)) echo'<div class="error">Email already in use.<br></div>' ?>
+
 
         <label for="type">Are you local or visiting</label><br>
         <select name="type" id="type">
