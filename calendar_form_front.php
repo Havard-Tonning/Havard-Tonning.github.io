@@ -1,7 +1,5 @@
 <!-- calendar_form_front.php -->
 <?php 
-    session_start();
-
     if (!isset($_SESSION['username'])) {
         $currentPage = basename($_SERVER['PHP_SELF']);
         
@@ -34,7 +32,7 @@
         <textarea name="description" id="description" required></textarea><br>
 
         <label for="eventTime">Time of event</label><br>
-        <input type="datetime-local" name="evenetTime" id="eventTime">
+        <input type="datetime-local" name="eventTime" id="eventTime">
 
         <select name="eventType" id="type">
             <option value="sport" <?php if($type == "sport") echo "selected"; ?>>Sport</option>
