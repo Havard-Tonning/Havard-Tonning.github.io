@@ -1,4 +1,5 @@
 <?php
+include 'db.php';
 
 // Initialise variables
 $username = $password = $password2 = $email = $type = $testQ = "";
