@@ -601,7 +601,7 @@ max-height: 180px;
 
 .modalContent {
     background: #fff;
-    border-radius: 12px;
+    border-radius: 6px;
     padding: 2rem;
     min-width: 320px;
     max-width: 480px;

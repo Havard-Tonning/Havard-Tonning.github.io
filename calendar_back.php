@@ -1,5 +1,5 @@
 <?php
-require_once 'login_back.php'; 
+require_once 'db.php'; 
 
 function isLocalUser(){
     $conn = createConn(); 
