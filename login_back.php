@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($userData) {
         $_SESSION["username"] = $userData['Username'];
-        $_SESSION["type"] = $userData['Type'];
+        $_SESSION["rolenum"] = $userData['RoleNum'];
         
         header("Location: " . $returnUrl);
         exit();
@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 function checkCredentials($username, $password){
     $conn = createConn();
 
-    $sql = "SELECT Username, PassHash, Type FROM Users WHERE Username = ?";
+    $sql = "SELECT Username, PassHash, RoleNum FROM Users WHERE Username = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $username);
     $stmt->execute();
