@@ -1,6 +1,5 @@
-<!-- calendar_form_back.php ************************ FIX *********************-->
 <?php
-
+// This whole file needs to be fixed ************
 session_start();
 
 include 'db.php';

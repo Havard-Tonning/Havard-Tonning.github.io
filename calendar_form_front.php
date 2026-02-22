@@ -1,4 +1,3 @@
-<!-- calendar_form_front.php -->
 <?php 
     if (!isset($_SESSION['username'])) {
         $currentPage = basename($_SERVER['PHP_SELF']);

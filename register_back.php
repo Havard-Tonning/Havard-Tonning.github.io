@@ -1,5 +1,3 @@
-<!-- register_back.php -->
-
 <?php
 
 // Initialise variables

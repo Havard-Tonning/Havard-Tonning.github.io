@@ -1,5 +1,3 @@
-<!-- login_front.php -->
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,7 +23,7 @@
         ?>
         <br>
         <input type="submit" name="submit" value="Submit Form">
-        
+
     </form>
 </body>
 </html>

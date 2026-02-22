@@ -1,5 +1,3 @@
-<!-- db.php -->
-
 <?php
 function createConn(){
     $servername = "localhost";

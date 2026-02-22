@@ -1,5 +1,3 @@
-<!-- calendar_front.php -->
-
 <?php 
     session_start();
 ?>
