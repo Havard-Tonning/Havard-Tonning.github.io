@@ -71,6 +71,7 @@
 
             </form>
         </div>
+        <a href="login_back.php" class="other-btn">Already have an account? Click here to log in.</a>
     </div>
 </body>
 </html>
