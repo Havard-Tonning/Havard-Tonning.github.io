@@ -19,7 +19,10 @@
     <title>Calendar Form</title>
 </head>
 <body>
-
+    <g-tag></g-tag>
+    <main-header></main-header>
+    <hamburger-menu></hamburger-menu>
+    <form method="post" action=""> 
 
     <form method="post" action=""> 
         <h1>Calendar Form</h1>
@@ -46,5 +49,6 @@
 
         <?php if($success == true) echo'<div class="success">Registration successful</div>' ?>
     </form>
+    <site-footer></site-footer>
 </body>
 </html>

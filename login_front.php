@@ -1,29 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>PHP Form</title>
+    <title>Login</title>
 </head>
 <body>
-    <form method="post" action=""> 
-        <h1>Login</h1>
+<g-tag></g-tag>
+<main-header></main-header>
+<hamburger-menu></hamburger-menu>
 
-        <input type="hidden" name="return" value="<?php echo htmlspecialchars($returnUrl); ?>">
+    <div class="login-wrapper">
+        <div class="login-card">
+            <h1>Login</h1>
 
+            <form method="post" action="">
+                <input type="hidden" name="return" value="<?php echo htmlspecialchars($returnUrl); ?>">
 
-        <label for="username">Name</label><br>
-        <input type="text" name="username" id="username" value="<?php echo htmlspecialchars($username); ?>" required><br>
+                <?php if($error): ?>
+                    <div class="error">Incorrect username or password.</div>
+                <?php endif; ?>
 
-        <label for="password">Password</label><br>
-        <input type="password" name="password" id="password" required><br>
+                <div class="form-group">
+                    <label for="username">Name</label>
+                    <input type="text" name="username" id="username" value="<?php echo htmlspecialchars($username); ?>" required>
+                </div>
 
-        <?php 
-        if($error){
-            echo "<br> <div>Incorrect username or password</div>";
-        }
-        ?>
-        <br>
-        <input type="submit" name="submit" value="Submit Form">
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" required>
+                </div>
 
-    </form>
+                <input type="submit" name="submit" value="Login" class="submit-btn">
+            </form>
+        </div>
+    </div>
 </body>
 </html>

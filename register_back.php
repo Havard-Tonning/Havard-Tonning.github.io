@@ -68,6 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 function checkUsername($username, &$errors){
     $conn = createConn();
+    $count = 0;
 
     $sql = "SELECT COUNT(*) FROM Users WHERE Username = ?";
     $stmt = $conn->prepare($sql);
