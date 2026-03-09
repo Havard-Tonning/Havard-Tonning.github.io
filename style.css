@@ -676,7 +676,7 @@ max-height: 180px;
 .form-group label {
     display: block;
     font-size: 0.92rem;
-    font-weight: 300;
+    font-weight: 200;
     margin-bottom: 6px;
     color: #333;
 }
@@ -780,7 +780,7 @@ max-height: 180px;
 .form-group label {
     display: block;
     font-size: 0.92rem;
-    font-weight: 600;
+    font-weight: 200;
     margin-bottom: 6px;
     color: #333;
 }
@@ -844,7 +844,7 @@ max-height: 180px;
     height: 48px;
     background-color: #ffffff;
     color: rgb(0, 0, 0);
-    border: solid 2px #2f6ab0;
+    border: 2px solid #2f6ab0;
     border-radius: 8px;
     font-size: 0.9rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
