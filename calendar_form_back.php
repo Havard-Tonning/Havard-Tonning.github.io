@@ -1,97 +1,53 @@
 <?php
-// This whole file needs to be fixed ************
 session_start();
 
 include 'db.php';
 
-// Initialize variables
-$username = $password = $password2 = $email = $type = $testQ = "";
+$eventName = $description = $eventTime = $type = "";
 $errors = [];
 $success = false;
-$localFlag = false;
 
-// Process form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get form data
-    $username = $_POST["username"] ?? "";
-    $password = $_POST["password"] ?? "";
-    $password2 = $_POST["password2"] ?? "";
-    $email = $_POST["email"] ?? "";
-    $type = $_POST["type"] ?? "";
-    $testQ = $_POST["testQ"] ?? "";
-    
-    // Validate username
-    if (strlen($username) < 3 || !ctype_alpha($username)) {
-        $errors[] = "UserError";
-    }
-    
-    // Validate password
-    if (strlen($password) < 8 || preg_match_all('/\d/', $password) < 3) {
-        $errors[] = "PassError";
-    }
-    
-    // Validate password match
-    if ($password !== $password2) {
-        $errors[] = "MatchError";
-    }
-    
-    // Validate email
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errors[] = "EmailError";
-    }
-    
-    // Validate type
-    if (empty($type)) {
-        $errors[] = "TypeError";
-    }
-    elseif($type == "local"){
-        $localFlag = true;
+    $eventName   = $_POST["eventName"]   ?? "";
+    $description = $_POST["description"] ?? "";
+    $eventTime   = $_POST["eventTime"]   ?? "";
+    $type        = $_POST["eventType"]   ?? "";
+
+    if (empty(trim($eventName))) {
+        $errors[] = "EventNameError";
     }
 
-    if($type == "local"){
-        if (empty($testQ) || !(strtolower($testQ) == "gul")){
-            $errors[] = "TestError";
+    if (empty(trim($description))) {
+        $errors[] = "DescriptionError";
+    }
+
+    if (empty($eventTime)) {
+        $errors[] = "EventTimeError";
+    } else {
+        $dt = DateTime::createFromFormat('Y-m-d\TH:i', $eventTime);
+        if (!$dt) {
+            $errors[] = "EventTimeFormatError";
         }
     }
 
-    checkUsername($username);
+    $allowedTypes = ["sport", "concert", "meeting", "basar", "other"];
+    if (empty($type) || !in_array($type, $allowedTypes)) {
+        $errors[] = "TypeError";
+    }
 
-    // If no errors, process registration
     if (empty($errors)) {
         $success = true;
-
-        $password = password_hash($password, PASSWORD_DEFAULT);
-
-        writeUserToDB($username, $email, $password, $type);
+        writeEventToDB($eventName, $description, $eventTime, $type);
     }
 }
 
-function checkUsername($username){
+function writeEventToDB($eventName, $description, $eventTime, $type) {
     $conn = createConn();
 
-    $sql = "SELECT COUNT(*) FROM Users WHERE Username = ?";
+    $sql = "INSERT INTO Events (EventName, Description, EventTime, EventType, CreatedBy) VALUES (?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $username);
-    $stmt->execute();
-    $stmt->bind_result($count);
-    $stmt->fetch();
-
-    if ($count > 0) {
-        $errors[] = "UniqueError";
-    }
-    
-    $conn->close();
-
-}
-
-function writeUserToDB($username, $email, $password, $type){
-    $conn = createConn();
-
-    $roleNum = ($type == "local") ? 2 : 2;
-
-    $sql = "INSERT INTO Users (Username, Email, PassHash, RoleNum) VALUES (?, ?, ?, ?)";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sssi", $username, $email, $password, $roleNum);
+    $username = $_SESSION['username'];
+    $stmt->bind_param("sssss", $eventName, $description, $eventTime, $type, $username);
     $stmt->execute();
     $conn->close();
 }
