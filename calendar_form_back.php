@@ -1,8 +1,11 @@
 <?php
 session_start();
+var_dump($_SESSION); 
+
 
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
+
 
 
 include 'db.php';
@@ -59,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 function writeEventToDB($eventName, $description, $eventTime, $catnum, $userID) {
     $conn = createConn();
 
-    $sql = "INSERT INTO Events (UserID, Title, Description, Date, Catnum) VALUES (?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO CalendarEvent (UserID, Title, Description, Date, Catnum) VALUES (?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("isssi", $userID, $eventName, $description, $eventTime, $catnum);
     $stmt->execute();
