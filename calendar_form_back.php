@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($errors)) {
         $success = true;
         $catnum = $categoryMap[$type];
-        $userID = $_SESSION['userID']; 
+        $userID = $_SESSION['username']; 
         writeEventToDB($eventName, $description, $eventTime, $catnum, $userID);
     }
 }

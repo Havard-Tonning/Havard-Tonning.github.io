@@ -34,7 +34,7 @@
         <textarea name="description" id="description" required></textarea><br>
 
         <label for="eventTime">Time of event</label><br>
-        <input type="datetime-local" name="eventTime" id="eventTime">
+        <input type="datetime-local" name="eventTime" id="eventTime"><br>
 
         <select name="eventType" id="type">
             <option value="sport" <?php if($type == "sport") echo "selected"; ?>>Sport</option>
