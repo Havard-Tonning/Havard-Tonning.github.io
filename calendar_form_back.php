@@ -1,6 +1,4 @@
 <?php
-session_start();
-var_dump($_SESSION); 
 
 
 ini_set('display_errors', 1);
@@ -54,10 +52,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($errors)) {
         $success = true;
         $catnum = $categoryMap[$type];
-        $userID = $_SESSION['username']; 
-        writeEventToDB($eventName, $description, $eventTime, $catnum, $userID);
+        $userID = getUserID($_SESSION['username']);
+
+        if ($userID === null) {
+            $errors[] = "UserNotFoundError";
+            $success = false;
+        } else {
+            writeEventToDB($eventName, $description, $eventTime, $catnum, $userID);
+        }
     }
 }
+
+function getUserID($username) {
+    $conn = createConn();
+
+    $sql = "SELECT UserID FROM Users WHERE Username = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $stmt->bind_result($userID);
+    $stmt->fetch();
+    $conn->close();
+
+    return $userID ?? null;
+}
+
 
 function writeEventToDB($eventName, $description, $eventTime, $catnum, $userID) {
     $conn = createConn();
