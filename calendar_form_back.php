@@ -7,6 +7,14 @@ $eventName = $description = $eventTime = $type = "";
 $errors = [];
 $success = false;
 
+$categoryMap = [
+    "sport"   => 1,
+    "concert" => 2,
+    "meeting" => 3,
+    "basar"   => 4,
+    "other"   => 5
+];
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $eventName   = $_POST["eventName"]   ?? "";
     $description = $_POST["description"] ?? "";
@@ -27,27 +35,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $dt = DateTime::createFromFormat('Y-m-d\TH:i', $eventTime);
         if (!$dt) {
             $errors[] = "EventTimeFormatError";
+        } else {
+            $eventTime = $dt->format('Y-m-d H:i:s');
         }
     }
 
-    $allowedTypes = ["sport", "concert", "meeting", "basar", "other"];
-    if (empty($type) || !in_array($type, $allowedTypes)) {
+    if (empty($type) || !array_key_exists($type, $categoryMap)) {
         $errors[] = "TypeError";
     }
 
     if (empty($errors)) {
         $success = true;
-        writeEventToDB($eventName, $description, $eventTime, $type);
+        $catnum = $categoryMap[$type];
+        $userID = $_SESSION['userID']; 
+        writeEventToDB($eventName, $description, $eventTime, $catnum, $userID);
     }
 }
 
-function writeEventToDB($eventName, $description, $eventTime, $type) {
+function writeEventToDB($eventName, $description, $eventTime, $catnum, $userID) {
     $conn = createConn();
 
-    $sql = "INSERT INTO Events (EventName, Description, EventTime, EventType, CreatedBy) VALUES (?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO Events (UserID, Title, Description, Date, Catnum) VALUES (?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
-    $username = $_SESSION['username'];
-    $stmt->bind_param("sssss", $eventName, $description, $eventTime, $type, $username);
+    $stmt->bind_param("isssi", $userID, $eventName, $description, $eventTime, $catnum);
     $stmt->execute();
     $conn->close();
 }
