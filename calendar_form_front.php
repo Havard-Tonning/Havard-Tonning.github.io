@@ -1,5 +1,4 @@
 <?php 
-    session_start();
     if (!isset($_SESSION['username'])) {
         $currentPage = basename($_SERVER['PHP_SELF']);
         

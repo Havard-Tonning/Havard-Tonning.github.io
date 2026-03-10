@@ -1,10 +1,8 @@
 <?php
-
+session_start();
 
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
-
-
 
 include 'db.php';
 
@@ -76,7 +74,6 @@ function getUserID($username) {
 
     return $userID ?? null;
 }
-
 
 function writeEventToDB($eventName, $description, $eventTime, $catnum, $userID) {
     $conn = createConn();
