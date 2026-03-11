@@ -590,7 +590,7 @@ max-height: 180px;
 }
 
 .roundedbody.calendar{
-padding-top: 50px;
+margin-top: 50px;
 }
 
 .calendarHeader {
