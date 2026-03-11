@@ -591,6 +591,7 @@ max-height: 180px;
 
 .roundedBody.calendar{
   margin-top: 100px;
+  transform: translateY(50px);
 }
 
 .calendarHeader {
@@ -629,7 +630,7 @@ max-height: 180px;
 
 .addEventLink {
     position: fixed;
-    bottom: 100px;
+    bottom: 250px;
     right: 24px;
     background-color: #3a7ec9;
     color: white;
