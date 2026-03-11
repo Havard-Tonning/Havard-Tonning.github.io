@@ -237,7 +237,7 @@ a{
 .tab {
   flex: 1;
   text-align: center;
-  padding: 12px 8px;
+  padding: 12px 16px; /*TEST*/
   cursor: pointer;
   transition: background-color 0.3s;
   font-weight: 500;
@@ -590,8 +590,7 @@ max-height: 180px;
 }
 
 .roundedBody.calendar{
-  margin-top: 100px;
-  transform: translateY(50px);
+padding-top: 50px;
 }
 
 .calendarHeader {
@@ -630,7 +629,7 @@ max-height: 180px;
 
 .addEventLink {
     position: fixed;
-    bottom: 250px;
+    bottom: 150px;
     right: 24px;
     background-color: #3a7ec9;
     color: white;
