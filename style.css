@@ -589,6 +589,69 @@ max-height: 180px;
     gap: 0.5rem;
 }
 
+.roundedBody.calendar{
+  margin-top: 20px;
+}
+
+.calendarHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.calendarNav {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.calendarNav h2 {
+    margin: 0;
+    font-size: 1.1rem;
+    text-transform: capitalize;
+}
+
+.navButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #3a7ec9;
+    font-size: 1rem;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+
+.navButton:hover {
+    background-color: #e8f0fb;
+}
+
+.addEventLink {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background-color: #3a7ec9;
+    color: white;
+    padding: 14px 20px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 4px 12px rgba(58, 126, 201, 0.4);
+    transition: background-color 0.2s, transform 0.15s, box-shadow 0.2s;
+    z-index: 999;
+}
+
+.addEventLink:hover {
+    background-color: #2f6ab0;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(58, 126, 201, 0.5);
+}
+
+.addEventLink:active {
+    transform: translateY(0);
+}
+
 .eventModal {
     display: none;
     position: fixed;

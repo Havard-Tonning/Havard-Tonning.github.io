@@ -17,7 +17,7 @@
     <main-header lang="no"></main-header>
     <hamburger-menu></hamburger-menu>
 
-    <div class="roundedbody"> 
+    <div class="roundedbody calendar"> 
         <div class="marginbody">
             <div class="calendarHeader">
                 <div class="calendarNav">
@@ -67,6 +67,9 @@
             <p id="modalDescription">Description</p>
         </div>
     </div>
+
+    <a href="calendar_form_back.php" class="addEventLink">Add an event</a>
+    
 <site-footer></site-footer>
 
 <script src="calendar.js"></script>
