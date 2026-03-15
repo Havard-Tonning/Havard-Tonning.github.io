@@ -57,7 +57,7 @@ html,body{
     width: 90%;
     margin-left: 5%;
     margin-right: 5%;
-
+    transition: 0.3s ease-in;
 }
 
 .valgboks:hover{
@@ -629,7 +629,7 @@ margin-top: 0px;
 
 .addEventLink {
     position: fixed;
-    bottom: 75px;
+    bottom: 80px;
     right: 24px;
     background-color: #3a7ec9;
     color: white;
