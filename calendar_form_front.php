@@ -24,31 +24,51 @@
     <hamburger-menu></hamburger-menu>
     <form method="post" action=""> 
 
-    <form method="post" action=""> 
-        <h1>Calendar Form</h1>
+    <div class="calendar-form-wrapper">
+    <div class="calendar-form-card">
+        <h1>Add Calendar Event</h1>
+        <form method="post" action="">
 
-        <label for="eventName">Name of Event</label><br>
-        <input type="text" name="eventName" id="eventName" value="<?php echo htmlspecialchars($eventName); ?>" required><br>
+            <div class="form-group">
+                <label for="eventName">Name of Event</label>
+                <input type="text" name="eventName" id="eventName"
+                       value="<?php echo htmlspecialchars($eventName); ?>">
+            </div>
 
-        <label for="description">Description</label><br>
-        <textarea name="description" id="description" required></textarea><br>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea name="description" id="description"></textarea>
+            </div>
 
-        <label for="eventTime">Time of event</label><br>
-        <input type="datetime-local" name="eventTime" id="eventTime"><br>
+            <div class="form-group">
+                <label for="eventTime">Time of Event</label>
+                <input type="datetime-local" name="eventTime" id="eventTime">
+            </div>
 
-        <select name="eventType" id="type">
-            <option value="sport" <?php if($type == "sport") echo "selected"; ?>>Sport</option>
-            <option value="concert" <?php if($type == "concert") echo "selected"; ?>>Concert</option>
-            <option value="meeting" <?php if($type == "meeting") echo "selected"; ?>>Meeting</option>
-            <option value="basar" <?php if($type == "basar") echo "selected"; ?>>Basar</option>
-            <option value="other" <?php if($type == "other") echo "selected"; ?>>Other</option>
-        </select><br>
+            <div class="form-group">
+                <label for="type">Category</label>
+                <select name="eventType" id="type">
+                    <option value="sport"   <?php if($type=="sport")   echo "selected"; ?>>Sport</option>
+                    <option value="concert" <?php if($type=="concert") echo "selected"; ?>>Concert</option>
+                    <option value="meeting" <?php if($type=="meeting") echo "selected"; ?>>Meeting</option>
+                    <option value="basar"   <?php if($type=="basar")   echo "selected"; ?>>Basar</option>
+                    <option value="other"   <?php if($type=="other")   echo "selected"; ?>>Other</option>
+                </select>
+            </div>
 
-        <br>
-        <input type="submit" name="submit" value="Submit Form">
+            <?php if (!empty($errors)): ?>
+                <div class="error">Please fill in all fields correctly.</div>
+            <?php endif; ?>
 
-        <?php if($success == true) echo'<div class="success">Registration successful</div>' ?>
-    </form>
+            <?php if ($success): ?>
+                <div class="success">Event added successfully!</div>
+            <?php endif; ?>
+
+            <input type="submit" name="submit" value="Add Event" class="submit-btn">
+
+        </form>
+    </div>
+</div>
     <site-footer></site-footer>
 </body>
 </html>
