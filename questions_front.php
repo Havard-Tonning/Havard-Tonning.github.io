@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 ?>
@@ -39,65 +39,44 @@ error_reporting(E_ALL);
                 </button>
                 <div id="detailContent"></div>
 
+
+        <div class="eventModal" id="askModal" onclick="if(event.target==this) closeAskModal()">
+            <div class="modalContent">
+                <span class="closeModal" onclick="closeAskModal()">&times;</span>
+
                 <?php if (isset($_SESSION['username'])): ?>
-                    <div class="answerFormWrapper">
-                        <h3>Your Answer</h3>
-                        <form method="post" action="questions_back.php">
-                            <input type="hidden" name="mode" value="answer">
-                            <input type="hidden" name="questionID" id="answerQuestionID" value="">
-                            <div class="form-group">
-                                <textarea name="answerBody" id="answerBody"
-                                          placeholder="Write your answer here..." rows="4"></textarea>
-                            </div>
-                            <?php if (!empty($errors) && ($_POST['mode'] ?? '') === 'answer'): ?>
-                                <div class="error">Please write an answer before submitting.</div>
-                            <?php endif; ?>
-                            <input type="submit" value="Post Answer" class="submit-btn">
-                        </form>
-                    </div>
+                    <h2>Ask a Question</h2>
+                    <form method="post" action="questions_back.php">
+                        <input type="hidden" name="mode" value="question">
+                        <div class="form-group">
+                            <label for="title">Title</label>
+                            <input type="text" name="title" id="title"
+                                placeholder="Short, specific question title"
+                                value="<?php echo htmlspecialchars($title ?? ''); ?>">
+                        </div>
+                        <div class="form-group">
+                            <label for="body">Details</label>
+                            <textarea name="body" id="body" rows="5"
+                                    placeholder="Describe your question in detail..."><?php
+                                echo htmlspecialchars($body ?? '');
+                            ?></textarea>
+                        </div>
+                        <?php if (!empty($errors) && ($_POST['mode'] ?? '') === 'question'): ?>
+                            <div class="error">Please fill in all fields.</div>
+                        <?php endif; ?>
+                        <?php if (($success ?? false) && ($_POST['mode'] ?? '') === 'question'): ?>
+                            <div class="success">Question posted!</div>
+                        <?php endif; ?>
+                        <input type="submit" value="Post Question" class="submit-btn">
+                    </form>
+
                 <?php else: ?>
-                    <p class="loginPrompt">
-                        <a href="login_back.php?return=questions_front.php">Log in</a> to post an answer.
-                    </p>
+                    <h2><a href="login_back.php?return=questions_front.php">Log in to post a question</a></h2>
                 <?php endif; ?>
+
             </div>
-
         </div>
-    </div>
-
-    <div class="eventModal" id="askModal" onclick="if(event.target==this) closeAskModal()">
-        <div class="modalContent">
-            <span class="closeModal" onclick="closeAskModal()">&times;</span>
-            <h2>Ask a Question</h2>
-            <form method="post" action="questions_back.php">
-                <input type="hidden" name="mode" value="question">
-
-                <div class="form-group">
-                    <label for="title">Title</label>
-                    <input type="text" name="title" id="title"
-                           placeholder="Short, specific question title"
-                           value="<?php echo htmlspecialchars($title ?? ''); ?>">
-                </div>
-
-                <div class="form-group">
-                    <label for="body">Details</label>
-                    <textarea name="body" id="body" rows="5"
-                              placeholder="Describe your question in detail..."><?php
-                        echo htmlspecialchars($body ?? '');
-                    ?></textarea>
-                </div>
-
-                <?php if (!empty($errors) && ($_POST['mode'] ?? '') === 'question'): ?>
-                    <div class="error">Please fill in all fields.</div>
-                <?php endif; ?>
-                <?php if (($success ?? false) && ($_POST['mode'] ?? '') === 'question'): ?>
-                    <div class="success">Question posted!</div>
-                <?php endif; ?>
-
-                <input type="submit" value="Post Question" class="submit-btn">
-            </form>
-        </div>
-    </div>
+   
 
     <site-footer></site-footer>
     <script src="questions.js"></script>
