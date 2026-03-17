@@ -1,0 +1,86 @@
+<?php
+session_start();
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+include 'db.php';
+
+$title = $body = $answerBody = "";
+$errors  = [];
+$success = false;
+$mode    = "question";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $mode = $_POST["mode"] ?? "question";
+
+    if (!isset($_SESSION['username'])) {
+        header("Location: login_back.php?return=qa_front.php");
+        exit();
+    }
+
+    $userID = getUserID($_SESSION['username']);
+    if ($userID === null) {
+        $errors[] = "UserNotFoundError";
+    }
+
+    if ($mode === "question") {
+        $title = trim($_POST["title"] ?? "");
+        $body  = trim($_POST["body"]  ?? "");
+
+        if (empty($title)) $errors[] = "TitleError";
+        if (empty($body))  $errors[] = "BodyError";
+
+        if (empty($errors)) {
+            writeQuestionToDB($title, $body, $userID);
+            $success = true;
+            $title = $body = ""; 
+        }
+
+    } elseif ($mode === "answer") {
+        $questionID = (int)($_POST["questionID"] ?? 0);
+        $answerBody = trim($_POST["answerBody"] ?? "");
+
+        if (empty($answerBody))  $errors[] = "AnswerBodyError";
+        if ($questionID <= 0)    $errors[] = "QuestionIDError";
+
+        if (empty($errors)) {
+            writeAnswerToDB($answerBody, $questionID, $userID);
+            $success = true;
+            $answerBody = "";
+            header("Location: qa_front.php?question=" . $questionID . "&answered=1");
+            exit();
+        }
+    }
+}
+
+function getUserID($username) {
+    $conn = createConn();
+    $sql  = "SELECT UserID FROM Users WHERE Username = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $stmt->bind_result($userID);
+    $stmt->fetch();
+    $conn->close();
+    return $userID ?? null;
+}
+
+function writeQuestionToDB($title, $body, $userID) {
+    $conn = createConn();
+    $sql  = "INSERT INTO Questions (UserID, Title, Body) VALUES (?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("iss", $userID, $title, $body);
+    $stmt->execute();
+    $conn->close();
+}
+
+function writeAnswerToDB($body, $questionID, $userID) {
+    $conn = createConn();
+    $sql  = "INSERT INTO Answers (QuestionID, UserID, Body) VALUES (?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("iis", $questionID, $userID, $body);
+    $stmt->execute();
+    $conn->close();
+}
+
+include 'questions_front.php';
+?>

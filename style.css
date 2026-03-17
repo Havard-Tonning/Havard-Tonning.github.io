@@ -958,3 +958,84 @@ margin-top: 0px;
     box-shadow: 0 0 0 3px rgba(58,126,201,0.15);
     background-color: #fff;
 }
+
+.qa .qaHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.askBtn {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 1rem;
+    background: var(--accent, #4f46e5);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.questionCard {
+    background: var(--card-bg, #fff);
+    border: 1px solid var(--border, #e5e7eb);
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: box-shadow 0.15s;
+}
+.questionCard:hover { box-shadow: 0 4px 16px rgba(0,0,0,.08); }
+
+.questionTitle   { margin: 0 0 0.35rem; font-size: 1.05rem; }
+.questionSnippet { margin: 0; color: var(--muted, #6b7280); font-size: 0.9rem; }
+
+.questionMeta {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.6rem;
+    font-size: 0.82rem;
+    color: var(--muted, #6b7280);
+    flex-wrap: wrap;
+}
+
+.answerBadge { font-weight: 600; color: var(--accent, #4f46e5); }
+
+.backBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: var(--accent, #4f46e5);
+    margin-bottom: 1rem;
+    padding: 0;
+}
+
+.questionFull        { margin-bottom: 1.5rem; }
+.questionFullBody    { line-height: 1.6; white-space: pre-wrap; }
+.answersHeading      { margin: 1.5rem 0 0.8rem; font-size: 1rem; }
+
+.answerCard {
+    background: var(--card-bg, #f9fafb);
+    border-left: 3px solid var(--accent, #4f46e5);
+    border-radius: 6px;
+    padding: 0.8rem 1rem;
+    margin-bottom: 0.8rem;
+}
+.answerBody { margin: 0 0 0.4rem; line-height: 1.5; white-space: pre-wrap; }
+.answerMeta { font-size: 0.8rem; color: var(--muted, #6b7280); display: flex; gap: 1rem; }
+
+.answerFormWrapper {
+    margin-top: 2rem;
+    border-top: 1px solid var(--border, #e5e7eb);
+    padding-top: 1.2rem;
+}
+
+.loginPrompt { margin-top: 1.5rem; color: var(--muted, #6b7280); }
+.loginPrompt a { color: var(--accent, #4f46e5); }
+
+.emptyMsg    { color: var(--muted, #6b7280); font-style: italic; }
+.loadingMsg  { color: var(--muted, #6b7280); }
