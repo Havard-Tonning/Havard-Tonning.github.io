@@ -40,7 +40,7 @@ session_start();
                 <?php if (isset($_SESSION['username'])): ?>
                     <div class="answerFormWrapper">
                         <h3>Your Answer</h3>
-                        <form method="post" action="qa_back.php">
+                        <form method="post" action="questions_back.php">
                             <input type="hidden" name="mode" value="answer">
                             <input type="hidden" name="questionID" id="answerQuestionID" value="">
                             <div class="form-group">
@@ -55,7 +55,7 @@ session_start();
                     </div>
                 <?php else: ?>
                     <p class="loginPrompt">
-                        <a href="login_back.php?return=qa_front.php">Log in</a> to post an answer.
+                        <a href="login_back.php?return=questions_front.php">Log in</a> to post an answer.
                     </p>
                 <?php endif; ?>
             </div>
@@ -67,7 +67,7 @@ session_start();
         <div class="modalContent">
             <span class="closeModal" onclick="closeAskModal()">&times;</span>
             <h2>Ask a Question</h2>
-            <form method="post" action="qa_back.php">
+            <form method="post" action="questions_back.php">
                 <input type="hidden" name="mode" value="question">
 
                 <div class="form-group">
@@ -98,6 +98,6 @@ session_start();
     </div>
 
     <site-footer></site-footer>
-    <script src="qa.js"></script>
+    <script src="questions.js"></script>
 </body>
 </html>

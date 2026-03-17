@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mode = $_POST["mode"] ?? "question";
 
     if (!isset($_SESSION['username'])) {
-        header("Location: login_back.php?return=qa_front.php");
+        header("Location: login_back.php?return=questions_front.php");
         exit();
     }
 
@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             writeAnswerToDB($answerBody, $questionID, $userID);
             $success = true;
             $answerBody = "";
-            header("Location: qa_front.php?question=" . $questionID . "&answered=1");
+            header("Location: questions_front.php?question=" . $questionID . "&answered=1");
             exit();
         }
     }

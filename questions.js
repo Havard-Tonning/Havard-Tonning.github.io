@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 async function loadQuestions() {
     try {
-        const res  = await fetch("qa_fetch.php");
+        const res  = await fetch("questions_fetch.php");
         questions  = await res.json();
         renderQuestionList();
 
@@ -27,7 +27,7 @@ async function loadQuestions() {
 }
 
 async function loadAnswers(questionID) {
-    const res     = await fetch(`qa_fetch.php?answers=1&questionID=${questionID}`);
+    const res     = await fetch(`questions_fetch.php?answers=1&questionID=${questionID}`);
     return await res.json();
 }
 
