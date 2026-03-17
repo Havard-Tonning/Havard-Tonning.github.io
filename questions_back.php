@@ -66,7 +66,7 @@ function getUserID($username) {
 
 function writeQuestionToDB($title, $body, $userID) {
     $conn = createConn();
-    $sql  = "INSERT INTO Questions (UserID, Title, Body) VALUES (?, ?, ?)";
+    $sql = "INSERT INTO question (UserID, Title, Text) VALUES (?, ?, ?)";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("iss", $userID, $title, $body);
     $stmt->execute();
@@ -75,7 +75,7 @@ function writeQuestionToDB($title, $body, $userID) {
 
 function writeAnswerToDB($body, $questionID, $userID) {
     $conn = createConn();
-    $sql  = "INSERT INTO Answers (QuestionID, UserID, Body) VALUES (?, ?, ?)";
+    $sql = "INSERT INTO Answer (QuestionID, UserID, Text) VALUES (?, ?, ?)";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("iis", $questionID, $userID, $body);
     $stmt->execute();

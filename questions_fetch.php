@@ -31,7 +31,14 @@ function isLocalUser(){
 function fetchQuestions(){
     $conn = createConn(); 
 
-    $sql = "SELECT * FROM `question` JOIN `Users` USING(UserID)";
+    $sql = "SELECT q.QuestionID, q.UserID, q.Title, q.Text, q.TimeAdded, u.Username,
+               COUNT(a.AnswerID) AS AnswerCount
+        FROM question q
+        JOIN Users u USING(UserID)
+        LEFT JOIN Answer a USING(QuestionID)
+        GROUP BY q.QuestionID
+        ORDER BY q.TimeAdded DESC";
+
     $stmt = $conn->prepare($sql);
     $stmt->execute();
 
@@ -41,11 +48,12 @@ function fetchQuestions(){
 
     while($row = $results -> fetch_assoc()){
         $questions[] = [
-            "questionID"    => $row["QuestionID"],
-            "userID"        => $row["UserID"],
-            "text"          => $row["Text"],
-            "timeAdded"     => $row["TimeAdded"],
-            "username"      => $row["Username"],
+            "id"          => $row["QuestionID"],
+            "title"       => $row["Title"],       
+            "body"        => $row["Text"],       
+            "username"    => $row["Username"],
+            "createdAt"   => $row["TimeAdded"],  
+            "answerCount" => $row["AnswerCount"],   
         ];
     }
 
@@ -68,11 +76,11 @@ function fetchAnswers($questionID){
     $answers = [];
 
     while($row = $results -> fetch_assoc()){
-        $questions[] = [
-            "answerID"      => $row["AnswerID"],
-            "username"      => $row["Username"],
-            "text"          => $row["Text"],
-            "createdAt"     => $row["CreatedAt"],
+        $answers[] = [
+            "id"        => $row["AnswerID"],
+            "body"      => $row["Text"],    
+            "username"  => $row["Username"],
+            "createdAt" => $row["CreatedAt"], 
         ];
     }
 
