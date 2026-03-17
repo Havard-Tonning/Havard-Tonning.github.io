@@ -66,7 +66,7 @@ function getUserID($username) {
 
 function writeQuestionToDB($title, $body, $userID) {
     $conn = createConn();
-    $sql = "INSERT INTO question (UserID, Title, Text) VALUES (?, ?, ?)";
+    $sql = "INSERT INTO Question (UserID, Title, Text) VALUES (?, ?, ?)";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("iss", $userID, $title, $body);
     $stmt->execute();
