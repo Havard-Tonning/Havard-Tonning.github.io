@@ -33,7 +33,7 @@ function fetchQuestions(){
 
     $sql = "SELECT q.QuestionID, q.UserID, q.Title, q.Text, q.TimeAdded, u.Username,
                COUNT(a.AnswerID) AS AnswerCount
-        FROM question q
+        FROM Question q
         JOIN Users u USING(UserID)
         LEFT JOIN Answer a USING(QuestionID)
         GROUP BY q.QuestionID
