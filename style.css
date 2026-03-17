@@ -1039,3 +1039,7 @@ margin-top: 0px;
 
 .emptyMsg    { color: var(--muted, #6b7280); font-style: italic; }
 .loadingMsg  { color: var(--muted, #6b7280); }
+
+.roundedbody.qa{
+    margin-top: 20px;
+}
