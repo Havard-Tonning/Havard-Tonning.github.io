@@ -971,7 +971,7 @@ margin-top: 0px;
     align-items: center;
     gap: 0.4rem;
     padding: 0.5rem 1rem;
-    background: var(--accent, #4f46e5);
+    background: #3a7ec9;
     color: #fff;
     border: none;
     border-radius: 8px;
@@ -1002,7 +1002,7 @@ margin-top: 0px;
     flex-wrap: wrap;
 }
 
-.answerBadge { font-weight: 600; color: var(--accent, #4f46e5); }
+.answerBadge { font-weight: 600; color: #3a7ec9; }
 
 .backBtn {
     background: none;
@@ -1020,7 +1020,7 @@ margin-top: 0px;
 
 .answerCard {
     background: var(--card-bg, #f9fafb);
-    border-left: 3px solid var(--accent, #4f46e5);
+    border-left: 3px solid #3a7ec9;
     border-radius: 6px;
     padding: 0.8rem 1rem;
     margin-bottom: 0.8rem;
@@ -1035,7 +1035,7 @@ margin-top: 0px;
 }
 
 .loginPrompt { margin-top: 1.5rem; color: var(--muted, #6b7280); }
-.loginPrompt a { color: var(--accent, #4f46e5); }
+.loginPrompt a { color: #3a7ec9; }
 
 .emptyMsg    { color: var(--muted, #6b7280); font-style: italic; }
 .loadingMsg  { color: var(--muted, #6b7280); }
