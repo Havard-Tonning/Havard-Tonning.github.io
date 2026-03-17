@@ -1,6 +1,6 @@
 <?php
-require_once 'db.php'; 
 session_start();
+require_once 'db.php'; 
 
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
@@ -67,7 +67,11 @@ function fetchQuestions(){
 function fetchAnswers($questionID){
     $conn = createConn(); 
 
-    $sql = "SELECT a.AnswerID, a.QuestionID, a.Text, u.Username FROM Answer a JOIN Users u USING(UserID) WHERE a.QuestionID = ? ORDER BY a.CreatedAt ASC";
+    $sql = "SELECT a.AnswerID, a.QuestionID, a.Text, a.CreatedAt, u.Username 
+        FROM Answer a 
+        JOIN Users u USING(UserID) 
+        WHERE a.QuestionID = ? 
+        ORDER BY a.CreatedAt ASC";
    $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $questionID);
     $stmt->execute();
