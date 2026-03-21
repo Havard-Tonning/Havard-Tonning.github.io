@@ -2,6 +2,35 @@
 require_once 'db.php'; 
 session_start();
 
+function isModerator() {
+    if (!isset($_SESSION["username"])) return false;
+
+    $conn = createConn();
+    $sql = "SELECT RoleNum FROM `Users` WHERE `username` = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $_SESSION["username"]);
+    $stmt->execute();
+    $results = $stmt->get_result();
+
+    $isMod = false;
+    if ($row = $results->fetch_assoc()) {
+        $isMod = $row["RoleNum"] == 3;
+    }
+
+    $stmt->close();
+    $conn->close();
+    return $isMod;
+}
+
+function deleteEvent($id) {
+    $conn = createConn();
+    $sql = "DELETE FROM `CalendarEvent` WHERE `EventID` = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+    $stmt->close();
+    $conn->close();
+}
 
 function isLocalUser(){
     $conn = createConn(); 
@@ -55,5 +84,12 @@ function fetchEvents(){
     return $events;
 }
 
+
+
+if ($_SERVER["REQUEST_METHOD"] === "DELETE") {
+    $id = intval($_GET["id"] ?? 0);
+    deleteEvent($id);
+} else {
     echo json_encode(fetchEvents());
+}
 ?>

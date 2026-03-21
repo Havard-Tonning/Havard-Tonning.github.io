@@ -1,6 +1,7 @@
 let events = [];
 let viewDate = new Date();
 let currentView = "calendar";
+let currentEventId = null;
 
 async function loadEvents() {
     try{
@@ -110,7 +111,9 @@ function moveMonth(dir){
 }
 
 function openModal(eventId){
+    currentEventId = eventId;
     const e = events.find(item => item.id == eventId);
+
     if(!e)
         return;
 
@@ -125,5 +128,16 @@ function openModal(eventId){
 function closeModal(){
     document.getElementById('eventModal').style.display = 'none';
 }
+
+async function deleteCurrentEvent() {
+    if (!confirm("Delete this event?")) return;
+
+    await fetch(`calendar_back.php?id=${currentEventId}`, { method: 'DELETE' });
+
+    closeModal();
+    events = events.filter(e => e.id != currentEventId);
+    render();
+}
+
 
 window.onload = loadEvents;

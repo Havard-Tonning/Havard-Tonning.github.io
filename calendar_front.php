@@ -1,5 +1,25 @@
 <?php 
     session_start();
+
+    function isModerator(){
+    $conn = createConn();
+    $sql = "SELECT * FROM `Users` WHERE `username` = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $_SESSION["username"]);
+    $stmt->execute();
+    $results = $stmt->get_result();
+
+    if($row = $results->fetch_assoc()){
+        if($row["RoleNum"] == 3){
+            $stmt->close();
+            $conn->close();
+            return true;
+        }
+    }
+    $stmt->close();
+    $conn->close();
+    return false;
+}
 ?>
 
 
@@ -65,6 +85,11 @@
                 <p><i class="fa-solid fa-user-pen"></i>Added by: <span id="modalUser">Username</span></p>
             </div>
             <p id="modalDescription">Description</p>
+            <?php if(isset($_SESSION["username"]) && isModerator()): ?>
+                <button id="deleteEventBtn" onclick="deleteCurrentEvent()">
+                <i class="fa-solid fa-trash"></i> Delete
+                </button>
+            <?php endif; ?>
         </div>
     </div>
 
@@ -72,6 +97,9 @@
     
 <site-footer></site-footer>
 
+<script>
+    const IS_MODERATOR = <?php echo (isset($_SESSION["username"]) && isModerator()) ? 'true' : 'false'; ?>;
+</script>
 <script src="calendar.js"></script>
 </body>
 </html>
