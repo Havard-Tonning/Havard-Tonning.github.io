@@ -100,6 +100,6 @@
 <script>
     const IS_MODERATOR = <?php echo (isset($_SESSION["username"]) && isModerator()) ? 'true' : 'false'; ?>;
 </script>
-<script src="calendar.js"></script>
+<script src="calendar.js" defer></script>
 </body>
 </html>
