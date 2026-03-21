@@ -2,24 +2,24 @@
 require_once 'db.php'; 
 session_start();
 
-function isModerator() {
-    if (!isset($_SESSION["username"])) return false;
-
+function isModerator(){
     $conn = createConn();
-    $sql = "SELECT RoleNum FROM `Users` WHERE `username` = ?";
+    $sql = "SELECT * FROM `Users` WHERE `username` = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $_SESSION["username"]);
     $stmt->execute();
     $results = $stmt->get_result();
 
-    $isMod = false;
-    if ($row = $results->fetch_assoc()) {
-        $isMod = $row["RoleNum"] == 1;
+    if($row = $results->fetch_assoc()){
+        if($row["RoleNum"] == 3){
+            $stmt->close();
+            $conn->close();
+            return true;
+        }
     }
-
     $stmt->close();
     $conn->close();
-    return $isMod;
+    return false;
 }
 
 function deleteEvent($id) {
@@ -83,6 +83,8 @@ function fetchEvents(){
 
     return $events;
 }
+
+
 
 
 

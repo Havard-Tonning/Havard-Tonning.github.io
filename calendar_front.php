@@ -1,27 +1,7 @@
 <?php 
     session_start();
-
-    function isModerator(){
-    $conn = createConn();
-    $sql = "SELECT * FROM `Users` WHERE `username` = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $_SESSION["username"]);
-    $stmt->execute();
-    $results = $stmt->get_result();
-
-    if($row = $results->fetch_assoc()){
-        if($row["RoleNum"] == 3){
-            $stmt->close();
-            $conn->close();
-            return true;
-        }
-    }
-    $stmt->close();
-    $conn->close();
-    return false;
-}
+    require_once 'calendar_back.php';
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
