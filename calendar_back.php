@@ -14,7 +14,7 @@ function isModerator() {
 
     $isMod = false;
     if ($row = $results->fetch_assoc()) {
-        $isMod = $row["RoleNum"] == 3;
+        $isMod = $row["RoleNum"] == 1;
     }
 
     $stmt->close();
