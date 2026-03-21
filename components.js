@@ -59,7 +59,7 @@ class hamburger extends HTMLElement {
 
 class mainHeader extends HTMLElement{
     connectedCallback() {
-        let currentLang = this.getAttribute("lang") || "no";
+//        let currentLang = this.getAttribute("lang") || "no";
         let path = window.location.pathname;
         let filename = path.split("/").pop() || "index.html"
         

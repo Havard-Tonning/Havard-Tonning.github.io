@@ -36,11 +36,11 @@ function renderCalendar(){
     const year = viewDate.getFullYear();
     const month = viewDate.getMonth();
 
-    // JS starts week on Sunday. Sunday gets moved to day 6, and all others are moved one earlier
+    // JS starts week on Sunday. Sunday has an offset of 6 empty cells, while all others have their weekday minus one
     let firstDay = new Date(year, month, 1).getDay();
     let startOffset = firstDay === 0 ? 6 : firstDay - 1; 
 
-    // Get the next month, then the 0th of that month, which is the last of the next one
+    // Get the next month, then the 0th of that month, which is the last of the previous one
     let daysInMonth = new Date(year, month + 1, 0).getDate();
 
     // Padding the days before the first day of month
