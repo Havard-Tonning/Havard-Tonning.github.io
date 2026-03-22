@@ -22,46 +22,61 @@ site-footer {
 
 @media (min-width: 768px) {
 
-    body {
-        background-attachment: fixed;
+    .infobox {
+        all: unset;
         display: flex;
         flex-direction: column;
-        min-height: 100vh;
+        justify-content: center;
+        width: 35%;
+        min-width: 280px;
+        color: white;
+        text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+        padding: 20px;
     }
 
-    .infobox {
-        width: 500px;
-        margin: 40px auto 24px auto;
+    .infobox .infoheader {
+        color: white;
+        font-size: 2rem;
+        margin: 0 0 12px 0;
     }
 
+    .infobox p {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    .desktop-layout {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 40px;
+        width: calc(100% - 80px);
+        max-width: 1200px;
+        margin: 40px auto;
+        flex: 1;
+    }
 
     .valgboks-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
-        width: calc(100% - 80px);
-        max-width: 1200px;
-        margin: 0 auto 40px auto;
+        gap: 14px;
+        flex: 1;
     }
 
     .valgboks-grid .valgboks {
         width: 100%;
         margin: 0;
-        height: 80px;
+        height: 70px;
         background-color: rgba(255, 255, 255, 0.82);
         backdrop-filter: blur(4px);
         border: 1px solid rgba(255,255,255,0.6);
-        box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
         border-radius: 10px;
     }
 
-    .valgboks-grid .bokslink {
-        display: block;
-    }
-
-
     .valgboks-grid .valgboks:hover {
-        background-color: rgba(255,255,255,0.98);
+        background-color: rgba(255, 255, 255, 0.97);
     }
 
     body {
