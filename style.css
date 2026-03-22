@@ -460,15 +460,24 @@ max-height: 180px;
   width: 20px;
 }
 .ham-menu {
-  position: absolute;
-  left: 30px;
-  top: 30px;
-  font-size: 30px;
-  text-decoration: none;
-  color: white;
-  cursor: pointer;
-  z-index: 20000;
+    position: absolute;
+    left: 30px;
+    top: 30px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    z-index: 20000;
+    width: 30px;
+    height: 30px;
 }
+
+.ham-menu i {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.2s;
+}
+
 
 /* Hide the X icon by default, show hamburger */
 .ham-menu i:nth-child(1) {
