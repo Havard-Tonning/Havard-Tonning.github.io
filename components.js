@@ -44,16 +44,6 @@ class hamburger extends HTMLElement {
         <a href="comments.html">Digital gjestebok</a>
         <a href="feedback.html">Gi tilbakemelding til bygda</a>
     </div>`; 
-
-        const hamMenu = document.querySelector('.ham-menu');
-        const menuContent = this.querySelector('.menu-content');
-
-        if (hamMenu && menuContent) {
-            hamMenu.addEventListener('click', () => {
-                hamMenu.classList.toggle('active');
-                menuContent.classList.toggle('active');
-            });
-        }
     }
 }
 
@@ -80,6 +70,18 @@ class mainHeader extends HTMLElement{
         </header>`
     }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const hamMenu = document.querySelector('.ham-menu');
+    const menuContent = document.querySelector('.menu-content');
+
+    if (hamMenu && menuContent) {
+        hamMenu.addEventListener('click', () => {
+            hamMenu.classList.toggle('active');
+            menuContent.classList.toggle('active');
+        });
+    }
+});
 
 customElements.define('site-footer', SiteFooter);
 customElements.define('g-tag', gtag);

@@ -10,6 +10,16 @@ html,body{
     padding: 0;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+site-footer {
+    margin-top: auto;
+}
+
 @media (min-width: 768px) {
 
     body {
@@ -24,28 +34,31 @@ html,body{
         margin: 40px auto 24px auto;
     }
 
-    .valgboks-grid {
+        .valgboks-grid {
         display: grid;
-        grid-template-columns: repeat(3, 220px);
-        gap: 14px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        max-width: 900px;
+        width: 80%;
         justify-content: center;
         margin: 0 auto 40px auto;
+    }
+
+    .valgboks-grid .valgboks {
+        width: 100%;
+        margin: 0;
+        height: 70px;
+        background-color: rgba(255, 255, 255, 0.82);
+        backdrop-filter: blur(4px);
+        border: 1px solid rgba(255,255,255,0.6);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+        border-radius: 10px;
     }
 
     .valgboks-grid .bokslink {
         display: block;
     }
 
-    .valgboks-grid .valgboks {
-        width: 100%;
-        margin: 0;
-        height: 60px;
-        border-radius: 10px;
-        background-color: rgba(255, 255, 255, 0.85);
-        backdrop-filter: blur(4px);
-        border: 1px solid rgba(255,255,255,0.6);
-        box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-    }
 
     .valgboks-grid .valgboks:hover {
         background-color: rgba(255,255,255,0.98);
