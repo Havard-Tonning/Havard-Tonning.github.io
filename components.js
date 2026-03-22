@@ -33,7 +33,8 @@ class hamburger extends HTMLElement {
     connectedCallback(){
         this.innerHTML = `
         <div class="menu-content">
-            <a href="index.html" style="margin-top: 100px;">Heim</a>
+            <span class="menu-close"><i class="fa-solid fa-xmark"></i></span>
+            <a href="index.html" style="margin-top: 40px;">Heim</a>
             <a href="mainmap.html">Virtuell guida tur</a>
             <a href="picktrip.html">Trimturar i området</a>
             <a href="sites.html">Ein kort køyretur unna</a>
@@ -43,7 +44,12 @@ class hamburger extends HTMLElement {
             <a href="faq.html">Vanlege spørsmål</a>
             <a href="comments.html">Digital gjestebok</a>
             <a href="feedback.html">Gi tilbakemelding til bygda</a>
-        </div>`; 
+        </div>`;
+
+        this.querySelector('.menu-close').addEventListener('click', () => {
+            this.querySelector('.menu-content').classList.remove('active');
+            document.querySelector('.ham-menu')?.classList.remove('active');
+        });
     }
 }
 
@@ -59,7 +65,6 @@ class mainHeader extends HTMLElement {
             </a>    
             <div class="ham-menu"> 
                 <i class="fa-solid fa-bars"></i>
-                <i class="fa-solid fa-xmark"></i>
             </div>
             <div class="languages">
                 <div class="active-lang">No</div>
@@ -69,9 +74,8 @@ class mainHeader extends HTMLElement {
 
         const hamMenu = this.querySelector('.ham-menu');
         hamMenu.addEventListener('click', () => {
-            hamMenu.classList.toggle('active');
             const menuContent = document.querySelector('.menu-content');
-            if (menuContent) menuContent.classList.toggle('active');
+            if (menuContent) menuContent.classList.add('active');
         });
     }
 }
