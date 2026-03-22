@@ -12,21 +12,33 @@ class SiteFooter extends HTMLElement {
     }
 }
 
-class gtagElement extends HTMLElement {
+class mainHeader extends HTMLElement {
     connectedCallback() {
-        const gtagScript = document.createElement('script');
-        gtagScript.async = true;
-        gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-0LT1EF01DF';
-        document.head.appendChild(gtagScript);
+        let path = window.location.pathname;
+        let filename = path.split("/").pop() || "index.html";
 
-        const configScript = document.createElement('script');
-        configScript.innerHTML = `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-0LT1EF01DF');
-        `;
-        document.head.appendChild(configScript);
+        this.innerHTML = `
+        <header class="main-header">
+            <a href="index.html">
+                <img class="logoimg" src="images/logo3.png" alt="">
+            </a>    
+            <div class="ham-menu"> 
+                <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <div class="languages">
+                <div class="active-lang">No</div>
+                <a href="en/${filename}"><div class="disactive-lang">En</div></a>
+            </div>
+        </header>`;
+
+        const hamMenu = this.querySelector('.ham-menu');
+
+        hamMenu.addEventListener('click', () => {
+            hamMenu.classList.toggle('active');
+            const menuContent = document.querySelector('.menu-content');
+            if (menuContent) menuContent.classList.toggle('active');
+        });
     }
 }
 
@@ -71,17 +83,7 @@ class mainHeader extends HTMLElement{
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    const hamMenu = document.querySelector('.ham-menu');
-    const menuContent = document.querySelector('.menu-content');
 
-    if (hamMenu && menuContent) {
-        hamMenu.addEventListener('click', () => {
-            hamMenu.classList.toggle('active');
-            menuContent.classList.toggle('active');
-        });
-    }
-});
 
 customElements.define('site-footer', SiteFooter);
 customElements.define('g-tag', gtagElement);
