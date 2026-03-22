@@ -582,6 +582,19 @@ max-height: 180px;
   border-radius: 5px;
 }
 
+.menu-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+}
+
+.menu-close:hover {
+    opacity: 0.7;
+}
+
 .tabs {
     display: flex;
     gap: 0.5rem;
