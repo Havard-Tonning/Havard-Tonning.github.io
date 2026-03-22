@@ -30,24 +30,24 @@ site-footer {
     }
 
     .infobox {
-        width: 400px;
+        width: 500px;
         margin: 40px auto 24px auto;
     }
 
-        .valgboks-grid {
+
+    .valgboks-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 16px;
-        max-width: 900px;
-        width: 80%;
-        justify-content: center;
+        width: calc(100% - 80px);
+        max-width: 1200px;
         margin: 0 auto 40px auto;
     }
 
     .valgboks-grid .valgboks {
         width: 100%;
         margin: 0;
-        height: 70px;
+        height: 80px;
         background-color: rgba(255, 255, 255, 0.82);
         backdrop-filter: blur(4px);
         border: 1px solid rgba(255,255,255,0.6);

@@ -12,7 +12,7 @@ class SiteFooter extends HTMLElement {
     }
 }
 
-class gtag extends HTMLElement {
+class gtagElement extends HTMLElement {
     connectedCallback() {
         const gtagScript = document.createElement('script');
         gtagScript.async = true;
@@ -84,6 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 customElements.define('site-footer', SiteFooter);
-customElements.define('g-tag', gtag);
+customElements.define('g-tag', gtagElement);
 customElements.define('hamburger-menu', hamburger);
 customElements.define("main-header", mainHeader);
