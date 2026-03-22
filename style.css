@@ -14,28 +14,50 @@ html,body{
 
     body {
         background-attachment: fixed;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
     }
 
     .infobox {
-        max-width: 700px;
-        margin: 30px auto 10px auto;
+        width: 400px;
+        margin: 40px auto 24px auto;
     }
 
-    /* Grid of menu boxes */
     .valgboks-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 12px;
-        max-width: 700px;
-        margin: 0 auto;
-        padding: 0 16px 30px 16px;
+        grid-template-columns: repeat(3, 220px);
+        gap: 14px;
+        justify-content: center;
+        margin: 0 auto 40px auto;
     }
 
-    .valgboks {
-        width: auto;
-        margin: 0;
-        height: 70px;
+    .valgboks-grid .bokslink {
+        display: block;
     }
+
+    .valgboks-grid .valgboks {
+        width: 100%;
+        margin: 0;
+        height: 60px;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(4px);
+        border: 1px solid rgba(255,255,255,0.6);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    }
+
+    .valgboks-grid .valgboks:hover {
+        background-color: rgba(255,255,255,0.98);
+    }
+
+    body {
+        background-image: url('images/olden.jpg') !important;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+
 }
 
 #map {
