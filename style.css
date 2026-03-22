@@ -24,62 +24,56 @@ site-footer {
 
     .infobox {
         all: unset;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 35%;
-        min-width: 280px;
+        display: block;
+        text-align: center;
+        padding: 60px 20px 30px 20px;
         color: white;
         text-shadow: 0 1px 4px rgba(0,0,0,0.5);
-        padding: 20px;
     }
 
     .infobox .infoheader {
         color: white;
-        font-size: 2rem;
+        font-size: 2.8rem;
         margin: 0 0 12px 0;
     }
 
     .infobox p {
-        font-size: 1rem;
-        line-height: 1.6;
+        font-size: 1.1rem;
         margin: 0;
-    }
-
-    .desktop-layout {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 40px;
-        width: calc(100% - 80px);
-        max-width: 1200px;
-        margin: 40px auto;
-        flex: 1;
     }
 
     .valgboks-grid {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 14px;
-        flex: 1;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        width: calc(100% - 120px);
+        max-width: 1100px;
+        margin: 30px auto 0 auto;
+    }
+
+    .valgboks-grid .bokslink {
+        display: block;
     }
 
     .valgboks-grid .valgboks {
         width: 100%;
         margin: 0;
-        height: 70px;
+        height: 64px;
         background-color: rgba(255, 255, 255, 0.82);
         backdrop-filter: blur(4px);
-        border: 1px solid rgba(255,255,255,0.6);
+        border: 1px solid rgba(255, 255, 255, 0.6);
         box-shadow: 0 2px 8px rgba(0,0,0,0.15);
         border-radius: 10px;
+        font-size: 1rem;
     }
 
     .valgboks-grid .valgboks:hover {
         background-color: rgba(255, 255, 255, 0.97);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(0,0,0,0.2);
     }
 
-    body {
+        body {
         background-image: url('images/olden.jpg') !important;
         background-size: cover;
         background-position: center;
