@@ -27,7 +27,7 @@ async function loadQuestions() {
 }
 
 async function loadAnswers(questionID) {
-    const res     = await fetch(`questions_fetch.php?answers=1&questionID=${questionID}`);
+    const res = await fetch(`questions_fetch.php?answers=1&questionID=${questionID}`);
     return await res.json();
 }
 
@@ -51,6 +51,11 @@ function renderQuestionList() {
                 <span class="answerBadge">
                     <i class="fa-solid fa-comment"></i> ${q.answerCount}
                 </span>
+                ${IS_MODERATOR ? `
+                    <button class="deleteBtn" onclick="event.stopPropagation(); deleteQuestion(${q.id})">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                ` : ''}
             </div>
         </div>
     `).join("");
@@ -70,6 +75,11 @@ async function openQuestion(questionID) {
                 <div class="answerMeta">
                     <span><i class="fa-solid fa-user-pen"></i> ${escapeHTML(a.username)}</span>
                     <span><i class="fa-solid fa-clock"></i> ${formatDate(a.createdAt)}</span>
+                    ${IS_MODERATOR ? `
+                        <button class="deleteBtn" onclick="deleteAnswer(${a.id}, ${questionID})">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    ` : ''}
                 </div>
             </div>
           `).join("")
@@ -96,6 +106,33 @@ async function openQuestion(questionID) {
 
     document.getElementById("questionList").style.display   = "none";
     document.getElementById("questionDetail").style.display = "block";
+}
+
+async function deleteQuestion(questionID) {
+    if (!confirm("Delete this question and all its answers?")) return;
+
+    const form = new FormData();
+    form.append("mode", "delete_question");
+    form.append("questionID", questionID);
+
+    await fetch("questions_back.php", { method: "POST", body: form });
+
+    questions = questions.filter(q => q.id !== questionID);
+    showList();
+    renderQuestionList();
+}
+
+async function deleteAnswer(answerID, questionID) {
+    if (!confirm("Delete this answer?")) return;
+
+    const form = new FormData();
+    form.append("mode", "delete_answer");
+    form.append("answerID", answerID);
+    form.append("questionID", questionID);
+
+    await fetch("questions_back.php", { method: "POST", body: form });
+
+    openQuestion(questionID);
 }
 
 function showList() {

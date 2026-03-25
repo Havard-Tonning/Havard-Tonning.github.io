@@ -63,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 function getUserID($username) {
     $conn = createConn();
-
+    
     $sql = "SELECT UserID FROM Users WHERE Username = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $username);

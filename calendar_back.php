@@ -85,9 +85,6 @@ function fetchEvents(){
 }
 
 
-
-
-
 // Only execute when accessed directly, not when included
 if (basename(__FILE__) === basename($_SERVER["SCRIPT_FILENAME"])) {
     if ($_SERVER["REQUEST_METHOD"] === "DELETE") {

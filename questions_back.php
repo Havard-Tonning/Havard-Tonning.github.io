@@ -9,6 +9,28 @@ $errors  = [];
 $success = false;
 $mode    = "question";
 
+function getRoleNum($username) {
+    $conn = createConn();
+    $sql  = "SELECT RoleNum FROM Users WHERE Username = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $stmt->bind_result($roleNum);
+    $stmt->fetch();
+    $conn->close();
+    return $roleNum ?? 0;
+}
+
+function isLocalUser() {
+    if (!isset($_SESSION['username'])) return false;
+    return getRoleNum($_SESSION['username']) == 2;
+}
+
+function isModerator() {
+    if (!isset($_SESSION['username'])) return false;
+    return getRoleNum($_SESSION['username']) == 3;
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mode = $_POST["mode"] ?? "question";
 
@@ -32,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (empty($errors)) {
             writeQuestionToDB($title, $body, $userID);
             $success = true;
-            $title = $body = ""; 
+            $title = $body = "";
         }
 
     } elseif ($mode === "answer") {
@@ -49,6 +71,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: questions_front.php?question=" . $questionID . "&answered=1");
             exit();
         }
+    } elseif ($mode === "delete_question") {
+        if (isModerator()) {
+            $qid = (int)($_POST["questionID"] ?? 0);
+            deleteQuestionFromDB($qid);
+        }
+        header("Location: questions_front.php");
+        exit();
+
+    } elseif ($mode === "delete_answer") {
+        if (isModerator()) {
+            $aid = (int)($_POST["answerID"] ?? 0);
+            deleteAnswerFromDB($aid);
+            $qid = (int)($_POST["questionID"] ?? 0);
+        }
+        header("Location: questions_front.php?question=" . $qid);
+        exit();
     }
 }
 
@@ -78,6 +116,24 @@ function writeAnswerToDB($body, $questionID, $userID) {
     $sql = "INSERT INTO Answer (QuestionID, UserID, Text) VALUES (?, ?, ?)";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("iis", $questionID, $userID, $body);
+    $stmt->execute();
+    $conn->close();
+}
+
+function deleteQuestionFromDB($questionID) {
+    $conn = createConn();
+    $sql = "DELETE FROM Question WHERE QuestionID = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $questionID);
+    $stmt->execute();
+    $conn->close();
+}
+
+function deleteAnswerFromDB($answerID) {
+    $conn = createConn();
+    $sql = "DELETE FROM Answer WHERE AnswerID = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $answerID);
     $stmt->execute();
     $conn->close();
 }
