@@ -2,6 +2,14 @@
 session_start();
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
+
+$currentPage = basename($_SERVER['PHP_SELF']);
+
+if (!empty($_SERVER['QUERY_STRING'])) {
+    $currentPage .= '?' . $_SERVER['QUERY_STRING'];
+}
+
+$loginLink = "login_back.php?return=" . urlencode($currentPage);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -90,6 +98,16 @@ error_reporting(E_ALL);
             </form>
         </div>
     </div>
+
+    <?php if (!isset($_SESSION['username'])): ?>
+    <div class="login-prompt-wrapper">
+        <a href="<?php echo $loginLink; ?>" class="submit-btn" style="text-decoration: none; display: inline-block; text-align: center;">
+            Log in to ask questions
+        </a>
+    </div>
+
+<?php endif; ?>
+
 
     <script>
         const IS_MODERATOR = <?php echo (isset($_SESSION['username']) && isModerator()) ? 'true' : 'false'; ?>;
