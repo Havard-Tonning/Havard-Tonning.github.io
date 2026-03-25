@@ -44,11 +44,18 @@ class hamburger extends HTMLElement {
             <a href="faq.html">Vanlege spørsmål</a>
             <a href="comments.html">Digital gjestebok</a>
             <a href="feedback.html">Gi tilbakemelding til bygda</a>
+            <a class="logout-btn" style="cursor:pointer;">Logg ut</a>
         </div>`;
 
         this.querySelector('.menu-close').addEventListener('click', () => {
             this.querySelector('.menu-content').classList.remove('active');
             document.querySelector('.ham-menu')?.classList.remove('active');
+        });
+
+        this.querySelector('.logout-btn').addEventListener('click', () => {
+            fetch('logout.php').then(() => {
+                window.location.href = 'index.html';
+            });
         });
     }
 }
