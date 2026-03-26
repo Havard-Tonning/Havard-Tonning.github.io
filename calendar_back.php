@@ -1,6 +1,4 @@
     <?php
-
-    header('Content-Type: application/json; charset=utf-8');
     require_once 'db.php'; 
 
     function isModerator(){
@@ -88,6 +86,7 @@
 
     // Only execute when accessed directly, not when included
     if (basename(__FILE__) === basename($_SERVER["SCRIPT_FILENAME"])) {
+            header('Content-Type: application/json; charset=utf-8'); 
         if ($_SERVER["REQUEST_METHOD"] === "DELETE") {
             $id = intval($_GET["id"] ?? 0);
             deleteEvent($id);
