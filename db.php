@@ -13,6 +13,7 @@ function createConn(){
         die("Connection failed: " . $conn->connect_error);
     }
     else{
+        $conn->set_charset("utf8mb4");
         return $conn;
     }
 
