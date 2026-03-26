@@ -4,11 +4,13 @@ let currentView = "calendar";
 let currentEventId = null;
 
 async function loadEvents() {
-    try{
+    try {
         const response = await fetch('calendar_back.php');
-        events = await response.json();
+        const text = await response.text();  // Get raw text first *** Debug ***
+        console.log("Raw response:", text);   // See what PHP returns
+        events = JSON.parse(text);            // Then parse it
         render();
-    }catch(err){
+    } catch(err) {
         console.error("Could not load events:", err);
     }
 }
