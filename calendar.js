@@ -122,7 +122,7 @@ function openModal(eventId){
     document.getElementById('modalTitle').innerText = e.title;
     document.getElementById('modalDate').innerText = e.date.split(" ")[0].split("-").reverse().join('.');    
     document.getElementById('modalUser').innerText = e.username;
-    document.getElementById('modalDescription').innerText = e.description;
+    document.getElementById('modalDescription').innerHTML = e.description;
     document.getElementById('modalCategory').innerText = e.category;
     document.getElementById('eventModal').style.display = 'flex';
 }
