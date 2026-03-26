@@ -67,6 +67,10 @@
 
             <?php if ($success): ?>
                 <div class="success">Event added successfully!</div>
+                <?php
+                header("Location: calendar_front.php");
+                exit();
+        ?>
             <?php endif; ?>
 
             <input type="submit" name="submit" value="Add Event" class="submit-btn">
