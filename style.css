@@ -656,6 +656,10 @@ max-height: 180px;
     text-overflow: ellipsis;
 }
 
+.eventItem.cat-Ship {
+    background: #70a288;
+}
+
 .listContainer {
     display: flex;
     flex-direction: column;

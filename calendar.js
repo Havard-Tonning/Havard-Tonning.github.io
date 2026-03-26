@@ -61,7 +61,8 @@ function renderCalendar(){
         let eventsHTML ='';
 
         dayEvents.forEach(e=> {
-            eventsHTML += `<div class='eventItem' onclick='openModal(${e.id})'>${e.title}</div>`;
+            eventsHTML += `<div class='eventItem cat-${e.catname}' onclick='openModal(${e.id})'>${e.title}</div>`;
+;
         });
         
         grid.innerHTML += `
