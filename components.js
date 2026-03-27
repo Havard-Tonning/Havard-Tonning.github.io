@@ -36,14 +36,13 @@ class hamburger extends HTMLElement {
             <span class="menu-close"><i class="fa-solid fa-xmark"></i></span>
             <a href="index.html" style="margin-top: 40px;">Heim</a>
             <a href="mainmap.html">Virtuell guida tur</a>
+            <a href="calendar_front.php">Kalender</a>
             <a href="picktrip.html">Trimturar i området</a>
             <a href="sites.html">Ein kort køyretur unna</a>
             <a href="weather.html">Vêrmelding</a>
             <a href="bus.html">Buss til Briksdalen</a>
             <a href="toilet.html">Offentlege toalett</a>
-            <a href="faq.html">Vanlege spørsmål</a>
-            <a href="comments.html">Digital gjestebok</a>
-            <a href="feedback.html">Gi tilbakemelding til bygda</a>
+            <a href="questions_front.html">Spørsmål og svar</a>
             <a class="auth-btn" style="cursor:pointer;"></a>
         </div>`;
 
