@@ -31,49 +31,49 @@
 
     <div class="calendar-form-wrapper">
     <div class="calendar-form-card">
-        <h1>Add Calendar Event</h1>
+        <h1>Legg til hending</h1>
         <form method="post" action="">
 
             <div class="form-group">
-                <label for="eventName">Name of Event</label>
+                <label for="eventName">Namn på hendinga</label>
                 <input type="text" name="eventName" id="eventName"
                        value="<?php echo htmlspecialchars($eventName); ?>">
             </div>
 
             <div class="form-group">
-                <label for="description">Description</label>
+                <label for="description">Skildring</label>
                 <textarea name="description" id="description"></textarea>
             </div>
 
             <div class="form-group">
-                <label for="eventTime">Time of Event</label>
+                <label for="eventTime">Tidspunkt</label>
                 <input type="datetime-local" name="eventTime" id="eventTime">
             </div>
 
             <div class="form-group">
-                <label for="type">Category</label>
+                <label for="type">Kategori</label>
                 <select name="eventType" id="type">
                     <option value="sport"   <?php if($type=="sport")   echo "selected"; ?>>Sport</option>
-                    <option value="concert" <?php if($type=="concert") echo "selected"; ?>>Concert</option>
-                    <option value="meeting" <?php if($type=="meeting") echo "selected"; ?>>Meeting</option>
+                    <option value="konsert" <?php if($type=="konsert") echo "selected"; ?>>Konsert</option>
+                    <option value="moete" <?php if($type=="moete") echo "selected"; ?>>Møte</option>
                     <option value="basar"   <?php if($type=="basar")   echo "selected"; ?>>Basar</option>
-                    <option value="other"   <?php if($type=="other")   echo "selected"; ?>>Other</option>
+                    <option value="anna"   <?php if($type=="anna")   echo "selected"; ?>>Anna</option>
                 </select>
             </div>
 
             <?php if (!empty($errors)): ?>
-                <div class="error">Please fill in all fields correctly.</div>
+                <div class="error">Venligst fyll ut alle felta.</div>
             <?php endif; ?>
 
             <?php if ($success): ?>
-                <div class="success">Event added successfully!</div>
+                <div class="success">Hending lagt til!</div>
                 <?php
                 header("Location: calendar_front.php");
                 exit();
         ?>
             <?php endif; ?>
 
-            <input type="submit" name="submit" value="Add Event" class="submit-btn">
+            <input type="submit" name="submit" value="Legg til hending" class="submit-btn">
 
         </form>
     </div>

@@ -12,10 +12,10 @@ $success = false;
 
 $categoryMap = [
     "sport"   => 1,
-    "concert" => 2,
-    "meeting" => 3,
+    "konsert" => 2,
+    "moete" => 3,
     "basar"   => 4,
-    "other"   => 5
+    "anna"   => 5
 ];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

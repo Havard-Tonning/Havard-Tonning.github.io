@@ -33,8 +33,8 @@ function renderCalendar(){
     grid.innerHTML = "";
 
     const days = window.innerWidth < 480
-        ? ["M", "T", "W", "T", "F", "S", "S"]
-        : ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+        ? ["M", "T", "O", "T", "F", "L", "S"]
+        : ["Man", "Tys", "Ons", "Tor", "Fre", "Lau", "Søn"];
 
     days.forEach(d => grid.innerHTML += `<div class="weekday">${d}</div>`);
 

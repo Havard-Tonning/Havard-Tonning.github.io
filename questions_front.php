@@ -29,38 +29,38 @@ $loginLink = "login_back.php?return=" . urlencode($currentPage);
         <div class="marginbody">
 
             <div class="qaHeader">
-                <h2><i class="fa-solid fa-circle-question"></i> Questions & Answers</h2>
+                <h2><i class="fa-solid fa-circle-question"></i> Spørsmål og svar</h2>
                 <?php if (isset($_SESSION['username'])): ?>
                     <button class="navButton askBtn" onclick="openAskModal()">
-                        <i class="fa-solid fa-plus"></i> Ask a Question
+                        <i class="fa-solid fa-plus"></i> Spør eit spørsmpål
                     </button>
                 <?php endif; ?>
             </div>
 
             <div id="questionList" class="questionList">
-                <p class="loadingMsg">Loading questions...</p>
+                <p class="loadingMsg">Lastar spørsmål...</p>
             </div>
 
             <div id="questionDetail" class="questionDetail" style="display:none;">
                 <button class="backBtn" onclick="showList()">
-                    <i class="fa-solid fa-arrow-left"></i> Back to questions
+                    <i class="fa-solid fa-arrow-left"></i> Tilbake til spørsmål
                 </button>
                 <div id="detailContent"></div>
 
                 <?php if (isset($_SESSION['username']) && isLocalUser()): ?>
                     <div class="answerFormWrapper">
-                        <h3>Post an Answer</h3>
+                        <h3>Legg til eit svar</h3>
                         <form method="post" action="questions_back.php">
                             <input type="hidden" name="mode" value="answer">
                             <input type="hidden" name="questionID" id="answerQuestionID" value="">
                             <div class="form-group">
                                 <textarea name="answerBody" rows="4"
-                                    placeholder="Write your answer..."></textarea>
+                                    placeholder="Skriv svar..."></textarea>
                             </div>
                             <?php if (!empty($errors) && ($_POST['mode'] ?? '') === 'answer'): ?>
-                                <div class="error">Please write an answer.</div>
+                                <div class="error">Skriv eit svar.</div>
                             <?php endif; ?>
-                            <input type="submit" value="Post Answer" class="submit-btn">
+                            <input type="submit" value="Send svar" class="submit-btn">
                         </form>
                     </div>
                 <?php endif; ?>
@@ -72,27 +72,27 @@ $loginLink = "login_back.php?return=" . urlencode($currentPage);
     <div class="eventModal" id="askModal" onclick="if(event.target==this) closeAskModal()">
         <div class="modalContent">
             <span class="closeModal" onclick="closeAskModal()">&times;</span>
-            <h2>Ask a Question</h2>
+            <h2>Still eit spørsmpål</h2>
             <form method="post" action="questions_back.php">
                 <input type="hidden" name="mode" value="question">
                 <div class="form-group">
-                    <label for="title">Title</label>
+                    <label for="title">Tittel</label>
                     <input type="text" name="title" id="title"
                         placeholder="Short, specific question title"
                         value="<?php echo htmlspecialchars($title ?? ''); ?>">
                 </div>
                 <div class="form-group">
-                    <label for="body">Details</label>
+                    <label for="body">Detaljar</label>
                     <textarea name="body" id="body" rows="5"
                             placeholder="Describe your question in detail..."><?php
                         echo htmlspecialchars($body ?? '');
                     ?></textarea>
                 </div>
                 <?php if (!empty($errors) && ($_POST['mode'] ?? '') === 'question'): ?>
-                    <div class="error">Please fill in all fields.</div>
+                    <div class="error">Fyll inn alle felta.</div>
                 <?php endif; ?>
                 <?php if (($success ?? false) && ($_POST['mode'] ?? '') === 'question'): ?>
-                    <div class="success">Question posted!</div>
+                    <div class="success">Spørsmål stilt.</div>
                 <?php endif; ?>
                 <input type="submit" value="Post Question" class="submit-btn">
             </form>
@@ -102,8 +102,9 @@ $loginLink = "login_back.php?return=" . urlencode($currentPage);
     <?php if (!isset($_SESSION['username'])): ?>
     <div class="login-prompt-wrapper">
         <a href="<?php echo $loginLink; ?>" class="submit-btn">
-            Log in to ask questions
+            Logg in for å stille spørsmål
         </a>
+        <br>
     </div>
 
 <?php endif; ?>

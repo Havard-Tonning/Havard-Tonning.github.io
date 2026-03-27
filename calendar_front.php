@@ -49,7 +49,7 @@
             <?php if(isset($_SESSION["username"]))
                         if(isLocalUser()):?>
                             <a href="calendar_form_front.php">
-                                <i class="fa-solid fa-calendar-plus"></i> Add event
+                                <i class="fa-solid fa-calendar-plus"></i> Legg til hending
                             </a>
                         <?php endif; ?>
         </div>
@@ -58,22 +58,22 @@
     <div class="eventModal" id="eventModal" onclick="if(event.target == this) closeModal()">
         <div class="modalContent">
             <span class="closeModal" onclick="closeModal()">&times;</span>
-            <span class="modalCategory" id="modalCategory">Category</span>
-            <h2 id="modalTitle">Title</h2>
+            <span class="modalCategory" id="modalCategory">Kategori</span>
+            <h2 id="modalTitle">Tittel</h2>
             <div class="eventMeta">
                 <p><i class="fa-solid fa-calendar-day"></i> <span id="modalDate">Date</span></p>
-                <p><i class="fa-solid fa-user-pen"></i>Added by: <span id="modalUser">Username</span></p>
+                <p><i class="fa-solid fa-user-pen"></i>Lagt til av: <span id="modalUser">Username</span></p>
             </div>
-            <p id="modalDescription">Description</p>
+            <p id="modalDescription">Skildring</p>
             <?php if(isset($_SESSION["username"]) && isModerator()): ?>
                 <button id="deleteEventBtn" onclick="deleteCurrentEvent()">
-                <i class="fa-solid fa-trash"></i> Delete
+                <i class="fa-solid fa-trash"></i> Slett
                 </button>
             <?php endif; ?>
         </div>
     </div>
 
-    <a href="calendar_form_back.php" class="addEventLink">Add an event</a>
+    <a href="calendar_form_back.php" class="addEventLink">Legg til hending</a>
     
 <site-footer></site-footer>
 
