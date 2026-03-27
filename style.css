@@ -71,6 +71,39 @@ site-footer {
         background-attachment: fixed;
     }
 
+    .calendarGrid {
+        gap: 2px;
+    }
+
+    .day {
+        min-height: 60px;
+        padding: 2px;
+    }
+
+    .dayNumber {
+        font-size: 0.75rem;
+    }
+
+    .eventItem {
+        font-size: 0.6rem;
+        padding: 1px 3px;
+        border-radius: 3px;
+    }
+
+    .calendarNav h2 {
+        font-size: 0.95rem;
+    }
+
+    .calendarContainer {
+    overflow-x: hidden;
+    width: 100%;
+    }
+
+    .calendarGrid {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
 }
 
 #map {
