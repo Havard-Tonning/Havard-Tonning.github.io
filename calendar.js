@@ -32,44 +32,48 @@ function renderCalendar(){
     const grid = document.getElementById("calendarGrid");
     grid.innerHTML = "";
 
-    const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+    const days = window.innerWidth < 480
+        ? ["M", "T", "W", "T", "F", "S", "S"]
+        : ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
-    days.forEach(d => grid.innerHTML += `<div class = "weekday">${d}</div>`);
+    days.forEach(d => grid.innerHTML += `<div class="weekday">${d}</div>`);
 
     const year = viewDate.getFullYear();
     const month = viewDate.getMonth();
 
-    // JS starts week on Sunday. Sunday has an offset of 6 empty cells, while all others have their weekday minus one
     let firstDay = new Date(year, month, 1).getDay();
-    let startOffset = firstDay === 0 ? 6 : firstDay - 1; 
-
-    // Get the next month, then the 0th of that month, which is the last of the previous one
+    let startOffset = firstDay === 0 ? 6 : firstDay - 1;
     let daysInMonth = new Date(year, month + 1, 0).getDate();
 
-    // Padding the days before the first day of month
     for(let i = 0; i < startOffset; i++){
         grid.innerHTML += `<div class="day otherMonth"></div>`;
     }
 
+    const maxVisible = window.innerWidth < 480 ? 2 : 3;
+
     for(let d = 1; d <= daysInMonth; d++){
-        // Formatting date to ISO standard for comparison. Padding single digit months/days with zeros
         let dateString = `${year}-${String(month + 1).padStart(2, 0)}-${String(d).padStart(2, 0)}`;
         const isToday = new Date().toISOString().split('T')[0] === dateString;
-    
         const dayEvents = events.filter(e => e.date.split(" ")[0] === dateString);
 
-        let eventsHTML ='';
+        let eventsHTML = '';
+        const visible = dayEvents.slice(0, maxVisible);
+        const overflow = dayEvents.length - maxVisible;
 
-        dayEvents.forEach(e=> {
+        visible.forEach(e => {
             eventsHTML += `<div class='eventItem cat-${e.category}' onclick='openModal(${e.id})'>${e.title}</div>`;
         });
-        
+
+        if(overflow > 0){
+            eventsHTML += `<div class='eventOverflow'>+${overflow}</div>`;
+        }
+
         grid.innerHTML += `
             <div class="day ${isToday ? 'today' : ''}">
-                <span class="dayNumber">${d}</span>
-                <span class="eventContainer"> ${eventsHTML}</span>
+                <span class="dayNumber ${isToday ? 'todayNumber' : ''}">${d}</span>
+                <div class="eventContainer">${eventsHTML}</div>
             </div>
-        `;    
+        `;
     }
 }
     function renderList(){
