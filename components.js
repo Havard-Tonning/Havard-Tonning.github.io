@@ -44,7 +44,7 @@ class hamburger extends HTMLElement {
             <a href="faq.html">Vanlege spørsmål</a>
             <a href="comments.html">Digital gjestebok</a>
             <a href="feedback.html">Gi tilbakemelding til bygda</a>
-            <a class="logout-btn" style="cursor:pointer;">Logg ut</a>
+            <a class="auth-btn" style="cursor:pointer;"></a>
         </div>`;
 
         this.querySelector('.menu-close').addEventListener('click', () => {
@@ -52,11 +52,24 @@ class hamburger extends HTMLElement {
             document.querySelector('.ham-menu')?.classList.remove('active');
         });
 
-        this.querySelector('.logout-btn').addEventListener('click', () => {
-            fetch('logout.php').then(() => {
-                window.location.href = 'index.html';
+        fetch('auth_status.php')
+            .then(r => r.json())
+            .then(data => {
+                const btn = this.querySelector('.auth-btn');
+                if(data.loggedIn){
+                    btn.innerText = 'Logg ut';
+                    btn.addEventListener('click', () => {
+                        fetch('logout.php').then(() => {
+                            window.location.href = 'index.html';
+                        });
+                    });
+                } else {
+                    btn.innerText = 'Logg inn';
+                    btn.addEventListener('click', () => {
+                        window.location.href = 'login.php';
+                    });
+                }
             });
-        });
     }
 }
 

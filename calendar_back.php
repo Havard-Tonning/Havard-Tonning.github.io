@@ -76,7 +76,6 @@
             ];
         }
 
-
         $stmt->close();
         $conn->close();    
 
