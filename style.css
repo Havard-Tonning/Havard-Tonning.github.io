@@ -694,6 +694,38 @@ max-height: 180px;
     background-color: transparent;
 }
 
+@media (min-width: 768px) {
+    .dayNumber {
+        font-size: 1rem;
+    }
+
+    .todayNumber {
+        width: 28px;
+        height: 28px;
+        font-size: 0.95rem;
+    }
+
+    .eventItem {
+        font-size: 0.78rem;
+        padding: 2px 6px;
+        border-radius: 4px;
+    }
+
+    .eventOverflow {
+        font-size: 0.75rem;
+    }
+
+    .weekday {
+        font-size: 0.85rem;
+        padding: 6px 0;
+    }
+
+    .day {
+        min-height: 90px;
+        padding: 4px;
+    }
+}
+
 .cat-Ship {
     background: #70a288 !important;
 }
