@@ -101,7 +101,7 @@ $loginLink = "login_back.php?return=" . urlencode($currentPage);
 
     <?php if (!isset($_SESSION['username'])): ?>
     <div class="login-prompt-wrapper">
-        <a href="<?php echo $loginLink; ?>" class="submit-btn" style="text-decoration: none; display: inline-block; text-align: center;">
+        <a href="<?php echo $loginLink; ?>" class="submit-btn">
             Log in to ask questions
         </a>
     </div>
