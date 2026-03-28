@@ -42,7 +42,7 @@ class hamburger extends HTMLElement {
             <a href="weather.html">Vêrmelding</a>
             <a href="bus.html">Buss til Briksdalen</a>
             <a href="toilet.html">Offentlege toalett</a>
-            <a href="questions_front.html">Spørsmål og svar</a>
+            <a href="questions_front.php">Spørsmål og svar</a>
             <a class="auth-btn" style="cursor:pointer;"></a>
         </div>`;
 

@@ -9,6 +9,29 @@ if (!empty($_SERVER['QUERY_STRING'])) {
     $currentPage .= '?' . $_SERVER['QUERY_STRING'];
 }
 
+if (!function_exists('isModerator')) {
+    include 'db.php';
+    function getRoleNum($username) {
+        $conn = createConn();
+        $sql  = "SELECT RoleNum FROM Users WHERE Username = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $stmt->bind_result($roleNum);
+        $stmt->fetch();
+        $conn->close();
+        return $roleNum ?? 0;
+    }
+    function isModerator() {
+        if (!isset($_SESSION['username'])) return false;
+        return getRoleNum($_SESSION['username']) == 3;
+    }
+    function isLocalUser() {
+        if (!isset($_SESSION['username'])) return false;
+        return getRoleNum($_SESSION['username']) == 2;
+    }
+}
+
 $loginLink = "login_back.php?return=" . urlencode($currentPage);
 ?>
 <!DOCTYPE html>
@@ -32,7 +55,7 @@ $loginLink = "login_back.php?return=" . urlencode($currentPage);
                 <h2><i class="fa-solid fa-circle-question"></i> Spørsmål og svar</h2>
                 <?php if (isset($_SESSION['username'])): ?>
                     <button class="navButton askBtn" onclick="openAskModal()">
-                        <i class="fa-solid fa-plus"></i> Spør eit spørsmpål
+                        <i class="fa-solid fa-plus"></i> Still eit spørsmål
                     </button>
                 <?php endif; ?>
             </div>
