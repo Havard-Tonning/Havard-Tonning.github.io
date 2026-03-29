@@ -19,13 +19,13 @@
     <title>Calendar Form</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <script src="https://kit.fontawesome.com/e065bf0659.js" crossorigin="anonymous"></script>
     <script src="components.js"></script>
 </head>
 <body>
     <g-tag></g-tag>
-    <main-header lang="en"></main-header>
+    <main-header></main-header>
     <hamburger-menu></hamburger-menu>
     <form method="post" action=""> 
 

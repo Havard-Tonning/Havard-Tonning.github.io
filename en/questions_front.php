@@ -40,12 +40,12 @@ $loginLink = "login_back.php?return=" . urlencode($currentPage);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Q&A</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <script src="https://kit.fontawesome.com/e065bf0659.js" crossorigin="anonymous"></script>
     <script src="components.js"></script>
 </head>
 <body>
-    <main-header lang="no"></main-header>
+    <main-header></main-header>
     <hamburger-menu></hamburger-menu>
 
     <div class="roundedbody qa">
