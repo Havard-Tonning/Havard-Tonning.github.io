@@ -13,5 +13,5 @@ window.onload = function() {
     // Force recalculate after custom elements have rendered
     setTimeout(() => {
         swiper.update();
-    }, 300);
+    }, 2000);
 }
