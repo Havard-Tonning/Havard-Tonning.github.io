@@ -9,4 +9,9 @@ window.onload = function() {
         observer: true,
         observeParents: true,
     });
+
+    // Force recalculate after custom elements have rendered
+    setTimeout(() => {
+        swiper.update();
+    }, 300);
 }
