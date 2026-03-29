@@ -19,38 +19,38 @@
             <form method="post" action="">
 
                 <div class="form-group">
-                    <label for="username">Namn</label>
+                    <label for="username">Name</label>
                     <input type="text" name="username" id="username" value="<?php echo htmlspecialchars($username); ?>">
-                    <?php if(in_array("UserError", $errors)) echo '<span class="error">Brukernamn må vere minst tre karakterar langt, og kun nytte engelske karakterar.</span>'; ?>
-                    <?php if(in_array("UniqueUsername", $errors)) echo '<span class="error">Brukernamn allereie tatt.</span>'; ?>
+                    <?php if(in_array("UserError", $errors)) echo '<span class="error">Username must be at least three characters long and must only contain English letters.</span>'; ?>
+                    <?php if(in_array("UniqueUsername", $errors)) echo '<span class="error">Username is already taken.</span>'; ?>
                 </div>
 
                 <div class="form-group">
-                    <label for="password">Passord</label>
+                    <label for="password">Password</label>
                     <input type="password" name="password" id="password" value="<?php echo htmlspecialchars($password); ?>">
-                    <?php if(in_array("PassError", $errors)) echo '<span class="error">Passord må vere minst åtte karakterarm med tre nummer.</span>'; ?>
+                    <?php if(in_array("PassError", $errors)) echo '<span class="error">Password must be at least eight characters long, with at least three digits.</span>'; ?>
                 </div>
 
                 <div class="form-group">
-                    <label for="password2">Gjenta passord</label>
+                    <label for="password2">Retype Password</label>
                     <input type="password" name="password2" id="password2" value="<?php echo htmlspecialchars($password2); ?>">
-                    <?php if(in_array("MatchError", $errors)) echo '<span class="error">Passorda er ulike.</span>'; ?>
+                    <?php if(in_array("MatchError", $errors)) echo '<span class="error">Passwords don\'t match.</span>'; ?>
                 </div>
 
                 <div class="form-group">
-                    <label for="email">Epost</label>
+                    <label for="email">Email</label>
                     <input type="email" name="email" id="email" value="<?php echo htmlspecialchars($email); ?>">
-                    <?php if(in_array("EmailError", $errors)) echo '<span class="error">Ugyldig epost.</span>'; ?>
-                    <?php if(in_array("UniqueEmail", $errors)) echo '<span class="error">Epost allereie i bruk.</span>'; ?>
+                    <?php if(in_array("EmailError", $errors)) echo '<span class="error">Invalid email.</span>'; ?>
+                    <?php if(in_array("UniqueEmail", $errors)) echo '<span class="error">Email already in use.</span>'; ?>
                 </div>
 
                 <div class="form-group">
-                    <label for="type">Er du lokal, eller på besøk?</label>
+                    <label for="type">Are you local or visiting?</label>
                     <select name="type" id="type">
-                        <option value="local" <?php if($type == "local") echo "selected"; ?>>Lokal</option>
-                        <option value="visiting" <?php if($type == "visiting") echo "selected"; ?>>På besøk</option>
+                        <option value="local" <?php if($type == "local") echo "selected"; ?>>Local</option>
+                        <option value="visiting" <?php if($type == "visiting") echo "selected"; ?>>Visiting</option>
                     </select>
-                    <?php if(in_array("TypeError", $errors)) echo '<span class="error">Du må velge eit alternativ.</span>'; ?>
+                    <?php if(in_array("TypeError", $errors)) echo '<span class="error">You must select an option.</span>'; ?>
                 </div>
 
                 <?php if($localFlag == true): ?>
@@ -65,13 +65,13 @@
                 </div>
                 <?php endif; ?>
 
-                <input type="submit" name="submit" value="Send skjema" class="submit-btn">
+                <input type="submit" name="submit" value="Submit Form" class="submit-btn">
 
-                <?php if($success == true) echo '<div class="success">Vellukka registrering!</div>'; ?>
+                <?php if($success == true) echo '<div class="success">Registration successful!</div>'; ?>
 
             </form>
         </div>
-        <a href="login_back.php" class="other-btn">Har du allereie ein konto? Logg inn her.</a>
+        <a href="login_back.php" class="other-btn">Already have an account? Click here to log in.</a>
     </div>
 </body>
 </html>
