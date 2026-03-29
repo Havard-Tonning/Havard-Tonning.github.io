@@ -291,7 +291,7 @@ a{
 .roundedbody {
     position: relative;
     z-index: 5;
-    margin-top: -40px; /* Pulls the white section over the bottom of the image */
+    margin-top: -10px; 
     background: white;
     border-radius: 20px 20px 0 0;
     padding: 20px;
