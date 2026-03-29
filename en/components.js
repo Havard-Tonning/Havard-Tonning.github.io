@@ -84,10 +84,10 @@ class mainHeader extends HTMLElement {
             <div class="ham-menu"> 
                 <i class="fa-solid fa-bars"></i>
             </div>
-            <a href="../${filename}">
-                <div class="disactive-lang">No</div>
-            </a>
-            <div class="active-lang">En</div>
+            <div class="languages">
+                <a href="../${filename}"><div class="disactive-lang">No</div></a>
+                <div class="active-lang">En</div>
+            </div>
         </header>`;
 
         const hamMenu = this.querySelector('.ham-menu');
