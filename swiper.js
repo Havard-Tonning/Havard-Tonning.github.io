@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+window.onload = function() {
     const swiper = new Swiper('.swiper', {
         direction: 'horizontal',
         loop: true,
@@ -7,4 +7,4 @@ document.addEventListener('DOMContentLoaded', function() {
             prevEl: '.swiper-button-prev',
         }
     });
-});
+}
