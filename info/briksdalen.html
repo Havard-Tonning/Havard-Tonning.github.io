@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Briksdalen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+    <script src="https://kit.fontawesome.com/e065bf0659.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+
+<body>
+    <g-tag></g-tag>
+    <main-header></main-header>
+    <hamburger-menu></hamburger-menu>
+
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img class="swiper_image" src="./images/info_bd2.jpg"></div>
+            <div class="swiper-slide"><img class="swiper_image" src="./images/info_bd1.jpg"></div>
+            <div class="swiper-slide"><img class="swiper_image" src="./images/info_bd3.jpg"></div>
+            <div class="swiper-slide"><img class="swiper_image" src="./images/info_bd4.jpg"></div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+    <div class="roundedbody">
+        <div class="marginbody">
+            <h1>Briksdalen</h1>
+            <p>
+                <ul>
+                    <li>Briksdal, med Briksdalsbreen, i Oldedalen</li>
+                    <li>Ca 350 000 besøkande kvar sommar</li>
+                    <li>Sesong April - Oktober</li>
+                    <li>Trollbil tur til breen (Må forehandsbestillast)</li>
+                    <li>Kafeteria/Restaurant og overnatting</li>
+                    <li>Store P-plassasr og gode toalettfasilitetar</li>
+                    <li>EL lading</li>
+                </ul>
+            </p>
+            <a class="visitUs" href="briksdal.no">
+                Besøk oss på nettet
+            </a>
+    </div>
+
+        <div style="margin-top: 30px;">Her finn du oss:</div>
+        <div id="briksdalen_info_map" class="maps" style="height: 400px; border-radius: 5px;"></div>
+</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+
+    <script src="../swiper.js"></script>
+    <script src="../index.js"></script>
+    <script src="../components.js"></script>
+   
+    <site-footer></site-footer>
+</body>
+</html>

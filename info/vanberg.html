@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vanberg</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+    <script src="https://kit.fontawesome.com/e065bf0659.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+
+<body>
+    <g-tag></g-tag>
+    <main-header></main-header>
+    <hamburger-menu></hamburger-menu>
+
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img class="swiper_image" src="./images/vangberg.jpg"></div>
+            <div class="swiper-slide"><img class="swiper_image" src="./images/vangberg2.jpg"></div>
+            <div class="swiper-slide"><img class="swiper_image" src="./images/vangberg3.jpg"></div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+    <div class="roundedbody">
+        <div class="marginbody">
+            <h1>Vanberg Hytter</h1>
+            <p>
+                Vanberg hytter har drevet med turisme, hytter
+                og utleie som tilleggsnæring på gården siden
+                slutten av 60-tallet. I dag har vi tre hytter, ett hus
+                og en leilighet som vi leier ut. Hyttene er
+                sommerhytter som kun kan leies i
+                sommermånedene. Leiligheten og huset kan
+                leies større deler av året. Alt ligger skjermet med
+                eget uteområde og god avstand til nabohusene.
+            </p>
+            <a class="visitUs" href="ellivan.no/properties">
+                Besøk oss på nettet
+            </a>
+    </div>
+
+        <div style="margin-top: 30px;">Her finn du oss:</div>
+        <div id="vanberg_map" class="maps" style="height: 400px; border-radius: 5px;"></div>
+</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+
+    <script src="../swiper.js"></script>
+    <script src="../index.js"></script>
+    <script src="../components.js"></script>
+   
+    <site-footer></site-footer>
+</body>
+</html>

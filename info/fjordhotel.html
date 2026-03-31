@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Olden Fjordhotel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+    <script src="https://kit.fontawesome.com/e065bf0659.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+
+<body>
+    <g-tag></g-tag>
+    <main-header></main-header>
+    <hamburger-menu></hamburger-menu>
+
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img class="swiper_image" src="./images/fjordhotel6.jpg"></div>
+            <div class="swiper-slide"><img class="swiper_image" src="./images/fjordhotel1.jpg"></div>
+            <div class="swiper-slide"><img class="swiper_image" src="./images/fjordhotel2.jpg"></div>
+            <div class="swiper-slide"><img class="swiper_image" src="./images/fjordhotel3.jpg"></div>
+            <div class="swiper-slide"><img class="swiper_image" src="./images/fjordhotel4.jpg"></div>
+            <div class="swiper-slide"><img class="swiper_image" src="./images/fjordhotel5.jpg"></div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+    <div class="roundedbody">
+        <div class="marginbody">
+            <h1>Olden Fjordhotel</h1>
+            <p>
+                Olden Fjordhotel er eit klassisk og sjarmerande hotell vakkert plassert ved Nordfjorden. Her
+                bur du komfortabelt ved fjorden, i rom med balkong og utsikt mot det mektige
+                fjordlandskapet. Hotellet har en restaurant med panoramautsikt, ein nostalgisk bar og eit
+                historisk diskotek som gir opphaldet ei heilt eiga atmosfære.
+                <br><br>
+                Med Olden Fjordhotel som base
+                kan du enkelt utforske naturen og opplevingane i regionen. Etter ein dag på tur er hotellet ein
+                perfekt stad å vende tilbake til – for god mat, avslappande omgjevnader og utsikt over fjorden.
+                </p>
+
+            <a class="visitUs" href="https://www.instagram.com/oldenfjordhotel">
+                Besøk vår Instagram
+            </a>
+            <br>
+            <a class="visitUs" href="https://www.oldenfjordhotel.no">
+                Besøk oss på nettet
+            </a>
+    </div>
+
+        <div style="margin-top: 30px;">Her finn du oss:</div>
+        <div id="fjordhotel_map" class="maps" style="height: 400px; border-radius: 5px;"></div>
+</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+
+    <script src="../swiper.js"></script>
+    <script src="../index.js"></script>
+    <script src="../components.js"></script>
+   
+    <site-footer></site-footer>
+</body>
+</html>

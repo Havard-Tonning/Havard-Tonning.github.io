@@ -69,12 +69,10 @@ site-footer {
         background-position: center;
         background-attachment: fixed;
     }
-
-
 }
 
 #map {
-    height: 89%;
+    height: calc(100vh - 175px);
     width: 100%;
     border-radius: 5px;
 }
@@ -159,12 +157,33 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+}
 
+.picdiv.shd{
+    text-shadow: 1px 1px 10px #000000;
+}
+
+@media (min-width: 768px) {
+    .tripgrid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        padding: 16px;
+    }
+
+    .trippic {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+    }
 }
 
 .trippic{
     height: 400px;
+    width: 100%;
     z-index: 1;
+    object-fit: cover;
 }
 
 .pictext {
@@ -241,7 +260,6 @@ a{
     align-items: center;
     justify-content: space-between;
   }
-
 
   .icon {
     font-size: 1.5rem;
@@ -1206,4 +1224,15 @@ a.submit-btn {
     justify-content: center;
     text-decoration: none;
     box-sizing: border-box; 
+}
+
+.visitUs{
+    height: 70px; 
+    background-color: #3A7EC9; 
+    border-radius: 20px; 
+    color: white; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    font-size: large;
 }

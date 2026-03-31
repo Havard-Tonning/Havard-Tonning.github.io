@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Skogstad Sport</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+    <script src="https://kit.fontawesome.com/e065bf0659.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+
+<body>
+    <g-tag></g-tag>
+    <main-header></main-header>
+    <hamburger-menu></hamburger-menu>
+
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img class="swiper_image" src="./images/skogstad1.jpg"></div>
+            <div class="swiper-slide"><img class="swiper_image" src="./images/skogstad2.jpg"></div>
+            <div class="swiper-slide"><img class="swiper_image" src="./images/skogstad3.jpg"></div>
+            <div class="swiper-slide"><img class="swiper_image" src="./images/skogstad4.jpg"></div>
+            <div class="swiper-slide"><img class="swiper_image" src="./images/skogstad5.jpg"></div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+    <div class="roundedbody">
+        <div class="marginbody">
+            <h1>Skogstad Sport</h1>
+            <p>
+               Hos Skogstad finner du sport- og friluftsklær av høy kvalitet til hele familien. Vi har høyt fokus på miljø, design og funksjonalitet til fornuftige priser.
+                <br><br>
+                Vår butikk i Olden tilbyr sesongens kolleksjoner med et bredt utvalg til både barn, dame og herre. For deg som trenger tekniske kvalitetsplagg tilpasset ulike aktiviteter og værforhold, uavhengig om det er til sesongens fjellturer eller til det urbane byliv.
+                <br><br>
+                Olden har også en egen outlet butikk som holder sommeråpent. Her finner du utgåtte modeller og farger fra tidligere kolleksjoner, til svært reduserte priser.
+                <br>
+            </p>
+                <a class="visitUs" href="https://skogstadsport.no/">
+                    Besøk oss på nettet
+                </a>
+    </div>
+        <div style="margin-top: 30px;">Her finn du oss:</div>
+        <div id="skogstad_map" class="maps" style="height: 400px; border-radius: 5px;"></div>
+</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+
+    <script src="../swiper.js"></script>
+    <script src="../index.js"></script>
+    <script src="../components.js"></script>
+   
+    <site-footer></site-footer>
+</body>
+</html>

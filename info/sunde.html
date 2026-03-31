@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sundekiosken</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+    <script src="https://kit.fontawesome.com/e065bf0659.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+
+<body>
+    <g-tag></g-tag>
+    <main-header></main-header>
+    <hamburger-menu></hamburger-menu>
+
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img class="swiper_image" src="./images/sunde1.jpg"></div>
+            <div class="swiper-slide"><img class="swiper_image" src="./images/sunde2.jpg"></div>
+            <div class="swiper-slide"><img class="swiper_image" src="./images/sunde3.jpg"></div>
+            <div class="swiper-slide"><img class="swiper_image" src="./images/sunde4.jpg"></div>
+            <div class="swiper-slide"><img class="swiper_image" src="./images/sunde5.jpg"></div>
+            <div class="swiper-slide"><img class="swiper_image" src="./images/sunde6.jpg"></div>
+            <div class="swiper-slide"><img class="swiper_image" src="./images/sunde7.jpg"></div>
+
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+    <div class="roundedbody">
+        <div class="marginbody">
+            <h1>Sundekiosken</h1>
+            <p>
+                Sundekiosken i Olden tilbyr både dagligvarer og smakfull mat i hyggelige omgivelser. 
+                I tillegg til et godt utvalg matvarer har vi en restaurant med deilige retter inspirert av det asiatiske og filippinske kjøkken. 
+                Nyt maten i våre hyggelige lokaler, eller ta den med som take-away. 
+                Et perfekt stopp for bade fastboende og reisende som ønsker god mat og vennlig service i hjertet av Olden.
+                </p>
+
+            <br>
+            <a class="visitUs" href="https://www.facebook.com/p/Sunde-Kiosken-Olden-100075778826426/?locale=nb_NO">
+                Besøk oss på nettet
+            </a>
+    </div>
+
+        <div style="margin-top: 30px;">Her finn du oss:</div>
+        <div id="sunde_map" class="maps" style="height: 400px; border-radius: 5px;"></div>
+</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+
+    <script src="../swiper.js"></script>
+    <script src="../index.js"></script>
+    <script src="../components.js"></script>
+   
+    <site-footer></site-footer>
+</body>
+</html>
