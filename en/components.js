@@ -7,7 +7,7 @@ class SiteFooter extends HTMLElement {
         &copy;2026 All rights reserved
         <br>
         Questions? Contact <a href="mailto:havard@iolden.no" style="color: rgb(203, 234, 255)">havard@iolden.no</a>
-        </footer>`; 
+        </footer>`;
     }
 }
 
@@ -30,12 +30,13 @@ class gtagElement extends HTMLElement {
 }
 
 class hamburger extends HTMLElement {
-    connectedCallback(){
+    connectedCallback() {
         this.innerHTML = `
         <div class="menu-content">
             <span class="menu-close"><i class="fa-solid fa-xmark"></i></span>
             <a href="index.html" style="margin-top: 40px;">Home</a>
             <a href="mainmap.html">Virtual guided tour</a>
+            <a href="calendar_front.php">Calendar</a>
             <a href="picktrip.html">Hikes in the area</a>
             <a href="sites.html">A short drive away</a>
             <a href="weather.html">Weather</a>
@@ -54,7 +55,7 @@ class hamburger extends HTMLElement {
             .then(r => r.json())
             .then(data => {
                 const btn = this.querySelector('.auth-btn');
-                if(data.loggedIn){
+                if (data.loggedIn) {
                     btn.innerText = 'Log out';
                     btn.addEventListener('click', () => {
                         fetch('logout.php').then(() => {
@@ -98,7 +99,36 @@ class mainHeader extends HTMLElement {
     }
 }
 
+
+class altMainHeader extends HTMLElement {
+    connectedCallback() {
+        let path = window.location.pathname;
+        let filename = path.split("/").pop() || "index.html";
+
+        this.innerHTML = `
+        <header class="main-header">
+            <a href="index.html">
+                <img class="logoimg" src="images/logo3.png" alt="">
+            </a>    
+            <div class="ham-menu"> 
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="languages">
+                <a href="../../info/${filename}"><div class="disactive-lang">No</div></a>
+                <div class="active-lang">En</div>
+            </div>
+        </header>`;
+
+        const hamMenu = this.querySelector('.ham-menu');
+        hamMenu.addEventListener('click', () => {
+            const menuContent = document.querySelector('.menu-content');
+            if (menuContent) menuContent.classList.add('active');
+        });
+    }
+}
+
 customElements.define('site-footer', SiteFooter);
 customElements.define('g-tag', gtagElement);
 customElements.define('hamburger-menu', hamburger);
 customElements.define('main-header', mainHeader);
+customElements.define('info-header', altMainHeader);

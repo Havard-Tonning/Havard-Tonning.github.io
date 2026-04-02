@@ -326,7 +326,7 @@ L.marker([61.74095025385795, 6.791149855441869], {icon: icons.camping})
 
     locationControl.onAdd = function(map) {
         var div = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
-        div.innerHTML = '<a href="#" title="Show my location" role="button" aria-label="Show my location" style="display: flex; align-items: center; justify-content: center; width: 30px; height: 30px; background-color: white; text-decoration: none; color: black; font-size: 18px;"><i class="fa-solid fa-map-pin"></i></a>';
+        div.innerHTML = '<a href="#" title="Vis din posisjon" role="button" aria-label="Vis din posisjon" style="display: flex; align-items: center; justify-content: center; width: 30px; height: 30px; background-color: white; text-decoration: none; color: black; font-size: 18px;"><i class="fa-solid fa-map-pin"></i></a>';
         
         div.onclick = function() {
             map.locate({
@@ -390,7 +390,7 @@ if (vanberg_map) {
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(amap);
     
-    L.marker([61.85860437934231, 6.767902005551665]).addTo(amap).bindPopup("Vanberg Hytter");
+    L.marker([61.85860437934231, 6.767902005551665]).addTo(amap).bindPopup("Vanberg Cabins");
 }
 
 const ljos_map = document.getElementById('ljos_map');
@@ -489,8 +489,8 @@ if (aabrekk_map) {
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(amap);
     
-    L.marker([61.67911432283224, 6.815869210536484]).addTo(amap).bindPopup("Kafé");
-    L.marker([61.67821684927461, 6.813822979973412]).addTo(amap).bindPopup("Hytter");
+    L.marker([61.67911432283224, 6.815869210536484]).addTo(amap).bindPopup("Café");
+    L.marker([61.67821684927461, 6.813822979973412]).addTo(amap).bindPopup("Cabins");
 
 }
 
@@ -502,7 +502,7 @@ if (flaaten_map) {
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(amap);
     
-    L.marker([61.75732649403623, 6.808569237792529]).addTo(amap).bindPopup("Flåten Feriehytter");
+    L.marker([61.75732649403623, 6.808569237792529]).addTo(amap).bindPopup("Flåten Vacation Cabins");
 }
 
 const farm_map = document.getElementById('farm_map');

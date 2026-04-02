@@ -99,7 +99,36 @@ class mainHeader extends HTMLElement {
     }
 }
 
+class altMainHeader extends HTMLElement {
+    connectedCallback() {
+        let path = window.location.pathname;
+        let filename = path.split("/").pop() || "index.html";
+
+        this.innerHTML = `
+        <header class="main-header">
+            <a href="index.html">
+                <img class="logoimg" src="images/logo3.png" alt="">
+            </a>    
+            <div class="ham-menu"> 
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="languages">
+                <div class="active-lang">No</div>
+                <a href="../en/info/${filename}"><div class="disactive-lang">En</div></a>
+            </div>
+        </header>`;
+
+        const hamMenu = this.querySelector('.ham-menu');
+        hamMenu.addEventListener('click', () => {
+            const menuContent = document.querySelector('.menu-content');
+            if (menuContent) menuContent.classList.add('active');
+        });
+    }
+}
+
+
 customElements.define('site-footer', SiteFooter);
 customElements.define('g-tag', gtagElement);
 customElements.define('hamburger-menu', hamburger);
 customElements.define('main-header', mainHeader);
+customElements.define('info-header', altMainHeader);
