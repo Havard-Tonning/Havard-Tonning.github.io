@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Discover Olden</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+    <script src="https://kit.fontawesome.com/e065bf0659.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+
+<body>
+    <g-tag></g-tag>
+    <main-header></main-header>
+    <hamburger-menu></hamburger-menu>
+
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img class="swiper_image" src="../../info/images/discover1.jpg"></div>
+            <div class="swiper-slide"><img class="swiper_image" src="../../info/images/discover2.jpg"></div>
+            <div class="swiper-slide"><img class="swiper_image" src="../../info/images/discover3.jpg"></div>
+            <div class="swiper-slide"><img class="swiper_image" src="../../info/images/discover4.jpg"></div>
+            <div class="swiper-slide"><img class="swiper_image" src="../../info/images/discover5.jpg"></div>
+            <div class="swiper-slide"><img class="swiper_image" src="../../info/images/discover5.jpg"></div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+    <div class="roundedbody">
+        <div class="marginbody">
+            <h1>Discover Olden</h1>
+            <p>
+                We are a local family-run company, founded in 2014. We are proud of our five-star rating on TripAdvisor, Google and other platforms.
+                <br><br>
+                To maintain our high quality, we only accept small groups - and let you escape the crowds. All guides are top-rated.
+
+            <ul>
+                <li>Away from crowds, in fresh air</li>
+                <li>Local lunch by the fjord</li>
+                <li>Great guide - like having a friend show you around</li>
+                <li>Free high-quality photos included</li>
+                <li>Calm fjord - safe and perfect for beginners</li>
+                <li>Small groups (usually 4-8 people)</li>
+                <li>Single or double kayaks. Family friendly</li>
+                <li>The tour takes place rain or sunshine</li>
+            </ul>
+            </p>
+            <a class="visitUs" href="olden1.no">
+                Book a kayak tour with us
+            </a>
+        </div>
+        <div style="margin-top: 30px;">You find us here:</div>
+        <div id="discover_map" class="maps" style="height: 400px; border-radius: 5px;"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+
+    <script src="../../swiper.js"></script>
+    <script src="../index.js"></script>
+    <script src="../components.js"></script>
+
+    <site-footer></site-footer>
+</body>
+
+</html>

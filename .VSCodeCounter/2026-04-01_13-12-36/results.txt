@@ -1,0 +1,176 @@
+Date : 2026-04-01 13:12:36
+Directory : c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io
+Total : 142 files,  10294 codes, 124 comments, 1625 blanks, all 12043 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| HTML       |         90 |      4,350 |          9 |        674 |      5,033 |
+| JavaScript |         21 |      3,030 |         93 |        400 |      3,523 |
+| PHP        |         28 |      1,802 |         22 |        359 |      2,183 |
+| PostCSS    |          2 |      1,092 |          0 |        190 |      1,282 |
+| YAML       |          1 |         20 |          0 |          2 |         22 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++--------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                           | files      | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                              |        142 |     10,294 |        124 |      1,625 |     12,043 |
+| . (Files)                                                                                                                      |         55 |      5,320 |         91 |        890 |      6,301 |
+| .github                                                                                                                        |          1 |         20 |          0 |          2 |         22 |
+| .github\workflows                                                                                                              |          1 |         20 |          0 |          2 |         22 |
+| en                                                                                                                             |         54 |      3,500 |         33 |        565 |      4,098 |
+| info                                                                                                                           |         28 |      1,442 |          0 |        168 |      1,610 |
+| qr                                                                                                                             |          4 |         12 |          0 |          0 |         12 |
++--------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++--------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                                                       | language   | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\.github\workflows\deploycPanel.yml | YAML       |         20 |          0 |          2 |         22 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\auth_status.php                    | PHP        |          5 |          0 |          0 |          5 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\briksdalen.html                    | HTML       |         53 |          0 |          5 |         58 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\bus.css                            | PostCSS    |         34 |          0 |         10 |         44 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\bus.html                           | HTML       |         35 |          0 |          8 |         43 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\bus.js                             | JavaScript |        228 |          1 |         31 |        260 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\calendar.js                        | JavaScript |        117 |          0 |         33 |        150 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\calendar_back.php                  | PHP        |         78 |          0 |         17 |         95 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\calendar_form_back.php             | PHP        |         72 |          0 |         17 |         89 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\calendar_form_front.php            | PHP        |         69 |          0 |         14 |         83 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\calendar_front.php                 | PHP        |         97 |          0 |         12 |        109 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\components.js                      | JavaScript |         96 |          0 |          9 |        105 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\db.php                             | PHP        |         16 |          2 |          3 |         21 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\auth_status.php                 | PHP        |          5 |          0 |          0 |          5 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\briksdalen.html                 | HTML       |         54 |          0 |          9 |         63 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\briksdalen.js                   | JavaScript |        131 |          0 |          6 |        137 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\bus.html                        | HTML       |         36 |          0 |          5 |         41 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\calendar.js                     | JavaScript |        116 |          0 |         33 |        149 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\calendar_back.php               | PHP        |         92 |          0 |         18 |        110 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\calendar_form_back.php          | PHP        |         72 |          0 |         17 |         89 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\calendar_form_front.php         | PHP        |         69 |          0 |         14 |         83 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\calendar_front.php              | PHP        |         97 |          0 |         12 |        109 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\components.js                   | JavaScript |         95 |          0 |          9 |        104 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\db.php                          | PHP        |         16 |          2 |          3 |         21 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\faq.html                        | HTML       |        105 |          0 |         19 |        124 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\feedback.html                   | HTML       |         24 |          0 |          3 |         27 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\fjordhotel.html                 | HTML       |         50 |          0 |          7 |         57 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\food.html                       | HTML       |         37 |          3 |          7 |         47 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\food.js                         | JavaScript |         46 |          0 |         11 |         57 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\gamlekyrkja.html                | HTML       |         61 |          0 |          9 |         70 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\huaren.html                     | HTML       |         50 |          0 |         10 |         60 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\huaren.js                       | JavaScript |        133 |          0 |          6 |        139 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\index.html                      | HTML       |         57 |          0 |         17 |         74 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\index.js                        | JavaScript |        186 |         18 |         35 |        239 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\kjenndalen.html                 | HTML       |         56 |          0 |          8 |         64 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\kjenndalen.js                   | JavaScript |        160 |          0 |          8 |        168 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\lauki.html                      | HTML       |         54 |          0 |          7 |         61 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\laukisetra.html                 | HTML       |         50 |          0 |         11 |         61 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\laukisetra.js                   | JavaScript |         61 |          0 |          3 |         64 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\login_back.php                  | PHP        |         36 |          0 |         13 |         49 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\login_front.php                 | PHP        |         36 |          0 |          6 |         42 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\logout.php                      | PHP        |          7 |          0 |          0 |          7 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\mainmap.html                    | HTML       |         21 |          0 |          7 |         28 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\molla.html                      | HTML       |         52 |          0 |          8 |         60 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\nykyrkje.html                   | HTML       |         68 |          0 |         19 |         87 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\picktrip.html                   | HTML       |         36 |          0 |          8 |         44 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\questions.js                    | JavaScript |        158 |          0 |         12 |        170 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\questions_back.php              | PHP        |        122 |          0 |         20 |        142 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\questions_fetch.php             | PHP        |         80 |          0 |         22 |        102 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\questions_front.php             | PHP        |        127 |          0 |         16 |        143 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\register_back.php               | PHP        |         83 |          9 |         28 |        120 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\register_front.php              | PHP        |         66 |          0 |         11 |         77 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\singer-food.html                | HTML       |         51 |          0 |         11 |         62 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\singerheimen.html               | HTML       |         59 |          0 |          9 |         68 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\sites.html                      | HTML       |         36 |          0 |          8 |         44 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\skarstein.html                  | HTML       |         50 |          0 |          9 |         59 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\skarstein.js                    | JavaScript |         79 |          0 |          3 |         82 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\skred.html                      | HTML       |         45 |          0 |          8 |         53 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\skylift.html                    | HTML       |         50 |          0 |          8 |         58 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\skylift.js                      | JavaScript |         64 |          0 |          3 |         67 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\stabukk.html                    | HTML       |         52 |          0 |          7 |         59 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\strand.html                     | HTML       |         49 |          0 |          6 |         55 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\sundekiosken.html               | HTML       |         48 |          0 |          7 |         55 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\toilet.html                     | HTML       |         27 |          0 |          7 |         34 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\toilet.js                       | JavaScript |         12 |          0 |          8 |         20 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\weather.html                    | HTML       |         22 |          1 |          6 |         29 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\en\yris.html                       | HTML       |         51 |          0 |          8 |         59 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\faq.html                           | HTML       |         85 |          0 |         13 |         98 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\faq.js                             | JavaScript |         17 |          0 |          3 |         20 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\fjordhotel.html                    | HTML       |         50 |          0 |          4 |         54 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\food.html                          | HTML       |         38 |          0 |          5 |         43 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\food.js                            | JavaScript |          0 |         59 |          0 |         59 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\gamlekyrkja.html                   | HTML       |         60 |          0 |         13 |         73 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\hamburger.js                       | JavaScript |         10 |          0 |          2 |         12 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\huaren.html                        | HTML       |         52 |          0 |          7 |         59 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\index.html                         | HTML       |         61 |          5 |         17 |         83 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\index.js                           | JavaScript |      1,146 |         11 |        169 |      1,326 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\info\aabrekk.html                  | HTML       |         71 |          0 |          7 |         78 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\info\apartments.html               | HTML       |         48 |          0 |          5 |         53 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\info\briksdalen.html               | HTML       |         54 |          0 |          6 |         60 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\info\bunnpris.html                 | HTML       |         48 |          0 |          5 |         53 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\info\discover.html                 | HTML       |         60 |          0 |          6 |         66 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\info\farm.html                     | HTML       |         51 |          0 |          7 |         58 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\info\fjordbua.html                 | HTML       |         48 |          0 |          5 |         53 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\info\fjordhotel.html               | HTML       |         59 |          0 |          7 |         66 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\info\flaaten.html                  | HTML       |         51 |          0 |          7 |         58 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\info\gryta.html                    | HTML       |         60 |          0 |          6 |         66 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\info\index.html                    | HTML       |          3 |          0 |          0 |          3 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\info\isabella.html                 | HTML       |         48 |          0 |          5 |         53 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\info\ljos.html                     | HTML       |         55 |          0 |          6 |         61 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\info\muri_hytter.html              | HTML       |         53 |          0 |          6 |         59 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\info\olden_active.html             | HTML       |         53 |          0 |          8 |         61 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\info\olden_adventure.html          | HTML       |         52 |          0 |          6 |         58 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\info\olden_camping.html            | HTML       |         61 |          0 |          6 |         67 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\info\olden_sauna.html              | HTML       |         56 |          0 |         12 |         68 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\info\olden_souvenir.html           | HTML       |         48 |          0 |          5 |         53 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\info\olden_taxi.html               | HTML       |         43 |          0 |          6 |         49 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\info\riccovero.html                | HTML       |         53 |          0 |          5 |         58 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\info\singerheimen.html             | HTML       |         64 |          0 |          7 |         71 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\info\skogstad.html                 | HTML       |         52 |          0 |          5 |         57 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\info\stabukk.html                  | HTML       |         48 |          0 |          5 |         53 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\info\sunde.html                    | HTML       |         53 |          0 |          8 |         61 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\info\trollshop.html                | HTML       |         48 |          0 |          5 |         53 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\info\vanberg.html                  | HTML       |         52 |          0 |          6 |         58 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\info\viking.html                   | HTML       |         50 |          0 |          6 |         56 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\kjenndalen.html                    | HTML       |         56 |          0 |          7 |         63 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\lauki.html                         | HTML       |         54 |          0 |          8 |         62 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\laukisetra.html                    | HTML       |         50 |          0 |         11 |         61 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\login_back.php                     | PHP        |         36 |          0 |         13 |         49 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\login_front.php                    | PHP        |         36 |          0 |          6 |         42 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\logout.php                         | PHP        |          7 |          0 |          0 |          7 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\mainmap.html                       | HTML       |         21 |          0 |          5 |         26 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\molla.html                         | HTML       |         52 |          0 |          8 |         60 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\nykyrkje.html                      | HTML       |         68 |          0 |         12 |         80 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\pick_accommodation.html            | HTML       |         74 |          0 |         15 |         89 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\pick_stores.html                   | HTML       |         80 |          0 |         18 |         98 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\pick_tour.html                     | HTML       |         74 |          0 |         17 |         91 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\picktrip.html                      | HTML       |         38 |          0 |          4 |         42 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\qr\qr-kaia.html                    | HTML       |          3 |          0 |          0 |          3 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\qr\qr-kråka.html                   | HTML       |          3 |          0 |          0 |          3 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\qr\qr-sentrum.html                 | HTML       |          3 |          0 |          0 |          3 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\qr\qr.html                         | HTML       |          3 |          0 |          0 |          3 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\questions.js                       | JavaScript |        158 |          0 |         12 |        170 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\questions_back.php                 | PHP        |        122 |          0 |         20 |        142 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\questions_fetch.php                | PHP        |         80 |          0 |         22 |        102 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\questions_front.php                | PHP        |        127 |          0 |         16 |        143 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\register_back.php                  | PHP        |         83 |          9 |         28 |        120 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\register_front.php                 | PHP        |         66 |          0 |         11 |         77 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\singer-food.html                   | HTML       |         52 |          0 |          6 |         58 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\singerheimen.html                  | HTML       |         59 |          0 |          7 |         66 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\sites.html                         | HTML       |         38 |          0 |          6 |         44 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\skarstein.html                     | HTML       |         49 |          0 |         10 |         59 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\skred.html                         | HTML       |         45 |          0 |          5 |         50 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\skylift.html                       | HTML       |         50 |          0 |         10 |         60 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\stabukk.html                       | HTML       |         53 |          0 |          4 |         57 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\strand.html                        | HTML       |         49 |          0 |          6 |         55 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\style.css                          | PostCSS    |      1,058 |          0 |        180 |      1,238 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\sundekiosken.html                  | HTML       |         48 |          0 |          6 |         54 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\swiper.js                          | JavaScript |         17 |          4 |          4 |         25 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\toilet.html                        | HTML       |         27 |          0 |          7 |         34 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\weather.html                       | HTML       |         22 |          0 |          6 |         28 |
+| c:\Users\Bruker\OneDrive - Vestland fylkeskommune\Documents\GitHub\Havard-Tonning.github.io\yris.html                          | HTML       |         52 |          0 |          8 |         60 |
+| Total                                                                                                                          |            |     10,294 |        124 |      1,625 |     12,043 |
++--------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+

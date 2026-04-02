@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vanberg</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+    <script src="https://kit.fontawesome.com/e065bf0659.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+
+<body>
+    <g-tag></g-tag>
+    <main-header></main-header>
+    <hamburger-menu></hamburger-menu>
+
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img class="swiper_image" src="../../info/images/vangberg.jpg"></div>
+            <div class="swiper-slide"><img class="swiper_image" src="../../info/images/vangberg2.jpg"></div>
+            <div class="swiper-slide"><img class="swiper_image" src="../../info/images/vangberg3.jpg"></div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+    <div class="roundedbody">
+        <div class="marginbody">
+            <h1>Vanberg Hytter</h1>
+            <p>
+                Vanberg Hytter has been operating with tourism, cabins
+                and rentals as an additional business on the farm since
+                the late 60s. Today we have three cabins, one house
+                and an apartment that we rent out. The cabins are
+                summer cabins that can only be rented in
+                the summer months. The apartment and the house can
+                be rented for most of the year. Everything is sheltered with
+                its own outdoor area and a good distance from neighboring houses.
+            </p>
+            <a class="visitUs" href="ellivan.no/properties">
+                Visit us online
+            </a>
+        </div>
+
+        <div style="margin-top: 30px;">You can find us here:</div>
+        <div id="vanberg_map" class="maps" style="height: 400px; border-radius: 5px;"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+
+    <script src="../../swiper.js"></script>
+    <script src="../index.js"></script>
+    <script src="../components.js"></script>
+
+    <site-footer></site-footer>
+</body>
+
+</html>

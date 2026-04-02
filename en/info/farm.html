@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Olden Farm</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+    <script src="https://kit.fontawesome.com/e065bf0659.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+
+<body>
+    <g-tag></g-tag>
+    <main-header></main-header>
+    <hamburger-menu></hamburger-menu>
+
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img class="swiper_image" src="../../info/images/farm4.jpg"></div>
+            <div class="swiper-slide"><img class="swiper_image" src="../../info/images/farm1.jpg"></div>
+            <div class="swiper-slide"><img class="swiper_image" src="../../info/images/farm2.jpg"></div>
+            <div class="swiper-slide"><img class="swiper_image" src="../../info/images/farm3.jpg"></div>
+            <div class="swiper-slide"><img class="swiper_image" src="../../info/images/farm5.jpg"></div>
+            <div class="swiper-slide"><img class="swiper_image" src="../../info/images/farm6.jpg"></div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+    <div class="roundedbody">
+        <div class="marginbody">
+            <h1>Olden Farm</h1>
+            <p>
+                Visit our old cluster farm in the heart of Olden. Here you can explore authentic houses from the 18th century and enjoy the tranquility of the farm.
+Meet the animals, join in the feeding, and discover what life on the farm was like hundreds of years ago.
+We offer guided tours with fascinating stories from both the farm and Olden.
+<br><br>
+</p>
+<a class="visitUs" href="https://www.oldenfarm.no/welcome">
+Visit us online
+                </a>
+
+    </div>
+
+        <div style="margin-top: 30px;">You find us here</div>
+        <div id="farm_map" class="maps" style="height: 400px; border-radius: 5px;"></div>
+</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+
+    <script src="../../swiper.js"></script>
+    <script src="../index.js"></script>
+    <script src="../components.js"></script>
+   
+    <site-footer></site-footer>
+</body>
+</html>
