@@ -1,11 +1,24 @@
 const mapElement = document.getElementById('map');
 if (mapElement) {
 
-    var map = L.map('map', {zoomControl: false}).setView([61.82913342266096, 6.806796286220201], 14);
+    var map = L.map('map', {
+        zoomControl: false
+    }).setView([61.82913342266096, 6.806796286220201], 14);
 
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: ''
     }).addTo(map);
+
+    const sponsoredControl = L.control({
+        position: 'bottomleft'
+    });
+    sponsoredControl.onAdd = function() {
+        const div = L.DomUtil.create('div', 'leaflet-control');
+        div.innerHTML = 'Black tags contain sponsored listings';
+        div.style.cssText = 'background:white; padding: 3px 6px; font-size: 10px; opacity: 0.8; border-top-right-radius: 3px; margin: 0;';
+        return div;
+    };
+    sponsoredControl.addTo(map);
 
     // create a red polyline from an array of LatLng points
     var latlngs = [
@@ -41,7 +54,7 @@ if (mapElement) {
         [61.823960754227784, 6.802841696181773],
         [61.82343763237603, 6.8025067581713206],
         [61.823011828937446, 6.8025711693271775],
-        [61.822354863472604, 6.802828813950601],      
+        [61.822354863472604, 6.802828813950601],
         [61.822330875973435, 6.802858073491995],
         [61.821365701899616, 6.804703535919273],
         [61.82136321001993, 6.804703433099487],
@@ -96,7 +109,9 @@ if (mapElement) {
         [61.835230448567664, 6.805423001262164]
     ];
 
-    var polyline = L.polyline(latlngs, {color: 'red'}).addTo(map);
+    var polyline = L.polyline(latlngs, {
+        color: 'red'
+    }).addTo(map);
 
     var latlngs2 = [
         [61.843105042128514, 6.811016007011299],
@@ -104,214 +119,294 @@ if (mapElement) {
         [61.84281811824503, 6.81125547993921],
         [61.84259593175304, 6.811113132932271],
         [61.842277289403626, 6.810932461736519],
-        [61.84185443727406, 6.810917862042929], 
+        [61.84185443727406, 6.810917862042929],
         [61.8415805706659, 6.811156932016824],
         [61.841446220118264, 6.811363152674601],
-        [61.841300673023, 6.811560248535604],    
+        [61.841300673023, 6.811560248535604],
         [61.84112842704919, 6.8116606214244175],
         [61.84089761592857, 6.811757344394814],
-        [61.84064699442269, 6.811806618360511],    
+        [61.84064699442269, 6.811806618360511],
         [61.840466132270414, 6.811784718819411],
         [61.84003550380865, 6.811602222661659],
         [61.83973406028508, 6.811421551469055],
         [61.83946017474255, 6.811290154232342],
         [61.83940160770326, 6.811279204461255],
         [61.839192315762574, 6.811310228809573],
-        [61.83909757408329, 6.811324828502589], 
+        [61.83909757408329, 6.811324828502589],
         [61.838991635313405, 6.811323003538368],
         [61.83878750836257, 6.811301103995624],
-        [61.83855495701501, 6.811224455606968],    
+        [61.83855495701501, 6.811224455606968],
         [61.83832584914906, 6.811114957908136],
         [61.838118272499045, 6.8109123871676385],
-        [61.838194068283535, 6.810441547073438],  
+        [61.838194068283535, 6.810441547073438],
     ];
 
-    var polyline2 = L.polyline(latlngs2, {color: '#3a7ec9'}).addTo(map);
+    var polyline2 = L.polyline(latlngs2, {
+        color: '#3a7ec9'
+    }).addTo(map);
 
-function makeIcon(emoji) {
-    const svg = `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 50'>
+    function makeIcon(emoji) {
+        const svg = `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 50'>
         <path d='M20 0 C9 0 0 9 0 20 C0 35 20 50 20 50 C20 50 40 35 40 20 C40 9 31 0 20 0Z' fill='#1a1a2e' opacity='0.85'/>
         <text x='20' y='27' text-anchor='middle' font-size='18'>${emoji}</text>
     </svg>`;
-    return L.icon({
-        iconUrl: 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg),
-        iconSize: [32, 40],
-        iconAnchor: [16, 40],
-        popupAnchor: [0, -42],
-    });
-}
+        return L.icon({
+            iconUrl: 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg),
+            iconSize: [32, 40],
+            iconAnchor: [16, 40],
+            popupAnchor: [0, -42],
+        });
+    }
 
-function makeWhiteIcon(emoji) {
-    const svg = `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 50'>
+    function makeWhiteIcon(emoji) {
+        const svg = `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 50'>
         <path d='M20 0 C9 0 0 9 0 20 C0 35 20 50 20 50 C20 50 40 35 40 20 C40 9 31 0 20 0Z' fill='#ffffff' opacity='0.85'/>
         <text x='20' y='27' text-anchor='middle' font-size='18'>${emoji}</text>
     </svg>`;
-    return L.icon({
-        iconUrl: 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg),
-        iconSize: [40, 50],
-        iconAnchor: [20, 50],
-        popupAnchor: [0, -52],
+        return L.icon({
+            iconUrl: 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg),
+            iconSize: [40, 50],
+            iconAnchor: [20, 50],
+            popupAnchor: [0, -52],
+        });
+    }
+
+    const icons = {
+        accommodation: makeIcon('🛏️'),
+        camping: makeIcon('⛺'),
+        adventure: makeIcon('🧭'),
+        store: makeIcon('🛍️'),
+        food: makeIcon('🍽️'),
+        wellness: makeIcon('🧖'),
+        hike: makeIcon('🥾'),
+        main: makeWhiteIcon('⭕')
+    };
+
+
+    L.marker([61.83573157084586, 6.805100560216835], {
+            icon: icons.main
+        }).addTo(map)
+        .bindPopup("<a href='strand.html'><H3>Norway's smallest and coldest beach</H3><p>2.5 meters wide and an average temperature of around 6 degrees.</p><img src='../images/strand.jpg' class='popup-image'></a>");
+
+    L.marker([61.834191786195206, 6.805654369769167], {
+            icon: icons.main
+        }).addTo(map)
+        .bindPopup('<a href="gamlekyrkja.html"><H3>Olden Gamle Kyrkje</H3><p>A cross church from 1759, built on the same site as a stave church from the 14th century.</p><img src="../images/OldenGamleKyrkje.jpg" class="popup-image"></a>');
+
+    L.marker([61.83198400514617, 6.801277627125196], {
+            icon: icons.main
+        }).addTo(map)
+        .bindPopup("<a href='skred.html'><H3>Håskreda</H3><p>Every year a large avalanche thunders down the mountainside. Some years the village is covered by a cloud of snow.</p><img src='../images/haskreda.jpg' class='popup-image'></a>")
+
+    L.marker([61.82756413293129, 6.808309705339039], {
+            icon: icons.main
+        }).addTo(map)
+        .bindPopup("<a href='nykyrkje.html'><H3>Olden Nye Kyrkje</H3><p>A long church from 1934. Note the wires that tie the church to the ground to prevent it from blowing away.</p><img src='../images/OldenNyeKyrkje.jpg' class='popup-image'></a>");
+
+    L.marker([61.818087067146614, 6.810325979689476], {
+            icon: icons.main
+        }).addTo(map)
+        .bindPopup("<a href='lauki.html'><H3>Laukifossen</H3><p>A beautiful waterfall that is also used for power generation.</p><img src='../images/laukifossen.jpg' class='popup-image'></a>");
+
+    L.marker([61.832533331352266, 6.81289993511424], {
+            icon: icons.main
+        }).addTo(map)
+        .bindPopup("<a href='singerheimen.html'><H3>Singerheimen</H3><p>A collection of beautiful buildings built by billionaire Willam Singer in 1921. Today protected through use.</p><img src='../images/singerheimen.jpg' class='popup-image'></a>");
+
+    L.marker([61.85855378132025, 6.832809190327688], {
+            icon: icons.hike
+        }).addTo(map)
+        .bindPopup("<a href='huaren.html'><H3>Huaren</H3><p>Family-friendly tour with great views.</p><img src='../images/huaren.jpg' class='popup-image'> <style='opacity:0'></a>");
+
+    L.marker([61.84875878015604, 6.771772936299873], {
+            icon: icons.hike
+        }).addTo(map)
+        .bindPopup("<a href='skarstein.html'><H3>Skarsteinsetra</H3><p>Family-friendly hike up to a beautiful seat with a view of the fjord.</p><img src='../images/skarstein.jpg' class='popup-image'> <style='opacity:0'></a>");
+
+    // Sponsored tags
+    // Stabukk
+    L.marker([61.83514629201231, 6.80473671906396], {
+            icon: icons.food
+        })
+        .addTo(map)
+        .bindPopup("<a href='./info/stabukk.html'><H3>Stabukk</H3><p>Café with ice cream and coffee</p><img src='../../info/images/placeholder.png' class='popup-image'> <style='opacity:0'></a>");
+
+    // Isabella
+    L.marker([61.83945710069584, 6.809481206796373], {
+            icon: icons.adventure
+        })
+        .addTo(map)
+        .bindPopup("<a href='./info/isabella.html'><H3>Isabella</H3><p>Go fishing on the crystal clear fjord</p><img src='../../info/images/placeholder.png' class='popup-image'> <style='opacity:0'></a>");
+
+    // Olden Taxi
+    L.marker([61.8440950197931, 6.812049007972068], {
+            icon: icons.adventure
+        })
+        .addTo(map)
+        .bindPopup("<a href='./info/olden_taxi.html'><H3>Olden Taxi</H3><p>Your transport. On your terms</p><img src='../../info/images/taxi.jpg' class='popup-image'> <style='opacity:0'></a>");
+
+    // Bunnpris
+    L.marker([61.83525424656778, 6.804800555021214], {
+            icon: icons.store
+        })
+        .addTo(map)
+        .bindPopup("<a href='./info/bunnpris.html'><H3>Bunnpris</H3><p>Local grocery store with a wide selection and friendly staff</p><img src='../../info/images/placeholder.png' class='popup-image'> <style='opacity:0'></a>");
+
+    // Olden Apartments
+    L.marker([61.835241835095, 6.804609916147261], {
+            icon: icons.accommodation
+        })
+        .addTo(map)
+        .bindPopup("<a href='./info/apartments.html'><H3>Olden Apartments</H3><p>Beautiful apartments right by the Olde river</p><img src='../../info/images/placeholder.png' class='popup-image'> <style='opacity:0'></a>");
+
+    // Briksdalen
+    L.marker([61.663243698719754, 6.822264708197644], {
+            icon: icons.adventure
+        })
+        .addTo(map)
+        .bindPopup("<a href='./info/briksdalen.html'><H3>Briksdalen</H3><p>Spectacular nature at the Briksdal glacier</p><img src='../../info/images/info_bd3.jpg' class='popup-image'> <style='opacity:0'></a>");
+
+    // Vanberg Hytter
+    L.marker([61.85860437934231, 6.767902005551665], {
+            icon: icons.accommodation
+        })
+        .addTo(map)
+        .bindPopup("<a href='./info/vanberg.html'><H3>Vanberg Cabins</H3><p>Cosy cabins with a beautiful view of the fjord</p><img src='../../info/images/vangberg.jpg' class='popup-image'> <style='opacity:0'></a>");
+
+    // Ljós
+    L.marker([61.843338644393654, 6.811956255183239], {
+            icon: icons.store
+        })
+        .addTo(map)
+        .bindPopup("<a href='./info/ljos.html'><H3>Ljós</H3><p>Handcrafted quality products</p><img src='../../info/images/ljos1.jpg' class='popup-image'> <style='opacity:0'></a>");
+
+    // Olden Adventure
+    L.marker([61.84271884019358, 6.810757925733879], {
+            icon: icons.adventure
+        })
+        .addTo(map)
+        .bindPopup("<a href='./info/olden_adventure.html'><H3>Olden Adventure</H3><p>Exciting activities for the whole family</p><img src='../../info/images/adventure1.jpeg' class='popup-image'> <style='opacity:0'></a>");
+
+    // Olden Camping
+    L.marker([61.7388721323572, 6.789532930089874], {
+            icon: icons.camping
+        })
+        .addTo(map)
+        .bindPopup("<a href='./info/olden_camping.html'><H3>Olden Camping</H3><p>Family-friendly camping by Lake Olden</p><img src='../../info/images/oldencamping6.jpg' class='popup-image'> <style='opacity:0'></a>");
+
+    // The Viking Shop
+    L.marker([61.83475925136581, 6.805342694945899], {
+            icon: icons.store
+        })
+        .addTo(map)
+        .bindPopup("<a href='./info/viking.html'><H3>The Viking Shop</H3><p>Souvenirs and Norwegian specialities</p><img src='../../info/images/viking2.jpeg' class='popup-image'> <style='opacity:0'></a>");
+
+    // Singerheimen
+    L.marker([61.83297613686762, 6.8146693722710263], {
+            icon: icons.accommodation
+        })
+        .addTo(map)
+        .bindPopup("<a href='./info/singerheimen.html'><H3>Singerheimen</H3><p>Historic accommodation with charm and history</p><img src='../../info/images/singer2.jpg' class='popup-image'> <style='opacity:0'></a>");
+
+    // Olden Fjordhotel
+    L.marker([61.84823079426946, 6.814474679106876], {
+            icon: icons.accommodation
+        })
+        .addTo(map)
+        .bindPopup("<a href='./info/fjordhotel.html'><H3>Olden Fjord Hotel</H3><p>Classic fjord hotel with panoramic views</p><img src='../../info/images/fjordhotel1.jpg' class='popup-image'> <style='opacity:0'></a>");
+
+    // Olden Active
+    L.marker([61.84259220003629, 6.810708937466418], {
+            icon: icons.adventure
+        })
+        .addTo(map)
+        .bindPopup("<a href='./info/olden_active.html'><H3>Olden Active</H3><p>Guided tours and world-class nature experiences</p><img src='../../info/images/active1.jpg' class='popup-image'> <style='opacity:0'></a>");
+
+    // Sundekiosken
+    L.marker([61.84183231203744, 6.811405718967407], {
+            icon: icons.food
+        })
+        .addTo(map)
+        .bindPopup("<a href='./info/sunde.html'><H3>Sundekiosken</H3><p>Street food with Norwegian classics and tasty Thai dishes</p><img src='../../info/images/sunde1.jpg' class='popup-image'> <style='opacity:0'></a>");
+
+    // Aabrekk Kafé
+    L.marker([61.67911432283224, 6.815869210536484], {
+            icon: icons.food
+        })
+        .addTo(map)
+        .bindPopup("<a href='./info/aabrekk.html'><H3>Aabrekk Café</H3><p>Homely café with local dishes</p><img src='../../info/images/aabrekk1.jpg' class='popup-image'> <style='opacity:0'></a>");
+
+    // Aabrekk Hytter
+    L.marker([61.67821684927461, 6.813822979973412], {
+            icon: icons.accommodation
+        })
+        .addTo(map)
+        .bindPopup("<a href='./info/aabrekk.html'><H3>Aabrekk Cabins</H3><p>Spacious cabins in beautiful nature near Briksdalen</p><img src='../../info/images/aabrekk2.jpg' class='popup-image'> <style='opacity:0'></a>");
+
+    // Flåten Feriehytter
+    L.marker([61.75732649403623, 6.808569237792529], {
+            icon: icons.accommodation
+        })
+        .addTo(map)
+        .bindPopup("<a href='./info/flaaten.html'><H3>Flåten Holiday Cabins</H3><p>Idyllic holiday cabins by the lake</p><img src='../../info/images/flaaten4.png' class='popup-image'> <style='opacity:0'></a>");
+
+    // Olden Farm
+    L.marker([61.82741634975917, 6.814167637414622], {
+            icon: icons.adventure
+        })
+        .addTo(map)
+        .bindPopup("<a href='./info/farm.html'><H3>Olden Farm</H3><p>Experience authentic farm life</p><img src='../../info/images/farm2.jpg' class='popup-image'> <style='opacity:0'></a>");
+
+    // Fjordblikk Hytter
+    L.marker([61.845129914010165, 6.817369782609704], {
+            icon: icons.accommodation
+        })
+        .addTo(map)
+        .bindPopup("<a href='./info/muri_hytter.html'><H3>Fjordblikk Cabins</H3><p>Cosy cabins with stunning fjord views</p><img src='../../info/images/muri1.jpg' class='popup-image'> <style='opacity:0'></a>");
+
+    // Skogstad Olden
+    L.marker([61.83548622483675, 6.8069284010959], {
+            icon: icons.store
+        })
+        .addTo(map)
+        .bindPopup("<a href='./info/skogstad.html'><H3>Skogstad Olden</H3><p>Quality clothing for the Norwegian outdoors</p><img src='../../info/images/skogstad1.jpg' class='popup-image'> <style='opacity:0'></a>");
+
+    // Riccovero
+    L.marker([61.837158157963835, 6.8095992788072035], {
+            icon: icons.store
+        })
+        .addTo(map)
+        .bindPopup("<a href='./info/riccovero.html'><H3>Riccovero</H3><p>Tailoring heritage meets innovative design</p><img src='../../info/images/riccovero1.jpg' class='popup-image'> <style='opacity:0'></a>");
+
+    // Olden Sauna
+    L.marker([61.757301445985966, 6.810304052446991], {
+            icon: icons.wellness
+        })
+        .addTo(map)
+        .bindPopup("<a href='./info/olden_sauna.html'><H3>Olden Sauna</H3><p>Relaxation and wellbeing right by the water</p><img src='../../info/images/badstue2.jpeg' class='popup-image'> <style='opacity:0'></a>");
+
+    // Discover Olden
+    L.marker([61.866150314662946, 6.73004665169674], {
+            icon: icons.adventure
+        })
+        .addTo(map)
+        .bindPopup("<a href='./info/discover.html'><H3>Discover Olden</H3><p>Your guide to the best experiences in Olden</p><img src='../../info/images/discover1.jpg' class='popup-image'> <style='opacity:0'></a>");
+
+    // Gryta Camping
+    L.marker([61.74095025385795, 6.791149855441869], {
+            icon: icons.camping
+        })
+        .addTo(map)
+        .bindPopup("<a href='./info/gryta.html'><H3>Gryta Camping</H3><p>Natural and peaceful camping by Lake Olden</p><img src='../../info/images/gryta1.jpg' class='popup-image'> <style='opacity:0'></a>");
+
+    var locationControl = L.control({
+        position: 'topleft'
     });
-}
-
-const icons = {
-    accommodation: makeIcon('🛏️'),
-    camping:       makeIcon('⛺'),
-    adventure:     makeIcon('🧭'),
-    store:         makeIcon('🛍️'),
-    food:          makeIcon('🍽️'),
-    wellness:      makeIcon('🧖'),
-    hike:          makeIcon('🥾'),
-    main:          makeWhiteIcon('⭕')
-};
-
-
-L.marker([61.83573157084586, 6.805100560216835], {icon: icons.main}).addTo(map)
-.bindPopup("<a href='strand.html'><H3>Norway's smallest and coldest beach</H3><p>2.5 meters wide and an average temperature of around 6 degrees.</p><img src='../images/strand.jpg' class='popup-image'></a>");
-
-L.marker([61.834191786195206, 6.805654369769167], {icon: icons.main}).addTo(map) 
-.bindPopup('<a href="gamlekyrkja.html"><H3>Olden Gamle Kyrkje</H3><p>A cross church from 1759, built on the same site as a stave church from the 14th century.</p><img src="../images/OldenGamleKyrkje.jpg" class="popup-image"></a>');
-
-L.marker([61.83198400514617, 6.801277627125196], {icon: icons.main}).addTo(map) 
-.bindPopup("<a href='skred.html'><H3>Håskreda</H3><p>Every year a large avalanche thunders down the mountainside. Some years the village is covered by a cloud of snow.</p><img src='../images/haskreda.jpg' class='popup-image'></a>")
-
-L.marker([61.82756413293129, 6.808309705339039], {icon: icons.main}).addTo(map) 
-.bindPopup("<a href='nykyrkje.html'><H3>Olden Nye Kyrkje</H3><p>A long church from 1934. Note the wires that tie the church to the ground to prevent it from blowing away.</p><img src='../images/OldenNyeKyrkje.jpg' class='popup-image'></a>");
-
-L.marker([61.818087067146614, 6.810325979689476], {icon: icons.main}).addTo(map)
-.bindPopup("<a href='lauki.html'><H3>Laukifossen</H3><p>A beautiful waterfall that is also used for power generation.</p><img src='../images/laukifossen.jpg' class='popup-image'></a>");
-
-L.marker([61.832533331352266, 6.81289993511424], {icon: icons.main}).addTo(map)
-.bindPopup("<a href='singerheimen.html'><H3>Singerheimen</H3><p>A collection of beautiful buildings built by billionaire Willam Singer in 1921. Today protected through use.</p><img src='../images/singerheimen.jpg' class='popup-image'></a>");
-
-L.marker([61.85855378132025, 6.832809190327688], {icon: icons.hike}).addTo(map) 
-.bindPopup("<a href='huaren.html'><H3>Huaren</H3><p>Family-friendly tour with great views.</p><img src='../images/huaren.jpg' class='popup-image'> <style='opacity:0'></a>");
-
-L.marker([61.84875878015604, 6.771772936299873], {icon: icons.hike}).addTo(map)
-.bindPopup("<a href='skarstein.html'><H3>Skarsteinsetra</H3><p>Family-friendly hike up to a beautiful seat with a view of the fjord.</p><img src='../images/skarstein.jpg' class='popup-image'> <style='opacity:0'></a>");
-
-// Sponsored tags
-// Stabukk
-L.marker([61.83514629201231, 6.80473671906396], {icon: icons.food})
-    .addTo(map)
-    .bindPopup("<a href='./info/stabukk.html'><H3>Stabukk</H3><p>Café with ice cream and coffee</p><img src='../../info/images/placeholder.png' class='popup-image'> <style='opacity:0'></a>");
-
-// Bunnpris
-L.marker([61.83525424656778, 6.804800555021214], {icon: icons.store})
-    .addTo(map)
-    .bindPopup("<a href='./info/bunnpris.html'><H3>Bunnpris</H3><p>Local grocery store with a wide selection and friendly staff</p><img src='../../info/images/placeholder.png' class='popup-image'> <style='opacity:0'></a>");
-
-// Olden Apartments
-L.marker([61.835241835095, 6.804609916147261], {icon: icons.accommodation})
-    .addTo(map)
-    .bindPopup("<a href='./info/apartments.html'><H3>Olden Apartments</H3><p>Beautiful apartments right by the Olde river</p><img src='../../info/images/placeholder.png' class='popup-image'> <style='opacity:0'></a>");
-
-// Briksdalen
-L.marker([61.663243698719754, 6.822264708197644], {icon: icons.adventure})
-    .addTo(map)
-    .bindPopup("<a href='./info/briksdalen.html'><H3>Briksdalen</H3><p>Spectacular nature at the Briksdal glacier</p><img src='../../info/images/info_bd3.jpg' class='popup-image'> <style='opacity:0'></a>");
-
-// Vanberg Hytter
-L.marker([61.85860437934231, 6.767902005551665], {icon: icons.accommodation})
-    .addTo(map)
-    .bindPopup("<a href='./info/vanberg.html'><H3>Vanberg Cabins</H3><p>Cosy cabins with a beautiful view of the fjord</p><img src='../../info/images/vangberg.jpg' class='popup-image'> <style='opacity:0'></a>");
-
-// Ljós
-L.marker([61.843338644393654, 6.811956255183239], {icon: icons.store})
-    .addTo(map)
-    .bindPopup("<a href='./info/ljos.html'><H3>Ljós</H3><p>Handcrafted quality products</p><img src='../../info/images/ljos1.jpg' class='popup-image'> <style='opacity:0'></a>");
-
-// Olden Adventure
-L.marker([61.84271884019358, 6.810757925733879], {icon: icons.adventure})
-    .addTo(map)
-    .bindPopup("<a href='./info/olden_adventure.html'><H3>Olden Adventure</H3><p>Exciting activities for the whole family</p><img src='../../info/images/adventure1.jpeg' class='popup-image'> <style='opacity:0'></a>");
-
-// Olden Camping
-L.marker([61.7388721323572, 6.789532930089874], {icon: icons.camping})
-    .addTo(map)
-    .bindPopup("<a href='./info/olden_camping.html'><H3>Olden Camping</H3><p>Family-friendly camping by Lake Olden</p><img src='../../info/images/oldencamping6.jpg' class='popup-image'> <style='opacity:0'></a>");
-
-// The Viking Shop
-L.marker([61.83475925136581, 6.805342694945899], {icon: icons.store})
-    .addTo(map)
-    .bindPopup("<a href='./info/viking.html'><H3>The Viking Shop</H3><p>Souvenirs and Norwegian specialities</p><img src='../../info/images/viking2.jpeg' class='popup-image'> <style='opacity:0'></a>");
-
-// Singerheimen
-L.marker([61.83297613686762, 6.8146693722710263], {icon: icons.accommodation})
-    .addTo(map)
-    .bindPopup("<a href='./info/singerheimen.html'><H3>Singerheimen</H3><p>Historic accommodation with charm and history</p><img src='../../info/images/singer2.jpg' class='popup-image'> <style='opacity:0'></a>");
-
-// Olden Fjordhotel
-L.marker([61.84823079426946, 6.814474679106876], {icon: icons.accommodation})
-    .addTo(map)
-    .bindPopup("<a href='./info/fjordhotel.html'><H3>Olden Fjord Hotel</H3><p>Classic fjord hotel with panoramic views</p><img src='../../info/images/fjordhotel1.jpg' class='popup-image'> <style='opacity:0'></a>");
-
-// Olden Active
-L.marker([61.84259220003629, 6.810708937466418], {icon: icons.adventure})
-    .addTo(map)
-    .bindPopup("<a href='./info/olden_active.html'><H3>Olden Active</H3><p>Guided tours and world-class nature experiences</p><img src='../../info/images/active1.jpg' class='popup-image'> <style='opacity:0'></a>");
-
-// Sundekiosken
-L.marker([61.84183231203744, 6.811405718967407], {icon: icons.food})
-    .addTo(map)
-    .bindPopup("<a href='./info/sunde.html'><H3>Sundekiosken</H3><p>Street food with Norwegian classics and tasty Thai dishes</p><img src='../../info/images/sunde1.jpg' class='popup-image'> <style='opacity:0'></a>");
-
-// Aabrekk Kafé
-L.marker([61.67911432283224, 6.815869210536484], {icon: icons.food})
-    .addTo(map)
-    .bindPopup("<a href='./info/aabrekk.html'><H3>Aabrekk Café</H3><p>Homely café with local dishes</p><img src='../../info/images/aabrekk1.jpg' class='popup-image'> <style='opacity:0'></a>");
-
-// Aabrekk Hytter
-L.marker([61.67821684927461, 6.813822979973412], {icon: icons.accommodation})
-    .addTo(map)
-    .bindPopup("<a href='./info/aabrekk.html'><H3>Aabrekk Cabins</H3><p>Spacious cabins in beautiful nature near Briksdalen</p><img src='../../info/images/aabrekk2.jpg' class='popup-image'> <style='opacity:0'></a>");
-
-// Flåten Feriehytter
-L.marker([61.75732649403623, 6.808569237792529], {icon: icons.accommodation})
-    .addTo(map)
-    .bindPopup("<a href='./info/flaaten.html'><H3>Flåten Holiday Cabins</H3><p>Idyllic holiday cabins by the lake</p><img src='../../info/images/flaaten4.png' class='popup-image'> <style='opacity:0'></a>");
-
-// Olden Farm
-L.marker([61.82741634975917, 6.814167637414622], {icon: icons.adventure})
-    .addTo(map)
-    .bindPopup("<a href='./info/farm.html'><H3>Olden Farm</H3><p>Experience authentic farm life</p><img src='../../info/images/farm2.jpg' class='popup-image'> <style='opacity:0'></a>");
-
-// Fjordblikk Hytter
-L.marker([61.845129914010165, 6.817369782609704], {icon: icons.accommodation})
-    .addTo(map)
-    .bindPopup("<a href='./info/muri_hytter.html'><H3>Fjordblikk Cabins</H3><p>Cosy cabins with stunning fjord views</p><img src='../../info/images/muri1.jpg' class='popup-image'> <style='opacity:0'></a>");
-
-// Skogstad Olden
-L.marker([61.83548622483675, 6.8069284010959], {icon: icons.store})
-    .addTo(map)
-    .bindPopup("<a href='./info/skogstad.html'><H3>Skogstad Olden</H3><p>Quality clothing for the Norwegian outdoors</p><img src='../../info/images/skogstad1.jpg' class='popup-image'> <style='opacity:0'></a>");
-
-// Riccovero
-L.marker([61.837158157963835, 6.8095992788072035], {icon: icons.store})
-    .addTo(map)
-    .bindPopup("<a href='./info/riccovero.html'><H3>Riccovero</H3><p>Tailoring heritage meets innovative design</p><img src='../../info/images/riccovero1.jpg' class='popup-image'> <style='opacity:0'></a>");
-
-// Olden Sauna
-L.marker([61.757301445985966, 6.810304052446991], {icon: icons.wellness})
-    .addTo(map)
-    .bindPopup("<a href='./info/olden_sauna.html'><H3>Olden Sauna</H3><p>Relaxation and wellbeing right by the water</p><img src='../../info/images/badstue2.jpeg' class='popup-image'> <style='opacity:0'></a>");
-
-// Discover Olden
-L.marker([61.866150314662946, 6.73004665169674], {icon: icons.adventure})
-    .addTo(map)
-    .bindPopup("<a href='./info/discover.html'><H3>Discover Olden</H3><p>Your guide to the best experiences in Olden</p><img src='../../info/images/discover1.jpg' class='popup-image'> <style='opacity:0'></a>");
-
-// Gryta Camping
-L.marker([61.74095025385795, 6.791149855441869], {icon: icons.camping})
-    .addTo(map)
-    .bindPopup("<a href='./info/gryta.html'><H3>Gryta Camping</H3><p>Natural and peaceful camping by Lake Olden</p><img src='../../info/images/gryta1.jpg' class='popup-image'> <style='opacity:0'></a>");
-
-var locationControl = L.control({position: 'topleft'});
 
     locationControl.onAdd = function(map) {
         var div = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
         div.innerHTML = '<a href="#" title="Show my location" role="button" aria-label="Show my location" style="display: flex; align-items: center; justify-content: center; width: 30px; height: 30px; background-color: white; text-decoration: none; color: black; font-size: 18px;"><i class="fa-solid fa-map-pin"></i></a>';
-        
+
         div.onclick = function() {
             map.locate({
                 watch: true,
@@ -320,24 +415,36 @@ var locationControl = L.control({position: 'topleft'});
             });
             return false;
         };
-        
+
         return div;
     };
 
     locationControl.addTo(map);
-        
+
     var locationMarker, locationCircle;
 
-    function onLocationFound(e){
+    function onLocationFound(e) {
         var radius = e.accuracy;
 
-        if(!locationMarker){
-            locationMarker = L.circleMarker(e.latlng, {radius: 8, fillColor: '#3a7ec9', color: "FFF", weight: 2, opacity: 1, fillOpacity: 0.8}).addTo(map);
+        if (!locationMarker) {
+            locationMarker = L.circleMarker(e.latlng, {
+                radius: 8,
+                fillColor: '#3a7ec9',
+                color: "FFF",
+                weight: 2,
+                opacity: 1,
+                fillOpacity: 0.8
+            }).addTo(map);
 
-            locationCircle = L.circle(e.latlng, {radius: radius, color: '#3a7ec9', fillColor:'#3a7ec9', fillOpacity: 0.1 }).addTo(map);
+            locationCircle = L.circle(e.latlng, {
+                radius: radius,
+                color: '#3a7ec9',
+                fillColor: '#3a7ec9',
+                fillOpacity: 0.1
+            }).addTo(map);
 
             map.setView(e.latlng);
-        }else {
+        } else {
             locationMarker.setLatLng(e.latlng);
             locationCircle.setLatLng(e.latlng);
             locationCircle.setRadius(radius);
@@ -345,7 +452,7 @@ var locationControl = L.control({position: 'topleft'});
 
     }
 
-    function onLocationError(e){
+    function onLocationError(e) {
         alert(e.message);
     }
 
@@ -357,122 +464,146 @@ var locationControl = L.control({position: 'topleft'});
 // Info page maps
 const briksdalen_info_map = document.getElementById('briksdalen_info_map');
 if (briksdalen_info_map) {
-    var amap = L.map('briksdalen_info_map', {zoomControl: false}).setView([61.778888681509386, 6.822197111271428], 10);
+    var amap = L.map('briksdalen_info_map', {
+        zoomControl: false
+    }).setView([61.778888681509386, 6.822197111271428], 10);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(amap);
-    
-    L.marker([61.663243698719754, 6.822264708197644], {icon: icons.accommodation}).addTo(amap).bindPopup("Briksdalen");
+
+    L.marker([61.663243698719754, 6.822264708197644], {
+        icon: icons.accommodation
+    }).addTo(amap).bindPopup("Briksdalen");
 }
 
 const vanberg_map = document.getElementById('vanberg_map');
 if (vanberg_map) {
-    var amap = L.map('vanberg_map', {zoomControl: false}).setView([61.85885896648801, 6.8005823367979845], 12);
+    var amap = L.map('vanberg_map', {
+        zoomControl: false
+    }).setView([61.85885896648801, 6.8005823367979845], 12);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(amap);
-    
+
     L.marker([61.85860437934231, 6.767902005551665]).addTo(amap).bindPopup("Vanberg Hytter");
 }
 
 const ljos_map = document.getElementById('ljos_map');
 if (ljos_map) {
-    var amap = L.map('ljos_map', {zoomControl: false}).setView([61.84371231074744, 6.805446122618148], 13);
+    var amap = L.map('ljos_map', {
+        zoomControl: false
+    }).setView([61.84371231074744, 6.805446122618148], 13);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(amap);
-    
+
     L.marker([61.843338644393654, 6.811956255183239]).addTo(amap).bindPopup("Ljós");
 }
 
 const oadventure_map = document.getElementById('oadventure_map');
 if (oadventure_map) {
-    var amap = L.map('oadventure_map', {zoomControl: false}).setView([61.84271884019358, 6.810757925733879], 13);
+    var amap = L.map('oadventure_map', {
+        zoomControl: false
+    }).setView([61.84271884019358, 6.810757925733879], 13);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(amap);
-    
+
     L.marker([61.84271884019358, 6.810757925733879]).addTo(amap).bindPopup("Olden Adventure");
 }
 
 const ocamping_map = document.getElementById('ocamping_map');
 if (ocamping_map) {
-    var amap = L.map('ocamping_map', {zoomControl: false}).setView([61.80052927166301, 6.8164155322043065], 10.2);
+    var amap = L.map('ocamping_map', {
+        zoomControl: false
+    }).setView([61.80052927166301, 6.8164155322043065], 10.2);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(amap);
-    
+
     L.marker([61.7388721323572, 6.789532930089874]).addTo(amap).bindPopup("Olden Camping");
 }
 
 const viking_map = document.getElementById('viking_map');
 if (viking_map) {
-    var amap = L.map('viking_map', {zoomControl: false}).setView([61.83966872377449, 6.805572517516001], 14);
+    var amap = L.map('viking_map', {
+        zoomControl: false
+    }).setView([61.83966872377449, 6.805572517516001], 14);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(amap);
-    
+
     L.marker([61.83475925136581, 6.805342694945899]).addTo(amap).bindPopup("The Viking Shop");
 }
 
 const singer_map = document.getElementById('singer_map');
 if (singer_map) {
-    var amap = L.map('singer_map', {zoomControl: false}).setView([61.838245193841246, 6.805374402310553], 14);
+    var amap = L.map('singer_map', {
+        zoomControl: false
+    }).setView([61.838245193841246, 6.805374402310553], 14);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(amap);
-    
+
     L.marker([61.83249268584146, 6.813125114976453]).addTo(amap).bindPopup("Singerheimen");
 }
 
 const fjordhotel_map = document.getElementById('fjordhotel_map');
 if (fjordhotel_map) {
-    var amap = L.map('fjordhotel_map', {zoomControl: false}).setView([61.845627541933624, 6.806580134296458], 13);
+    var amap = L.map('fjordhotel_map', {
+        zoomControl: false
+    }).setView([61.845627541933624, 6.806580134296458], 13);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(amap);
-    
+
     L.marker([61.84823079426946, 6.814474679106876]).addTo(amap).bindPopup("Olden Fjordhotel");
 }
 
 const active_map = document.getElementById('active_map');
 if (active_map) {
-    var amap = L.map('active_map', {zoomControl: false}).setView([61.843669499336954, 6.80554200020884], 13);
+    var amap = L.map('active_map', {
+        zoomControl: false
+    }).setView([61.843669499336954, 6.80554200020884], 13);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(amap);
-    
+
     L.marker([61.84259220003629, 6.810708937466418]).addTo(amap).bindPopup("Olden Active");
 }
 
 const sunde_map = document.getElementById('sunde_map');
 if (sunde_map) {
-    var amap = L.map('sunde_map', {zoomControl: false}).setView([61.84024002520122, 6.80479946563558], 13);
+    var amap = L.map('sunde_map', {
+        zoomControl: false
+    }).setView([61.84024002520122, 6.80479946563558], 13);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(amap);
-    
+
     L.marker([61.84183231203744, 6.811405718967407]).addTo(amap).bindPopup("Sundekiosken");
 }
 
 const aabrekk_map = document.getElementById('aabrekk_map');
 if (aabrekk_map) {
-    var amap = L.map('aabrekk_map', {zoomControl: false}).setView([61.778888681509386, 6.822197111271428], 10);
+    var amap = L.map('aabrekk_map', {
+        zoomControl: false
+    }).setView([61.778888681509386, 6.822197111271428], 10);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(amap);
-    
+
     L.marker([61.67911432283224, 6.815869210536484]).addTo(amap).bindPopup("Kafé");
     L.marker([61.67821684927461, 6.813822979973412]).addTo(amap).bindPopup("Hytter");
 
@@ -480,189 +611,239 @@ if (aabrekk_map) {
 
 const flaaten_map = document.getElementById('flaaten_map');
 if (flaaten_map) {
-    var amap = L.map('flaaten_map', {zoomControl: false}).setView([61.80155312901155, 6.813335198470627], 11);
+    var amap = L.map('flaaten_map', {
+        zoomControl: false
+    }).setView([61.80155312901155, 6.813335198470627], 11);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(amap);
-    
+
     L.marker([61.75732649403623, 6.808569237792529]).addTo(amap).bindPopup("Flåten Feriehytter");
 }
 
 const farm_map = document.getElementById('farm_map');
 if (farm_map) {
-    var amap = L.map('farm_map', {zoomControl: false}).setView([61.83711326139425, 6.8055707629523585], 13);
+    var amap = L.map('farm_map', {
+        zoomControl: false
+    }).setView([61.83711326139425, 6.8055707629523585], 13);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(amap);
-    
+
     L.marker([61.82741634975917, 6.814167637414622]).addTo(amap).bindPopup("Olden Farm");
 }
 
 const muri_map = document.getElementById('muri_map');
 if (muri_map) {
-    var amap = L.map('muri_map', {zoomControl: false}).setView([61.84208435893307, 6.805471744505528], 13);
+    var amap = L.map('muri_map', {
+        zoomControl: false
+    }).setView([61.84208435893307, 6.805471744505528], 13);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(amap);
-    
+
     L.marker([61.845129914010165, 6.817369782609704]).addTo(amap).bindPopup("Fjordblikk Hytter");
 }
 
 const skogstad_map = document.getElementById('skogstad_map');
 if (skogstad_map) {
-    var amap = L.map('skogstad_map', {zoomControl: false}).setView([61.83839384301383, 6.80482955631565], 14);
+    var amap = L.map('skogstad_map', {
+        zoomControl: false
+    }).setView([61.83839384301383, 6.80482955631565], 14);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(amap);
-    
+
     L.marker([61.83548622483675, 6.8069284010959]).addTo(amap).bindPopup("Skogstad Olden");
 }
 
 const riccovero_map = document.getElementById('riccovero_map');
 if (riccovero_map) {
-    var amap = L.map('riccovero_map', {zoomControl: false}).setView([61.83839384301383, 6.80482955631565], 14);
+    var amap = L.map('riccovero_map', {
+        zoomControl: false
+    }).setView([61.83839384301383, 6.80482955631565], 14);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(amap);
-    
+
     L.marker([61.837158157963835, 6.8095992788072035]).addTo(amap).bindPopup("Riccovero");
 }
 
 const badstue_map = document.getElementById('badstue_map');
 if (badstue_map) {
-    var amap = L.map('badstue_map', {zoomControl: false}).setView([61.800881460517544, 6.824725052463083], 11);
+    var amap = L.map('badstue_map', {
+        zoomControl: false
+    }).setView([61.800881460517544, 6.824725052463083], 11);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(amap);
-    
+
     L.marker([61.757301445985966, 6.810304052446991]).addTo(amap).bindPopup("Olden Sauna");
 }
 
 const discover_map = document.getElementById('discover_map');
 if (discover_map) {
-    var amap = L.map('discover_map', {zoomControl: false}).setView([61.860081444817325, 6.797115169805129], 11);
+    var amap = L.map('discover_map', {
+        zoomControl: false
+    }).setView([61.860081444817325, 6.797115169805129], 11);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(amap);
-    
+
     L.marker([61.866150314662946, 6.73004665169674]).addTo(amap).bindPopup("Discover Olden");
 }
 
 const bunnpris_map = document.getElementById('bunnpris_map');
 if (bunnpris_map) {
-    var amap = L.map('bunnpris_map', {zoomControl: false}).setView([61.837212460389935, 6.804374926430985], 14);
+    var amap = L.map('bunnpris_map', {
+        zoomControl: false
+    }).setView([61.837212460389935, 6.804374926430985], 14);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(amap);
-    
+
     L.marker([61.83525047096347, 6.804831137071842]).addTo(amap).bindPopup("Bunnpris Olden");
 }
 
 const apartments_map = document.getElementById('apartments_map');
 if (apartments_map) {
-    var amap = L.map('apartments_map', {zoomControl: false}).setView([61.837212460389935, 6.804374926430985], 14);
+    var amap = L.map('apartments_map', {
+        zoomControl: false
+    }).setView([61.837212460389935, 6.804374926430985], 14);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(amap);
-    
+
     L.marker([61.83525047096347, 6.804831137071842]).addTo(amap).bindPopup("Olden Apartments");
 }
 
 const stabukk_map = document.getElementById('stabukk_map');
 if (stabukk_map) {
-    var amap = L.map('stabukk_map', {zoomControl: false}).setView([61.837212460389935, 6.804374926430985], 14);
+    var amap = L.map('stabukk_map', {
+        zoomControl: false
+    }).setView([61.837212460389935, 6.804374926430985], 14);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(amap);
-    
+
     L.marker([61.83515711604809, 6.804742926055739]).addTo(amap).bindPopup("Stabukk");
 }
 
 const gryta_map = document.getElementById('gryta_map');
 if (gryta_map) {
-    var amap = L.map('gryta_map', {zoomControl: false}).setView([61.78987493615204, 6.821755840106871], 11);
+    var amap = L.map('gryta_map', {
+        zoomControl: false
+    }).setView([61.78987493615204, 6.821755840106871], 11);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(amap);
-    
+
     L.marker([61.74095025385795, 6.791149855441869]).addTo(amap).bindPopup("Gryta Camping");
 }
 
 const mat_map = document.getElementById('mat_map');
-if(mat_map){
+if (mat_map) {
 
-    var map = L.map('mat_map', {zoomControl: false}).setView([61.84017770961436, 6.805104792299194], 14,5);
+    var map = L.map('mat_map', {
+        zoomControl: false
+    }).setView([61.84017770961436, 6.805104792299194], 14, 5);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
 
-    L.marker([61.841857038014155, 6.811442067471242], {icon: L.icon({
-        iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
-        iconSize: [25, 41],
-        iconAnchor: [12, 41],
-        popupAnchor: [1, -34],
-        shadowSize: [41, 41]})}).addTo(map)
+    L.marker([61.841857038014155, 6.811442067471242], {
+            icon: L.icon({
+                iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
+                shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
+                iconSize: [25, 41],
+                iconAnchor: [12, 41],
+                popupAnchor: [1, -34],
+                shadowSize: [41, 41]
+            })
+        }).addTo(map)
         .bindPopup("<a href='sundekiosken.html'><H3>Sundekiosken</H3><p>Sundekiosken is a fast-food restaurant serving both traditional street food such as burgers and shaved meat, as well as Asian dishes like spring rolls and noodles.</p><img src='../images/sunde2.jpg' class='popup-image'> <style='opacity:0'></a>");
 
-    L.marker([61.8425222198133, 6.810743183913986], {icon: L.icon({
-        iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
-        iconSize: [25, 41],
-        iconAnchor: [12, 41],
-        popupAnchor: [1, -34],
-        shadowSize: [41, 41]})}).addTo(map)
+    L.marker([61.8425222198133, 6.810743183913986], {
+            icon: L.icon({
+                iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
+                shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
+                iconSize: [25, 41],
+                iconAnchor: [12, 41],
+                popupAnchor: [1, -34],
+                shadowSize: [41, 41]
+            })
+        }).addTo(map)
         .bindPopup("<a href='molla.html'><H3>Mølla Guesthouse</H3><p>Mølla is a restaurant located right by the fjord, serving both seafood and pizza.</p><img src='../images/molla3.jpg' class='popup-image'> <style='opacity:0'></a>");
 
 
-    L.marker([61.848272904545304, 6.814688885941699], {icon: L.icon({
-        iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
-        iconSize: [25, 41],
-        iconAnchor: [12, 41],
-        popupAnchor: [1, -34],
-        shadowSize: [41, 41]})}).addTo(map)
+    L.marker([61.848272904545304, 6.814688885941699], {
+            icon: L.icon({
+                iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
+                shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
+                iconSize: [25, 41],
+                iconAnchor: [12, 41],
+                popupAnchor: [1, -34],
+                shadowSize: [41, 41]
+            })
+        }).addTo(map)
         .bindPopup("<a href='fjordhotel.html'><H3>Olden Fjord Hotel</H3><p>Olden Fjord Hotel offers a dinner buffet open to all, every day from 19:00–22:00.</p><img src='../images/fjordhotel1.jpg' class='popup-image'> <style='opacity:0'></a>");
 
-        
-    L.marker([61.83452678782124, 6.804963791435792], {icon: L.icon({
-        iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
-        iconSize: [25, 41],
-        iconAnchor: [12, 41],
-        popupAnchor: [1, -34],
-        shadowSize: [41, 41]})}).addTo(map)
+
+    L.marker([61.83452678782124, 6.804963791435792], {
+            icon: L.icon({
+                iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
+                shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
+                iconSize: [25, 41],
+                iconAnchor: [12, 41],
+                popupAnchor: [1, -34],
+                shadowSize: [41, 41]
+            })
+        }).addTo(map)
         .bindPopup("<a href='yris.html'><H3>Yris Café</H3><p>Yris Café, located in the centre of Olden, offers ice cream, coffee and food service.</p><img src='../images/yris1.jpg' class='popup-image'> <style='opacity:0'></a>");
 
-    L.marker([61.83514958988893, 6.804779749846841], {icon: L.icon({
-        iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
-        iconSize: [25, 41],
-        iconAnchor: [12, 41],
-        popupAnchor: [1, -34],
-        shadowSize: [41, 41]})}).addTo(map)
+    L.marker([61.83514958988893, 6.804779749846841], {
+            icon: L.icon({
+                iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
+                shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
+                iconSize: [25, 41],
+                iconAnchor: [12, 41],
+                popupAnchor: [1, -34],
+                shadowSize: [41, 41]
+            })
+        }).addTo(map)
         .bindPopup("<a href='stabukk.html'><H3>Stabukk</H3><p>Stabukk is a café in the heart of Olden serving ice cream, shakes, pastries and coffee.</p><img src='../images/stabukk5.jpg' class='popup-image'> <style='opacity:0'></a>");
 
-    L.marker([61.83237864928943, 6.813073108002821], {icon: L.icon({
-        iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
-        iconSize: [25, 41],
-        iconAnchor: [12, 41],
-        popupAnchor: [1, -34],
-        shadowSize: [41, 41]})}).addTo(map)
+    L.marker([61.83237864928943, 6.813073108002821], {
+            icon: L.icon({
+                iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
+                shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
+                iconSize: [25, 41],
+                iconAnchor: [12, 41],
+                popupAnchor: [1, -34],
+                shadowSize: [41, 41]
+            })
+        }).addTo(map)
         .bindPopup("<a href='singer-food.html'><H3>Singerheimen</H3><p>At Singerheimen they serve afternoon tea in surroundings full of tradition and history.</p><img src='../images/singer-food.jpg' class='popup-image'> <style='opacity:0'></a>");
 }
 
 const huaren_map = document.getElementById('huaren_map');
-if(huaren_map){
-    var map = L.map('huaren_map', {zoomControl: false}).setView([61.845, 6.81], 13.4);
+if (huaren_map) {
+    var map = L.map('huaren_map', {
+        zoomControl: false
+    }).setView([61.845, 6.81], 13.4);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -724,7 +905,9 @@ if(huaren_map){
         [61.858548168695705, 6.832799421607049],
     ];
 
-    var polyline = L.polyline(latlngs, {color: 'red'}).addTo(map);
+    var polyline = L.polyline(latlngs, {
+        color: 'red'
+    }).addTo(map);
 
     var latlngs2 = [
         [61.850341250198994, 6.823405047232877],
@@ -799,12 +982,16 @@ if(huaren_map){
         [61.83522928170395, 6.805438844524453]
     ];
 
-    var polyline = L.polyline(latlngs2, {color: 'orange'}).addTo(map);
+    var polyline = L.polyline(latlngs2, {
+        color: 'orange'
+    }).addTo(map);
 }
 
 const kjenndalen_map = document.getElementById('kjenndalen_map');
-if(kjenndalen_map){
-    var map = L.map('kjenndalen_map', {zoomControl: false}).setView([61.829125478313316, 6.923411386989772], 11);
+if (kjenndalen_map) {
+    var map = L.map('kjenndalen_map', {
+        zoomControl: false
+    }).setView([61.829125478313316, 6.923411386989772], 11);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -953,7 +1140,9 @@ if(kjenndalen_map){
         [61.74695558844885, 7.035316126520833]
     ];
 
-    var polyline = L.polyline(latlngs, {color: 'red'}).addTo(map);
+    var polyline = L.polyline(latlngs, {
+        color: 'red'
+    }).addTo(map);
 
 
 
@@ -970,13 +1159,17 @@ if(kjenndalen_map){
         [61.74393858158816, 7.034864066144338]
     ];
 
-    var polyline2 = L.polyline(latlngs2, {color: 'orange'}).addTo(map);
+    var polyline2 = L.polyline(latlngs2, {
+        color: 'orange'
+    }).addTo(map);
 }
 
 
 const lauki_map = document.getElementById('lauki_map');
-if(lauki_map){
-    var map = L.map('lauki_map', {zoomControl: false}).setView([61.815, 6.8], 13.459);
+if (lauki_map) {
+    var map = L.map('lauki_map', {
+        zoomControl: false
+    }).setView([61.815, 6.8], 13.459);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -1003,11 +1196,11 @@ if(lauki_map){
         [61.81596220078703, 6.810140615234659],
         [61.815682556118304, 6.809863712283634],
         [61.81563428706245, 6.809644716894844],
-        [61.81512745739421, 6.80890743241925],   
+        [61.81512745739421, 6.80890743241925],
         [61.81507573959035, 6.8088125343642],
         [61.81464130676931, 6.806907274481726],
         [61.81448615070064, 6.8063743857023375],
-        [61.81374828664111, 6.8064838833752646],   
+        [61.81374828664111, 6.8064838833752646],
         [61.812948177146495, 6.806582596520777],
         [61.812698314727186, 6.80692949589347],
         [61.81186643403009, 6.806894096733367],
@@ -1016,38 +1209,42 @@ if(lauki_map){
         [61.80807817848818, 6.804572263428836],
         [61.809085167386506, 6.80412668311289],
         [61.80758320573976, 6.802464788961519],
-        [61.8071316038403, 6.802281987671037], 
+        [61.8071316038403, 6.802281987671037],
         [61.805823840359665, 6.8026467681315586],
         [61.804252423036864, 6.801552426896392],
-        [61.80499251992051, 6.800930154429337],   
+        [61.80499251992051, 6.800930154429337],
         [61.80601646017751, 6.8004795433325045],
         [61.80545887318149, 6.8001791359346155],
         [61.80612797636205, 6.799192083055837],
-        [61.80535749264014, 6.799299371412227],   
+        [61.80535749264014, 6.799299371412227],
         [61.80506348717787, 6.798762929630282],
         [61.804343668821865, 6.797883165107894],
         [61.805448735142406, 6.797775876751506],
-        [61.80572246102298, 6.797217977298284],   
+        [61.80572246102298, 6.797217977298284],
         [61.80584411618686, 6.796531331817395],
         [61.806361145257675, 6.796230924419507],
         [61.80655376170586, 6.79552282126734],
         [61.8066044500441, 6.794578683731118],
         [61.808317666733295, 6.7933770537668385],
         [61.808925886337605, 6.793419969109394],
-        [61.809118486701124, 6.7929908156838374],   
+        [61.809118486701124, 6.7929908156838374],
         [61.810294336455904, 6.793226850038445],
-        [61.811341028092066, 6.793854587386976]  
+        [61.811341028092066, 6.793854587386976]
     ];
 
-    var polyline = L.polyline(latlngs, {color: 'red'}).addTo(map);
+    var polyline = L.polyline(latlngs, {
+        color: 'red'
+    }).addTo(map);
 }
 
 const skarstein_map = document.getElementById('skarstein_map');
-if(skarstein_map){
-    var map = L.map('skarstein_map', {zoomControl: false}).setView([61.845, 6.8], 13,4);
+if (skarstein_map) {
+    var map = L.map('skarstein_map', {
+        zoomControl: false
+    }).setView([61.845, 6.8], 13, 4);
 
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
     var latlngs = [
@@ -1125,12 +1322,16 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         [61.84857900396478, 6.771144687086194]
     ];
 
-    var polyline = L.polyline(latlngs, {color: 'red'}).addTo(map);
+    var polyline = L.polyline(latlngs, {
+        color: 'red'
+    }).addTo(map);
 }
 
 const toilet_map = document.getElementById('toilet_map');
-if(toilet_map){
-    var map = L.map('toilet_map', {zoomControl: false}).setView([61.837268553540305, 6.807555672099274], 16);
+if (toilet_map) {
+    var map = L.map('toilet_map', {
+        zoomControl: false
+    }).setView([61.837268553540305, 6.807555672099274], 16);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -1150,212 +1351,222 @@ if(toilet_map){
 }
 
 const skylift_map = document.getElementById('skylift_map');
-if(skylift_map){
-    var map = L.map('skylift_map', {zoomControl: false}).setView([61.85464679307173, 6.819380924314439], 13);
+if (skylift_map) {
+    var map = L.map('skylift_map', {
+        zoomControl: false
+    }).setView([61.85464679307173, 6.819380924314439], 13);
 
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
 
-var latlngs = [
-    [61.835208784985305, 6.805556463765776],
-    [61.8349370026776, 6.805775021815464],
-    [61.835082771689294, 6.806508480442586],
-    [61.83518982036615, 6.807092352112862],
-    [61.83603936365725, 6.808834316406961],
-    [61.83656775404779, 6.809582251204631],
-    [61.838296346949534, 6.810943010019168],
-    [61.83927788928256, 6.811164977784102],
-    [61.84007949685697, 6.810889930791171],
-    [61.84099949787469, 6.810581106106067],
-    [61.84164621476328, 6.8105714553395735],
-    [61.84222005072028, 6.810764470788013],
-    [61.842705070355834, 6.811025041622693],
-    [61.843994499796956, 6.812118117383477],
-    [61.84453413783629, 6.812460719798787],
-    [61.845095003852734, 6.812710613968654],
-    [61.84849051589074, 6.8137701208918315],
-    [61.85016411687753, 6.81469874103286],
-    [61.852827670345256, 6.815645933614127],
-    [61.85494783365731, 6.815720223246908],
-    [61.85721677160148, 6.8153673475625665],
-    [61.85865788096203, 6.814624851740779],
-    [61.85924781723451, 6.81469781560497],
-    [61.85979349820361, 6.815218986102713],
-    [61.86031458986757, 6.81602158863293],
-    [61.86045223523879, 6.81657402931895],
-    [61.86112078969134, 6.818992260312641],
-    [61.86129284178221, 6.819304962587747],
-    [61.86333281439486, 6.8240163436311665],
-    [61.86426181716462, 6.824725135567133],
-    [61.86456164801737, 6.82455836102041],
-    [61.865977203269395, 6.8236515243645695],
-    [61.86674884994442, 6.823703641441481],
-    [61.86741235222667, 6.824402009855882],
-    [61.86783010555061, 6.82531926986286],
-    [61.86800211998539, 6.8262990704115],
-    [61.86812498683602, 6.8272163304184765],
-    [61.86821345066908, 6.832229990370746],
-    [61.86773672591199, 6.835471670622673],
-    [61.86775147008904, 6.835659292317977],
-    [61.867618772251134, 6.83880716188737],
-    [61.865726536824894, 6.846113971858307],
-    [61.86584941280228, 6.848282040965704],
-    [61.86617380301507, 6.849261841679059],
-    [61.8665768284943, 6.849730895091717],
-    [61.86984198892078, 6.850988715872585],
-    [61.87054262759301, 6.850528706472528],
-    [61.871232622346774, 6.848749957629481],
-    [61.871402464825366, 6.845867934187583],
-    [61.87183539157396, 6.844695893753073],
-    [61.8722422980136, 6.843987370870379],
-    [61.87357533422135, 6.842351327131193],
-    [61.87375144856753, 6.842029271222937],
-    [61.87402472743153, 6.841417365110498],
-    [61.87475649550896, 6.839497912169443],
-    [61.874601641485484, 6.8392338263735475],  
-    [61.87445589580697, 6.839761997965338]
-];
+    var latlngs = [
+        [61.835208784985305, 6.805556463765776],
+        [61.8349370026776, 6.805775021815464],
+        [61.835082771689294, 6.806508480442586],
+        [61.83518982036615, 6.807092352112862],
+        [61.83603936365725, 6.808834316406961],
+        [61.83656775404779, 6.809582251204631],
+        [61.838296346949534, 6.810943010019168],
+        [61.83927788928256, 6.811164977784102],
+        [61.84007949685697, 6.810889930791171],
+        [61.84099949787469, 6.810581106106067],
+        [61.84164621476328, 6.8105714553395735],
+        [61.84222005072028, 6.810764470788013],
+        [61.842705070355834, 6.811025041622693],
+        [61.843994499796956, 6.812118117383477],
+        [61.84453413783629, 6.812460719798787],
+        [61.845095003852734, 6.812710613968654],
+        [61.84849051589074, 6.8137701208918315],
+        [61.85016411687753, 6.81469874103286],
+        [61.852827670345256, 6.815645933614127],
+        [61.85494783365731, 6.815720223246908],
+        [61.85721677160148, 6.8153673475625665],
+        [61.85865788096203, 6.814624851740779],
+        [61.85924781723451, 6.81469781560497],
+        [61.85979349820361, 6.815218986102713],
+        [61.86031458986757, 6.81602158863293],
+        [61.86045223523879, 6.81657402931895],
+        [61.86112078969134, 6.818992260312641],
+        [61.86129284178221, 6.819304962587747],
+        [61.86333281439486, 6.8240163436311665],
+        [61.86426181716462, 6.824725135567133],
+        [61.86456164801737, 6.82455836102041],
+        [61.865977203269395, 6.8236515243645695],
+        [61.86674884994442, 6.823703641441481],
+        [61.86741235222667, 6.824402009855882],
+        [61.86783010555061, 6.82531926986286],
+        [61.86800211998539, 6.8262990704115],
+        [61.86812498683602, 6.8272163304184765],
+        [61.86821345066908, 6.832229990370746],
+        [61.86773672591199, 6.835471670622673],
+        [61.86775147008904, 6.835659292317977],
+        [61.867618772251134, 6.83880716188737],
+        [61.865726536824894, 6.846113971858307],
+        [61.86584941280228, 6.848282040965704],
+        [61.86617380301507, 6.849261841679059],
+        [61.8665768284943, 6.849730895091717],
+        [61.86984198892078, 6.850988715872585],
+        [61.87054262759301, 6.850528706472528],
+        [61.871232622346774, 6.848749957629481],
+        [61.871402464825366, 6.845867934187583],
+        [61.87183539157396, 6.844695893753073],
+        [61.8722422980136, 6.843987370870379],
+        [61.87357533422135, 6.842351327131193],
+        [61.87375144856753, 6.842029271222937],
+        [61.87402472743153, 6.841417365110498],
+        [61.87475649550896, 6.839497912169443],
+        [61.874601641485484, 6.8392338263735475],
+        [61.87445589580697, 6.839761997965338]
+    ];
 
-var polyline = L.polyline(latlngs, {color: 'red'}).addTo(map);
+    var polyline = L.polyline(latlngs, {
+        color: 'red'
+    }).addTo(map);
 }
 
 const briksdalen_map = document.getElementById('briksdalen_map');
-if(briksdalen_map){
-    var map = L.map('briksdalen_map', {zoomControl: false}).setView([61.75246705165772, 6.820822994097988], 11);
+if (briksdalen_map) {
+    var map = L.map('briksdalen_map', {
+        zoomControl: false
+    }).setView([61.75246705165772, 6.820822994097988], 11);
 
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
 
-var latlngs = [
-    [61.835208784985305, 6.805556463765776],
-    [61.83495299173912, 6.805779253969773],
-    [61.835200258578126, 6.807067824338831],
-    [61.83495299173912, 6.807278571829098],
-    [61.834577824453184, 6.806989546699589],
-    [61.83322491034617, 6.806212791686704],
-    [61.83296341585313, 6.806242898508569],
-    [61.83120161672117, 6.807649512525815],
-    [61.82820819115811, 6.808540006113653],
-    [61.82196497256085, 6.81014769693044],
-    [61.81617524960529, 6.811543600642565],
-    [61.81493913220328, 6.814118991205313],
-    [61.81320156110914, 6.816094583415013],
-    [61.81222011175828, 6.82123793554716],
-    [61.8089537510211, 6.82069294462214],
-    [61.805316901316345, 6.824405695629877],
-    [61.798927233202036, 6.828697499499952],
-    [61.79506381681982, 6.8271987744982265],
-    [61.7910389083109, 6.829651233793025],
-    [61.79079739694615, 6.829821543539735],
-    [61.78744824497946, 6.836020815646031],
-    [61.78079716421524, 6.833874913948729],
-    [61.77878384151563, 6.836054877846463],
-    [61.77569112121357, 6.836395497192963],
-    [61.77280752356536, 6.833500232767749],
-    [61.77042311581877, 6.835271453369548],
-    [61.76407453448489, 6.830332472671669],
-    [61.76276920688898, 6.829889667375637],
-    [61.759078536878796, 6.823451961726791],
-    [61.757418396872886, 6.815651778691946],
-    [61.75825653695223, 6.81146216021713],
-    [61.75598383479221, 6.808805329314431],
-    [61.7554196628319, 6.799574544654324],
-    [61.74728794257965, 6.790021006729697],
-    [61.74035180559198, 6.790172270237477],
-    [61.737459933741555, 6.7864176203065005],
-    [61.723257377034784, 6.794377478323091],
-    [61.70598735786972, 6.799884298398517],
-    [61.702807481384234, 6.804139568459657],
-    [61.69587706272389, 6.809145768685627],
-    [61.69112930235548, 6.8103472566635395],
-    [61.6861908565709, 6.807944280652751],
-    [61.67628784224664, 6.813901658733639],
-    [61.67037301683514, 6.814702650820987],
-    [61.667664646374185, 6.816655068857724],
-    [61.66696223891831, 6.816264728577267],
-    [61.66507506672092, 6.816245611968888],
-    [61.66501155411423, 6.818042573790774],
-    [61.66547428583041, 6.818635188859695],
-    [61.66533818898626, 6.819113104237857],
-    [61.66404977579936, 6.820470383957558],
-    [61.66352350708213, 6.820795366414707],
-];
+    var latlngs = [
+        [61.835208784985305, 6.805556463765776],
+        [61.83495299173912, 6.805779253969773],
+        [61.835200258578126, 6.807067824338831],
+        [61.83495299173912, 6.807278571829098],
+        [61.834577824453184, 6.806989546699589],
+        [61.83322491034617, 6.806212791686704],
+        [61.83296341585313, 6.806242898508569],
+        [61.83120161672117, 6.807649512525815],
+        [61.82820819115811, 6.808540006113653],
+        [61.82196497256085, 6.81014769693044],
+        [61.81617524960529, 6.811543600642565],
+        [61.81493913220328, 6.814118991205313],
+        [61.81320156110914, 6.816094583415013],
+        [61.81222011175828, 6.82123793554716],
+        [61.8089537510211, 6.82069294462214],
+        [61.805316901316345, 6.824405695629877],
+        [61.798927233202036, 6.828697499499952],
+        [61.79506381681982, 6.8271987744982265],
+        [61.7910389083109, 6.829651233793025],
+        [61.79079739694615, 6.829821543539735],
+        [61.78744824497946, 6.836020815646031],
+        [61.78079716421524, 6.833874913948729],
+        [61.77878384151563, 6.836054877846463],
+        [61.77569112121357, 6.836395497192963],
+        [61.77280752356536, 6.833500232767749],
+        [61.77042311581877, 6.835271453369548],
+        [61.76407453448489, 6.830332472671669],
+        [61.76276920688898, 6.829889667375637],
+        [61.759078536878796, 6.823451961726791],
+        [61.757418396872886, 6.815651778691946],
+        [61.75825653695223, 6.81146216021713],
+        [61.75598383479221, 6.808805329314431],
+        [61.7554196628319, 6.799574544654324],
+        [61.74728794257965, 6.790021006729697],
+        [61.74035180559198, 6.790172270237477],
+        [61.737459933741555, 6.7864176203065005],
+        [61.723257377034784, 6.794377478323091],
+        [61.70598735786972, 6.799884298398517],
+        [61.702807481384234, 6.804139568459657],
+        [61.69587706272389, 6.809145768685627],
+        [61.69112930235548, 6.8103472566635395],
+        [61.6861908565709, 6.807944280652751],
+        [61.67628784224664, 6.813901658733639],
+        [61.67037301683514, 6.814702650820987],
+        [61.667664646374185, 6.816655068857724],
+        [61.66696223891831, 6.816264728577267],
+        [61.66507506672092, 6.816245611968888],
+        [61.66501155411423, 6.818042573790774],
+        [61.66547428583041, 6.818635188859695],
+        [61.66533818898626, 6.819113104237857],
+        [61.66404977579936, 6.820470383957558],
+        [61.66352350708213, 6.820795366414707],
+    ];
 
-var polyline = L.polyline(latlngs, {color: 'red'}).addTo(map);
+    var polyline = L.polyline(latlngs, {
+        color: 'red'
+    }).addTo(map);
 
-var latlngs2 = [
-    [61.66352350708213, 6.820795366414707],
-    [61.66303287642473, 6.821741792270974],
-    [61.66318565129831, 6.821800800866988],
-    [61.663254399744986, 6.822069021757961],
-    [61.66315764262804, 6.822691294225016],
-    [61.66331805557772, 6.823270651349516],
-    [61.66357670598808, 6.824286365027844],
-    [61.66406668934884, 6.826272982403581],
-    [61.66414448456662, 6.827678580945724],
-    [61.664356652327236, 6.828567634392661],
-    [61.6644462338408, 6.829188481872687],
-    [61.664835203156805, 6.8296007245324395],
-    [61.664960143776774, 6.8303755420616135],
-    [61.6649766453314, 6.830966588769482],
-    [61.665103942733914, 6.831349030755034],
-    [61.66515108979344, 6.832466556105849],
-    [61.66509922803113, 6.832650326930076],
-    [61.66517466329295, 6.833161905170492],
-    [61.66508979861047, 6.83359898172541],
-    [61.66491299643991, 6.834016191164197],
-    [61.66469611772202, 6.834115526826265],
-    [61.66442501719242, 6.833405277424523],
-    [61.66443916162671, 6.8328936991841065],
-    [61.66434250786344, 6.832670194127614],
-    [61.664236215439715, 6.833371919290116],
-    [61.6642322462665, 6.833725933133714],
-    [61.66405713857948, 6.8344472456913845],
-    [61.663932405439304, 6.834939985316162],
-    [61.66397398320865, 6.835085982242022],
-    [61.66409178658461, 6.83550572340387],
-    [61.66403808216011, 6.83610066087675],
-    [61.664176674036156, 6.836578800851592],
-    [61.66490814476101, 6.837111281962347],
-    [61.665088309006705, 6.8380748617254055],
-    [61.66531870982107, 6.8383048068836345],
-    [61.66546249292201, 6.838739147754526],
-    [61.66553698270007, 6.839469132418895],
-    [61.66572753712013, 6.840505710592501],
-    [61.66537760901039, 6.841845232448094],
-    [61.66561285865416, 6.846962120220727],
-    [61.66553317210629, 6.8475278583716905],
-    [61.66543096514775, 6.848199444230647],
-    [61.66549159642615, 6.848542537092861],
-    [61.66533568716104, 6.849181273643499],
-    [61.66508796304386, 6.849049876410225],
-    [61.66500827514336, 6.849195873336084],
-    [61.66503772504357, 6.849465967648926],
-    [61.664883545843004, 6.849893008657067],
-    [61.66502559861747, 6.849487867187806],
-    [61.66489220761622, 6.849911258272799],
-    [61.66496496641558, 6.85024340127913],
-    [61.66495976936471, 6.850622993346762],
-    [61.66511568052285, 6.851495325032729],
-    [61.66498921930717, 6.852013614119531],
-    [61.664980557561144, 6.852228959585175],
-    [61.66481251920739, 6.85315239014124],
-    [61.66470857749665, 6.853404234921071],
-    [61.66478653381162, 6.855116048931881],
-    [61.66474149241022, 6.855579589171486],
-    [61.6648350398628, 6.856046779334239],
-    [61.6648246457154, 6.85615992695178],
-    [61.664675662551566, 6.856831512810737],
-    [61.66457691749902, 6.856937360639806],
-    [61.66457172038235, 6.8575943468061755],
-    [61.66446431310588, 6.858200234093719],
-    [61.66433611683852, 6.858411929636215],
-    [61.664349975920075, 6.8586090254861265],
-    [61.66430839865672, 6.8587805718740125],
-    [61.66423217352854, 6.859068915802586],
-];
+    var latlngs2 = [
+        [61.66352350708213, 6.820795366414707],
+        [61.66303287642473, 6.821741792270974],
+        [61.66318565129831, 6.821800800866988],
+        [61.663254399744986, 6.822069021757961],
+        [61.66315764262804, 6.822691294225016],
+        [61.66331805557772, 6.823270651349516],
+        [61.66357670598808, 6.824286365027844],
+        [61.66406668934884, 6.826272982403581],
+        [61.66414448456662, 6.827678580945724],
+        [61.664356652327236, 6.828567634392661],
+        [61.6644462338408, 6.829188481872687],
+        [61.664835203156805, 6.8296007245324395],
+        [61.664960143776774, 6.8303755420616135],
+        [61.6649766453314, 6.830966588769482],
+        [61.665103942733914, 6.831349030755034],
+        [61.66515108979344, 6.832466556105849],
+        [61.66509922803113, 6.832650326930076],
+        [61.66517466329295, 6.833161905170492],
+        [61.66508979861047, 6.83359898172541],
+        [61.66491299643991, 6.834016191164197],
+        [61.66469611772202, 6.834115526826265],
+        [61.66442501719242, 6.833405277424523],
+        [61.66443916162671, 6.8328936991841065],
+        [61.66434250786344, 6.832670194127614],
+        [61.664236215439715, 6.833371919290116],
+        [61.6642322462665, 6.833725933133714],
+        [61.66405713857948, 6.8344472456913845],
+        [61.663932405439304, 6.834939985316162],
+        [61.66397398320865, 6.835085982242022],
+        [61.66409178658461, 6.83550572340387],
+        [61.66403808216011, 6.83610066087675],
+        [61.664176674036156, 6.836578800851592],
+        [61.66490814476101, 6.837111281962347],
+        [61.665088309006705, 6.8380748617254055],
+        [61.66531870982107, 6.8383048068836345],
+        [61.66546249292201, 6.838739147754526],
+        [61.66553698270007, 6.839469132418895],
+        [61.66572753712013, 6.840505710592501],
+        [61.66537760901039, 6.841845232448094],
+        [61.66561285865416, 6.846962120220727],
+        [61.66553317210629, 6.8475278583716905],
+        [61.66543096514775, 6.848199444230647],
+        [61.66549159642615, 6.848542537092861],
+        [61.66533568716104, 6.849181273643499],
+        [61.66508796304386, 6.849049876410225],
+        [61.66500827514336, 6.849195873336084],
+        [61.66503772504357, 6.849465967648926],
+        [61.664883545843004, 6.849893008657067],
+        [61.66502559861747, 6.849487867187806],
+        [61.66489220761622, 6.849911258272799],
+        [61.66496496641558, 6.85024340127913],
+        [61.66495976936471, 6.850622993346762],
+        [61.66511568052285, 6.851495325032729],
+        [61.66498921930717, 6.852013614119531],
+        [61.664980557561144, 6.852228959585175],
+        [61.66481251920739, 6.85315239014124],
+        [61.66470857749665, 6.853404234921071],
+        [61.66478653381162, 6.855116048931881],
+        [61.66474149241022, 6.855579589171486],
+        [61.6648350398628, 6.856046779334239],
+        [61.6648246457154, 6.85615992695178],
+        [61.664675662551566, 6.856831512810737],
+        [61.66457691749902, 6.856937360639806],
+        [61.66457172038235, 6.8575943468061755],
+        [61.66446431310588, 6.858200234093719],
+        [61.66433611683852, 6.858411929636215],
+        [61.664349975920075, 6.8586090254861265],
+        [61.66430839865672, 6.8587805718740125],
+        [61.66423217352854, 6.859068915802586],
+    ];
 
-var polyline2 = L.polyline(latlngs2, {color: 'orange'}).addTo(map);
+    var polyline2 = L.polyline(latlngs2, {
+        color: 'orange'
+    }).addTo(map);
 }
