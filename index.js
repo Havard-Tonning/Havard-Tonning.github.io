@@ -254,7 +254,7 @@ L.marker([61.83475925136581, 6.805342694945899], {icon: icons.store})
     .bindPopup("<a href='./info/viking.html'><H3>The Viking Shop</H3><p>Suvenirar og norske spesialitetar</p><img src='./info/images/viking2.jpeg' class='popup-image'> <style='opacity:0'></a>");
 
 // Singerheimen
-L.marker([61.83249268584146, 6.813125114976453], {icon: icons.accommodation})
+L.marker([61.83297613686762, 6.814669372271026], {icon: icons.accommodation})
     .addTo(map)
     .bindPopup("<a href='./info/singerheimen.html'><H3>Singerheimen</H3><p>Historisk overnattingsstad med sjarm og historie</p><img src='./info/images/singer2.jpg' class='popup-image'> <style='opacity:0'></a>");
 
