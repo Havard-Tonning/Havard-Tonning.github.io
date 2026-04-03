@@ -52,7 +52,7 @@ $loginLink = "login_back.php?return=" . urlencode($currentPage);
         <div class="marginbody">
 
             <div class="qaHeader">
-                <h2><i class="fa-solid fa-circle-question"></i>Questions and answers</h2>
+                <h2><i class="fa-solid fa-circle-question"></i>&nbsp; Questions and answers</h2>
                 <?php if (isset($_SESSION['username'])): ?>
                     <button class="navButton askBtn" onclick="openAskModal()">
                         <i class="fa-solid fa-plus"></i> Ask a question
