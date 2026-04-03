@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset 
+xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Homepage -->
+
+  <url>
+    <loc>https://iolden.no/</loc>
+    <xhtml:link rel="alternate" hreflang="no" href="https://iolden.no/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iolden.no/en/index.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iolden.no/en/index.html"/>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Core pages -->
+
+  <url>
+    <loc>https://iolden.no/picktrip.html</loc>
+    <xhtml:link rel="alternate" hreflang="no" href="https://iolden.no/picktrip.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iolden.no/en/picktrip.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iolden.no/en/picktrip.html"/>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://iolden.no/sites.html</loc>
+    <xhtml:link rel="alternate" hreflang="no" href="https://iolden.no/sites.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iolden.no/en/sites.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iolden.no/en/sites.html"/>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://iolden.no/food.html</loc>
+    <xhtml:link rel="alternate" hreflang="no" href="https://iolden.no/food.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iolden.no/en/food.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iolden.no/en/food.html"/>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://iolden.no/pick_stores.html</loc>
+    <xhtml:link rel="alternate" hreflang="no" href="https://iolden.no/pick_stores.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iolden.no/en/pick_stores.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iolden.no/en/pick_stores.html"/>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://iolden.no/pick_accommodation.html</loc>
+    <xhtml:link rel="alternate" hreflang="no" href="https://iolden.no/pick_accommodation.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iolden.no/en/pick_accommodation.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iolden.no/en/pick_accommodation.html"/>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://iolden.no/pick_tour.html</loc>
+    <xhtml:link rel="alternate" hreflang="no" href="https://iolden.no/pick_tour.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iolden.no/en/pick_tour.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iolden.no/en/pick_tour.html"/>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Attractions -->
+
+  <url>
+    <loc>https://iolden.no/briksdalen.html</loc>
+    <xhtml:link rel="alternate" hreflang="no" href="https://iolden.no/briksdalen.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iolden.no/en/briksdalen.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iolden.no/en/briksdalen.html"/>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://iolden.no/kjenndalen.html</loc>
+    <xhtml:link rel="alternate" hreflang="no" href="https://iolden.no/kjenndalen.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iolden.no/en/kjenndalen.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iolden.no/en/kjenndalen.html"/>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://iolden.no/skylift.html</loc>
+    <xhtml:link rel="alternate" hreflang="no" href="https://iolden.no/skylift.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iolden.no/en/skylift.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iolden.no/en/skylift.html"/>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- ALL INFO PAGES -->
+
+  <!-- Accommodation -->
+
+  <url>
+    <loc>https://iolden.no/info/apartments.html</loc>
+    <xhtml:link rel="alternate" hreflang="no" href="https://iolden.no/info/apartments.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iolden.no/en/info/apartments.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iolden.no/en/info/apartments.html"/>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://iolden.no/info/muri_hytter.html</loc>
+    <xhtml:link rel="alternate" hreflang="no" href="https://iolden.no/info/muri_hytter.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iolden.no/en/info/muri_hytter.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iolden.no/en/info/muri_hytter.html"/>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://iolden.no/info/singerheimen.html</loc>
+    <xhtml:link rel="alternate" hreflang="no" href="https://iolden.no/info/singerheimen.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iolden.no/en/info/singerheimen.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iolden.no/en/info/singerheimen.html"/>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://iolden.no/info/fjordhotel.html</loc>
+    <xhtml:link rel="alternate" hreflang="no" href="https://iolden.no/info/fjordhotel.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iolden.no/en/info/fjordhotel.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iolden.no/en/info/fjordhotel.html"/>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Activities -->
+
+  <url>
+    <loc>https://iolden.no/info/olden_active.html</loc>
+    <xhtml:link rel="alternate" hreflang="no" href="https://iolden.no/info/olden_active.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iolden.no/en/info/olden_active.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iolden.no/en/info/olden_active.html"/>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://iolden.no/info/olden_adventure.html</loc>
+    <xhtml:link rel="alternate" hreflang="no" href="https://iolden.no/info/olden_adventure.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iolden.no/en/info/olden_adventure.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iolden.no/en/info/olden_adventure.html"/>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://iolden.no/info/olden_camping.html</loc>
+    <xhtml:link rel="alternate" hreflang="no" href="https://iolden.no/info/olden_camping.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iolden.no/en/info/olden_camping.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iolden.no/en/info/olden_camping.html"/>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Shops / misc -->
+
+  <url>
+    <loc>https://iolden.no/info/bunnpris.html</loc>
+    <xhtml:link rel="alternate" hreflang="no" href="https://iolden.no/info/bunnpris.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iolden.no/en/info/bunnpris.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iolden.no/en/info/bunnpris.html"/>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://iolden.no/info/trollshop.html</loc>
+    <xhtml:link rel="alternate" hreflang="no" href="https://iolden.no/info/trollshop.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iolden.no/en/info/trollshop.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iolden.no/en/info/trollshop.html"/>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://iolden.no/info/olden_souvenir.html</loc>
+    <xhtml:link rel="alternate" hreflang="no" href="https://iolden.no/info/olden_souvenir.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iolden.no/en/info/olden_souvenir.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iolden.no/en/info/olden_souvenir.html"/>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Remaining (long-tail coverage) -->
+
+  <url>
+    <loc>https://iolden.no/info/discover.html</loc>
+    <xhtml:link rel="alternate" hreflang="no" href="https://iolden.no/info/discover.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iolden.no/en/info/discover.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iolden.no/en/info/discover.html"/>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://iolden.no/info/farm.html</loc>
+    <xhtml:link rel="alternate" hreflang="no" href="https://iolden.no/info/farm.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iolden.no/en/info/farm.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iolden.no/en/info/farm.html"/>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://iolden.no/info/ljos.html</loc>
+    <xhtml:link rel="alternate" hreflang="no" href="https://iolden.no/info/ljos.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iolden.no/en/info/ljos.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iolden.no/en/info/ljos.html"/>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://iolden.no/info/isabella.html</loc>
+    <xhtml:link rel="alternate" hreflang="no" href="https://iolden.no/info/isabella.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iolden.no/en/info/isabella.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iolden.no/en/info/isabella.html"/>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://iolden.no/info/gjesta.html</loc>
+    <xhtml:link rel="alternate" hreflang="no" href="https://iolden.no/info/gjesta.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iolden.no/en/info/gjesta.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iolden.no/en/info/gjesta.html"/>
+    <priority>0.5</priority>
+  </url>
+
+</urlset>

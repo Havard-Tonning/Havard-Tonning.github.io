@@ -28,7 +28,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,6 +36,10 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/e065bf0659.js" crossorigin="anonymous"></script>
     <script src="components.js"></script>
+        <link rel="alternate" hreflang="no" href="https://iolden.no/calendar_front.php" />
+    <link rel="alternate" hreflang="en" href="https://iolden.no/calendar_front.php" />
+    <link rel="alternate" hreflang="x-default" href="https://iolden.no/calendar_front.php" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 </head>
 <body>
     <main-header lang="no"></main-header>

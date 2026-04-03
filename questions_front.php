@@ -35,7 +35,7 @@ if (!function_exists('isModerator')) {
 $loginLink = "login_back.php?return=" . urlencode($currentPage);
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,6 +43,7 @@ $loginLink = "login_back.php?return=" . urlencode($currentPage);
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/e065bf0659.js" crossorigin="anonymous"></script>
     <script src="components.js"></script>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 </head>
 <body>
     <main-header lang="no"></main-header>

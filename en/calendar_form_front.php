@@ -22,6 +22,10 @@
     <link rel="stylesheet" href="../style.css">
     <script src="https://kit.fontawesome.com/e065bf0659.js" crossorigin="anonymous"></script>
     <script src="components.js"></script>
+        <link rel="alternate" hreflang="no" href="https://iolden.no/calendar_form_front.php" />
+    <link rel="alternate" hreflang="en" href="https://iolden.no/en/calendar_form_front.php" />
+    <link rel="alternate" hreflang="x-default" href="https://iolden.no/en/calendar_form_front.php" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 </head>
 <body>
     <g-tag></g-tag>
