@@ -1590,7 +1590,7 @@ const food_map = document.getElementById('food_map');
 if (food_map) {
 
 
-    var map = L.map('mat_map', {
+    var map = L.map('food_map', {
         zoomControl: false
     }).setView([61.84017770961436, 6.805104792299194], 14, 5);
 

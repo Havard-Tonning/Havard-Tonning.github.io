@@ -42,7 +42,7 @@ $loginLink = "login_back.php?return=" . urlencode($currentPage);
     <title>Q&A</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="https://kit.fontawesome.com/e065bf0659.js" crossorigin="anonymous"></script>
-    <script src="components.js"></script>
+    <script defer src="index.js"></script>
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 </head>
 <body>

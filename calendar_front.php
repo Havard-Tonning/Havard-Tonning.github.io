@@ -35,7 +35,7 @@
     <title>Calender</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="https://kit.fontawesome.com/e065bf0659.js" crossorigin="anonymous"></script>
-    <script src="components.js"></script>
+    <script defer src="index.js"></script>
         <link rel="alternate" hreflang="no" href="https://iolden.no/calendar_front.php" />
     <link rel="alternate" hreflang="en" href="https://iolden.no/calendar_front.php" />
     <link rel="alternate" hreflang="x-default" href="https://iolden.no/calendar_front.php" />
