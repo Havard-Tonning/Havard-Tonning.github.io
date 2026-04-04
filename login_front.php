@@ -42,5 +42,7 @@
         </div>
         <a href="register_back.php" class="other-btn">Do not have an account? Click here to register.</a>
     </div>
+            <script defer src="components.js"></script>
+
 </body>
 </html>

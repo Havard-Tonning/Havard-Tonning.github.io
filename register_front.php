@@ -11,6 +11,8 @@
     <link rel="alternate" hreflang="en" href="https://iolden.no/en/register_front.php" />
     <link rel="alternate" hreflang="x-default" href="https://iolden.no/en/register_front.php" />
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+            <script defer src="components.js"></script>
+
 </head>
 
 <body>

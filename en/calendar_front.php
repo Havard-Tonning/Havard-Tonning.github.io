@@ -102,7 +102,8 @@
     </div>
 
     <a href="calendar_form_back.php" class="addEventLink">Add event</a>
-    
+            <script defer src="components.js"></script>
+
 <site-footer></site-footer>
 
 <script>

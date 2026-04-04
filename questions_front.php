@@ -44,6 +44,8 @@ $loginLink = "login_back.php?return=" . urlencode($currentPage);
     <script defer src="https://kit.fontawesome.com/e065bf0659.js" crossorigin="anonymous"></script>
     <script defer src="index.js"></script>
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+            <script defer src="components.js"></script>
+
 </head>
 <body>
     <main-header lang="no"></main-header>

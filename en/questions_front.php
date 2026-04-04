@@ -140,5 +140,7 @@ $loginLink = "login_back.php?return=" . urlencode($currentPage);
 
     <site-footer></site-footer>
     <script src="questions.js"></script>
+            <script defer src="components.js"></script>
+
 </body>
 </html>

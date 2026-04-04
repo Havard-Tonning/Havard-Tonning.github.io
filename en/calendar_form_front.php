@@ -83,5 +83,7 @@
     </div>
 </div>
     <site-footer></site-footer>
+            <script defer src="components.js"></script>
+
 </body>
 </html>
