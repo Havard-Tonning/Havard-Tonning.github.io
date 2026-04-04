@@ -75,30 +75,40 @@ function renderCalendar(){
         `;
     }
 }
-    function renderList(){
-        let listDiv = document.getElementById('eventList');
+function renderList(){
+    let listDiv = document.getElementById('eventList');
+    listDiv.innerHTML = '';
 
-        listDiv.innerHTML = '';
+    const filteredEvents = events.filter(e => {
+        const eDate = new Date(e.date.split(" ")[0]);
+        return eDate.getMonth() === viewDate.getMonth() && eDate.getFullYear() === viewDate.getFullYear();
+    }).sort((a,b) => new Date(a.date) - new Date(b.date));
 
-        const filteredEvents = events.filter(e => {
-            const eDate = new Date(e.date.split(" ")[0]);
-            return eDate.getMonth() === viewDate.getMonth() && eDate.getFullYear() === viewDate.getFullYear();
-        }).sort((a,b) => new Date(a.date) - new Date(b.date));
-
-        if(filteredEvents.length === 0){
-            listDiv.innerHTML = '<p style="text-align:center;">No events this month</p>';
-            return;
-        }
-
-        filteredEvents.forEach(e=> {
-            listDiv.innerHTML += `
-                <div class="valgBoks" onclick="openModal(${e.id})">
-                    <span>${e.date.split("-").reverse().join(".")} </span>
-                    <span>${e.title}</span>
-                </div>
-            `
-        })
+    if(filteredEvents.length === 0){
+        listDiv.innerHTML = '<p style="text-align:center;color:var(--color-text-secondary);">No events this month</p>';
+        return;
     }
+
+    filteredEvents.forEach(e => {
+        const d = new Date(e.date.split(" ")[0]);
+        const day = String(d.getDate()).padStart(2, '0');
+        const mon = d.toLocaleString('default', { month: 'short' });
+
+        listDiv.innerHTML += `
+            <div class="evCard" onclick="openModal(${e.id})">
+                <div class="evDateBox">
+                    <span class="evDay">${day}</span>
+                    <span class="evMon">${mon}</span>
+                </div>
+                <div class="evInfo">
+                    <span class="evTitle">${e.title}</span>
+                    <span class="evCat">${e.category}</span>
+                </div>
+                <span class="evChevron">›</span>
+            </div>
+        `;
+    });
+}
 
 
 function setView(view){
