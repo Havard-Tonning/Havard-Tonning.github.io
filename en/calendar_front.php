@@ -34,7 +34,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calender</title>
     <link rel="stylesheet" href="../style.css">
-    <script src="https://kit.fontawesome.com/e065bf0659.js" crossorigin="anonymous"></script>
+    <script defer src="https://kit.fontawesome.com/e065bf0659.js" crossorigin="anonymous"></script>
     <script src="components.js"></script>
         <link rel="alternate" hreflang="no" href="https://iolden.no/calendar_front.php" />
     <link rel="alternate" hreflang="en" href="https://iolden.no/en/calendar_front.php" />
