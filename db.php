@@ -1,13 +1,11 @@
 <?php
+
+require_once 'db_config.php';
 function createConn(){
-    $servername = "localhost";
-    $DBusername = "wmrhtwvu_admin";
-    $DBpassword = "UwS5GHDa(2kb";
-    $DBname = "wmrhtwvu_iOlden";
+
 
     // Create connection
-    $conn = new mysqli($servername, $DBusername, $DBpassword, $DBname);
-
+     $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
     // Check connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
