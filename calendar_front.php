@@ -89,7 +89,8 @@
             <span class="modalCategory" id="modalCategory">Kategori</span>
             <h2 id="modalTitle">Tittel</h2>
             <div class="eventMeta">
-                <p><i class="fa-solid fa-calendar-day"></i> <span id="modalDate">Date</span></p>
+                <p><i class="fa-solid fa-calendar-day"></i> <span id="modalDate">Daoe</span></p>
+                <p id="timeContainer"><i class="fa-solid fa-clock"></i> <span id="modalTime"></span></p>
                 <p><i class="fa-solid fa-user-pen"></i>Lagt til av: <span id="modalUser">Username</span></p>
             </div>
             <p id="modalDescription">Skildring</p>

@@ -6,9 +6,9 @@ let currentEventId = null;
 async function loadEvents() {
     try {
         const response = await fetch('calendar_back.php');
-        const text = await response.text(); // Get raw text first *** Debug ***
-        console.log("Raw response:", text); // See what PHP returns
-        events = JSON.parse(text); // Then parse it
+        const text = await response.text(); 
+        console.log("Raw response:", text); 
+        events = JSON.parse(text); 
         render();
     } catch (err) {
         console.error("Could not load events:", err);
@@ -54,7 +54,7 @@ function renderCalendar() {
     const maxVisible = window.innerWidth < 480 ? 2 : 3;
 
     for (let d = 1; d <= daysInMonth; d++) {
-        let dateString = `${year}-${String(month + 1).padStart(2, 0)}-${String(d).padStart(2, 0)}`;
+        let dateString = `${year}-${String(month + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
         const isToday = new Date().toISOString().split('T')[0] === dateString;
         const dayEvents = events.filter(e => e.date.split(" ")[0] === dateString);
 
@@ -116,7 +116,6 @@ function renderList() {
     });
 }
 
-
 function setView(view) {
     currentView = view;
     document.getElementById('calendarView').style.display = view === 'calendar' ? 'block' : 'none';
@@ -135,14 +134,26 @@ function openModal(eventId) {
     currentEventId = eventId;
     const e = events.find(item => item.id == eventId);
 
-    if (!e)
-        return;
+    if (!e) return;
 
     document.getElementById('modalTitle').innerText = e.title;
     document.getElementById('modalDate').innerText = e.date.split(" ")[0].split("-").reverse().join('.');
     document.getElementById('modalUser').innerText = e.username;
     document.getElementById('modalDescription').innerHTML = e.description;
     document.getElementById('modalCategory').innerText = e.category;
+
+    const timeElement = document.getElementById('modalTime');
+    if (timeElement) {
+        if (e.category == 5) {
+            timeElement.innerText = "";
+            timeElement.style.display = "none";
+        } else {
+            const timePart = e.date.split(" ")[1] ? e.date.split(" ")[1].substring(0, 5) : "";
+            timeElement.innerText = timePart;
+            timeElement.style.display = "inline";
+        }
+    }
+
     document.getElementById('eventModal').style.display = 'flex';
 }
 
@@ -161,6 +172,5 @@ async function deleteCurrentEvent() {
     events = events.filter(e => e.id != currentEventId);
     render();
 }
-
 
 window.onload = loadEvents;

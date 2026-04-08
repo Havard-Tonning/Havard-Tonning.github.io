@@ -7,7 +7,7 @@ class SiteFooter extends HTMLElement {
         &copy;2026 All rights reserved
         <br>
         Spørsmål? Ta kontakt på <a href="mailto:havard@iolden.no" style="color: rgb(203, 234, 255)">havard@iolden.no</a>
-        </footer>`; 
+        </footer>`;
     }
 }
 
@@ -30,7 +30,7 @@ class gtagElement extends HTMLElement {
 }
 
 class hamburger extends HTMLElement {
-    connectedCallback(){
+    connectedCallback() {
         this.innerHTML = `
         <div class="menu-content">
             <span class="menu-close"><i class="fa-solid fa-xmark"></i></span>
@@ -38,9 +38,11 @@ class hamburger extends HTMLElement {
             <a href="mainmap.html">Virtuell guida tur</a>
             <a href="calendar_front.php">Kalender</a>
             <a href="picktrip.html">Trimturar i området</a>
-            <a href="sites.html">Ein kort køyretur unna</a>
+            <a href="food.html">Mat og drikke</a>
+            <a href="pick_stores.html">Butikkar</a>
+            <a href="pick_accommodation.html">Overnatting</a>
+            <a href="pick_tour.html">Opplevingar og transport</a>
             <a href="weather.html">Vêrmelding</a>
-            <a href="bus.html">Buss til Briksdalen</a>
             <a href="toilet.html">Offentlege toalett</a>
             <a href="questions_front.php">Spørsmål og svar</a>
             <a class="auth-btn" style="cursor:pointer;"></a>
@@ -55,7 +57,7 @@ class hamburger extends HTMLElement {
             .then(r => r.json())
             .then(data => {
                 const btn = this.querySelector('.auth-btn');
-                if(data.loggedIn){
+                if (data.loggedIn) {
                     btn.innerText = 'Logg ut';
                     btn.addEventListener('click', () => {
                         fetch('logout.php').then(() => {
@@ -65,7 +67,8 @@ class hamburger extends HTMLElement {
                 } else {
                     btn.innerText = 'Logg inn';
                     btn.addEventListener('click', () => {
-                        window.location.href = 'login_front.php';
+                        const currentPath = encodeURIComponent(window.location.href);
+                        window.location.href = `login_front.php?return=${currentPath}`;
                     });
                 }
             });

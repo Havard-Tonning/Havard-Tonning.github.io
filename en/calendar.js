@@ -7,33 +7,34 @@ async function loadEvents() {
     try {
         const response = await fetch('calendar_back.php');
         const text = await response.text();
-        events = JSON.parse(text);            
+        console.log("Raw response:", text);
+        events = JSON.parse(text);
         render();
-    } catch(err) {
+    } catch (err) {
         console.error("Could not load events:", err);
     }
 }
 
-function render(){
+function render() {
     updateHeader();
 
-    if(currentView == "calendar")
+    if (currentView == "calendar")
         renderCalendar();
     else
         renderList();
 }
 
-function updateHeader(){
-    document.getElementById("monthTitle").innerText = viewDate.toLocaleString('default', { month: 'long' }) + " " + viewDate.getFullYear();
+function updateHeader() {
+    document.getElementById("monthTitle").innerText = viewDate.toLocaleString('default', {
+        month: 'long'
+    }) + " " + viewDate.getFullYear();
 }
 
-function renderCalendar(){
+function renderCalendar() {
     const grid = document.getElementById("calendarGrid");
     grid.innerHTML = "";
 
-    const days = window.innerWidth < 480
-        ? ["M", "T", "W", "T", "F", "S", "S"]
-        : ["Mon", "Tue", "Wed", "Tur", "Fri", "Sat", "Sun"];
+    const days = window.innerWidth < 480 ? ["M", "T", "O", "T", "F", "L", "S"] : ["Man", "Tys", "Ons", "Tor", "Fre", "Lau", "Søn"];
 
     days.forEach(d => grid.innerHTML += `<div class="weekday">${d}</div>`);
 
@@ -44,14 +45,14 @@ function renderCalendar(){
     let startOffset = firstDay === 0 ? 6 : firstDay - 1;
     let daysInMonth = new Date(year, month + 1, 0).getDate();
 
-    for(let i = 0; i < startOffset; i++){
+    for (let i = 0; i < startOffset; i++) {
         grid.innerHTML += `<div class="day otherMonth"></div>`;
     }
 
     const maxVisible = window.innerWidth < 480 ? 2 : 3;
 
-    for(let d = 1; d <= daysInMonth; d++){
-        let dateString = `${year}-${String(month + 1).padStart(2, 0)}-${String(d).padStart(2, 0)}`;
+    for (let d = 1; d <= daysInMonth; d++) {
+        let dateString = `${year}-${String(month + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
         const isToday = new Date().toISOString().split('T')[0] === dateString;
         const dayEvents = events.filter(e => e.date.split(" ")[0] === dateString);
 
@@ -63,7 +64,7 @@ function renderCalendar(){
             eventsHTML += `<div class='eventItem cat-${e.category}' onclick='openModal(${e.id})'>${e.title}</div>`;
         });
 
-        if(overflow > 0){
+        if (overflow > 0) {
             eventsHTML += `<div class='eventOverflow'>+${overflow}</div>`;
         }
 
@@ -75,16 +76,17 @@ function renderCalendar(){
         `;
     }
 }
-function renderList(){
+
+function renderList() {
     let listDiv = document.getElementById('eventList');
     listDiv.innerHTML = '';
 
     const filteredEvents = events.filter(e => {
         const eDate = new Date(e.date.split(" ")[0]);
         return eDate.getMonth() === viewDate.getMonth() && eDate.getFullYear() === viewDate.getFullYear();
-    }).sort((a,b) => new Date(a.date) - new Date(b.date));
+    }).sort((a, b) => new Date(a.date) - new Date(b.date));
 
-    if(filteredEvents.length === 0){
+    if (filteredEvents.length === 0) {
         listDiv.innerHTML = '<p style="text-align:center;color:var(--color-text-secondary);">No events this month</p>';
         return;
     }
@@ -92,7 +94,9 @@ function renderList(){
     filteredEvents.forEach(e => {
         const d = new Date(e.date.split(" ")[0]);
         const day = String(d.getDate()).padStart(2, '0');
-        const mon = d.toLocaleString('default', { month: 'short' });
+        const mon = d.toLocaleString('default', {
+            month: 'short'
+        });
 
         listDiv.innerHTML += `
             <div class="evCard" onclick="openModal(${e.id})">
@@ -110,8 +114,7 @@ function renderList(){
     });
 }
 
-
-function setView(view){
+function setView(view) {
     currentView = view;
     document.getElementById('calendarView').style.display = view === 'calendar' ? 'block' : 'none';
     document.getElementById('listView').style.display = view === 'list' ? 'block' : 'none';
@@ -120,39 +123,52 @@ function setView(view){
     render();
 }
 
-function moveMonth(dir){
+function moveMonth(dir) {
     viewDate.setMonth(viewDate.getMonth() + dir);
     render();
 }
 
-function openModal(eventId){
+function openModal(eventId) {
     currentEventId = eventId;
     const e = events.find(item => item.id == eventId);
 
-    if(!e)
-        return;
+    if (!e) return;
 
     document.getElementById('modalTitle').innerText = e.title;
-    document.getElementById('modalDate').innerText = e.date.split(" ")[0].split("-").reverse().join('.');    
+    document.getElementById('modalDate').innerText = e.date.split(" ")[0].split("-").reverse().join('.');
     document.getElementById('modalUser').innerText = e.username;
     document.getElementById('modalDescription').innerHTML = e.description;
     document.getElementById('modalCategory').innerText = e.category;
+
+    const timeElement = document.getElementById('modalTime');
+    if (timeElement) {
+        if (e.category == 5) {
+            timeElement.innerText = "";
+            timeElement.style.display = "none";
+        } else {
+            const timePart = e.date.split(" ")[1] ? e.date.split(" ")[1].substring(0, 5) : "";
+            timeElement.innerText = timePart;
+            timeElement.style.display = "inline";
+        }
+    }
+
     document.getElementById('eventModal').style.display = 'flex';
 }
 
-function closeModal(){
+function closeModal() {
     document.getElementById('eventModal').style.display = 'none';
 }
 
 async function deleteCurrentEvent() {
     if (!confirm("Delete this event?")) return;
 
-    await fetch(`calendar_back.php?id=${currentEventId}`, { method: 'DELETE' });
+    await fetch(`calendar_back.php?id=${currentEventId}`, {
+        method: 'DELETE'
+    });
 
     closeModal();
     events = events.filter(e => e.id != currentEventId);
     render();
 }
-
 
 window.onload = loadEvents;
