@@ -65,7 +65,7 @@ class hamburger extends HTMLElement {
                         });
                     });
                 } else {
-                    btn.innerText = 'Logg inn';
+                    btn.innerText = 'Log in';
                     btn.addEventListener('click', () => {
                         const currentPath = encodeURIComponent(window.location.href);
                         window.location.href = `login_front.php?return=${currentPath}`;

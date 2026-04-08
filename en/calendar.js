@@ -34,7 +34,7 @@ function renderCalendar() {
     const grid = document.getElementById("calendarGrid");
     grid.innerHTML = "";
 
-    const days = window.innerWidth < 480 ? ["M", "T", "O", "T", "F", "L", "S"] : ["Man", "Tys", "Ons", "Tor", "Fre", "Lau", "Søn"];
+    const days = window.innerWidth < 480 ? ["M", "T", "W", "T", "F", "S", "S"] : ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
     days.forEach(d => grid.innerHTML += `<div class="weekday">${d}</div>`);
 
@@ -94,7 +94,7 @@ function renderList() {
     filteredEvents.forEach(e => {
         const d = new Date(e.date.split(" ")[0]);
         const day = String(d.getDate()).padStart(2, '0');
-        const mon = d.toLocaleString('default', {
+        const mon = d.toLocaleString('en-US', {
             month: 'short'
         });
 
@@ -141,14 +141,15 @@ function openModal(eventId) {
     document.getElementById('modalCategory').innerText = e.category;
 
     const timeElement = document.getElementById('modalTime');
-    if (timeElement) {
-        if (e.category == 5) {
-            timeElement.innerText = "";
-            timeElement.style.display = "none";
-        } else {
-            const timePart = e.date.split(" ")[1] ? e.date.split(" ")[1].substring(0, 5) : "";
+    const timeContainer = document.getElementById('timeContainer');
+
+    if (timeElement && timeContainer) {
+        const timePart = e.date.split(" ")[1] ? e.date.split(" ")[1].substring(0, 5) : "";
+        if (timePart) {
             timeElement.innerText = timePart;
-            timeElement.style.display = "inline";
+            timeContainer.style.display = "block";
+        } else {
+            timeContainer.style.display = "none";
         }
     }
 
