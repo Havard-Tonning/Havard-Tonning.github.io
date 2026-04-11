@@ -309,7 +309,7 @@ a {
 .roundedbody {
     position: relative;
     z-index: 5;
-    margin-top: -10px;
+    margin-top: -14px;
     background: white;
     border-radius: 20px 20px 0 0;
     padding: 20px;
@@ -327,7 +327,6 @@ a {
     flex: 1;
     text-align: center;
     padding: 12px 16px;
-    /*TEST*/
     cursor: pointer;
     transition: background-color 0.3s;
     font-weight: 500;
@@ -1370,3 +1369,25 @@ a.submit-btn {
     font-size: large;
 }
 
+@media (min-width: 768px) {
+    .swiper {
+        height: 350px;
+    }
+
+    .swiper .swiper-wrapper {
+        display: flex;
+        align-items: stretch;
+    }
+
+    .swiper .swiper-slide {
+        width: auto !important;
+        flex-shrink: 0;
+    }
+
+    .swiper_image {
+        width: auto;
+        height: 350px;
+        object-fit: cover;
+        display: block;
+    }
+}

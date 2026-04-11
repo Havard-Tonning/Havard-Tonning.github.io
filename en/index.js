@@ -788,6 +788,18 @@ if (mat_map) {
         }).addTo(map)
         .bindPopup("<a href='molla.html'><H3>Mølla Guesthouse</H3><p>Mølla is a restaurant located right by the fjord, serving both seafood and pizza.</p><img src='../images/molla3.jpg' class='popup-image'> <style='opacity:0'></a>");
 
+            L.marker([61.679152875735696, 6.815727554128876], {
+            icon: L.icon({
+                iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
+                shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
+                iconSize: [25, 41],
+                iconAnchor: [12, 41],
+                popupAnchor: [1, -34],
+                shadowSize: [41, 41]
+            })
+        }).addTo(map)
+        .bindPopup("<a href='info/aabrekk.html'><H3>Aabrekk Gard Kafé og Restaurant</H3><p>At Aabrekk they serve homemade farm food and cakes, and sell food produced on the farm, as well as home-brewed beer.<p><img src='../../info/images/aabrekk1.jpg' class='popup-image'> <style='opacity:0'></a>");
+
 
     L.marker([61.848272904545304, 6.814688885941699], {
             icon: L.icon({

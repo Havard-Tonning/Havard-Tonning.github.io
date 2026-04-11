@@ -358,7 +358,7 @@ if (mapElement) {
             icon: icons.accommodation
         })
         .addTo(map)
-        .bindPopup("<a href='./info/aabrekk.html'><H3>Aabrekk Hytter</H3><p>Romelege hytter i vakker natur nær Briksdalen</p><img src='./info/images/aabrekk2.jpg' class='popup-image'> <style='opacity:0'></a>");
+        .bindPopup("<a href='./info/aabrekk.html'><H3>Aabrekk Hytter</H3><p>Romslege hytter i vakker natur nær Briksdalen</p><img src='./info/images/aabrekk2.jpg' class='popup-image'> <style='opacity:0'></a>");
 
     // Flåten Feriehytter
     L.marker([61.75732649403623, 6.808569237792529], {
@@ -776,6 +776,19 @@ if (mat_map) {
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
+
+    L.marker([61.679152875735696, 6.815727554128876], {
+            icon: L.icon({
+                iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
+                shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
+                iconSize: [25, 41],
+                iconAnchor: [12, 41],
+                popupAnchor: [1, -34],
+                shadowSize: [41, 41]
+            })
+        }).addTo(map)
+        .bindPopup("<a href='info/aabrekk.html'><H3>Aabrekk Gard Kafé og Restaurant</H3><p>På Aabrekk serverar dei heimelaga gardsmat og kaker, og sel matvarer som er produsert på garden, samt heimebrygga øl.<p><img src='./info/images/aabrekk1.jpg' class='popup-image'> <style='opacity:0'></a>");
+
 
 
     L.marker([61.841857038014155, 6.811442067471242], {
@@ -1610,6 +1623,7 @@ if (food_map) {
             })
         }).addTo(map)
         .bindPopup("<a href='sundekiosken.html'><H3>Sundekiosken</H3><p>Sundekiosken er ein fast-food restaurant med både tradisjonell gatemat som burger og løvsteik, samt asiatiske rettar som vårrullar og nudlar.</p><img src='./images/sunde2.jpg' class='popup-image'> <style='opacity:0'></a>");
+
 
     L.marker([61.8425222198133, 6.810743183913986], {
             icon: L.icon({

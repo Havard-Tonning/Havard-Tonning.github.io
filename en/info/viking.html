@@ -1,62 +1,62 @@
-<!DOCTYPE html>
-<html lang="no">
+    <!DOCTYPE html>
+    <html lang="no">
 
-<head>
-    <meta charset="UTF-8">
-    <title>Viking Shop</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
-    <script defer src="https://kit.fontawesome.com/e065bf0659.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <link rel="alternate" hreflang="no" href="https://iolden.no/info/viking.html" />
-    <link rel="alternate" hreflang="en" href="https://iolden.no/en/info/viking.html" />
-    <link rel="alternate" hreflang="x-default" href="https://iolden.no/en/info/viking.html" />
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <title>Viking Shop</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../../style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+        <script defer src="https://kit.fontawesome.com/e065bf0659.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <link rel="alternate" hreflang="no" href="https://iolden.no/info/viking.html" />
+        <link rel="alternate" hreflang="en" href="https://iolden.no/en/info/viking.html" />
+        <link rel="alternate" hreflang="x-default" href="https://iolden.no/en/info/viking.html" />
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    </head>
 
-<body>
-    <g-tag></g-tag>
-    <info-header></info-header>
-    <hamburger-menu></hamburger-menu>
+    <body>
+        <g-tag></g-tag>
+        <info-header></info-header>
+        <alt-hamburger-menu></alt-hamburger-menu>
 
-    <div class="swiper">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide"><img class="swiper_image" src="../../info/images/viking5.jpeg" alt="Norwegian Viking souvenir mugs with Thor's hammer Mjolnir and runic inscriptions – authentic gifts from Olden, Norway"></div>
-            <div class="swiper-slide"><img class="swiper_image" src="../../info/images/viking3.jpeg" alt="Traditional Norwegian hunting and outdoor knives displayed in a souvenir shop in Olden, Norway – handcrafted Scandinavian blades"></div>
-            <div class="swiper-slide"><img class="swiper_image" src="../../info/images/viking6.jpeg" alt="Norwegian Viking jewellery collection including Thor's hammer pendants and Celtic-style necklaces – souvenir gifts from Olden, Norway"></div>
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img class="swiper_image" src="/info/images/viking5.jpeg" alt="Norwegian Viking souvenir mugs with Thor's hammer Mjolnir and runic inscriptions – authentic gifts from Olden, Norway"></div>
+                <div class="swiper-slide"><img class="swiper_image" src="/info/images/viking3.jpeg" alt="Traditional Norwegian hunting and outdoor knives displayed in a souvenir shop in Olden, Norway – handcrafted Scandinavian blades"></div>
+                <div class="swiper-slide"><img class="swiper_image" src="/info/images/viking6.jpeg" alt="Norwegian Viking jewellery collection including Thor's hammer pendants and Celtic-style necklaces – souvenir gifts from Olden, Norway"></div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
         </div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-    </div>
-    <div class="roundedbody">
-        <div class="marginbody">
-            <h1>The Viking Shop</h1>
-            <p>
-                Vikingbutikken is a souvenir shop in the center of Olden. In the shop you will find Viking items, such as drinking horns, beer mugs, Viking jewelry etc.
-                We focus on sustainability, so here you will find quality Norwegian products. We can mention Norlender knitted jumpers, knives from Helle, silver jewelery from Fjordsylv,
-                bronze jewelery from Espeland, leather bags from Aurlands and reindeer, sheep and goat skins from Granberg.
-                <br><br>
-                Welcome to our small Viking shop with a local twist.
-            </p>
-            <a class="visitUs" href="https://www.instagram.com/thevikingshopnorway?utm_source=qr">
-                Visit us online
-            </a>
-            <br>
+        <div class="roundedbody">
+            <div class="marginbody">
+                <h1>The Viking Shop</h1>
+                <p>
+                    Vikingbutikken is a souvenir shop in the center of Olden. In the shop you will find Viking items, such as drinking horns, beer mugs, Viking jewelry etc.
+                    We focus on sustainability, so here you will find quality Norwegian products. We can mention Norlender knitted jumpers, knives from Helle, silver jewelery from Fjordsylv,
+                    bronze jewelery from Espeland, leather bags from Aurlands and reindeer, sheep and goat skins from Granberg.
+                    <br><br>
+                    Welcome to our small Viking shop with a local twist.
+                </p>
+                <a class="visitUs" href="https://www.instagram.com/thevikingshopnorway?utm_source=qr">
+                    Visit us online
+                </a>
+                <br>
+            </div>
+
+            <div style="margin-top: 30px;">You can find us here:</div>
+            <div id="viking_map" class="maps" style="height: 400px; border-radius: 5px;"></div>
         </div>
 
-        <div style="margin-top: 30px;">You can find us here:</div>
-        <div id="viking_map" class="maps" style="height: 400px; border-radius: 5px;"></div>
-    </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+        <script src="../../swiper.js"></script>
+        <script defer src="../index.js"></script>
+        <script defer src="../components.js"></script>
 
-    <script src="../../swiper.js"></script>
-    <script defer src="../index.js"></script>
-    <script defer src="../components.js"></script>
+        <site-footer></site-footer>
+    </body>
 
-    <site-footer></site-footer>
-</body>
-
-</html>
+    </html>

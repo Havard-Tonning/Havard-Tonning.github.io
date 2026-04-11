@@ -1,25 +1,38 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
+    const isMobile = window.innerWidth < 768;
+
+    if (!isMobile) {
+        const wrapper = document.querySelector('.swiper .swiper-wrapper');
+        if (wrapper) {
+            const originalSlides = Array.from(wrapper.querySelectorAll('.swiper-slide'));
+            for (let i = 0; i < 2; i++) {
+                originalSlides.forEach(slide => {
+                    wrapper.appendChild(slide.cloneNode(true));
+                });
+            }
+        }
+    }
+
+    const slideCount = document.querySelectorAll('.swiper .swiper-slide').length;
+
     const swiper = new Swiper('.swiper', {
         direction: 'horizontal',
         loop: true,
-        
-        // Navigation arrows
+        loopedSlides: slideCount,
+        observer: true,
+        observeParents: true,
+        watchOverflow: true,
+        updateOnImagesReady: true,
+
+        slidesPerView: isMobile ? 1 : 'auto',
+        spaceBetween: isMobile ? 0 : 8,
+        centeredSlides: true,
+
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
-
-        // Fixes for dynamic content/custom elements
-        observer: true,
-        observeParents: true,
-        watchOverflow: true,
-        
-        // Ensure images are loaded before sizing
-        updateOnImagesReady: true,
     });
 
-    // Recalculate size after a short delay to account for the main-header component
-    setTimeout(() => {
-        swiper.update();
-    }, 500);
+    setTimeout(() => swiper.update(), 500);
 });

@@ -75,6 +75,53 @@ class hamburger extends HTMLElement {
     }
 }
 
+class altHamburger extends HTMLElement {
+    connectedCallback() {
+        this.innerHTML = `
+        <div class="menu-content">
+            <span class="menu-close"><i class="fa-solid fa-xmark"></i></span>
+            <a href="../index.html" style="margin-top: 40px;">Heim</a>
+            <a href="../mainmap.html">Virtuell guida tur</a>
+            <a href="../calendar_front.php">Kalender</a>
+            <a href="../picktrip.html">Trimturar i området</a>
+            <a href="../food.html">Mat og drikke</a>
+            <a href="../pick_stores.html">Butikkar</a>
+            <a href="../pick_accommodation.html">Overnatting</a>
+            <a href="../pick_tour.html">Opplevingar og transport</a>
+            <a href="../weather.html">Vêrmelding</a>
+            <a href="../toilet.html">Offentlege toalett</a>
+            <a href="../questions_front.php">Spørsmål og svar</a>
+            <a class="auth-btn" style="cursor:pointer;"></a>
+        </div>`;
+
+        this.querySelector('.menu-close').addEventListener('click', () => {
+            this.querySelector('.menu-content').classList.remove('active');
+            document.querySelector('.ham-menu')?.classList.remove('active');
+        });
+
+        fetch('../auth_status.php')
+            .then(r => r.json())
+            .then(data => {
+                const btn = this.querySelector('.auth-btn');
+                if (data.loggedIn) {
+                    btn.innerText = 'Logg ut';
+                    btn.addEventListener('click', () => {
+                        fetch('../logout.php').then(() => {
+                            window.location.href = '../index.html';
+                        });
+                    });
+                } else {
+                    btn.innerText = 'Logg inn';
+                    btn.addEventListener('click', () => {
+                        const currentPath = encodeURIComponent(window.location.href);
+                        window.location.href = `../login_front.php?return=${currentPath}`;
+                    });
+                }
+            });
+    }
+}
+
+
 class mainHeader extends HTMLElement {
     connectedCallback() {
         let path = window.location.pathname;
@@ -135,3 +182,4 @@ customElements.define('g-tag', gtagElement);
 customElements.define('hamburger-menu', hamburger);
 customElements.define('main-header', mainHeader);
 customElements.define('info-header', altMainHeader);
+customElements.define('alt-hamburger-menu', altHamburger);
