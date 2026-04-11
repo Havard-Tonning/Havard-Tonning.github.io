@@ -1391,3 +1391,9 @@ a.submit-btn {
         display: block;
     }
 }
+
+.header_image {
+    height: 350px;
+    width:100%;
+    object-fit:cover;
+}
