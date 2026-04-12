@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
     const isMobile = window.innerWidth < 768;
 
     if (!isMobile) {
