@@ -253,7 +253,5 @@ directionButtons.forEach(btn => {
     });
 });
 
-// Initialize
 setActiveTab(document.getElementById('tab-monday-wednesday-friday'));
 setActiveDirection('to-briksdalen');
-
