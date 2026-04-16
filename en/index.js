@@ -232,7 +232,7 @@ if (mapElement) {
         .bindPopup("<a href='./info/stabukk.html'><H3>Stabukk</H3><p>Café with ice cream and coffee</p><img src='../../info/images/placeholder.png' class='popup-image'> <style='opacity:0'></a>");
 
     // Isabella
-    L.marker([61.83945710069584, 6.809481206796373], {
+    L.marker([61.83914371938095, 6.806909096802973], {
             icon: icons.adventure
         })
         .addTo(map)
@@ -1360,6 +1360,19 @@ if (toilet_map) {
 
     L.marker([61.85984345786699, 6.814774301942007]).addTo(map)
         .bindPopup("<H3>Toalett</H3><img src='../images/toilet4.jpg' class='toiletimg'>");
+}
+
+const isabella_map = document.getElementById('isabella_map');
+if (isabella_map) {
+    var amap = L.map('isabella_map', {
+        zoomControl: false
+    }).setView([61.83914371938095, 6.806909096802973], 14);
+
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(amap);
+
+    L.marker([61.83911313605357, 6.806976716510388]).addTo(amap).bindPopup("Isabella");
 }
 
 const skylift_map = document.getElementById('skylift_map');

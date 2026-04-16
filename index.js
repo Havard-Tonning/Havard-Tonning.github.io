@@ -249,7 +249,7 @@ if (mapElement) {
         .bindPopup("<a href='./info/stabukk.html'><H3>Stabukk</H3><p>Café med is og kaffi</p><img src='./info/images/placeholder.png' class='popup-image'> <style='opacity:0'></a>");
 
     // Isabella
-    L.marker([61.83945710069584, 6.809481206796373], {
+    L.marker([61.83911313605357, 6.806976716510388], {
             icon: icons.adventure
         })
         .addTo(map)
@@ -752,6 +752,21 @@ if (stabukk_map) {
 
     L.marker([61.83515711604809, 6.804742926055739]).addTo(amap).bindPopup("Stabukk");
 }
+
+
+const isabella_map = document.getElementById('isabella_map');
+if (isabella_map) {
+    var amap = L.map('isabella_map', {
+        zoomControl: false
+    }).setView([61.83911313605357, 6.806976716510388], 14);
+
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(amap);
+
+    L.marker([61.83911313605357, 6.806976716510388]).addTo(amap).bindPopup("Isabella");
+}
+
 
 const gryta_map = document.getElementById('gryta_map');
 if (gryta_map) {
