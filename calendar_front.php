@@ -35,7 +35,7 @@ $loginLink = "login_back.php?return=" . urlencode($currentPage);
             <div class="calendarHeader">
                 <div class="calendarNav">
                     <button class="navButton" onclick="moveMonth(-1)"><i class="fa-solid fa-chevron-left"></i></button>
-                    <h2 id="monthTitle">February 2026</h2>
+                    <h2 id="monthTitle">Februar 2026</h2>
                     <button class="navButton" onclick="moveMonth(1)"><i class="fa-solid fa-chevron-right"></i></button>
                 </div>
 
@@ -58,42 +58,34 @@ $loginLink = "login_back.php?return=" . urlencode($currentPage);
                     <!-- Put JS content here -->
                 </div>
             </div>
-
-            <?php if (canAddCalendarEvents()): ?>
-                <a href="calendar_form_front.php">
-                    <i class="fa-solid fa-calendar-plus"></i> Add event
-                </a>
-            <?php endif; ?>
-
-
         </div>
     </div>
 
     <div class="eventModal" id="eventModal" onclick="if(event.target == this) closeModal()">
         <div class="modalContent">
             <span class="closeModal" onclick="closeModal()">&times;</span>
-            <span class="modalCategory" id="modalCategory">Category</span>
-            <h2 id="modalTitle">Title</h2>
+            <span class="modalCategory" id="modalCategory">Kategori</span>
+            <h2 id="modalTitle">Tittel</h2>
             <div class="eventMeta">
                 <p><i class="fa-solid fa-calendar-day"></i> <span id="modalDate">Date</span></p>
                 <p id="timeContainer"><i class="fa-solid fa-clock"></i> <span id="modalTime"></span></p>
-                <p><i class="fa-solid fa-user-pen"></i>Added by: <span id="modalUser">Username</span></p>
+                <p><i class="fa-solid fa-user-pen"></i>Lagt til av: <span id="modalUser">Brukarnamn</span></p>
             </div>
-            <p id="modalDescription">Description</p>
+            <p id="modalDescription">Skildring</p>
             <?php if (isset($_SESSION["username"]) && isModerator()): ?>
                 <button id="deleteEventBtn" onclick="deleteCurrentEvent()">
-                    <i class="fa-solid fa-trash"></i> Delete
+                    <i class="fa-solid fa-trash"></i> Slett
                 </button>
             <?php endif; ?>
         </div>
     </div>
 
     <?php if (canAddCalendarEvents()): ?>
-        <a href="calendar_form_front.php" class="addEventLink">Add event</a>
+        <a href="calendar_form_front.php" class="addEventLink">Legg til hending</a>
     <?php endif; ?>
 
     <?php if (!isset($_SESSION['username'])): ?>
-        <a href="<?php echo $loginLink; ?>" class="addEventLink">Log in</a>
+        <a href="<?php echo $loginLink; ?>" class="addEventLink">Logg inn</a>
     <?php endif; ?>
 
     <site-footer></site-footer>

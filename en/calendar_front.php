@@ -58,14 +58,6 @@ $loginLink = "login_back.php?return=" . urlencode($currentPage);
                     <!-- Put JS content here -->
                 </div>
             </div>
-
-            <?php if (canAddCalendarEvents()): ?>
-                <a href="calendar_form_front.php">
-                    <i class="fa-solid fa-calendar-plus"></i> Add event
-                </a>
-            <?php endif; ?>
-
-
         </div>
     </div>
 
