@@ -1,51 +1,36 @@
-<?php 
-    session_start();
-    require_once 'calendar_back.php';
+<?php
+session_start();
+require_once 'calendar_back.php';
+require_once 'db.php';
 
-
-    if (!function_exists('isModerator')) {
-    include 'db.php';
-    function getRoleNum($username) {
-        $conn = createConn();
-        $sql  = "SELECT RoleNum FROM Users WHERE Username = ?";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("s", $username);
-        $stmt->execute();
-        $stmt->bind_result($roleNum);
-        $stmt->fetch();
-        $conn->close();
-        return $roleNum ?? 0;
-    }
-    function isModerator() {
-        if (!isset($_SESSION['username'])) return false;
-        return getRoleNum($_SESSION['username']) == 3;
-    }
-    function isLocalUser() {
-        if (!isset($_SESSION['username'])) return false;
-        return getRoleNum($_SESSION['username']) == 2;
-    }
+$currentPage = basename($_SERVER['PHP_SELF']);
+if (!empty($_SERVER['QUERY_STRING'])) {
+    $currentPage .= '?' . $_SERVER['QUERY_STRING'];
 }
+$loginLink = "login_back.php?return=" . urlencode($currentPage);
 ?>
 
 <!DOCTYPE html>
 <html lang="no">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calender</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <script defer src="https://kit.fontawesome.com/e065bf0659.js" crossorigin="anonymous"></script>
     <script defer src="index.js"></script>
-        <link rel="alternate" hreflang="no" href="https://iolden.no/calendar_front.php" />
-    <link rel="alternate" hreflang="en" href="https://iolden.no/calendar_front.php" />
-    <link rel="alternate" hreflang="x-default" href="https://iolden.no/calendar_front.php" />
+    <link rel="alternate" hreflang="no" href="https://iolden.no/calendar_front.php" />
+    <link rel="alternate" hreflang="en" href="https://iolden.no/en/calendar_front.php" />
+    <link rel="alternate" hreflang="x-default" href="https://iolden.no/en/calendar_front.php" />
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 </head>
+
 <body>
-    <main-header lang="no"></main-header>
+    <main-header></main-header>
     <hamburger-menu></hamburger-menu>
 
-    <div class="roundedbody calendar"> 
+    <div class="roundedbody calendar">
         <div class="marginbody">
             <div class="calendarHeader">
                 <div class="calendarNav">
@@ -55,7 +40,7 @@
                 </div>
 
                 <div class="tabs">
-                    <div class="tab active" id="tabCalendar"onclick="setView('calendar')"><i class="fa-solid fa-calendar-days"></i></div>
+                    <div class="tab active" id="tabCalendar" onclick="setView('calendar')"><i class="fa-solid fa-calendar-days"></i></div>
                     <div class="tab" id="tabList" onclick="setView('list')"><i class="fa-solid fa-list"></i></div>
                 </div>
             </div>
@@ -74,32 +59,27 @@
                 </div>
             </div>
 
-            <?php if (canAddCalendarEvents()): ?>
-                <a href="calendar_form_front.php">
-                    <i class="fa-solid fa-calendar-plus"></i> Legg til hending
-                </a>
-            <?php endif; ?>
 
             <?php if (!isset($_SESSION['username'])): ?>
                 <a href="<?php echo $loginLink; ?>"><i class="fa-solid fa-right-to-bracket"></i> Logg inn for å legge til hendingar</a>
             <?php endif; ?>
         </div>
     </div>
-    
+
     <div class="eventModal" id="eventModal" onclick="if(event.target == this) closeModal()">
         <div class="modalContent">
             <span class="closeModal" onclick="closeModal()">&times;</span>
             <span class="modalCategory" id="modalCategory">Kategori</span>
             <h2 id="modalTitle">Tittel</h2>
             <div class="eventMeta">
-                <p><i class="fa-solid fa-calendar-day"></i> <span id="modalDate">Daoe</span></p>
+                <p><i class="fa-solid fa-calendar-day"></i> <span id="modalDate">Date</span></p>
                 <p id="timeContainer"><i class="fa-solid fa-clock"></i> <span id="modalTime"></span></p>
-                <p><i class="fa-solid fa-user-pen"></i>Lagt til av: <span id="modalUser">Username</span></p>
+                <p><i class="fa-solid fa-user-pen"></i>Lagt til av: <span id="modalUser">Brukarnamn</span></p>
             </div>
             <p id="modalDescription">Skildring</p>
-            <?php if(isset($_SESSION["username"]) && isModerator()): ?>
+            <?php if (isset($_SESSION["username"]) && isModerator()): ?>
                 <button id="deleteEventBtn" onclick="deleteCurrentEvent()">
-                <i class="fa-solid fa-trash"></i> Slett
+                    <i class="fa-solid fa-trash"></i> Slett
                 </button>
             <?php endif; ?>
         </div>
@@ -112,14 +92,16 @@
     <?php if (!isset($_SESSION['username'])): ?>
         <a href="<?php echo $loginLink; ?>" class="addEventLink">Logg inn</a>
     <?php endif; ?>
+    <script defer src="components.js"></script>
 
-<site-footer></site-footer>
+    <site-footer></site-footer>
 
-<script>
-    const IS_MODERATOR = <?php echo (isset($_SESSION["username"]) && isModerator()) ? 'true' : 'false'; ?>;
-</script>
-<script src="calendar.js"></script>
-<script defer src="components.js"></script>
+    <script>
+        const IS_MODERATOR = <?php echo (isset($_SESSION["username"]) && isModerator()) ? 'true' : 'false'; ?>;
+    </script>
+    <script src="calendar.js"></script>
+    <script defer src="components.js"></script>
 
 </body>
+
 </html>
