@@ -23,6 +23,8 @@
 <html>
 <head>
     <title>Calendar Form</title>
+        <link rel="stylesheet" href="../style.css">
+
     </head>
 <body>
     <g-tag></g-tag>
