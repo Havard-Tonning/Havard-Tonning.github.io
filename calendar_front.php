@@ -3,6 +3,9 @@ session_start();
 require_once 'calendar_back.php';
 require_once 'db.php';
 
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 $currentPage = basename($_SERVER['PHP_SELF']);
 if (!empty($_SERVER['QUERY_STRING'])) {
     $currentPage .= '?' . $_SERVER['QUERY_STRING'];
@@ -17,7 +20,7 @@ $loginLink = "login_back.php?return=" . urlencode($currentPage);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calender</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="./style.css">
     <script defer src="https://kit.fontawesome.com/e065bf0659.js" crossorigin="anonymous"></script>
     <script defer src="index.js"></script>
     <link rel="alternate" hreflang="no" href="https://iolden.no/calendar_front.php" />
@@ -100,7 +103,6 @@ $loginLink = "login_back.php?return=" . urlencode($currentPage);
         const IS_MODERATOR = <?php echo (isset($_SESSION["username"]) && isModerator()) ? 'true' : 'false'; ?>;
     </script>
     <script src="calendar.js"></script>
-    <script defer src="components.js"></script>
 
 </body>
 

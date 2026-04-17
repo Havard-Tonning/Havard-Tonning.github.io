@@ -66,6 +66,21 @@
         $events = [];
 
         while($row = $results -> fetch_assoc()){
+            switch($row["CatName"]){
+                case "basar": 
+                    $row["CatName"] = "basar";
+                    break;
+                case "moete": 
+                    $row["CatName"] = "møte";
+                    break;
+                case "anna":
+                    $row["CatName"] = "anna";
+                    break;
+                case "konsert":
+                    $row["CatName"] = "konsert";
+                    break;
+            }
+
             $events[] = [
                 "id"            => $row["EventID"],
                 "title"         => $row["Title"],

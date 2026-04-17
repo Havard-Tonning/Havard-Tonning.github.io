@@ -65,9 +65,7 @@ $loginLink = "login_back.php?return=" . urlencode($currentPage);
                 </a>
             <?php endif; ?>
 
-            <?php if (!isset($_SESSION['username'])): ?>
-                <a href="<?php echo $loginLink; ?>"><i class="fa-solid fa-right-to-bracket"></i> Log in to add events</a>
-            <?php endif; ?>
+
         </div>
     </div>
 
@@ -97,7 +95,6 @@ $loginLink = "login_back.php?return=" . urlencode($currentPage);
     <?php if (!isset($_SESSION['username'])): ?>
         <a href="<?php echo $loginLink; ?>" class="addEventLink">Log in</a>
     <?php endif; ?>
-    <script defer src="components.js"></script>
 
     <site-footer></site-footer>
 
