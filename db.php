@@ -1,5 +1,5 @@
 <?php
-require_once '../db_config.php';
+require_once './db_config.php';
 
 function createConn(){
      $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
