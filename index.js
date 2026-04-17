@@ -226,7 +226,7 @@ if (mapElement) {
     L.marker([61.85855378132025, 6.832809190327688], {
             icon: icons.hike
         }).addTo(map)
-        .bindPopup("<a href='huaren.html'><H3>Huaren</H3><p>Familievenleg tur med flott utsikt.</p><img src='./images/huaren.jpg' class='popup-image'> <style='opacity:0'></a>");
+        .bindPopup("<a href='huaren.html'><H3>Huaren</H3><p>Familievenleg tur med flott utsikt.</p><img src='../../images/huaren1.jpg' class='popup-image'> <style='opacity:0'></a>");
 
     L.marker([61.84875878015604, 6.771772936299873], {
             icon: icons.hike
@@ -246,14 +246,14 @@ if (mapElement) {
             icon: icons.food
         })
         .addTo(map)
-        .bindPopup("<a href='./info/stabukk.html'><H3>Stabukk</H3><p>Café med is og kaffi</p><img src='./info/images/placeholder.png' class='popup-image'> <style='opacity:0'></a>");
+        .bindPopup("<a href='./info/stabukk.html'><H3>Stabukk</H3><p>Café med is og kaffi</p><img src='../../images/stabukk1.jpg' class='popup-image'> <style='opacity:0'></a>");
 
     // Isabella
     L.marker([61.83911313605357, 6.806976716510388], {
             icon: icons.adventure
         })
         .addTo(map)
-        .bindPopup("<a href='./info/isabella.html'><H3>Isabella</H3><p>Bli med på fisketur på den vakre fjorden</p><img src='./info/images/placeholder.png' class='popup-image'> <style='opacity:0'></a>");
+        .bindPopup("<a href='./info/isabella.html'><H3>Isabella</H3><p>Bli med på fisketur på den vakre fjorden</p><img src='./info/images/isabella1.png' class='popup-image'> <style='opacity:0'></a>");
 
     // Olden Taxi
     L.marker([61.8440950197931, 6.812049007972068], {
@@ -267,14 +267,14 @@ if (mapElement) {
             icon: icons.store
         })
         .addTo(map)
-        .bindPopup("<a href='./info/bunnpris.html'><H3>Bunnpris</H3><p>Lokal matbutikk med stort utval og varmt personale</p><img src='./info/images/placeholder.png' class='popup-image'> <style='opacity:0'></a>");
+        .bindPopup("<a href='./info/bunnpris.html'><H3>Bunnpris</H3><p>Lokal matbutikk med stort utval og varmt personale</p><img src='./info/images/bunnpris1.jpg' class='popup-image'> <style='opacity:0'></a>");
 
     // Olden Apartments
     L.marker([61.835241835095, 6.804609916147261], {
             icon: icons.accommodation
         })
         .addTo(map)
-        .bindPopup("<a href='./info/apartments.html'><H3>Olden Apartments</H3><p>Flotte leilegheiter rett ved Oldeelva</p><img src='./info/images/placeholder.png' class='popup-image'> <style='opacity:0'></a>");
+        .bindPopup("<a href='./info/apartments.html'><H3>Olden Apartments</H3><p>Flotte leilegheiter rett ved Oldeelva</p><img src='./info/images/apartments1.jpg' class='popup-image'> <style='opacity:0'></a>");
 
     // Briksdalen
     L.marker([61.663243698719754, 6.822264708197644], {

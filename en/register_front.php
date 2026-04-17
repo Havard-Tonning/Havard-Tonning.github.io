@@ -28,13 +28,13 @@
 
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" name="password" id="password" value="<?php echo htmlspecialchars($password); ?>">
+                    <input type="password" name="password" id="password">
                     <?php if(in_array("PassError", $errors)) echo '<span class="error">Password must be at least eight characters long, with at least three digits.</span>'; ?>
                 </div>
 
                 <div class="form-group">
                     <label for="password2">Retype Password</label>
-                    <input type="password" name="password2" id="password2" value="<?php echo htmlspecialchars($password2); ?>">
+                    <input type="password" name="password2" id="password2">
                     <?php if(in_array("MatchError", $errors)) echo '<span class="error">Passwords don\'t match.</span>'; ?>
                 </div>
 

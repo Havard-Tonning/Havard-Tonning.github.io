@@ -14,4 +14,38 @@ function createConn(){
     }
 
 }
+
+if (!function_exists('getRoleNum')) {
+    function getRoleNum($username) {
+        $conn = createConn();
+        $sql  = "SELECT RoleNum FROM Users WHERE Username = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $stmt->bind_result($roleNum);
+        $stmt->fetch();
+        $conn->close();
+        return $roleNum ?? 0;
+    }
+}
+
+if (!function_exists('isModerator')) {
+    function isModerator() {
+        if (!isset($_SESSION['username'])) return false;
+        return getRoleNum($_SESSION['username']) == 3;
+    }
+}
+
+if (!function_exists('isLocalOrAbove')) {
+    function isLocalOrAbove() {
+        if (!isset($_SESSION['username'])) return false;
+        return getRoleNum($_SESSION['username']) >= 2;
+    }
+}
+
+if (!function_exists('canAddCalendarEvents')) {
+    function canAddCalendarEvents() {
+        return isLocalOrAbove();
+    }
+}
 ?>

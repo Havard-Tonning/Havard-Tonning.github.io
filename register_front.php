@@ -35,13 +35,13 @@
 
                 <div class="form-group">
                     <label for="password">Passord</label>
-                    <input type="password" name="password" id="password" value="<?php echo htmlspecialchars($password); ?>">
+                    <input type="password" name="password" id="password">
                     <?php if (in_array("PassError", $errors)) echo '<span class="error">Passord må vere minst åtte karakterarm med tre nummer.</span>'; ?>
                 </div>
 
                 <div class="form-group">
                     <label for="password2">Gjenta passord</label>
-                    <input type="password" name="password2" id="password2" value="<?php echo htmlspecialchars($password2); ?>">
+                    <input type="password" name="password2" id="password2"?>">
                     <?php if (in_array("MatchError", $errors)) echo '<span class="error">Passorda er ulike.</span>'; ?>
                 </div>
 

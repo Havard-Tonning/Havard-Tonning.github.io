@@ -5,7 +5,7 @@ if (mapElement) {
         zoomControl: false
     }).setView([61.82913342266096, 6.806796286220201], 14);
 
-        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: ''
     }).addTo(map);
 
@@ -178,7 +178,7 @@ if (mapElement) {
         store: makeIcon('🛍️'),
         food: makeIcon('🍽️'),
         wellness: makeIcon('🧖'),
-        hike: makeIcon('🥾'),
+        hike: makeWhiteIcon('🥾'),
         main: makeWhiteIcon('⭕')
     };
 
@@ -216,7 +216,7 @@ if (mapElement) {
     L.marker([61.85855378132025, 6.832809190327688], {
             icon: icons.hike
         }).addTo(map)
-        .bindPopup("<a href='huaren.html'><H3>Huaren</H3><p>Family-friendly tour with great views.</p><img src='../images/huaren.jpg' class='popup-image'> <style='opacity:0'></a>");
+        .bindPopup("<a href='huaren.html'><H3>Huaren</H3><p>Family-friendly tour with great views.</p><img src='../images/huaren1.jpg' class='popup-image'> <style='opacity:0'></a>");
 
     L.marker([61.84875878015604, 6.771772936299873], {
             icon: icons.hike
@@ -229,14 +229,14 @@ if (mapElement) {
             icon: icons.food
         })
         .addTo(map)
-        .bindPopup("<a href='./info/stabukk.html'><H3>Stabukk</H3><p>Café with ice cream and coffee</p><img src='../../info/images/placeholder.png' class='popup-image'> <style='opacity:0'></a>");
+        .bindPopup("<a href='./info/stabukk.html'><H3>Stabukk</H3><p>Café with ice cream and coffee</p><img src='../../images/stabukk1.jpg' class='popup-image'> <style='opacity:0'></a>");
 
     // Isabella
     L.marker([61.83914371938095, 6.806909096802973], {
             icon: icons.adventure
         })
         .addTo(map)
-        .bindPopup("<a href='./info/isabella.html'><H3>Isabella</H3><p>Go fishing on the crystal clear fjord</p><img src='../../info/images/placeholder.png' class='popup-image'> <style='opacity:0'></a>");
+        .bindPopup("<a href='./info/isabella.html'><H3>Isabella</H3><p>Go fishing on the crystal clear fjord</p><img src='../../info/images/isabella1.png' class='popup-image'> <style='opacity:0'></a>");
 
     // Olden Taxi
     L.marker([61.8440950197931, 6.812049007972068], {
@@ -250,14 +250,14 @@ if (mapElement) {
             icon: icons.store
         })
         .addTo(map)
-        .bindPopup("<a href='./info/bunnpris.html'><H3>Bunnpris</H3><p>Local grocery store with a wide selection and friendly staff</p><img src='../../info/images/placeholder.png' class='popup-image'> <style='opacity:0'></a>");
+        .bindPopup("<a href='./info/bunnpris.html'><H3>Bunnpris</H3><p>Local grocery store with a wide selection and friendly staff</p><img src='../../info/images/bunnpris1.jpg' class='popup-image'> <style='opacity:0'></a>");
 
     // Olden Apartments
     L.marker([61.835241835095, 6.804609916147261], {
             icon: icons.accommodation
         })
         .addTo(map)
-        .bindPopup("<a href='./info/apartments.html'><H3>Olden Apartments</H3><p>Beautiful apartments right by the Olde river</p><img src='../../info/images/placeholder.png' class='popup-image'> <style='opacity:0'></a>");
+        .bindPopup("<a href='./info/apartments.html'><H3>Olden Apartments</H3><p>Beautiful apartments right by the Olden river</p><img src='../../info/images/apartments1.jpg' class='popup-image'> <style='opacity:0'></a>");
 
     // Briksdalen
     L.marker([61.663243698719754, 6.822264708197644], {
@@ -788,7 +788,7 @@ if (mat_map) {
         }).addTo(map)
         .bindPopup("<a href='molla.html'><H3>Mølla Guesthouse</H3><p>Mølla is a restaurant located right by the fjord, serving both seafood and pizza.</p><img src='../images/molla3.jpg' class='popup-image'> <style='opacity:0'></a>");
 
-            L.marker([61.679152875735696, 6.815727554128876], {
+    L.marker([61.679152875735696, 6.815727554128876], {
             icon: L.icon({
                 iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
                 shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',

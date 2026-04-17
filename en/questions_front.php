@@ -9,28 +9,7 @@ if (!empty($_SERVER['QUERY_STRING'])) {
     $currentPage .= '?' . $_SERVER['QUERY_STRING'];
 }
 
-if (!function_exists('isModerator')) {
-    include 'db.php';
-    function getRoleNum($username) {
-        $conn = createConn();
-        $sql  = "SELECT RoleNum FROM Users WHERE Username = ?";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("s", $username);
-        $stmt->execute();
-        $stmt->bind_result($roleNum);
-        $stmt->fetch();
-        $conn->close();
-        return $roleNum ?? 0;
-    }
-    function isModerator() {
-        if (!isset($_SESSION['username'])) return false;
-        return getRoleNum($_SESSION['username']) == 3;
-    }
-    function isLocalUser() {
-        if (!isset($_SESSION['username'])) return false;
-        return getRoleNum($_SESSION['username']) == 2;
-    }
-}
+require_once 'db.php';
 
 $loginLink = "login_back.php?return=" . urlencode($currentPage);
 ?>
@@ -71,7 +50,7 @@ $loginLink = "login_back.php?return=" . urlencode($currentPage);
                 </button>
                 <div id="detailContent"></div>
 
-                <?php if (isset($_SESSION['username']) && isLocalUser()): ?>
+                <?php if (isLocalOrAbove()): ?>
                     <div class="answerFormWrapper">
                         <h3>Add an answer</h3>
                         <form method="post" action="questions_back.php">

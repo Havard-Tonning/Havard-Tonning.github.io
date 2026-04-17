@@ -1,33 +1,7 @@
 <?php
 session_start();
 require_once 'calendar_back.php';
-
-
-if (!function_exists('isModerator')) {
-    include 'db.php';
-    function getRoleNum($username)
-    {
-        $conn = createConn();
-        $sql  = "SELECT RoleNum FROM Users WHERE Username = ?";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("s", $username);
-        $stmt->execute();
-        $stmt->bind_result($roleNum);
-        $stmt->fetch();
-        $conn->close();
-        return $roleNum ?? 0;
-    }
-    function isModerator()
-    {
-        if (!isset($_SESSION['username'])) return false;
-        return getRoleNum($_SESSION['username']) == 3;
-    }
-    function isLocalUser()
-    {
-        if (!isset($_SESSION['username'])) return false;
-        return getRoleNum($_SESSION['username']) == 2;
-    }
-}
+require_once 'db.php';
 ?>
 
 <!DOCTYPE html>
@@ -79,8 +53,7 @@ if (!function_exists('isModerator')) {
                 </div>
             </div>
 
-            <?php if (isset($_SESSION["username"]))
-                if (isLocalUser()): ?>
+            <?php if (canAddCalendarEvents()): ?>
                 <a href="calendar_form_front.php">
                     <i class="fa-solid fa-calendar-plus"></i> Add event
                 </a>
@@ -107,7 +80,9 @@ if (!function_exists('isModerator')) {
         </div>
     </div>
 
-    <a href="calendar_form_back.php" class="addEventLink">Add event</a>
+    <?php if (canAddCalendarEvents()): ?>
+        <a href="calendar_form_front.php" class="addEventLink">Add event</a>
+    <?php endif; ?>
     <script defer src="components.js"></script>
 
     <site-footer></site-footer>
