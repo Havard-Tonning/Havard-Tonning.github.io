@@ -1,11 +1,14 @@
 <?php 
     session_start();
-    if (!isset($_SESSION['username'])) {
+    require_once 'db.php';
+
+    if (!canAddCalendarEvents()) {
         $currentPage = basename($_SERVER['PHP_SELF']);
         if (!empty($_SERVER['QUERY_STRING'])) {
             $currentPage .= '?' . $_SERVER['QUERY_STRING'];
         }
-        header("Location: login_back.php?return=" . urlencode($currentPage));
+        $redirect = isset($_SESSION['username']) ? "calendar_front.php" : "login_back.php?return=" . urlencode($currentPage);
+        header("Location: $redirect");
         exit();
     }
 

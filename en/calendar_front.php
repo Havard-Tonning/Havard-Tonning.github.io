@@ -2,6 +2,12 @@
 session_start();
 require_once 'calendar_back.php';
 require_once 'db.php';
+
+$currentPage = basename($_SERVER['PHP_SELF']);
+if (!empty($_SERVER['QUERY_STRING'])) {
+    $currentPage .= '?' . $_SERVER['QUERY_STRING'];
+}
+$loginLink = "login_back.php?return=" . urlencode($currentPage);
 ?>
 
 <!DOCTYPE html>
@@ -58,6 +64,10 @@ require_once 'db.php';
                     <i class="fa-solid fa-calendar-plus"></i> Add event
                 </a>
             <?php endif; ?>
+
+            <?php if (!isset($_SESSION['username'])): ?>
+                <a href="<?php echo $loginLink; ?>"><i class="fa-solid fa-right-to-bracket"></i> Log in to add events</a>
+            <?php endif; ?>
         </div>
     </div>
 
@@ -82,6 +92,10 @@ require_once 'db.php';
 
     <?php if (canAddCalendarEvents()): ?>
         <a href="calendar_form_front.php" class="addEventLink">Add event</a>
+    <?php endif; ?>
+
+    <?php if (!isset($_SESSION['username'])): ?>
+        <a href="<?php echo $loginLink; ?>" class="addEventLink">Log in</a>
     <?php endif; ?>
     <script defer src="components.js"></script>
 

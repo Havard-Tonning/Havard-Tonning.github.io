@@ -74,12 +74,15 @@
                 </div>
             </div>
 
-            <?php if(isset($_SESSION["username"]))
-                        if(isLocalUser()):?>
-                            <a href="calendar_form_front.php">
-                                <i class="fa-solid fa-calendar-plus"></i> Legg til hending
-                            </a>
-                        <?php endif; ?>
+            <?php if (canAddCalendarEvents()): ?>
+                <a href="calendar_form_front.php">
+                    <i class="fa-solid fa-calendar-plus"></i> Legg til hending
+                </a>
+            <?php endif; ?>
+
+            <?php if (!isset($_SESSION['username'])): ?>
+                <a href="<?php echo $loginLink; ?>"><i class="fa-solid fa-right-to-bracket"></i> Logg inn for å legge til hendingar</a>
+            <?php endif; ?>
         </div>
     </div>
     
@@ -102,8 +105,14 @@
         </div>
     </div>
 
-    <a href="calendar_form_back.php" class="addEventLink">Legg til hending</a>
-    
+    <?php if (canAddCalendarEvents()): ?>
+        <a href="calendar_form_front.php" class="addEventLink">Legg til hending</a>
+    <?php endif; ?>
+
+    <?php if (!isset($_SESSION['username'])): ?>
+        <a href="<?php echo $loginLink; ?>" class="addEventLink">Logg inn</a>
+    <?php endif; ?>
+
 <site-footer></site-footer>
 
 <script>
