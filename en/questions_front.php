@@ -58,12 +58,12 @@ $loginLink = "login_back.php?return=" . urlencode($currentPage);
                             <input type="hidden" name="questionID" id="answerQuestionID" value="">
                             <div class="form-group">
                                 <textarea name="answerBody" rows="4"
-                                    placeholder="Skriv svar..."></textarea>
+                                    placeholder="Write answer"></textarea>
                             </div>
                             <?php if (!empty($errors) && ($_POST['mode'] ?? '') === 'answer'): ?>
                                 <div class="error">Write an answer</div>
                             <?php endif; ?>
-                            <input type="submit" value="Send svar" class="submit-btn">
+                            <input type="submit" value="Send answer" class="submit-btn">
                         </form>
                     </div>
                 <?php endif; ?>

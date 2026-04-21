@@ -1188,7 +1188,7 @@ tr:last-child td {
     padding: 32px 28px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
     opacity: 0.95;
-    width: 90%;
+    width: 90% !important;
     margin-left: 5%;
     margin-right: 5%;
     max-width: 600px;

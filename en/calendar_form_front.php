@@ -60,10 +60,10 @@ if (isset($success) && $success) {
                     <label for="type">Category</label>
                     <select name="eventType" id="type">
                         <option value="sport" <?php if (($type ?? '') == "sport")   echo "selected"; ?>>Sport</option>
-                        <option value="konsert" <?php if (($type ?? '') == "konsert") echo "selected"; ?>>Konsert</option>
-                        <option value="moete" <?php if (($type ?? '') == "moete")   echo "selected"; ?>>Møte</option>
-                        <option value="basar" <?php if (($type ?? '') == "basar")   echo "selected"; ?>>Basar</option>
-                        <option value="anna" <?php if (($type ?? '') == "anna")    echo "selected"; ?>>Anna</option>
+                        <option value="konsert" <?php if (($type ?? '') == "konsert") echo "selected"; ?>>Concert</option>
+                        <option value="moete" <?php if (($type ?? '') == "moete")   echo "selected"; ?>>Meeting</option>
+                        <option value="basar" <?php if (($type ?? '') == "basar")   echo "selected"; ?>>Raffle</option>
+                        <option value="anna" <?php if (($type ?? '') == "anna")    echo "selected"; ?>>Other</option>
                     </select>
                 </div>
 

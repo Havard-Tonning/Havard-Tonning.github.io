@@ -278,7 +278,7 @@ if (mapElement) {
             icon: icons.store
         })
         .addTo(map)
-        .bindPopup("<a href='./info/ljos.html'><H3>Ljós</H3><p>Handcrafted quality products</p><img src='../../info/images/ljos1.jpg' class='popup-image'> <style='opacity:0'></a>");
+        .bindPopup("<a href='./info/ljos.html'><H3>Ljós</H3><p>Handcrafted quality products</p><img src='../../info/images/ljos5.jpg' class='popup-image'> <style='opacity:0'></a>");
 
     // Olden Adventure
     L.marker([61.84271884019358, 6.810757925733879], {
