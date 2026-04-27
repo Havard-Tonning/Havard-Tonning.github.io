@@ -15,10 +15,10 @@ $errors = [];
 
 $categoryMap = [
     "sport"   => 1,
-    "konsert" => 2,
-    "moete"   => 3,
-    "basar"   => 4,
-    "anna"    => 5
+    "concert" => 2,
+    "meeting" => 3, 
+    "raffle"  => 4, 
+    "other"   => 5
 ];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -77,5 +77,10 @@ function writeEventToDB($eventName, $description, $eventTime, $catnum, $userID) 
     $conn->close();
 }
 
+if (!empty($errors)) {
+    echo "<h1>Form Errors:</h1>";
+    print_r($errors);
+    exit(); 
+}
 include 'calendar_form_front.php';
 ?>
