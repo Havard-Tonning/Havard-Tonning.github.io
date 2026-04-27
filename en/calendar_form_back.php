@@ -9,10 +9,10 @@ $success = false;
 
 $categoryMap = [
     "sport"   => 1,
-    "concert" => 2,
-    "meeting" => 3,
-    "raffle"   => 4,
-    "other"   => 5
+    "konsert" => 2,
+    "moete"   => 3,
+    "basar"   => 4,
+    "anna"    => 5
 ];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -45,22 +45,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (empty($errors)) {
-        $success = true;
         $catnum = $categoryMap[$type];
         $userID = getUserID($_SESSION['username']);
 
         if ($userID === null) {
             $errors[] = "UserNotFoundError";
-            $success = false;
         } else {
             writeEventToDB($eventName, $description, $eventTime, $catnum, $userID);
+            header("Location: calendar_front.php");
+            exit();
         }
     }
 }
 
 function getUserID($username) {
     $conn = createConn();
-    
     $sql = "SELECT UserID FROM Users WHERE Username = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $username);
@@ -68,13 +67,11 @@ function getUserID($username) {
     $stmt->bind_result($userID);
     $stmt->fetch();
     $conn->close();
-
     return $userID ?? null;
 }
 
 function writeEventToDB($eventName, $description, $eventTime, $catnum, $userID) {
     $conn = createConn();
-
     $sql = "INSERT INTO CalendarEvent (UserID, Title, Description, Date, Catnum) VALUES (?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("isssi", $userID, $eventName, $description, $eventTime, $catnum);
@@ -83,4 +80,5 @@ function writeEventToDB($eventName, $description, $eventTime, $catnum, $userID) 
 }
 
 include 'calendar_form_front.php';
+?>
 ?>

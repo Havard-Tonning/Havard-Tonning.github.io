@@ -11,24 +11,16 @@ if (!canAddCalendarEvents()) {
     header("Location: $redirect");
     exit();
 }
-
-
-if (isset($success) && $success) {
-    header("Location: calendar_front.php");
-    exit();
-}
 ?>
 
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Calendar Form</title>
     <link rel="stylesheet" href="../style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 </head>
-
 <body>
     <g-tag></g-tag>
     <main-header></main-header>
@@ -59,11 +51,11 @@ if (isset($success) && $success) {
                 <div class="form-group">
                     <label for="type">Category</label>
                     <select name="eventType" id="type">
-                        <option value="sport" <?php if (($type ?? '') == "sport")   echo "selected"; ?>>Sport</option>
+                        <option value="sport"   <?php if (($type ?? '') == "sport")   echo "selected"; ?>>Sport</option>
                         <option value="konsert" <?php if (($type ?? '') == "konsert") echo "selected"; ?>>Concert</option>
-                        <option value="moete" <?php if (($type ?? '') == "moete")   echo "selected"; ?>>Meeting</option>
-                        <option value="basar" <?php if (($type ?? '') == "basar")   echo "selected"; ?>>Raffle</option>
-                        <option value="anna" <?php if (($type ?? '') == "anna")    echo "selected"; ?>>Other</option>
+                        <option value="moete"   <?php if (($type ?? '') == "moete")   echo "selected"; ?>>Meeting</option>
+                        <option value="basar"   <?php if (($type ?? '') == "basar")   echo "selected"; ?>>Raffle</option>
+                        <option value="anna"    <?php if (($type ?? '') == "anna")    echo "selected"; ?>>Other</option>
                     </select>
                 </div>
 
@@ -80,5 +72,4 @@ if (isset($success) && $success) {
     <site-footer></site-footer>
     <script defer src="components.js"></script>
 </body>
-
 </html>
