@@ -80,11 +80,7 @@ $loginLink = "login_back.php?return=" . urlencode($currentPage);
         </div>
     </div>
 
-    <div style="background: white; color: black; padding: 10px; border: 1px solid red;">
-        Logged in: <?php echo isset($_SESSION['username']) ? $_SESSION['username'] : 'No'; ?><br>
-        Role Number: <?php echo isset($_SESSION['username']) ? getRoleNum($_SESSION['username']) : 'N/A'; ?><br>
-        Can add events: <?php echo canAddCalendarEvents() ? 'Yes' : 'No'; ?>
-    </div>
+    
 
     <?php if (canAddCalendarEvents()): ?>
         <a href="calendar_form_front.php" class="addEventLink">Add event</a>
