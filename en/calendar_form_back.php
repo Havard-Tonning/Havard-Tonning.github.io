@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $errors[] = "UserNotFoundError";
         } else {
             writeEventToDB($eventName, $description, $eventTime, $catnum, $userID);
-            header("Location: calendar_front.php");
+            var_dump("Event written. UserID: $userID, Name: $eventName");
             exit();
         }
     }
