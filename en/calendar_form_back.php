@@ -17,9 +17,6 @@ $categoryMap = [
     "basar"   => 4,
     "anna"    => 5
 ];
- /* test */
-$userID = getUserID($_SESSION['username']);
-var_dump($userID); exit();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $eventName   = $_POST["eventName"]   ?? "";
@@ -54,11 +51,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $catnum = $categoryMap[$type];
         $userID = getUserID($_SESSION['username']);
 
-        if ($userID === null) {
+                if ($userID === null) {
             $errors[] = "UserNotFoundError";
+            $success = false;
         } else {
             writeEventToDB($eventName, $description, $eventTime, $catnum, $userID);
-            var_dump("Event written. UserID: $userID, Name: $eventName");
+            header("Location: en/calendar_front.php");
             exit();
         }
     }
@@ -86,5 +84,4 @@ function writeEventToDB($eventName, $description, $eventTime, $catnum, $userID) 
 }
 
 include 'calendar_form_front.php';
-?>
 ?>
