@@ -2,7 +2,7 @@
 session_start();
 require_once 'db.php';
 
-/*
+
 if (!canAddCalendarEvents()) {
     $currentPage = basename($_SERVER['PHP_SELF']);
     if (!empty($_SERVER['QUERY_STRING'])) {
@@ -12,7 +12,7 @@ if (!canAddCalendarEvents()) {
     header("Location: $redirect");
     exit();
 }
-*/
+
 
 if (isset($success) && $success) {
     header("Location: calendar_front.php");
