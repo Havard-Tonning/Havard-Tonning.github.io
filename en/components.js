@@ -119,8 +119,6 @@ class altHamburger extends HTMLElement {
     }
 }
 
-customElements.define('alt-hamburger-menu', altHamburger);
-
 class mainHeader extends HTMLElement {
     connectedCallback() {
         let path = window.location.pathname;
