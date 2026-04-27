@@ -40,8 +40,7 @@ if (isset($success) && $success) {
     <div class="calendar-form-wrapper">
         <div class="calendar-form-card">
             <h1>Legg til hending</h1>
-
-            <form method="post" action="">
+            <form method="post" action="calendar_form_back.php">
 
                 <div class="form-group">
                     <label for="eventName">Namn på hendinga</label>
