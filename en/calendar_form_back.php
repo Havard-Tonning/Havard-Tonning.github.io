@@ -6,9 +6,18 @@ ini_set('display_errors', 1);
 
 include 'db.php';
 
+if (!canAddCalendarEvents()) {
+    $currentPage = basename($_SERVER['PHP_SELF']);
+    if (!empty($_SERVER['QUERY_STRING'])) {
+        $currentPage .= '?' . $_SERVER['QUERY_STRING'];
+    }
+    $redirect = isset($_SESSION['username']) ? "calendar_front.php" : "login_back.php?return=" . urlencode($currentPage);
+    header("Location: $redirect");
+    exit();
+}
+
 $eventName = $description = $eventTime = $type = "";
 $errors = [];
-$success = false;
 
 $categoryMap = [
     "sport"   => 1,
@@ -39,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (!$dt) {
             $errors[] = "EventTimeFormatError";
         } else {
-            $eventTime = $dt->format('Y-m-d H:i:s');
+            $eventTimeDB = $dt->format('Y-m-d H:i:s');
         }
     }
 
@@ -51,11 +60,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $catnum = $categoryMap[$type];
         $userID = getUserID($_SESSION['username']);
 
-                if ($userID === null) {
+        if ($userID === null) {
             $errors[] = "UserNotFoundError";
-            $success = false;
         } else {
-            writeEventToDB($eventName, $description, $eventTime, $catnum, $userID);
+            writeEventToDB($eventName, $description, $eventTimeDB, $catnum, $userID);
             header("Location: en/calendar_front.php");
             exit();
         }

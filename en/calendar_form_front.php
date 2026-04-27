@@ -1,21 +1,7 @@
-<?php
-session_start();
-require_once 'db.php';
-
-if (!canAddCalendarEvents()) {
-    $currentPage = basename($_SERVER['PHP_SELF']);
-    if (!empty($_SERVER['QUERY_STRING'])) {
-        $currentPage .= '?' . $_SERVER['QUERY_STRING'];
-    }
-    $redirect = isset($_SESSION['username']) ? "calendar_front.php" : "login_back.php?return=" . urlencode($currentPage);
-    header("Location: $redirect");
-    exit();
-}
-?>
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Calendar Form</title>
     <link rel="stylesheet" href="../style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -60,7 +46,7 @@ if (!canAddCalendarEvents()) {
                 </div>
 
                 <?php if (!empty($errors)): ?>
-                    <div class="error">Please fill all fields</div>
+                    <div class="error">Please fill all fields correctly.</div>
                 <?php endif; ?>
 
                 <input type="submit" name="submit" value="Submit" class="submit-btn">
