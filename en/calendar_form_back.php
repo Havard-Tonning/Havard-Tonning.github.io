@@ -17,6 +17,9 @@ $categoryMap = [
     "basar"   => 4,
     "anna"    => 5
 ];
+ /* test */
+$userID = getUserID($_SESSION['username']);
+var_dump($userID); exit();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $eventName   = $_POST["eventName"]   ?? "";
