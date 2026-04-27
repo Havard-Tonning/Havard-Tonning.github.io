@@ -1,8 +1,6 @@
 <?php
 include 'db.php';
 
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
 
 // Initialise variables
 $username = $password = $password2 = $email = $type = $testQ = "";
