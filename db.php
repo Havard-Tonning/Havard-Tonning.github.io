@@ -31,14 +31,14 @@ if (!function_exists('getRoleNum')) {
 if (!function_exists('isModerator')) {
     function isModerator() {
         if (!isset($_SESSION['username'])) return false;
-        return getRoleNum($_SESSION['username']) == 3;
+        return getRoleNum($_SESSION['username']) == 1;
     }
 }
 
 if (!function_exists('isLocalOrAbove')) {
     function isLocalOrAbove() {
         if (!isset($_SESSION['username'])) return false;
-        return getRoleNum($_SESSION['username']) >= 2;
+        return getRoleNum($_SESSION['username']) <= 2;
     }
 }
 

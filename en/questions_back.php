@@ -29,7 +29,7 @@ function isLocalUser() {
 
 function isModerator() {
     if (!isset($_SESSION['username'])) return false;
-    return getRoleNum($_SESSION['username']) == 3;
+    return getRoleNum($_SESSION['username']) == 1;
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
