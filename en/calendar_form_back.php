@@ -1,18 +1,12 @@
 <?php
 session_start();
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
 
 include 'db.php';
 
 if (!canAddCalendarEvents()) {
     $currentPage = basename($_SERVER['PHP_SELF']);
-    if (!empty($_SERVER['QUERY_STRING'])) {
-        $currentPage .= '?' . $_SERVER['QUERY_STRING'];
-    }
-    $redirect = isset($_SESSION['username']) ? "calendar_front.php" : "login_back.php?return=" . urlencode($currentPage);
-    header("Location: $redirect");
+    header("Location: login_back.php?return=" . urlencode($currentPage));
     exit();
 }
 
@@ -33,39 +27,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $eventTime   = $_POST["eventTime"]   ?? "";
     $type        = $_POST["eventType"]   ?? "";
 
-    if (empty(trim($eventName))) {
-        $errors[] = "EventNameError";
-    }
-
-    if (empty(trim($description))) {
-        $errors[] = "DescriptionError";
-    }
-
+    if (empty(trim($eventName))) $errors[] = "Name required";
+    if (empty(trim($description))) $errors[] = "Description required";
+    
     if (empty($eventTime)) {
-        $errors[] = "EventTimeError";
+        $errors[] = "Time required";
     } else {
         $dt = DateTime::createFromFormat('Y-m-d\TH:i', $eventTime);
         if (!$dt) {
-            $errors[] = "EventTimeFormatError";
+            $errors[] = "Invalid date format";
         } else {
             $eventTimeDB = $dt->format('Y-m-d H:i:s');
         }
     }
 
-    if (empty($type) || !array_key_exists($type, $categoryMap)) {
-        $errors[] = "TypeError";
-    }
-
     if (empty($errors)) {
-        $catnum = $categoryMap[$type];
+        $catnum = $categoryMap[$type] ?? 5;
         $userID = getUserID($_SESSION['username']);
 
-        if ($userID === null) {
-            $errors[] = "UserNotFoundError";
-        } else {
+        if ($userID !== null) {
             writeEventToDB($eventName, $description, $eventTimeDB, $catnum, $userID);
-            header("Location: en/calendar_front.php");
+            
+            header("Location: calendar_front.php"); 
             exit();
+        } else {
+            $errors[] = "User not found";
         }
     }
 }
@@ -79,7 +65,7 @@ function getUserID($username) {
     $stmt->bind_result($userID);
     $stmt->fetch();
     $conn->close();
-    return $userID ?? null;
+    return $userID;
 }
 
 function writeEventToDB($eventName, $description, $eventTime, $catnum, $userID) {
