@@ -13,7 +13,7 @@
     <div class="calendar-form-wrapper">
         <div class="calendar-form-card">
             <h1>Add an event</h1>
-            <form method="post" action="">
+<form method="POST" action="calendar_form_back.php">
                 <div class="form-group">
                     <label for="eventName">Name of event</label>
                     <input type="text" name="eventName" id="eventName" value="<?php echo htmlspecialchars($eventName); ?>">
