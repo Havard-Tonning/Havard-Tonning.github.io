@@ -264,7 +264,7 @@ if (mapElement) {
             icon: icons.adventure
         })
         .addTo(map)
-        .bindPopup("<a href='./info/briksdalen.html'><H3>Briksdalen</H3><p>Spectacular nature at the Briksdal glacier</p><img src='../../info/images/info_bd3.jpg' class='popup-image'> <style='opacity:0'></a>");
+        .bindPopup("<a href='./info/briksdalen.html'><H3>Briksdalsbre Fjellstove</H3><p>Food, drink, souvernirs and accomodation by the Briksdal Glacier</p><img src='../../info/images/info_bd3.jpg' class='popup-image'> <style='opacity:0'></a>");
 
     // Vanberg Hytter
     L.marker([61.85860437934231, 6.767902005551665], {
@@ -279,6 +279,21 @@ if (mapElement) {
         })
         .addTo(map)
         .bindPopup("<a href='./info/ljos.html'><H3>Ljós</H3><p>Handcrafted quality products</p><img src='../../info/images/ljos5.jpg' class='popup-image'> <style='opacity:0'></a>");
+
+    // Melkevoll Bretun
+    L.marker([61.664763871466675, 6.816572033135127], {
+            icon: icons.camping
+        })
+        .addTo(map)
+        .bindPopup("<a href='./info/melkevoll.html'><H3>Melkevoll Bretun</H3><p>Camping and cabins surrounded by mountains, waterfalls and the glacier</p><img src='../../info/images/melk2.jpeg' class='popup-image'> <style='opacity:0'></a>");
+
+    // Mølla
+    L.marker([61.84250187834525, 6.810752540890467], {
+            icon: icons.food
+        })
+        .addTo(map)
+        .bindPopup("<a href='./info/molla.html'><H3>Mølla Gjestehus</H3><p>Food and drink right by the fjord</p><img src='../../info/images/molla2.jpg' class='popup-image'> <style='opacity:0'></a>");
+
 
     // Olden Adventure
     L.marker([61.84271884019358, 6.810757925733879], {
@@ -514,6 +529,33 @@ if (oadventure_map) {
     }).addTo(amap);
 
     L.marker([61.84271884019358, 6.810757925733879]).addTo(amap).bindPopup("Olden Adventure");
+}
+
+
+const molla_map = document.getElementById('molla_map');
+if (molla_map) {
+    var amap = L.map('molla_map', {
+        zoomControl: false
+    }).setView([61.842505056342794, 6.810751057854192], 11);
+
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(amap);
+
+    L.marker([61.842505056342794, 6.810751057854192]).addTo(amap).bindPopup("Mølla Gjestehus");
+}
+
+const melk_map = document.getElementById('melk_map');
+if (melk_map) {
+    var amap = L.map('melk_map', {
+        zoomControl: false
+    }).setView([61.760571143579774, 6.8088120765516855], 10);
+
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(amap);
+
+    L.marker([61.66472553065968, 6.8165138050501732]).addTo(amap).bindPopup("Melkevoll Bretun");
 }
 
 const ocamping_map = document.getElementById('ocamping_map');
@@ -774,7 +816,7 @@ if (mat_map) {
                 shadowSize: [41, 41]
             })
         }).addTo(map)
-        .bindPopup("<a href='sundekiosken.html'><H3>Sundekiosken</H3><p>Sundekiosken is a fast-food restaurant serving both traditional street food such as burgers and shaved meat, as well as Asian dishes like spring rolls and noodles.</p><img src='../images/sunde2.jpg' class='popup-image'> <style='opacity:0'></a>");
+        .bindPopup("<a href='info/sunde.html'><H3>Sundekiosken</H3><p>Sundekiosken is a fast-food restaurant serving both traditional street food such as burgers and shaved meat, as well as Asian dishes like spring rolls and noodles.</p><img src='../images/sunde2.jpg' class='popup-image'> <style='opacity:0'></a>");
 
     L.marker([61.8425222198133, 6.810743183913986], {
             icon: L.icon({
@@ -786,7 +828,7 @@ if (mat_map) {
                 shadowSize: [41, 41]
             })
         }).addTo(map)
-        .bindPopup("<a href='molla.html'><H3>Mølla Guesthouse</H3><p>Mølla is a restaurant located right by the fjord, serving both seafood and pizza.</p><img src='../images/molla3.jpg' class='popup-image'> <style='opacity:0'></a>");
+        .bindPopup("<a href='info/molla.html'><H3>Mølla Guesthouse</H3><p>Mølla is a restaurant located right by the fjord, serving both seafood and pizza.</p><img src='../images/molla3.jpg' class='popup-image'> <style='opacity:0'></a>");
 
     L.marker([61.679152875735696, 6.815727554128876], {
             icon: L.icon({

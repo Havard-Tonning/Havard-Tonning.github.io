@@ -281,7 +281,7 @@ if (mapElement) {
             icon: icons.adventure
         })
         .addTo(map)
-        .bindPopup("<a href='./info/briksdalen.html'><H3>Briksdalen</H3><p>Spektakulær natur ved Briksdalsbreen</p><img src='./info/images/info_bd3.jpg' class='popup-image'> <style='opacity:0'></a>");
+        .bindPopup("<a href='./info/briksdalen.html'><H3>Briksdalsbre Fjellstove</H3><p>Mat, drikke, souvernirar og overnatting nær Briksdalsbreen</p><img src='./info/images/info_bd3.jpg' class='popup-image'> <style='opacity:0'></a>");
 
     // Vanberg Hytter
     L.marker([61.85860437934231, 6.767902005551665], {
@@ -345,6 +345,22 @@ if (mapElement) {
         })
         .addTo(map)
         .bindPopup("<a href='./info/sunde.html'><H3>Sundekiosken</H3><p>Gatekjøkken med norske klassikarar og smakfulle thairettar</p><img src='./info/images/sunde1.jpg' class='popup-image'> <style='opacity:0'></a>");
+
+    // Mølla
+    L.marker([61.84250187834525, 6.810752540890467], {
+            icon: icons.food
+        })
+        .addTo(map)
+        .bindPopup("<a href='./info/molla.html'><H3>Mølla Gjestehus</H3><p>Restaurant nær fjorden med smakfulle rettar</p><img src='./info/images/molla2.jpg' class='popup-image'> <style='opacity:0'></a>");
+
+    // Melkevoll
+    L.marker([61.664728225884566, 6.8166256773127545], {
+            icon: icons.camping
+        })
+        .addTo(map)
+        .bindPopup("<a href='./info/melkevoll.html'><H3>Melkevoll Bretun</H3><p>Flott camping omkransa av fjell, fossar og brear</p><img src='./info/images/melk2.jpeg' class='popup-image'> <style='opacity:0'></a>");
+
+
 
     // Aabrekk Kafé
     L.marker([61.67911432283224, 6.815869210536484], {
@@ -714,6 +730,32 @@ if (discover_map) {
     L.marker([61.866150314662946, 6.73004665169674]).addTo(amap).bindPopup("Discover Olden");
 }
 
+const molla_map = document.getElementById('molla_map');
+if (molla_map) {
+    var amap = L.map('molla_map', {
+        zoomControl: false
+    }).setView([61.842505056342794, 6.810751057854192], 11);
+
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(amap);
+
+    L.marker([61.842505056342794, 6.810751057854192]).addTo(amap).bindPopup("Mølla Gjestehus");
+}
+
+const melk_map = document.getElementById('melk_map');
+if (melk_map) {
+    var amap = L.map('melk_map', {
+        zoomControl: false
+    }).setView([61.760571143579774, 6.8088120765516855], 10);
+
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(amap);
+
+    L.marker([61.66472553065968, 6.8165138050501732]).addTo(amap).bindPopup("Melkevoll Bretun");
+}
+
 const bunnpris_map = document.getElementById('bunnpris_map');
 if (bunnpris_map) {
     var amap = L.map('bunnpris_map', {
@@ -816,7 +858,7 @@ if (mat_map) {
                 shadowSize: [41, 41]
             })
         }).addTo(map)
-        .bindPopup("<a href='sundekiosken.html'><H3>Sundekiosken</H3><p>Sundekiosken er ein fast-food restaurant med både tradisjonell gatemat som burger og løvsteik, samt asiatiske rettar som vårrullar og nudlar.</p><img src='./images/sunde2.jpg' class='popup-image'> <style='opacity:0'></a>");
+        .bindPopup("<a href='info/sunde.html'><H3>Sundekiosken.html'><H3>Sundekiosken</H3><p>Sundekiosken er ein fast-food restaurant med både tradisjonell gatemat som burger og løvsteik, samt asiatiske rettar som vårrullar og nudlar.</p><img src='./images/sunde2.jpg' class='popup-image'> <style='opacity:0'></a>");
 
     L.marker([61.8425222198133, 6.810743183913986], {
             icon: L.icon({
@@ -828,7 +870,7 @@ if (mat_map) {
                 shadowSize: [41, 41]
             })
         }).addTo(map)
-        .bindPopup("<a href='molla.html'><H3>Mølla Gjestehus</H3><p>Mølla er ein restaurant lokalisert rett ved fjorden, og serverer både sjømat og pizza.</p><img src='./images/molla3.jpg' class='popup-image'> <style='opacity:0'></a>");
+        .bindPopup("<a href='info/molla.html'><H3>Mølla Gjestehus</H3><p>Mølla er ein restaurant lokalisert rett ved fjorden, og serverer både sjømat og pizza.</p><img src='./images/molla3.jpg' class='popup-image'> <style='opacity:0'></a>");
 
 
     L.marker([61.848272904545304, 6.814688885941699], {
