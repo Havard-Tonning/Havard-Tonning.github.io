@@ -372,12 +372,28 @@ if (mapElement) {
         .addTo(map)
         .bindPopup("<a href='./info/farm.html'><H3>Olden Farm</H3><p>Experience authentic farm life</p><img src='../../info/images/farm2.jpg' class='popup-image'> <style='opacity:0'></a>");
 
+    // ATV
+    L.marker([61.839323619577414, 6.810785498740839], {
+            icon: icons.adventure
+        })
+        .addTo(map)
+        .bindPopup("<a href='./info/atv.html'><H3>Fjord ATV Adventures</H3><p>Experience Olden at high speeds</p><img src='../../info/images/atv1.jpg' class='popup-image'> <style='opacity:0'></a>");
+
+
     // Fjordblikk Hytter
     L.marker([61.845129914010165, 6.817369782609704], {
             icon: icons.accommodation
         })
         .addTo(map)
         .bindPopup("<a href='./info/muri_hytter.html'><H3>Fjordblikk Cabins</H3><p>Cosy cabins with stunning fjord views</p><img src='../../info/images/muri1.jpg' class='popup-image'> <style='opacity:0'></a>");
+
+    // Fagerlund Hytter
+    L.marker([61.757439968392035, 6.821137897384036], {
+            icon: icons.accommodation
+        })
+        .addTo(map)
+        .bindPopup("<a href='./info/fagerlund.html'><H3>Fagerlund 2</H3><p>Cosy cabin with stunning lake views</p><img src='../../info/images/fl1.jpg' class='popup-image'> <style='opacity:0'></a>");
+
 
     // Skogstad Olden
     L.marker([61.83548622483675, 6.8069284010959], {
@@ -688,6 +704,19 @@ if (muri_map) {
     }).addTo(amap);
 
     L.marker([61.845129914010165, 6.817369782609704]).addTo(amap).bindPopup("Fjordblikk Hytter");
+}
+
+const fl_map = document.getElementById('fl_map');
+if (fl_map) {
+    var amap = L.map('fl_map', {
+        zoomControl: false
+    }).setView([61.79779222099876, 6.820097956437173], 11);
+
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(amap);
+
+    L.marker([61.757439968392035, 6.821137897384036]).addTo(amap).bindPopup("Fagerlund 2");
 }
 
 const skogstad_map = document.getElementById('skogstad_map');

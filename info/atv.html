@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8">
+    <titleFjord ATV Adventurestitle>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+        <script defer src="https://kit.fontawesome.com/e065bf0659.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <link rel="alternate" hreflang="no" href="https://iolden.no/info/atv.html" />
+        <link rel="alternate" hreflang="en" href="https://iolden.no/en/info/atv.html" />
+        <link rel="alternate" hreflang="x-default" href="https://iolden.no/en/info/atv.html" />
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+</head>
+
+<body>
+    <g-tag></g-tag>
+    <info-header></info-header>
+    <alt-hamburger-menu></alt-hamburger-menu>
+
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img class="swiper_image" src="./images/atv1.jpg"></div>
+            <div class="swiper-slide"><img class="swiper_image" src="./images/atv2.jpg"></div>
+            <div class="swiper-slide"><img class="swiper_image" src="./images/atv3.jpg"></div>
+            <div class="swiper-slide"><img class="swiper_image" src="./images/atv4.jpg"></div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+    <div class="roundedbody">
+        <div class="marginbody">
+            <h1>Fjord ATV Adventures</h1>
+            <p>
+                Glem sightseeing - føl naturen med Fjord ATV Adventures i Olden <br><br>
+                Det er på tide å bytte ut turbussen med adrenalin og rå natur. Fjord ATV Adventures inviterer nå reisende til å oppleve de spektakulære omgivelsene i Olden fra førersetet av en kraftfull ATV. <br><br>
+                Dette er ikke bare en transportetappe; det er en sanselig reise gjennom noen av verdens vakreste daler. Turen tar deg fra den asurblå fjorden, opp svingete veier og gjennom frodig vestlandsnatur, helt til utsiktspunkter som tar pusten fra selv den mest bereiste. Med vinden i ansiktet og lyden av fossende vann i bakgrunnen, kommer du tettere på elementene enn noen gang før. <br><br>
+                "Vårt mål er å gi gjestene en mestringsfølelse kombinert med naturens ro," sier Fjord ATV Adventures. <br><br>
+                Sikkerhet og lokalkunnskap står i sentrum, slik at du kan fokusere på det viktigste: Enten du er en erfaren fører eller prøver det for første gang, garanterer vi et minne for livet. <br><br>
+                Er du klar for ditt neste eventyr? <br><br>
+                Besøk oss i Olden for en opplevelse som sitter i kroppen lenge etter at motoren er slått av.
+
+                <br>
+            </p>
+            <a class="visitUs" href="https://www.fjordatvadventures.no/">
+                Bestill tur
+            </a>
+            <br>
+            <a class="visitUs" href="mailto:post@fjordatvadventures.no">
+                Kontakt oss
+            </a>
+
+        </div>
+        <div style="margin-top: 30px;">Her finn du oss:</div>
+        <div id="atv_map" class="maps" style="height: 400px; border-radius: 5px;"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+
+    <script src="../swiper.js"></script>
+    <script defer src="../index.js"></script>
+    <script defer src="../components.js"></script>
+
+    <site-footer></site-footer>
+</body>
+
+</html>
