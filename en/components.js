@@ -127,7 +127,7 @@ class mainHeader extends HTMLElement {
         this.innerHTML = `
         <header class="main-header">
             <a href="index.html">
-                <img class="logoimg" src="../images/logo3.png" alt="iOlden logo">
+                <img class="logoimg" src="../images/logo3.png" alt="iOlden logo"> 
             </a>    
             <div class="ham-menu"> 
                 <i class="fa-solid fa-bars"></i>
@@ -155,7 +155,7 @@ class altMainHeader extends HTMLElement {
         this.innerHTML = `
         <header class="main-header">
             <a href="index.html">
-                <img class="logoimg" src="images/logo3.png" alt="iOlden logo">
+                <img class="logoimg" src="images/logo3.png" alt="iOlden logo"> 
             </a>    
             <div class="ham-menu"> 
                 <i class="fa-solid fa-bars"></i>

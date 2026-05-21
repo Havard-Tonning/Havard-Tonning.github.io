@@ -193,7 +193,7 @@ if (mapElement) {
     };
 
 
-    L.marker([61.83573157084586, 6.805100560216835], {
+    L.marker([61.83573157084586, 6.805100560216835], { 
             icon: icons.main
         }).addTo(map)
         .bindPopup("<a href='strand.html'><H3>Noregs minste og kaldaste strand</H3><p>2,5 meter brei og ein gjennomsnittstemperatur på rundt 6 grader.</p><img src='./images/strand.jpg' class='popup-image'></a>");
@@ -206,7 +206,7 @@ if (mapElement) {
     L.marker([61.83198400514617, 6.801277627125196], {
             icon: icons.main
         }).addTo(map)
-        .bindPopup("<a href='skred.html'><H3>Håskreda</H3><p>Kvart år dundrar eit stort skred ned fjellsidene. Somme år blir bygda dekka av ei sky av snø.</p><img src='./images/haskreda.jpg' class='popup-image'></a>")
+        .bindPopup("<a href='skred.html'><H3>Håskreda</H3><p>Kvart år dundrar eit stort skred ned fjellsidene. Somme år blir bygda dekka av ei sky av snø.</p><img src='./images/haskreda.jpg' class='popup-image' alt='Håskreda snøskred'></a>")
 
     L.marker([61.82756413293129, 6.808309705339039], {
             icon: icons.main
@@ -221,7 +221,7 @@ if (mapElement) {
     L.marker([61.832533331352266, 6.81289993511424], {
             icon: icons.main
         }).addTo(map)
-        .bindPopup("<a href='singerheimen.html'><H3>Singerheimen</H3><p>Ei samling vakre bygg oppført av milliardæren Willam Singer i 1921. I dag verna gjennom bruk.</p><img src='./images/singerheimen.jpg' class='popup-image'></a>");
+        .bindPopup("<a href='singerheimen.html'><H3>Singerheimen</H3><p>Ei samling vakre bygg oppført av milliardæren Willam Singer i 1921. I dag verna gjennom bruk.</p><img src='./images/singerheimen.jpg' class='popup-image' alt='Singerheimen historisk bygning'></a>");
 
     L.marker([61.85855378132025, 6.832809190327688], {
             icon: icons.hike
@@ -231,7 +231,7 @@ if (mapElement) {
     L.marker([61.84875878015604, 6.771772936299873], {
             icon: icons.hike
         }).addTo(map)
-        .bindPopup("<a href='skarstein.html'><H3>Skarsteinsetra</H3><p>Familievenleg tur opp til ei flott seter med utsikt over fjorden.</p><img src='./images/skarstein.jpg' class='popup-image'> <style='opacity:0'></a>");
+        .bindPopup("<a href='skarstein.html'><H3>Skarsteinsetra</H3><p>Familievenleg tur opp til ei flott seter med utsikt over fjorden.</p><img src='./images/skarstein.jpg' class='popup-image' alt='Skarsteinsetra fjellgård'> <style='opacity:0'></a>");
 
 
     L.marker([61.811346777648616, 6.794098073865384], {
@@ -245,7 +245,7 @@ if (mapElement) {
     L.marker([61.83514629201231, 6.80473671906396], {
             icon: icons.food
         })
-        .addTo(map)
+        .addTo(map) 
         .bindPopup("<a href='./info/stabukk.html'><H3>Stabukk</H3><p>Café med is og kaffi</p><img src='../../images/stabukk1.jpg' class='popup-image'> <style='opacity:0'></a>");
 
     // Isabella
@@ -259,7 +259,7 @@ if (mapElement) {
     L.marker([61.8440950197931, 6.812049007972068], {
             icon: icons.adventure
         })
-        .addTo(map)
+        .addTo(map) 
         .bindPopup("<a href='./info/olden_taxi.html'><H3>Olden Taxi</H3><p>Din skyss. Når og kor du treng den</p><img src='./info/images/taxi.jpg' class='popup-image'> <style='opacity:0'></a>");
 
     // Bunnpris
@@ -273,7 +273,7 @@ if (mapElement) {
     L.marker([61.835241835095, 6.804609916147261], {
             icon: icons.accommodation
         })
-        .addTo(map)
+        .addTo(map) 
         .bindPopup("<a href='./info/apartments.html'><H3>Olden Apartments</H3><p>Flotte leilegheiter rett ved Oldeelva</p><img src='./info/images/apartments1.jpg' class='popup-image'> <style='opacity:0'></a>");
 
     // Briksdalen
@@ -287,7 +287,7 @@ if (mapElement) {
     L.marker([61.85860437934231, 6.767902005551665], {
             icon: icons.accommodation
         })
-        .addTo(map)
+        .addTo(map) 
         .bindPopup("<a href='./info/vanberg.html'><H3>Vanberg Hytter</H3><p>Koselige hytter med flott utsikt over fjorden</p><img src='./info/images/vangberg.jpg' class='popup-image'> <style='opacity:0'></a>");
 
     // Ljós
@@ -301,7 +301,7 @@ if (mapElement) {
     L.marker([61.84271884019358, 6.810757925733879], {
             icon: icons.adventure
         })
-        .addTo(map)
+        .addTo(map) 
         .bindPopup("<a href='./info/olden_adventure.html'><H3>Olden Adventure</H3><p>Spennande aktivitetar for heile familien</p><img src='./info/images/adventure1.jpeg' class='popup-image'> <style='opacity:0'></a>");
 
     // Olden Camping
@@ -315,7 +315,7 @@ if (mapElement) {
     L.marker([61.83475925136581, 6.805342694945899], {
             icon: icons.store
         })
-        .addTo(map)
+        .addTo(map) 
         .bindPopup("<a href='./info/viking.html'><H3>The Viking Shop</H3><p>Suvenirar og norske spesialitetar</p><img src='./info/images/viking2.jpeg' class='popup-image'> <style='opacity:0'></a>");
 
     // Singerheimen
@@ -329,7 +329,7 @@ if (mapElement) {
     L.marker([61.84823079426946, 6.814474679106876], {
             icon: icons.accommodation
         })
-        .addTo(map)
+        .addTo(map) 
         .bindPopup("<a href='./info/fjordhotel.html'><H3>Olden Fjordhotel</H3><p>Klassisk fjordhotel med panoramautsikt</p><img src='./info/images/fjordhotel1.jpg' class='popup-image'> <style='opacity:0'></a>");
 
     // Olden Active
@@ -343,7 +343,7 @@ if (mapElement) {
     L.marker([61.84183231203744, 6.811405718967407], {
             icon: icons.food
         })
-        .addTo(map)
+        .addTo(map) 
         .bindPopup("<a href='./info/sunde.html'><H3>Sundekiosken</H3><p>Gatekjøkken med norske klassikarar og smakfulle thairettar</p><img src='./info/images/sunde1.jpg' class='popup-image'> <style='opacity:0'></a>");
 
     // Mølla
@@ -357,7 +357,7 @@ if (mapElement) {
     L.marker([61.664728225884566, 6.8166256773127545], {
             icon: icons.camping
         })
-        .addTo(map)
+        .addTo(map) 
         .bindPopup("<a href='./info/melkevoll.html'><H3>Melkevoll Bretun</H3><p>Flott camping omkransa av fjell, fossar og brear</p><img src='./info/images/melk2.jpeg' class='popup-image'> <style='opacity:0'></a>");
 
 
@@ -373,7 +373,7 @@ if (mapElement) {
     L.marker([61.67821684927461, 6.813822979973412], {
             icon: icons.accommodation
         })
-        .addTo(map)
+        .addTo(map) 
         .bindPopup("<a href='./info/aabrekk.html'><H3>Aabrekk Hytter</H3><p>Romslege hytter i vakker natur nær Briksdalen</p><img src='./info/images/aabrekk2.jpg' class='popup-image'> <style='opacity:0'></a>");
 
     // Flåten Feriehytter
@@ -387,7 +387,7 @@ if (mapElement) {
     L.marker([61.82741634975917, 6.814167637414622], {
             icon: icons.adventure
         })
-        .addTo(map)
+        .addTo(map) 
         .bindPopup("<a href='./info/farm.html'><H3>Olden Farm</H3><p>Opplev autentisk gardsliv</p><img src='./info/images/farm2.jpg' class='popup-image'> <style='opacity:0'></a>");
 
     // ATV
@@ -398,14 +398,14 @@ if (mapElement) {
         .bindPopup("<a href='./info/atv.html'><H3>Olden ATV Adventures</H3><p>Køyr rundt i naturen i høg fart</p><img src='./info/images/atv1.jpg' class='popup-image'> <style='opacity:0'></a>");
 
     // Fjordblikk Hytter
-    L.marker([61.845129914010165, 6.817369782609704], {
+    L.marker([61.757439968392035, 6.821137897384036], {
             icon: icons.accommodation
         })
-        .addTo(map)
-        .bindPopup("<a href='./info/fagerlund.html'><H3>Fagerlund 2/H3><p>Koseleg hytte med flott utsikt over oldevatnet</p><img src='./info/images/fl1.jpg' class='popup-image'> <style='opacity:0'></a>");
+        .addTo(map) 
+        .bindPopup("<a href='./info/fagerlund.html'><H3>Fagerlund</H3><p>Koseleg hytte med flott utsikt over oldevatnet</p><img src='./info/images/fl1.jpg' class='popup-image'> <style='opacity:0'></a>");
 
     // Fjordblikk Hytter
-    L.marker([61.757439968392035, 6.821137897384036], {
+    L.marker([61.845129914010165, 6.817369782609704], {
             icon: icons.accommodation
         })
         .addTo(map)
@@ -416,7 +416,7 @@ if (mapElement) {
     L.marker([61.83548622483675, 6.8069284010959], {
             icon: icons.store
         })
-        .addTo(map)
+        .addTo(map) 
         .bindPopup("<a href='./info/skogstad.html'><H3>Skogstad Olden</H3><p>Kvalitetskle for den norske naturen</p><img src='./info/images/skogstad1.jpg' class='popup-image'> <style='opacity:0'></a>");
 
     // Riccovero
@@ -430,7 +430,7 @@ if (mapElement) {
     L.marker([61.757301445985966, 6.810304052446991], {
             icon: icons.wellness
         })
-        .addTo(map)
+        .addTo(map) 
         .bindPopup("<a href='./info/olden_sauna.html'><H3>Olden Sauna</H3><p>Avslapping og velvære rett ved vatnet</p><img src='./info/images/badstue2.jpeg' class='popup-image'> <style='opacity:0'></a>");
 
     // Discover Olden
@@ -444,7 +444,7 @@ if (mapElement) {
     L.marker([61.74095025385795, 6.791149855441869], {
             icon: icons.camping
         })
-        .addTo(map)
+        .addTo(map) 
         .bindPopup("<a href='./info/gryta.html'><H3>Gryta Camping</H3><p>Naturleg og roleg camping ved Oldevatnet</p><img src='./info/images/gryta1.jpg' class='popup-image'> <style='opacity:0'></a>");
     var locationControl = L.control({
         position: 'topleft'
