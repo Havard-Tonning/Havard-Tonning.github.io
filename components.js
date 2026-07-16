@@ -4,7 +4,7 @@ class SiteFooter extends HTMLElement {
         <footer class="mainfooter">
         Utvikla av <a href="https://www.instagram.com/havard_tonning/" style="color: rgb(203, 234, 255);">Håvard Tonning</a>
         <br>
-        Spørsmål? Ta kontakt på <a href="mailto:havard@iolden.no" style="color: rgb(203, 234, 255)">havard@iolden.no</a>
+        Spørsmål om iOlden? Ta kontakt på <a href="mailto:havard@iolden.no" style="color: rgb(203, 234, 255)">havard@iolden.no</a>
         </footer>`;
     }
 }
